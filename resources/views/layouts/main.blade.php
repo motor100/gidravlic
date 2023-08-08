@@ -16,7 +16,17 @@
 <body>
   <header class="header">
     <div class="container">
-
+      <form class="search-form" action="/poisk" method="get">
+        <input type="text" name="search_query" class="search-input" minlength="3" maxlength="20" autocomplete="off" required placeholder="Поиск по товарам">
+        <button type="submit" class="search-submit-btn">
+          <img src="/img/header-search-lens.png" alt="">
+        </button>
+        <div class="search-close"></div>
+        <div class="search-dropdown">
+          <div class="search-list js-search-rezult"></div>
+          <a href="#" class="search-see-all">Показать все результаты</a>
+        </div>
+      </form>
     </div>
   </header>
   
