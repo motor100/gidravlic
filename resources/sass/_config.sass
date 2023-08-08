@@ -1,0 +1,60 @@
+// USER VARIABLES SECTION
+
+$basiccolor: #252525 // Basic Color
+$accentcolor: #358567 // Accent Color
+$dopcolor: #969696 // Dop Color
+$dop2color: #F4F4F4 // Dop2 Color
+$fontsize: 16px // Font Size
+$textcolor: #252525 // Text Color
+$lineheight: 1.6 // Document Line Height
+$userfont: 'montserrat-regular', sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 24px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/swiper/swiper-bundle.min' // Swiper bundle
+// @import 'node_modules/air-datepicker/air-datepicker' // Air datepicker
+// @import 'node_modules/photoswipe/dist/photoswipe' // Photoswipe
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+  @font-face
+    font-family: $fname
+    font-style: $fstyle
+    font-weight: $fweight
+    src: url($furl) format('woff2')
+
+@include font('montserrat-light', normal, 400, '../../public/fonts/montserrat-light.woff2')
+@include font('montserrat-regular', normal, 400, '../../public/fonts/montserrat-regular.woff2')
+@include font('montserrat-medium', normal, 400, '../../public/fonts/montserrat-medium.woff2')
+@include font('montserrat-bold', normal, 400, '../../public/fonts/montserrat-bold.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+// ::placeholder
+//   color: #7f7f7f
+
+*
+  box-sizing: border-box
+
+input, textarea
+  outline: none
+
+html
+  font-size: $fontsize
+
+body
+  font-family: $userfont
+  line-height: $lineheight
+  color: $textcolor
+  max-width: 1920px
+  min-width: 320px
+  margin: 0 auto
+  position: relative
+  overflow-x: hidden
