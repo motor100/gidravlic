@@ -18,6 +18,9 @@ a, a:focus, a:active {
 a, a:hover {
   text-decoration: none;
 }
+button {
+  cursor: pointer;
+}
 button, button:focus, button:active {
   outline: none;
 }
@@ -64,7 +67,114 @@ ul {
   position: relative;
 }
 
+.header {
+  .header-top {
+    padding: 8px 0 0 0;
+    background-color: $greycolor;
+  }
+  .header-top .logo img {
+    width: 100%;
+  }
+  .header-top .header-phone {
+    color: #fff;
+    text-align: right;
+  }
+  .header-top .header-feedback-btn {
+    height: 30px;
+    border-radius: 5px;
+    background-color: $bluecolor;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .header-top .cart {
+    position: relative;
+    width: 43px;
+    height: 40px;
+    margin: 0 auto;
+  }
+  .header-top .cart .counter {
+    position: absolute;
+    top: -2px;
+    right: -8px;
+    display: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    background-color: $bluecolor;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .header-top .cart .counter.active {
+    display: block;
+  }
+  .header-bottom .underlogo-text {
+    font-family: 'roboto-condensed-light';
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .header-bottom .search-form {
+    position: relative;
+  }
+  .header-bottom .search-input {
+    width: 100%;
+    padding: 0 35px 5px 0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid $greycolor;
+    font-family: 'roboto-condensed-light';
+    font-size: 20px;
+  }
+  .header-bottom .search-submit-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    border: none;
+    background-color: #fff;
+  }
+  .header-bottom .header-bottom-item {
+    font-family: 'roboto-condensed-light';
+    text-align: center;
+  }
+  .top-menu {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .top-menu .menu {
+    text-align: center;
+  }
+  .top-menu .menu-item {
+    display: inline-block;
+    margin: 0 30px;
+  }
+  .top-menu .menu-item:first-child {
+    margin-left: 0;
+  }
+  .top-menu .menu-item:last-child {
+    margin-right: 0;
+  }
+  .top-menu .menu-item a {
+    font-size: 24px;
+    color: $textcolor;
+    text-transform: uppercase;
+    transition: color .3s;
+  }
+  .top-menu .menu-item a:hover {
+    color: $accentcolor;
+  }
+}
 
+.footer {
+  padding: 37px 0;
+  background-color: $greycolor;
+}
 
 
 

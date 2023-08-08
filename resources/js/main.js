@@ -32,14 +32,10 @@ function searchOnInput() {
 
   if (searchInput.value.length > 3 && searchInput.value.length < 40) {
 
-    const searchSeeAll = document.querySelector('.search-see-all');
-
     function searchDropdownRender(json) {
       
-      // Очистка результатов поиска
       searchRezult.innerHTML = '';
-      searchSeeAll.classList.remove('search-see-all-active');
-      console.log(json.length);
+
       // Если товаров 0, то не найдено
       if (json.length == 0) {
         let tmpEl = document.createElement('div');
@@ -66,7 +62,13 @@ function searchOnInput() {
           searchRezult.append(tmpEl);
         });
 
-        searchSeeAll.classList.add('search-see-all-active');
+        // Показать все результаты
+        let tmpEl = document.createElement('a');
+        tmpEl.className = "search-see-all";
+        tmpEl.href = '/poisk?search_query=' + searchInput.value;
+        tmpEl.innerText = 'Показать все результаты';
+        tmpEl.onclick = searchResetForm;
+        searchRezult.append(tmpEl);
 
         // Добавляю клик на найденные элементы
         let searchListItemLink = document.querySelectorAll('.search-list-item__link');
@@ -74,11 +76,6 @@ function searchOnInput() {
         searchListItemLink.forEach((item) => {
           item.onclick = searchResetForm;
         });
-
-        // Добавляю клик на ссылку Показать все результаты
-        searchSeeAll.classList.add('search-see-all-active');
-        searchSeeAll.href = '/poisk?search_query=' + searchInput.value;
-        searchSeeAll.onclick = searchResetForm;
       }
 
       searchClose.classList.add('search-close-active');
@@ -101,6 +98,7 @@ function searchOnInput() {
   } else {
     // Если менее 3 символов, то скрываю результаты поиска
     searchDropdownClose();
+    searchRezult.innerHTML = '';
   }
 
 }
