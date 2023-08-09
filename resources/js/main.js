@@ -19,9 +19,9 @@ function searchResetForm() {
   searchInput.classList.remove('search-input-dp');
 }
 
-searchInput.onfocus = () => {
-  searchInput.classList.add('search-input-active');
-}
+// searchInput.onfocus = () => {
+//   searchInput.classList.add('search-input-active');
+// }
 
 searchInput.onblur = () => {
   searchInput.classList.remove('search-input-active');
@@ -56,9 +56,7 @@ function searchOnInput() {
         json.forEach((item) => {
           let tmpEl = document.createElement('div');
           tmpEl.className = "search-list-item";
-          let str = '<div class="search-list-item__image"></div>';
-          str += '<a href="/catalog/' + item.slug + '" class="search-list-item__link">' + item.title + '</a>';
-          tmpEl.innerHTML = str;
+          tmpEl.innerHTML = '<a href="/catalog/' + item.slug + '" class="search-list-item__link">' + item.title + '</a>';
           searchRezult.append(tmpEl);
         });
 

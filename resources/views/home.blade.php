@@ -3,6 +3,6 @@
 @extends('layouts.main')
 
 @section('content')
-  <p>111111</p>
+  <p>Главная</p>
 
 @endsection
