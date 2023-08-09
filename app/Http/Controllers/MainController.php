@@ -73,4 +73,13 @@ class MainController extends Controller
     {
         return view('politika-konfidencialnosti');
     }
+
+
+    public function we_use_cookie(): bool
+    {
+        // Записываю в куки через фасад Cookie метод queue
+        \Illuminate\Support\Facades\Cookie::queue('we-use-cookie', 'yes', 525600);
+
+        return false;
+    }
 }

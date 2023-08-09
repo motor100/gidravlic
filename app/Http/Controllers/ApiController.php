@@ -22,5 +22,6 @@ class ApiController extends Controller
                                         ->get();
 
         return response()->json($products);
-    } 
+    }
+
 }

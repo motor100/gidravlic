@@ -240,4 +240,25 @@ callbackSubmitBtn.onclick = () => {
   ajaxCallback(callbackModalForm);
 }
 
+
+// Скрывание кнопки Мы используем куки we use cookie
+const messagesCookies = document.querySelector('.messages-cookies');
+const messagesCookiesClose = document.querySelector('.messages-cookies-close');
+
+if (messagesCookiesClose) {
+
+  messagesCookiesClose.onclick = () => {
+    messagesCookies.classList.add('hidden');
+
+    fetch('/ajax/we-use-cookie', {
+      method: 'GET',
+      cache: 'no-cache',
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
+}
+
   

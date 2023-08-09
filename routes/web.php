@@ -43,6 +43,8 @@ Route::get('/contacts', [MainController::class, 'contacts']);
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 
+Route::get('/ajax/we-use-cookie', [MainController::class, 'we_use_cookie']);
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

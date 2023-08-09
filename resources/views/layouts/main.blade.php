@@ -146,7 +146,6 @@
         </div>
         <div class="modal-title">Оставить заявку</div>
         <form id="callback-modal-form" class="form" method="post">
-        <!-- <form id="callback-modal-form" class="form" action="/api/callback" method="get"> -->
           <div class="form-group">
             <label for="name-callback-modal" class="label">Ф.И.О <span class="accentcolor">*</span></label>
             <input type="text" id="name-callback-modal" class="input-field js-name-callback-modal" name="name" required minlength="3" maxlength="20">
@@ -176,11 +175,21 @@
 
           @csrf
           <button type="button" id="callback-submit-btn" class="submit-btn">ОТПРАВИТЬ СООБЩЕНИЕ</button>
-          <!-- <button type="submit" id="callback-submit-btn" class="submit-btn">ОТПРАВИТЬ СООБЩЕНИЕ</button> -->
         </form>
       </div>
     </div>
   </div>
+
+  @if(!request()->cookie('we-use-cookie'))
+    <div class="messages-cookies">
+
+      <div class="messages-cookies-wrapper">
+        <div class="messages-cookies-text">Этот сайт использует cookie-файлы и другие технологии для улучшения его работы. Продолжая работу с сайтом, вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</div>
+        <button class="messages-cookies-close">ХОРОШО</button>
+      </div>
+
+    </div>
+  @endif
 
   @vite(['resources/js/main.js'])
 

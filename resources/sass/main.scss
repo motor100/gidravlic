@@ -454,6 +454,43 @@ ul {
   margin-top: 20px;
 }
 
+/* we use cookie */
+.messages-cookies {
+	position: fixed;
+  right: 25px;
+	bottom: 47px;
+	left: 0;
+  max-width: 1296px;
+  margin: 0 auto;
+	z-index: 10;
+}
+.messages-cookies .messages-cookies-wrapper {
+  display: flex;
+  max-width: 1296px;
+  padding: 34px;
+  border-radius: 20px;
+  background-color: #fff;
+  align-items: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.messages-cookies .messages-cookies-text {
+  padding: 0 50px 0 0;
+  color: #000;
+}
+.messages-cookies .messages-cookies-close {
+  display: block;
+  width: 196px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background-color: $bluecolor;
+  border-radius: 5px;
+  font-family: "roboto-condensed-medium";
+  font-size: 16px; 
+  color: #fff;
+  flex-shrink: 0;
+}
+
 
 @media only screen and (max-width : 1400px) {
   .header {
