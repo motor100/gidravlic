@@ -134,9 +134,78 @@
 
   <footer class="footer">
     <div class="container">
+      <div class="logo">
+        <img src="/img/header-logo.png" alt="">
+      </div>
+      <div class="footer-nav">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-2">
+            <div class="footer-nav__title">Компания</div>
+            <div class="footer-nav-item">
+              <a href="/company" class="footer-nav-item__link">О компании</a>
+            </div>
+            <div class="footer-nav-item">
+              <a href="/calculators" class="footer-nav-item__link">Калькуляторы</a>
+            </div>
+            <div class="footer-nav-item">
+              <a href="#" class="footer-nav-item__link">Реквизиты</a>
+            </div>
+            <div class="footer-nav-item">
+              <a href="/contacts" class="footer-nav-item__link">Контакты</a>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="footer-nav__title">Покупателям</div>
+            <div class="footer-nav-item">
+              <a href="/services" class="footer-nav-item__link">Услуги</a>
+            </div>
+            <div class="footer-nav-item">
+              <a href="/payment" class="footer-nav-item__link">Оплата</a>
+            </div>
+            <div class="footer-nav-item">
+              <a href="/delivery" class="footer-nav-item__link">Доставка</a>
+            </div>
+            <div class="footer-nav-item">
+              <a href="/warranty" class="footer-nav-item__link">Гарантия</a>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="footer-nav__title">Оставайтесь на связи</div>
+            <div class="footer-nav-item footer-contacts-item">
+              <div class="footer-contacts-item__image">
+                <img src="/img/footer-whatsapp.png" alt="">
+              </div>
+              <div class="footer-contacts-item__text">+7 (982) 292-88-79</div>
+            </div>
+            <div class="footer-nav-item footer-contacts-item">
+              <div class="footer-contacts-item__image">
+                <img src="/img/footer-geolocation.png" alt="">
+              </div>
+              <div class="footer-contacts-item__text">г. Миасс, Тургоякское шоссе, 5/11</div>
+            </div>
+            <div class="footer-nav-item footer-contacts-item">
+              <div class="footer-contacts-item__image">
+                <img src="/img/footer-clock.png" alt="">
+              </div>
+              <div class="footer-contacts-item__text">с 9:00 до 18:00 (СБ, ВС - выходной)</div>
+            </div>
+            <div class="footer-nav-item footer-contacts-item">
+              <div class="footer-contacts-item__image">
+                <img src="/img/footer-mail.png" alt="">
+              </div>
+              <div class="footer-contacts-item__text">zakaz@gidravlic.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <a href="/politika-konfidencialnosti">Политика конфиденциальности</a>
     </div>
   </footer>
+
+  <div id="to-top" class="to-top hidden-mobile">
+    <div class="circle"></div>
+  </div>
 
   <div id="callback-modal" class="modal-window callback-modal">
     <div class="modal-wrapper">

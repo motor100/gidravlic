@@ -26,6 +26,7 @@ button, button:focus, button:active {
 }
 img {
   border-style: none;
+  vertical-align: middle;
 }
 ul {
   margin: 0;
@@ -298,6 +299,53 @@ ul {
 .footer {
   padding: 37px 0;
   background-color: $greycolor;
+  .logo {
+    width: 200px;
+    margin: 0 0 47px 0;
+  }
+  .logo img {
+    width: 100%;
+  }
+  .footer-nav__title {
+    margin: 0 0 25px 0;
+    font-family: 'roboto-condensed-bold';
+    font-size: 24px;
+    color: #D9D9D9;
+  }
+  .footer-nav-item {
+    margin: 0 0 20px 0;
+  }
+  .footer-nav-item__link {
+    font-family: 'roboto-condensed-medium';
+    font-size: 20px;
+    color: #fff;
+  }
+  .footer-contacts-item {
+    display: flex;
+    height: 32px;
+    align-items: center;
+  }
+  .footer-contacts-item__image {
+    margin: 0 12px 0 0;
+  }
+  .footer-contacts-item__text {
+    font-family: 'roboto-condensed-bold';
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    z-index: 5;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    transition: visibility .5s ease, opacity .5s ease;
+  }
+  
 }
 
 
