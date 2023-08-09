@@ -34,7 +34,7 @@
           </div>
           <div class="col-xxl-2 col-md-3">
             <div class="flex-container">
-              <button class="header-feedback-btn">Оставить заявку</button>
+              <button id="callback-btn" class="header-feedback-btn">Оставить заявку</button>
             </div>
           </div>
           <div class="col-md-1">
@@ -137,6 +137,50 @@
       <a href="/politika-konfidencialnosti">Политика конфиденциальности</a>
     </div>
   </footer>
+
+  <div id="callback-modal" class="modal-window callback-modal">
+    <div class="modal-wrapper">
+      <div class="modal-area">
+        <div class="modal-close">
+          <div class="close"></div>
+        </div>
+        <div class="modal-title">Оставить заявку</div>
+        <form id="callback-modal-form" class="form" method="post">
+        <!-- <form id="callback-modal-form" class="form" action="/api/callback" method="get"> -->
+          <div class="form-group">
+            <label for="name-callback-modal" class="label">Ф.И.О <span class="accentcolor">*</span></label>
+            <input type="text" id="name-callback-modal" class="input-field js-name-callback-modal" name="name" required minlength="3" maxlength="20">
+          </div>
+          <div class="form-group">
+            <label for="email-callback-modal" class="label">E-mail <span class="accentcolor">*</span></label>
+            <input type="email" id="email-callback-modal" class="input-field js-email-callback-modal" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone-callback-modal" class="label">Телефон <span class="accentcolor">*</span></label>
+            <input type="text" id="phone-callback-modal" class="input-field js-phone-callback-modal js-input-phone-mask" name="phone" required maxlength="18">
+          </div>
+          <div class="form-group">
+            <label for="message-callback-modal" class="label">Сообщение</label>
+            <textarea name="message" id="message-callback-modal" class="input-field textarea" minlength="3" maxlength="100"></textarea>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" name="checkbox-agree" class="custom-checkbox js-checkbox-callback-modal" id="checkbox-agree-callback-modal" checked required>
+            <label for="checkbox-agree-callback-modal" class="custom-checkbox-label"></label>
+            <span class="checkbox-text">Согласен на обработку персональных данных</span>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" name="checkbox-read" class="custom-checkbox js-checkbox-callback-modal" id="checkbox-read-callback-modal" checked required>
+            <label for="checkbox-read-callback-modal" class="custom-checkbox-label"></label>
+            <span class="checkbox-text">Ознакомлен с <a href="/politika-konfidencialnosti" class="privacy-policy-btn" target="_blank">политикой конфиденциальности</a></span>
+          </div>
+
+          @csrf
+          <button type="button" id="callback-submit-btn" class="submit-btn">ОТПРАВИТЬ СООБЩЕНИЕ</button>
+          <!-- <button type="submit" id="callback-submit-btn" class="submit-btn">ОТПРАВИТЬ СООБЩЕНИЕ</button> -->
+        </form>
+      </div>
+    </div>
+  </div>
 
   @vite(['resources/js/main.js'])
 
