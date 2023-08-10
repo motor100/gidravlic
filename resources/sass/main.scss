@@ -82,9 +82,9 @@ ul {
   text-align: center;
   text-transform: uppercase;
   transition: background-color .3s;
-}
-.primary-btn:hover {
-  background-color: $bluehovercolor;
+  &:hover {
+    background-color: $bluehovercolor;
+  }
 }
 
 // badge counter
@@ -99,9 +99,9 @@ ul {
   color: #fff;
   line-height: 1.5;
   text-align: center;
-}
-.badge-counter.active {
-  display: block;
+  &.active {
+    display: block;
+  }
 }
 
 // header
@@ -368,16 +368,44 @@ ul {
 // to top
 .to-top {
   position: fixed;
-  right: 20px;
-  bottom: 50px;
-  z-index: 5;
+  left: 153px;
+  bottom: 80px;
   display: block;
   visibility: hidden;
   opacity: 0;
+  z-index: 5;
   cursor: pointer;
-  transition: visibility .3s, opacity .3s;
+  transition: visibility .5s, opacity .5s;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  .circle {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    background-color: $accentcolor;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .circle:before,
+  .circle:after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+  }
+  .circle:before {
+    left: 12px;
+    transform: rotate(-45deg);
+  }
+  .circle:after {
+    left: 28px;
+    transform: rotate(45deg);
+  }
 }
-
 
 // modal
 .modal-window {
@@ -535,33 +563,28 @@ ul {
   max-width: 1296px;
   margin: 0 auto;
 	z-index: 10;
+  .messages-cookies-wrapper {
+    display: flex;
+    max-width: 1296px;
+    padding: 34px;
+    border-radius: 20px;
+    background-color: #fff;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .messages-cookies-text {
+    padding: 0 50px 0 0;
+    color: #000;
+  }
+  .messages-cookies-close {
+    width: 196px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px; 
+    flex-shrink: 0;
+  }
 }
-.messages-cookies .messages-cookies-wrapper {
-  display: flex;
-  max-width: 1296px;
-  padding: 34px;
-  border-radius: 20px;
-  background-color: #fff;
-  align-items: center;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.messages-cookies .messages-cookies-text {
-  padding: 0 50px 0 0;
-  color: #000;
-}
-.messages-cookies .messages-cookies-close {
-  display: block;
-  width: 196px;
-  height: 30px;
-  padding: 0;
-  border: none;
-  background-color: $bluecolor;
-  border-radius: 5px;
-  font-family: "roboto-condensed-medium";
-  font-size: 16px; 
-  color: #fff;
-  flex-shrink: 0;
-}
+
 
 
 @media only screen and (max-width : 1400px) {

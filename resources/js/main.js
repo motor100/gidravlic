@@ -245,7 +245,7 @@ callbackSubmitBtn.onclick = () => {
 const messagesCookies = document.querySelector('.messages-cookies');
 const messagesCookiesClose = document.querySelector('.messages-cookies-close');
 
-if (messagesCookiesClose) {
+if (messagesCookies) {
 
   messagesCookiesClose.onclick = () => {
     messagesCookies.classList.add('hidden');
@@ -260,5 +260,27 @@ if (messagesCookiesClose) {
   }
 
 }
+
+
+// To top
+const toTop = document.getElementById("to-top");
+
+toTop.onclick = () => {
+  scroll(0, 0);
+}
+
+// Показать to-top при скролле
+window.onscroll = () => {
+  
+  let scrToTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (scrToTop > 200) {
+    toTop.classList.add('active');
+  } else {
+    toTop.classList.remove('active');
+  }
+
+}
+
 
   

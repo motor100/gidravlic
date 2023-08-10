@@ -223,10 +223,6 @@
     </div>
   </footer>
 
-  <div id="to-top" class="to-top hidden-mobile">
-    <div class="circle"></div>
-  </div>
-
   <div id="callback-modal" class="modal-window callback-modal">
     <div class="modal-wrapper">
       <div class="modal-area">
@@ -274,7 +270,7 @@
 
       <div class="messages-cookies-wrapper">
         <div class="messages-cookies-text">Этот сайт использует cookie-файлы и другие технологии для улучшения его работы. Продолжая работу с сайтом, вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</div>
-        <button class="messages-cookies-close">ХОРОШО</button>
+        <button class="primary-btn messages-cookies-close">ХОРОШО</button>
       </div>
 
     </div>
