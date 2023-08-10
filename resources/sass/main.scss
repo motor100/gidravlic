@@ -71,11 +71,44 @@ ul {
   color: $accentcolor;
 }
 
+// primary btn
+.primary-btn {
+  display: block;
+  padding: 0;
+  border: none;
+  background-color: $bluecolor;
+  font-family: 'roboto-condensed-medium';
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color .3s;
+}
+.primary-btn:hover {
+  background-color: $bluehovercolor;
+}
+
+// badge counter
+.badge-counter {
+  position: absolute;
+  display: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  background-color: $bluecolor;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.5;
+  text-align: center;
+}
+.badge-counter.active {
+  display: block;
+}
+
+// header
 .header {
   .header-top {
     padding: 5px 0;
     background-color: $greycolor;
-    color: #fff;
   }
   .header-top .logo-link {
     display: flex;
@@ -97,21 +130,9 @@ ul {
     text-align: right;
   }
   .header-top .header-feedback-btn {
-    display: block;
     height: 30px;
-    padding: 0;
-    border: none;
     border-radius: 5px;
-    background-color: $bluecolor;
-    font-family: 'roboto-condensed-medium';
     font-size: 20px;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    transition: background-color .3s;
-  }
-  .header-top .header-feedback-btn:hover {
-    background-color: $bluehovercolor;
   }
   .header-top .cart {
     position: relative;
@@ -119,21 +140,16 @@ ul {
     height: 40px;
     margin: 0 auto;
   }
-  .header-top .cart .counter {
-    position: absolute;
+  .header-top .cart svg {
+    fill: #fff;
+    transition: fill .3s;
+  }
+  .header-top .cart:hover svg {
+    fill: $accentcolor;
+  }
+  .header-top .badge-counter {
     top: -2px;
     right: -8px;
-    display: none;
-    width: 22px;
-    height: 22px;
-    border-radius: 5px;
-    background-color: $bluecolor;
-    font-size: 15px;
-    line-height: 1.5;
-    text-align: center;
-  }
-  .header-top .cart .counter.active {
-    display: block;
   }
   .header-bottom {
     padding: 11px 0;
@@ -196,8 +212,8 @@ ul {
     position: absolute;
     top: 11px;
     left: 2px;
-    width: 20px;
-    height: 1px;
+    width: 18px;
+    height: 2px;
     background-color: $greycolor;
   }
   .header-bottom .search-close::before {
@@ -211,7 +227,7 @@ ul {
     top: 30px;
     left: 0;
     width: 100%;
-    padding: 10px 0 37px 0;
+    padding: 10px 0;
     border-radius: 0px 0px 10px 10px;
     background-color: #fff;
     opacity: 0;
@@ -237,22 +253,15 @@ ul {
     color: #000;
     line-height: 1.2;
   }
-  .header-bottom .search-dropdown .search-see-all {
-    display: block;
+  .header-bottom .search-dropdown .search-see-all-btn {
     width: 190px;
     height: 30px;
-    margin: 30px 0 0 40px;
+    margin: 15px 0 15px 40px;
     border-radius: 5px;
-    background-color: $bluecolor;
-    font-family: 'roboto-condensed-medium';
     font-size: 20px;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    transition: background-color .3s;
   }
-  .header-bottom .search-dropdown .search-see-all:hover {
-    background-color: $bluehovercolor;
+  .header-bottom .search-dropdown .no-product {
+    margin: 0 0 0 40px;
   }
   .header-bottom .header-bottom-item {
     position: relative;
@@ -261,6 +270,23 @@ ul {
   }
   .header-bottom .header-bottom-item__image {
     height: 27px;
+  }
+  .header-bottom .header-bottom-item__image svg {
+    fill: $greycolor;
+    transition: fill .3s;
+  }
+  .header-bottom .header-bottom-item:hover .header-bottom-item__image svg {
+    fill: $accentcolor;
+  }
+  .header-bottom .header-bottom-item__text {
+    transition: color .3s;
+  }
+  .header-bottom .header-bottom-item:hover .header-bottom-item__text {
+    color: $accentcolor;
+  }
+  .header-bottom .badge-counter {
+    top: -9px;
+    right: 10px;
   }
   .top-menu {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -296,6 +322,7 @@ ul {
   }
 }
 
+// footer
 .footer {
   padding: 37px 0;
   background-color: $greycolor;
@@ -334,18 +361,21 @@ ul {
     color: #fff;
   }
 
-  .to-top {
-    position: fixed;
-    right: 20px;
-    bottom: 50px;
-    z-index: 5;
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-    cursor: pointer;
-    transition: visibility .5s ease, opacity .5s ease;
-  }
   
+  
+}
+
+// to top
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  z-index: 5;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  cursor: pointer;
+  transition: visibility .3s, opacity .3s;
 }
 
 
@@ -457,21 +487,15 @@ ul {
 .modal-window .checkbox-text {
   display: block;
 }
-.modal-window .privacy-policy-btn {
+.modal-window .privacy-policy-link {
   color: $bluecolor;
 }
 .modal-window .submit-btn {
-  display: block;
   width: 415px;
   height: 60px;
   margin: 30px auto 0 auto;
-  border: none;
-  font-family: "roboto-condensed-medium";
   font-size: 24px;
-  color: #fff;
   border-radius: 10px;
-  background-color: $bluecolor;
-  text-transform: uppercase;
 }
 .modal-window .checkbox-wrapper {
   display: flex;

@@ -63,9 +63,9 @@ function searchOnInput() {
 
         // Показать все результаты
         let tmpEl = document.createElement('a');
-        tmpEl.className = "search-see-all";
+        tmpEl.className = "primary-btn search-see-all-btn";
         tmpEl.href = '/poisk?search_query=' + searchInput.value;
-        tmpEl.innerText = 'Показать все результаты';
+        tmpEl.innerText = 'Показать все';
         tmpEl.onclick = searchResetForm;
         searchRezult.append(tmpEl);
 
