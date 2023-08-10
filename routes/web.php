@@ -43,6 +43,10 @@ Route::get('/contacts', [MainController::class, 'contacts']);
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 
+Route::get('/polzovatelskoe-soglashenie-s-publichnoj-ofertoj', [MainController::class, 'polzovatelskoe_soglashenie_s_publichnoj_ofertoj']);
+
+Route::get('/garantiya-vozvrata-denezhnyh-sredstv', [MainController::class, 'garantiya_vozvrata_denezhnyh_sredstv']);
+
 Route::get('/ajax/we-use-cookie', [MainController::class, 'we_use_cookie']);
 
 // Route::get('/dashboard', function () {

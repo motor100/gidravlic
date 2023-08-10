@@ -190,7 +190,7 @@
               <a href="/warranty" class="footer-nav-item__link">Гарантия</a>
             </div>
           </div>
-          <div class="col-md-7">
+          <div class="col-md-4">
             <div class="footer-nav__title">Оставайтесь на связи</div>
             <div class="footer-nav-item footer-contacts-item">
               <div class="footer-contacts-item__image">
@@ -217,9 +217,29 @@
               <div class="footer-contacts-item__text">zakaz@gidravlic.com</div>
             </div>
           </div>
+          <div class="col-md-3">
+            <div class="footer-image">
+              <img src="/img/footer-image.png" alt="">
+            </div>
+          </div>
         </div>
       </div>
-      <a href="/politika-konfidencialnosti">Политика конфиденциальности</a>
+      <div class="footer-links">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-11">
+            <div class="footer-link">
+              <a href="/politika-konfidencialnosti">Политика конфиденциальности</a>
+            </div>
+            <div class="footer-link">
+              <a href="/polzovatelskoe-soglashenie-s-publichnoj-ofertoj">Пользовательское соглашение с публичной офертой</a>
+            </div>
+            <div class="footer-link">
+              <a href="/garantiya-vozvrata-denezhnyh-sredstv">Гарантия возврата денежных средств</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 

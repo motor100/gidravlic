@@ -265,22 +265,28 @@ if (messagesCookies) {
 // To top
 const toTop = document.getElementById("to-top");
 
-toTop.onclick = () => {
-  scroll(0, 0);
-}
+if (toTop) {
+  
+  toTop.onclick = () => {
+    scroll(0, 0);
+  }
 
-// Показать to-top при скролле
-window.onscroll = () => {
-  
-  let scrToTop = window.pageYOffset || document.documentElement.scrollTop;
-  
-  if (scrToTop > 200) {
-    toTop.classList.add('active');
-  } else {
-    toTop.classList.remove('active');
+  // Показать to-top при скролле
+  window.onscroll = () => {
+    
+    let scrToTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrToTop > 200) {
+      toTop.classList.add('active');
+    } else {
+      toTop.classList.remove('active');
+    }
+
   }
 
 }
+
+
 
 
   

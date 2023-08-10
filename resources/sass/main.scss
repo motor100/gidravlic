@@ -324,6 +324,7 @@ ul {
 
 // footer
 .footer {
+  margin: 80px 0 0 0;
   padding: 37px 0;
   background-color: $greycolor;
   .logo {
@@ -332,6 +333,9 @@ ul {
   }
   .logo img {
     width: 100%;
+  }
+  .footer-nav {
+    margin: 0 0 50px 0;
   }
   .footer-nav__title {
     margin: 0 0 25px 0;
@@ -360,8 +364,18 @@ ul {
     font-size: 20px;
     color: #fff;
   }
-
-  
+  .footer-link a {
+    font-size: 20px;
+    color: #fff;
+  }
+  .footer-image {
+    position: relative;
+  }
+  .footer-image img {
+    position: absolute;
+    top: -200px;
+    left: -50px;
+  }
   
 }
 
