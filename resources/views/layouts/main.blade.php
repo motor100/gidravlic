@@ -149,8 +149,55 @@
       </div>
     </div>
   </header>
-  
-  @yield('content')
+
+  <div class="content-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+          @yield('content')
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @if(Route::is('home'))
+
+    <div class="special-offer-section">
+      <div class="container">
+        <div class="section-title">Специальные предложения</div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="product-item">
+              <div class="product-item__image">
+                <img src="/img/temp-product-image1.jpg" alt="">
+              </div>
+              <a href="#" class="product-item__title">Клапан обратный</a>
+              <div class="product-item__price">
+                <span class="product-item__value">325</span>
+                <span class="product-item__currency">р</span>
+              </div>
+              <button class="add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
+              <div class="product-item__label">ХИТ</div>
+              <div class="add-to-favourites" data-id="1">
+                <img src="/img/temp-heart.png" alt="">
+              </div>
+              <div class="add-to-comparison" data-id="1">
+                <img src="/img/temp-chart.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-to-order-section">
+      <div class="container">
+        <p>Как заказать</p>
+      </div>
+    </div>
+    
+  @endif
 
   <footer class="footer">
     <div class="container">
@@ -285,12 +332,18 @@
     </div>
   </div>
 
-  @if(!request()->cookie('we-use-cookie'))
-    <div class="messages-cookies">
+  @if(Route::is('home'))
+    <div id="to-top" class="to-top hidden-mobile">
+      <div class="circle"></div>
+    </div>
+  @endif
 
-      <div class="messages-cookies-wrapper">
-        <div class="messages-cookies-text">Этот сайт использует cookie-файлы и другие технологии для улучшения его работы. Продолжая работу с сайтом, вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</div>
-        <button class="primary-btn messages-cookies-close">ХОРОШО</button>
+  @if(!request()->cookie('we-use-cookie'))
+    <div class="we-use-cookie">
+
+      <div class="we-use-cookie-wrapper">
+        <div class="we-use-cookie-text">Этот сайт использует cookie-файлы и другие технологии для улучшения его работы. Продолжая работу с сайтом, вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</div>
+        <button class="primary-btn we-use-cookie-close">ХОРОШО</button>
       </div>
 
     </div>

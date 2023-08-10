@@ -4,8 +4,6 @@
 
 @section('content')
   <div class="comparison">
-    <div class="container">
-      <p>Сравнение</p>
-    </div>
+    <p>Сравнение</p>
   </div>
 @endsection

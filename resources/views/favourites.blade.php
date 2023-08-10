@@ -4,8 +4,6 @@
 
 @section('content')
   <div class="favourites">
-    <div class="container">
-      <p>Избранное</p>
-    </div>
+    <p>Избранное</p>
   </div>
 @endsection

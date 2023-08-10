@@ -1,6 +1,6 @@
 import IMask from 'imask';
 
-// common
+// Common
 const body = document.querySelector('body');
 
 // Products search dropdown
@@ -242,13 +242,13 @@ callbackSubmitBtn.onclick = () => {
 
 
 // Скрывание кнопки Мы используем куки we use cookie
-const messagesCookies = document.querySelector('.messages-cookies');
-const messagesCookiesClose = document.querySelector('.messages-cookies-close');
+const weUseCookie = document.querySelector('.we-use-cookie');
+const weUseCookieClose = document.querySelector('.we-use-cookie-close');
 
-if (messagesCookies) {
+if (weUseCookie) {
 
-  messagesCookiesClose.onclick = () => {
-    messagesCookies.classList.add('hidden');
+  weUseCookieClose.onclick = () => {
+    weUseCookie.classList.add('hidden');
 
     fetch('/ajax/we-use-cookie', {
       method: 'GET',
@@ -265,8 +265,9 @@ if (messagesCookies) {
 // To top
 const toTop = document.getElementById("to-top");
 
+/*
 if (toTop) {
-  
+
   toTop.onclick = () => {
     scroll(0, 0);
   }
@@ -276,7 +277,7 @@ if (toTop) {
     
     let scrToTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    if (scrToTop > 200) {
+    if (scrToTop > 400) {
       toTop.classList.add('active');
     } else {
       toTop.classList.remove('active');
@@ -285,6 +286,7 @@ if (toTop) {
   }
 
 }
+*/
 
 
 

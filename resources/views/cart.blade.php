@@ -4,8 +4,6 @@
 
 @section('content')
   <div class="cart">
-    <div class="container">
-      <p>Корзина</p>
-    </div>
+    <p>Корзина</p>
   </div>
 @endsection

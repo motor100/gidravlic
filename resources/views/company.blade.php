@@ -4,8 +4,6 @@
 
 @section('content')
   <div class="company">
-    <div class="container">
-      <p>Компания</p>
-    </div>
+    <p>Компания</p>
   </div>
 @endsection

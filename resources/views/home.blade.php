@@ -3,11 +3,13 @@
 @extends('layouts.main')
 
 @section('content')
-  <p>Главная</p>
 
+<div class="home">
 
-  <div id="to-top" class="to-top hidden-mobile">
-    <div class="circle"></div>
+  <div class="main-section">
+    <p>Главная секция</p>
   </div>
+
+</div>
 
 @endsection
