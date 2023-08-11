@@ -166,28 +166,123 @@
     <div class="special-offer-section">
       <div class="container">
         <div class="section-title">Специальные предложения</div>
-        <div class="row">
-          <div class="col-md-3">
-            <div class="product-item">
-              <div class="product-item__image">
-                <img src="/img/temp-product-image1.jpg" alt="">
+        <div class="special-offer-products">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="product-item">
+                <div class="product-item__image">
+                  <a href="#" class="product-item__link">
+                    <img src="/img/temp-product-image1.jpg" alt="">
+                  </a>
+                </div>
+                <a href="#" class="product-item__title">Шланг гидравлический высокого давление TR-1721 d32мм</a>
+                <div class="product-item__price">
+                  <span class="product-item__value">325</span>
+                  <span class="product-item__currency">р</span>
+                </div>
+                <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
+                <div class="product-item__label">
+                  <span class="product-item__label-text">ХИТ</span>
+                  </div>
+                <div class="product-item-favourites add-to-favourites" data-id="1">
+                  <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.9293 0C13.7428 0 12.0708 1.28617 10.6239 2.66881C9.27339 1.22186 7.53705 0 5.31841 0C2.19943 0 0.0129395 2.66881 0.0129395 5.59485C0.0129395 7.17042 0.656026 8.29582 1.36342 9.35691L9.59493 19.2604C10.5274 20.2251 10.7203 20.2251 11.6528 19.2604L19.9165 9.35691C20.7203 8.29582 21.267 7.17042 21.267 5.59485C21.267 2.66881 19.0483 0 15.9293 0Z"/>
+                  </svg>
+                </div>
+                <div class="product-item-comparison add-to-comparison" data-id="1">
+                  <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.9856 10.0185H13.7307C13.0663 10.0185 12.4757 10.5721 12.4757 11.2734V18.7663C12.4757 19.4306 13.0663 19.9843 13.7307 19.9843H14.9856C15.6869 19.9843 16.2406 19.4306 16.2406 18.7663V11.2734C16.2406 10.5721 15.6869 10.0185 14.9856 10.0185ZM8.74778 0.0157471H7.49282C6.79152 0.0157471 6.23787 0.569404 6.23787 1.2707V18.7663C6.23787 19.4306 6.79152 19.9843 7.49282 19.9843H8.74778C9.44908 19.9843 10.0027 19.4306 10.0027 18.7663V1.2707C10.0027 0.569404 9.44908 0.0157471 8.74778 0.0157471ZM2.50991 5.62614H1.25496C0.553657 5.62614 0 6.17979 0 6.88109V18.7663C0 19.4306 0.553657 19.9843 1.25496 19.9843H2.50991C3.1743 19.9843 3.76487 19.4306 3.76487 18.7663V6.88109C3.76487 6.17979 3.1743 5.62614 2.50991 5.62614Z"/>
+                  </svg>
+                </div>
               </div>
-              <a href="#" class="product-item__title">Клапан обратный</a>
-              <div class="product-item__price">
-                <span class="product-item__value">325</span>
-                <span class="product-item__currency">р</span>
+            </div>
+            <div class="col-md-3">
+              <div class="product-item">
+                <div class="product-item__image">
+                  <a href="#" class="product-item__link">
+                    <img src="/img/temp-product-image1.jpg" alt="">
+                  </a>
+                </div>
+                <a href="#" class="product-item__title">Шланг гидравлический высокого давление TR-1721 d32мм</a>
+                <div class="product-item__price">
+                  <span class="product-item__value">325</span>
+                  <span class="product-item__currency">р</span>
+                </div>
+                <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
+                <div class="product-item__label">
+                  <span class="product-item__label-text">ХИТ</span>
+                  </div>
+                <div class="product-item-favourites add-to-favourites" data-id="1">
+                  <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.9293 0C13.7428 0 12.0708 1.28617 10.6239 2.66881C9.27339 1.22186 7.53705 0 5.31841 0C2.19943 0 0.0129395 2.66881 0.0129395 5.59485C0.0129395 7.17042 0.656026 8.29582 1.36342 9.35691L9.59493 19.2604C10.5274 20.2251 10.7203 20.2251 11.6528 19.2604L19.9165 9.35691C20.7203 8.29582 21.267 7.17042 21.267 5.59485C21.267 2.66881 19.0483 0 15.9293 0Z"/>
+                  </svg>
+                </div>
+                <div class="product-item-comparison add-to-comparison" data-id="1">
+                  <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.9856 10.0185H13.7307C13.0663 10.0185 12.4757 10.5721 12.4757 11.2734V18.7663C12.4757 19.4306 13.0663 19.9843 13.7307 19.9843H14.9856C15.6869 19.9843 16.2406 19.4306 16.2406 18.7663V11.2734C16.2406 10.5721 15.6869 10.0185 14.9856 10.0185ZM8.74778 0.0157471H7.49282C6.79152 0.0157471 6.23787 0.569404 6.23787 1.2707V18.7663C6.23787 19.4306 6.79152 19.9843 7.49282 19.9843H8.74778C9.44908 19.9843 10.0027 19.4306 10.0027 18.7663V1.2707C10.0027 0.569404 9.44908 0.0157471 8.74778 0.0157471ZM2.50991 5.62614H1.25496C0.553657 5.62614 0 6.17979 0 6.88109V18.7663C0 19.4306 0.553657 19.9843 1.25496 19.9843H2.50991C3.1743 19.9843 3.76487 19.4306 3.76487 18.7663V6.88109C3.76487 6.17979 3.1743 5.62614 2.50991 5.62614Z"/>
+                  </svg>
+                </div>
               </div>
-              <button class="add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
-              <div class="product-item__label">ХИТ</div>
-              <div class="add-to-favourites" data-id="1">
-                <img src="/img/temp-heart.png" alt="">
+            </div>
+            <div class="col-md-3">
+              <div class="product-item">
+                <div class="product-item__image">
+                  <a href="#" class="product-item__link">
+                    <img src="/img/temp-product-image1.jpg" alt="">
+                  </a>
+                </div>
+                <a href="#" class="product-item__title">Шланг гидравлический высокого давление TR-1721 d32мм</a>
+                <div class="product-item__price">
+                  <span class="product-item__value">325</span>
+                  <span class="product-item__currency">р</span>
+                </div>
+                <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
+                <div class="product-item__label">
+                  <span class="product-item__label-text">ХИТ</span>
+                  </div>
+                <div class="product-item-favourites add-to-favourites" data-id="1">
+                  <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.9293 0C13.7428 0 12.0708 1.28617 10.6239 2.66881C9.27339 1.22186 7.53705 0 5.31841 0C2.19943 0 0.0129395 2.66881 0.0129395 5.59485C0.0129395 7.17042 0.656026 8.29582 1.36342 9.35691L9.59493 19.2604C10.5274 20.2251 10.7203 20.2251 11.6528 19.2604L19.9165 9.35691C20.7203 8.29582 21.267 7.17042 21.267 5.59485C21.267 2.66881 19.0483 0 15.9293 0Z"/>
+                  </svg>
+                </div>
+                <div class="product-item-comparison add-to-comparison" data-id="1">
+                  <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.9856 10.0185H13.7307C13.0663 10.0185 12.4757 10.5721 12.4757 11.2734V18.7663C12.4757 19.4306 13.0663 19.9843 13.7307 19.9843H14.9856C15.6869 19.9843 16.2406 19.4306 16.2406 18.7663V11.2734C16.2406 10.5721 15.6869 10.0185 14.9856 10.0185ZM8.74778 0.0157471H7.49282C6.79152 0.0157471 6.23787 0.569404 6.23787 1.2707V18.7663C6.23787 19.4306 6.79152 19.9843 7.49282 19.9843H8.74778C9.44908 19.9843 10.0027 19.4306 10.0027 18.7663V1.2707C10.0027 0.569404 9.44908 0.0157471 8.74778 0.0157471ZM2.50991 5.62614H1.25496C0.553657 5.62614 0 6.17979 0 6.88109V18.7663C0 19.4306 0.553657 19.9843 1.25496 19.9843H2.50991C3.1743 19.9843 3.76487 19.4306 3.76487 18.7663V6.88109C3.76487 6.17979 3.1743 5.62614 2.50991 5.62614Z"/>
+                  </svg>
+                </div>
               </div>
-              <div class="add-to-comparison" data-id="1">
-                <img src="/img/temp-chart.png" alt="">
+            </div>
+            <div class="col-md-3">
+              <div class="product-item">
+                <div class="product-item__image">
+                  <a href="#" class="product-item__link">
+                    <img src="/img/temp-product-image1.jpg" alt="">
+                  </a>
+                </div>
+                <a href="#" class="product-item__title">Шланг гидравлический высокого давление TR-1721 d32мм</a>
+                <div class="product-item__price">
+                  <span class="product-item__value">325</span>
+                  <span class="product-item__currency">р</span>
+                </div>
+                <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
+                <div class="product-item__label">
+                  <span class="product-item__label-text">ХИТ</span>
+                  </div>
+                <div class="product-item-favourites add-to-favourites" data-id="1">
+                  <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.9293 0C13.7428 0 12.0708 1.28617 10.6239 2.66881C9.27339 1.22186 7.53705 0 5.31841 0C2.19943 0 0.0129395 2.66881 0.0129395 5.59485C0.0129395 7.17042 0.656026 8.29582 1.36342 9.35691L9.59493 19.2604C10.5274 20.2251 10.7203 20.2251 11.6528 19.2604L19.9165 9.35691C20.7203 8.29582 21.267 7.17042 21.267 5.59485C21.267 2.66881 19.0483 0 15.9293 0Z"/>
+                  </svg>
+                </div>
+                <div class="product-item-comparison add-to-comparison" data-id="1">
+                  <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.9856 10.0185H13.7307C13.0663 10.0185 12.4757 10.5721 12.4757 11.2734V18.7663C12.4757 19.4306 13.0663 19.9843 13.7307 19.9843H14.9856C15.6869 19.9843 16.2406 19.4306 16.2406 18.7663V11.2734C16.2406 10.5721 15.6869 10.0185 14.9856 10.0185ZM8.74778 0.0157471H7.49282C6.79152 0.0157471 6.23787 0.569404 6.23787 1.2707V18.7663C6.23787 19.4306 6.79152 19.9843 7.49282 19.9843H8.74778C9.44908 19.9843 10.0027 19.4306 10.0027 18.7663V1.2707C10.0027 0.569404 9.44908 0.0157471 8.74778 0.0157471ZM2.50991 5.62614H1.25496C0.553657 5.62614 0 6.17979 0 6.88109V18.7663C0 19.4306 0.553657 19.9843 1.25496 19.9843H2.50991C3.1743 19.9843 3.76487 19.4306 3.76487 18.7663V6.88109C3.76487 6.17979 3.1743 5.62614 2.50991 5.62614Z"/>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <a href="#" class="primary-btn see-all-btn">СМОТРЕТЬ ВСЁ</a>
       </div>
     </div>
 
