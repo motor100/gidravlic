@@ -288,7 +288,99 @@
 
     <div class="how-to-order-section">
       <div class="container">
-        <p>Как заказать</p>
+        <div class="section-title">КАК СДЕЛАТЬ ЗАКАЗ?</div>
+        <div class="how-to-order-top">
+          <div class="how-to-order-top__title">Сделать заказ очень просто! Для этого подойдет любой удобный способ:</div>
+          <div class="how-to-order-top-items">
+            <div class="how-to-order-top-item">
+              <div class="how-to-order-top-item__image">
+                <img src="/img/how-to-order-top-web.png" alt="">
+              </div>
+              <div class="how-to-order-top-item__content">
+                <div class="how-to-order-top-item__title">Сайт</div>
+                <div class="how-to-order-top-item__text">Сделать заказ онлайн</div>
+              </div>
+            </div>
+            <div class="how-to-order-top-item">
+              <div class="how-to-order-top-item__image">
+                <img src="/img/how-to-order-top-phone.png" alt="">
+              </div>
+              <div class="how-to-order-top-item__content">
+                <div class="how-to-order-top-item__title">Телефон</div>
+                <div class="how-to-order-top-item__text">8 800 555-77-66<br>Звонок по России бесплатный</div>
+              </div>
+            </div>
+            <div class="how-to-order-top-item">
+              <div class="how-to-order-top-item__image">
+                <img src="/img/how-to-order-top-email.png" alt="">
+              </div>
+              <div class="how-to-order-top-item__content">
+                <div class="how-to-order-top-item__title">Электронная почта</div>
+                <div class="how-to-order-top-item__text">zakaz@gidravlic.com</div>
+              </div>
+            </div>
+            <div class="how-to-order-top-item">
+              <div class="how-to-order-top-item__image">
+                <img src="/img/how-to-order-top-chat.png" alt="">
+              </div>
+              <div class="how-to-order-top-item__content">
+                <div class="how-to-order-top-item__title">Чат</div>
+                <div class="how-to-order-top-item__text">Открыть чат</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="how-to-order-bottom">
+          <div class="how-to-order-bottom-item">
+            <div class="how-to-order-bottom-item__image">
+              <img src="/img/how-to-order-bottom-web.png" alt="">
+            </div>
+            <div class="how-to-order-bottom-line"></div>
+            <div class="how-to-order-bottom-item__content">
+              <div class="how-to-order-bottom-item__title">Заказать на сайте</div>
+              <div class="how-to-order-bottom-item__text">Добавьте нужные товары в корзину, нажав «Купить», и нажмите «Корзина» ---- Оформить заказ:</div>
+              <div class="how-to-order-bottom-item__description">
+                <div class="image">
+                  <img src="/img/how-to-order-bottom-description-image.png" alt="">
+                </div>
+                <div class="content">
+                  <div class="title">Оставить заявку</div>
+                  <div class="text">Вы можете сделать заказ быстро, заполнив всего несколько полей: имя и телефон. Операторы колл-центра свяжутся с Вами для уточнения деталей заказа.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="how-to-order-bottom-item">
+            <div class="how-to-order-bottom-item__image">
+              <img src="/img/how-to-order-bottom-phone.png" alt="">
+            </div>
+            <div class="how-to-order-bottom-line"></div>
+            <div class="how-to-order-bottom-item__content">
+              <div class="how-to-order-bottom-item__title">Заказать по телефону 8 800-555-77-66 (звонок по России бесплатный)</div>
+              <div class="how-to-order-bottom-item__text">По телефону Вас проконсультируют по всем вопросам, расскажут про преимущества товаров, гарантию и примут заказ. Если Вы позвонили в не рабочее время (рабочее время с 9:00 до 19:00), оставьте свой номер, и Вам перезвонят.</div>
+            </div>
+          </div>
+          <div class="how-to-order-bottom-item">
+            <div class="how-to-order-bottom-item__image">
+              <img src="/img/how-to-order-bottom-email.png" alt="">
+            </div>
+            <div class="how-to-order-bottom-line"></div>
+            <div class="how-to-order-bottom-item__content">
+              <div class="how-to-order-bottom-item__title">Заказать по электронной почте zakaz@gidravlic.com</div>
+              <div class="how-to-order-bottom-item__text">Напишите нам какие товары Вам нужны, и мы поможем оформить заказ. Оставьте свой телефон, чтобы мы могли перезвонить для уточнения деталей. Вы также можете прислать заказ в любом удобном формате, например, excel или pdf. Если Вы представитель юридического лица, то пришлите нам реквизиты, чтобы мы смогли выставить счет.</div>
+            </div>
+          </div>
+          <div class="how-to-order-bottom-item">
+            <div class="how-to-order-bottom-item__image">
+              <img src="/img/how-to-order-bottom-chat.png" alt="">
+            </div>
+            <div class="how-to-order-bottom-line"></div>
+            <div class="how-to-order-bottom-item__content">
+              <div class="how-to-order-bottom-item__title">Заказать через чат</div>
+              <div class="how-to-order-bottom-item__text">Вам не придется ждать, мы отвечаем быстро. В чате Вы можете задать все интересующие вопросы и получить подробную консультацию по товару и оформлению заказа. Открыть чат</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -311,7 +403,7 @@
               <a href="/calculators" class="footer-nav-item__link">Калькуляторы</a>
             </div>
             <div class="footer-nav-item">
-              <a href="#" class="footer-nav-item__link">Реквизиты</a>
+              <a href="/company#company-info" class="footer-nav-item__link">Реквизиты</a>
             </div>
             <div class="footer-nav-item">
               <a href="/contacts" class="footer-nav-item__link">Контакты</a>
@@ -336,25 +428,25 @@
             <div class="footer-nav__title">Оставайтесь на связи</div>
             <div class="footer-nav-item footer-contacts-item">
               <div class="footer-contacts-item__image">
-                <img src="/img/footer-whatsapp.png" alt="">
+                <img src="/img/footer-whatsapp.svg" alt="">
               </div>
               <div class="footer-contacts-item__text">+7 (982) 292-88-79</div>
             </div>
             <div class="footer-nav-item footer-contacts-item">
               <div class="footer-contacts-item__image">
-                <img src="/img/footer-geolocation.png" alt="">
+                <img src="/img/footer-geolocation.svg" alt="">
               </div>
               <div class="footer-contacts-item__text">г. Миасс, Тургоякское шоссе, 5/11</div>
             </div>
             <div class="footer-nav-item footer-contacts-item">
               <div class="footer-contacts-item__image">
-                <img src="/img/footer-clock.png" alt="">
+                <img src="/img/footer-clock.svg" alt="">
               </div>
               <div class="footer-contacts-item__text">с 9:00 до 18:00 (СБ, ВС - выходной)</div>
             </div>
             <div class="footer-nav-item footer-contacts-item">
               <div class="footer-contacts-item__image">
-                <img src="/img/footer-mail.png" alt="">
+                <img src="/img/footer-mail.svg" alt="">
               </div>
               <div class="footer-contacts-item__text">zakaz@gidravlic.com</div>
             </div>
