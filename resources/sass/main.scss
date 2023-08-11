@@ -466,7 +466,7 @@ ul {
 
 // how to order section
 .how-to-order-section {
-  padding: 40px 0 0 0;
+  padding: 40px 0 10px 0;
   .how-to-order-top {
     margin: 0 0 55px 0;
     padding: 24px 35px 30px 35px;
@@ -559,6 +559,26 @@ ul {
   .contacts-text a {
     color: $bluecolor;
     text-decoration: underline;
+  }
+}
+
+// payment
+.payment {
+  .payment-description {
+    margin: 0 0 40px 0;
+    font-size: 20px;
+  }
+  .payment-description p {
+    margin: 0 0 .5rem 0;
+    padding: 0;
+  }
+  .payment-description ul {
+    margin: 0 0 .5rem 0;
+    padding: 0 0 0 30px;
+    list-style: disc;
+  }
+  .how-to-order-section {
+    padding-top: 0;
   }
 }
 
