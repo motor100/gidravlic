@@ -149,24 +149,22 @@ for (let i = 0; i < modalWindow.length; i++) {
   }
 }
 
-// Checkbox I agree and I read
+// Callback modal checkbox I agree and I read
 const checkboxCallbackModal = document.querySelectorAll('.js-checkbox-callback-modal');
 const callbackSubmitBtn = document.querySelector('#callback-submit-btn');
 
-/*
 function callbackModalCheckboxOnchange() {
-  checkboxCallbackModal.forEach((item) => {
-    if (!item.checked) {
-      callbackSubmitBtn.disabled = true;
-    }
-    console.log(item.checked);
-  });
+  if (!checkboxCallbackModal[0].checked || !checkboxCallbackModal[1].checked) {
+    callbackSubmitBtn.disabled = true;
+  } else {
+    callbackSubmitBtn.disabled = '';
+  }
 }
 
 checkboxCallbackModal.forEach((item) => {
   item.onchange = callbackModalCheckboxOnchange;
 });
-*/
+
 
 
 // Input mask
