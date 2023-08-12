@@ -582,6 +582,110 @@ ul {
   }
 }
 
+// cart
+.cart {
+  .clear-cart-btn {
+    width: 245px;
+    height: 45px;
+    margin: 0 0 35px 0;
+    padding: 7px 0;
+    border-radius: 10px;
+    font-family: 'roboto-condensed-medium';
+  }
+  .products {
+    margin: 0 0 54px 0;
+  }
+  .products .product-item {
+    display: flex;
+    margin: 0 0 -1px 0;
+    padding: 43px 32px;
+    border: 1px solid $lightgreycolor;
+    font-size: 20px;
+  }
+  .products .product-item__stock {
+    font-family: 'roboto-condensed-medium';
+    color: #86C9C0;
+  }
+  .products .product-item__quantity {
+    display: flex;
+    padding: 5px;
+    border: 1px solid $greycolor;
+    border-radius: 5px;
+  }
+  .products .product-item__quantity .quantity-number {
+    width: 40px;
+    margin: 0 3px;
+    border: none;
+    font-family: 'roboto-condensed-medium';
+    font-size: 20px;
+    color: $textcolor;
+    line-height: 1.2;
+    text-align: center;
+    flex-grow: 1;
+    -moz-appearance: textfield;
+  }
+  .products .product-item__quantity .quantity-number::-webkit-inner-spin-button,
+  .products .product-item__quantity .quantity-number::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  .products .product-item__quantity .quantity-button {
+    display: block;
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    background-color: #fff;
+    flex-shrink: 0;
+  }
+  .products .product-item__quantity .quantity-button .circle {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    padding: 0px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--m-dop-grey);
+  }
+  .products .product-item__quantity .quantity-button .circle:before,
+  .products .product-item__quantity .quantity-button .circle:after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 2px;
+    width: 20px;
+    height: 2px;
+    background-color: $greycolor;
+    border-radius: 2px;
+    transition: background-color .3s;
+  }
+  .products .product-item__quantity .quantity-plus .circle:after {
+    transform: rotate(90deg);
+  }
+  .products .product-item__price {
+    color: #000;
+  }
+  .order-info {
+    width: 415px;
+    height: 290px;
+    padding: 23px;
+    border-radius: 10px;
+    background-color: #86C9C0;
+  }
+  .order-info .order-info__title {
+    margin: 0 0 16px 0;
+    font-size: 24px;
+    color: #000;
+  }
+  .order-info .order-info-row {
+    margin: 0 0 10px 0;
+  }
+  
+}
+
 // footer
 .footer {
   margin: 80px 0 0 0;
