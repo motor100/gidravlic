@@ -49,6 +49,8 @@ Route::get('/thank-you', [MainController::class, 'thank_you'])->name('thank-you'
 
 Route::get('/register1', [MainController::class, 'register1']);
 
+Route::get('/login1', [MainController::class, 'login1']);
+
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 
