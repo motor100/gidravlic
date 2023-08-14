@@ -68,6 +68,11 @@ class MainController extends Controller
         return view('contacts');
     }
 
+    public function create_order(): View
+    {
+        return view('create-order');
+    }
+
 
     public function politika_konfidencialnosti(): View
     {

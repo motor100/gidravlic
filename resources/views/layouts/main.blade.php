@@ -397,15 +397,15 @@
         <form id="callback-modal-form" class="form" method="post">
           <div class="form-group">
             <label for="name-callback-modal" class="label">Ф.И.О <span class="accentcolor">*</span></label>
-            <input type="text" id="name-callback-modal" class="input-field js-name-callback-modal" name="name" required minlength="3" maxlength="20">
+            <input type="text" name="name" id="name-callback-modal" class="input-field js-name-callback-modal" required minlength="3" maxlength="20">
           </div>
           <div class="form-group">
             <label for="email-callback-modal" class="label">E-mail <span class="accentcolor">*</span></label>
-            <input type="email" id="email-callback-modal" class="input-field js-email-callback-modal" name="email" required>
+            <input type="email" name="email" id="email-callback-modal" class="input-field js-email-callback-modal" required minlength="3" maxlength="50">
           </div>
           <div class="form-group">
             <label for="phone-callback-modal" class="label">Телефон <span class="accentcolor">*</span></label>
-            <input type="text" id="phone-callback-modal" class="input-field js-phone-callback-modal js-input-phone-mask" name="phone" required maxlength="18">
+            <input type="text" name="phone" id="phone-callback-modal" class="input-field js-phone-callback-modal js-input-phone-mask" required size="18">
           </div>
           <div class="form-group">
             <label for="message-callback-modal" class="label">Сообщение</label>

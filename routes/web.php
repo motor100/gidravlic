@@ -40,6 +40,10 @@ Route::get('/calculators', [MainController::class, 'calculators']);
 
 Route::get('/contacts', [MainController::class, 'contacts']);
 
+Route::get('/create-order', [MainController::class, 'create_order']);
+
+Route::post('create-order-handler', [MainController::class, 'create_order_handler']);
+
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 

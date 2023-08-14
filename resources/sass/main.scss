@@ -91,7 +91,6 @@ ul {
   fill: $accentcolor;
 }
 
-
 // primary btn
 .primary-btn {
   display: block;
@@ -122,6 +121,79 @@ ul {
   text-align: center;
   &.active {
     display: block;
+  }
+}
+
+// form
+.form {
+  .form-group {
+    margin: 0 0 15px 0;
+  }
+  .label {
+    display: block;
+    font-size: 18px;
+  }
+  .input-field {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    // border: 1px solid $bluecolor;
+    border: 1px solid $greycolor;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: inherit;
+  }
+  .input-field:focus,
+  .input-field:active {
+    border: 1px solid #86C9C0;
+  }
+  .required {
+    border: 1px solid $accentcolor;
+  }
+  .required::placeholder {
+    color: $accentcolor;
+  }
+  .required::-ms-input-placeholder {
+    color: $accentcolor;
+  }
+  .textarea {
+    height: 70px;
+  }
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px 0;
+  }
+  .custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  .custom-checkbox + .custom-checkbox-label {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $greycolor;
+    border-radius: 5px;
+    margin: 0 10px 0 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 60%;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .custom-checkbox:checked + .custom-checkbox-label {
+    border: 1px solid $accentcolor;
+    background-color: $accentcolor;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+  }
+  .custom-checkbox-label {
+    display: block;
+    margin-top: 20px;
+  }
+  .checkbox-text {
+    display: block;
+    line-height: 1.2;
   }
 }
 
@@ -689,41 +761,116 @@ ul {
   .products .product-item-remove {
     margin: 0 0 0 10px;
   }
-  .order-info {
-    width: 415px;
-    padding: 23px;
-    border-radius: 10px;
-    background-color: #86C9C0;
+}
+
+.create-order {
+  .create-order-item {
+    padding: 0 0 30px 0;
+    margin: 0 0 25px 0;
+    border-bottom: 1px solid #b9b9b9;
   }
-  .order-info .order-info__title {
+  .create-order-item__title {
+    margin: 0 0 25px 0;
+    font-size: 20px;
+  }
+  .flex-container {
+    display: flex;
+  }
+  .customer-type .checkbox-wrapper {
+    margin: 0 100px 0 0;
+  }
+  .delivery-method .flex-container {
+    margin: 0 0 18px 0;
+    justify-content: space-between;
+  }
+  .delivery-method-item {
+    width: 48%;
+    margin: 0 0 12px 0;
+  }
+  .delivery-method-item .label {
+    display: block;
+    width: 100%;
+    padding: 19px 10px;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .delivery-method-item .custom-checkbox:checked + .label {
+    border: 1px solid #86C9C0;
+  }
+  .delivery-method-description {
+    display: flex;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+  }
+  .delivery-method-description .content {
+    width: 60%;
+    padding: 14px 20px;
+  }
+  .delivery-method-description .text {
+    margin: 0 0 16px 0;
+  }
+  .delivery-method-description .description-item {
+    display: flex;
+  }
+  .delivery-method-description .first-description-item {
+    margin: 0 0 10px 0;
+  }
+  .delivery-method-description .description-item__image {
+    margin: 0 20px 0 0;
+  }
+  .delivery-method-description .map {
+    width: 40%;
+  }
+  .delivery-method-description .map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+}
+
+.order-info {
+  width: 415px;
+  padding: 23px;
+  border-radius: 10px;
+  background-color: #86C9C0;
+  .order-info__title {
     margin: 0 0 16px 0;
     font-size: 24px;
     color: #000;
   }
-  .order-info .order-info-row {
+  .order-info-row {
     display: flex;
     margin: 0 0 5px 0;
     justify-content: space-between;
   }
-  .order-info .order-info-row__quantity .order-info-row__content {
+  .order-info-row__quantity .order-info-row__content {
     font-size: 20px;
     color: #000;
   }
-  .order-info .order-info-row__discount .order-info-row__content {
+  .order-info-row__discount .order-info-row__content {
     font-size: 20px;
     color: $bluecolor;
   }
-  .order-info .order-info-row__total-summ {
+  .order-info-row__total-summ {
     margin: 0 0 30px 0;
   }
-  .order-info .order-info-row__total-summ .order-info-row__content {
+  .order-info-row__total-summ .order-info-row__content {
     font-size: 24px;
     color: #000;
   }
-  .order-info .place-order-btn {
+  .place-order-btn {
+    width: 245px;
+    height: 45px;
     margin: 0 auto 18px auto;
+    padding: 7px 0;
+    border-radius: 10px;
+    font-family: 'roboto-condensed-medium';
+    font-size: 20px;
   }
-  .order-info .delivery-description {
+  .delivery-description {
     width: 245px;
     margin: 0 auto;
     font-style: italic;
@@ -732,7 +879,6 @@ ul {
     color: $bluecolor;
     text-align: center;
   }
-  
 }
 
 // footer
@@ -910,37 +1056,6 @@ ul {
     text-align: center;
     text-transform: uppercase;
   }
-  .form-group {
-    margin: 0 0 15px 0;
-  }
-  .label {
-    display: block;
-    font-size: 20px;
-  }
-  .input-field {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    border: 1px solid $bluecolor;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: inherit;
-  }
-  .required {
-    border: 1px solid $accentcolor;
-  }
-  .required::placeholder {
-    color: $accentcolor;
-  }
-  .required::-ms-input-placeholder {
-    color: $accentcolor;
-  }
-  .textarea {
-    height: 70px;
-  }
-  .checkbox-text {
-    display: block;
-  }
   .privacy-policy-link {
     color: $bluecolor;
   }
@@ -950,34 +1065,6 @@ ul {
     margin: 30px auto 0 auto;
     font-size: 24px;
     border-radius: 10px;
-  }
-  .checkbox-wrapper {
-    display: flex;
-  }
-  .custom-checkbox {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-  }
-  .custom-checkbox + .custom-checkbox-label {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    margin: 0 10px 0 0;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 60%;
-    background-color: $accentcolor;
-    flex-shrink: 0;
-    cursor: pointer;
-  }
-  .custom-checkbox:checked + .custom-checkbox-label {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
-  }
-  .custom-checkbox-label {
-    display: block;
-    margin-top: 20px;
   }
 }
 
