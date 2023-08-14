@@ -73,6 +73,27 @@ class MainController extends Controller
         return view('create-order');
     }
 
+    public function thank_you(Request $request): View
+    {
+        if ($request->has('order_id') && $request->has('summ')) {
+
+            $order_id = $request->input('order_id');
+            $summ = $request->input('summ');
+            $payment = $request->input('payment');
+
+            return view('thank-you', compact('order_id', 'summ', 'payment'));
+        } else {
+            return view('thank-you');
+        }
+
+        // Для юкассы
+        // $summ - сумма к оплате
+        // $order_id - номер заказа
+        // http://semena-darom1.ru/thankyou?order_number=5&summ=1865 - ссылка для редиректа после оплаты
+        // без параметра payment
+        // $request->url() . '?order_id=' . $order_id . '&summ=' . $summ
+    }
+
 
     public function politika_konfidencialnosti(): View
     {

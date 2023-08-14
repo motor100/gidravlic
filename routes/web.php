@@ -44,6 +44,8 @@ Route::get('/create-order', [MainController::class, 'create_order']);
 
 Route::post('create-order-handler', [MainController::class, 'create_order_handler']);
 
+Route::get('/thank-you', [MainController::class, 'thank_you'])->name('thank-you');
+
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 
