@@ -33,7 +33,7 @@
     <div class="create-order-item customer-info">
       <div class="create-order-item__title">2. Личные данные</div>
       <div class="form-group">
-        <label for="name-create-order" class="label">Ф.И.О <span class="accentcolor">*</span></label>
+        <label for="name-create-order" class="label">Имя <span class="accentcolor">*</span></label>
         <input type="text" name="name" id="name-create-order" class="input-field" required minlength="3" maxlength="20">
       </div>
       <div class="form-group">

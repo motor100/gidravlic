@@ -47,6 +47,9 @@ Route::post('create-order-handler', [MainController::class, 'create_order_handle
 Route::get('/thank-you', [MainController::class, 'thank_you'])->name('thank-you');
 
 
+Route::get('/register1', [MainController::class, 'register1']);
+
+
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 
 Route::get('/polzovatelskoe-soglashenie-s-publichnoj-ofertoj', [MainController::class, 'polzovatelskoe_soglashenie_s_publichnoj_ofertoj']);

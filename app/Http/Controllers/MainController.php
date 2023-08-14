@@ -95,6 +95,15 @@ class MainController extends Controller
     }
 
 
+
+    public function register1(): View
+    {
+        return view('register');
+    }
+
+
+
+
     public function politika_konfidencialnosti(): View
     {
         return view('politika-konfidencialnosti');

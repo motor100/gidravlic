@@ -10,6 +10,7 @@
   @yield('robots')
   <link rel="shortcut icon" href="{{ asset('/img/favicon.svg') }}" type="image/x-icon">
   <title>@yield('title', config('app.name') )</title>
+  @yield('style')
   @vite(['resources/sass/main.scss'])
 </head>
 
@@ -292,8 +293,6 @@
       </div>
     </div>
 
-    
-    
   @endif
 
   <footer class="footer">
@@ -396,7 +395,7 @@
         <div class="modal-title">Оставить заявку</div>
         <form id="callback-modal-form" class="form" method="post">
           <div class="form-group">
-            <label for="name-callback-modal" class="label">Ф.И.О <span class="accentcolor">*</span></label>
+            <label for="name-callback-modal" class="label">Имя <span class="accentcolor">*</span></label>
             <input type="text" name="name" id="name-callback-modal" class="input-field js-name-callback-modal" required minlength="3" maxlength="20">
           </div>
           <div class="form-group">
@@ -407,7 +406,7 @@
             <label for="phone-callback-modal" class="label">Телефон <span class="accentcolor">*</span></label>
             <input type="text" name="phone" id="phone-callback-modal" class="input-field js-phone-callback-modal js-input-phone-mask" required size="18">
           </div>
-          <div class="form-group">
+          <div class="form-group mb30">
             <label for="message-callback-modal" class="label">Сообщение</label>
             <textarea name="message" id="message-callback-modal" class="input-field textarea" minlength="3" maxlength="100"></textarea>
           </div>
@@ -416,7 +415,7 @@
             <label for="checkbox-agree-callback-modal" class="custom-checkbox-label"></label>
             <span class="checkbox-text">Согласен на обработку персональных данных</span>
           </div>
-          <div class="checkbox-wrapper">
+          <div class="checkbox-wrapper mb30">
             <input type="checkbox" name="checkbox-read" class="custom-checkbox js-checkbox-callback-modal" id="checkbox-read-callback-modal" checked required>
             <label for="checkbox-read-callback-modal" class="custom-checkbox-label"></label>
             <span class="checkbox-text">Ознакомлен с <a href="/politika-konfidencialnosti" class="privacy-policy-link" target="_blank">политикой конфиденциальности</a></span>
@@ -446,6 +445,7 @@
     </div>
   @endif
 
+  @yield('script')
   @vite(['resources/js/main.js'])
 
 </body>

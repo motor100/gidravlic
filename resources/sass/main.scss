@@ -164,6 +164,9 @@ ul {
     align-items: center;
     margin: 0 0 10px 0;
   }
+  .mb30 {
+    margin-bottom: 30px;
+  }
   .custom-checkbox {
     position: absolute;
     z-index: -1;
@@ -194,6 +197,9 @@ ul {
   .checkbox-text {
     display: block;
     line-height: 1.2;
+  }
+  .privacy-policy-link {
+    color: $bluecolor;
   }
 }
 
@@ -933,6 +939,24 @@ ul {
   
 }
 
+.register {
+  .register-btn {
+    width: 305px;
+    height: 45px;
+    margin: 0 0 35px 0;
+    padding: 7px 0;
+    border-radius: 10px;
+    font-family: 'roboto-condensed-medium';
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+
+
 // footer
 .footer {
   margin: 80px 0 0 0;
@@ -1108,13 +1132,10 @@ ul {
     text-align: center;
     text-transform: uppercase;
   }
-  .privacy-policy-link {
-    color: $bluecolor;
-  }
   .submit-btn {
     width: 415px;
     height: 60px;
-    margin: 30px auto 0 auto;
+    margin: 0 auto;
     font-size: 24px;
     border-radius: 10px;
   }
