@@ -1,4 +1,7 @@
 import IMask from 'imask';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
 
 // Common
 const body = document.querySelector('body');
@@ -105,6 +108,21 @@ function searchOnInput() {
 searchClose.onclick = searchResetForm;
 
 searchInput.oninput = searchOnInput;
+
+
+// Slider
+const mainSlider = new Swiper('.main-slider', {
+  modules: [Navigation, Pagination],
+  slidesPerView: 1,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
 
 
 // Окна
