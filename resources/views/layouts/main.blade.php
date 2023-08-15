@@ -154,8 +154,166 @@
   <div class="content-wrapper">
     <div class="container">
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-10">
+        <div class="col-md-3">
+          <div class="aside-nav">
+            <div class="aside-nav-title">КАТАЛОГ</div>
+            <div class="aside-nav-items">
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-1.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Гидравлические станции</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-2.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Гидравлические распределители</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-3.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Гидравлические насосы</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-4.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Гидравлические моторы</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-5.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Клапанная аппаратура</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-6.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Коробки отбора мощности</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-7.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Модульная гидроаппаратура</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-8.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Фильтры гидравлические</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-9.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Картриджная аппаратура</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-10.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Измерительная аппаратура</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-11.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Гидроцилиндры</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-12.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Быстроразъемные соединения БРС</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-13.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Редукторы и мультипликаторы</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-14.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Маслоохладители</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-15.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Гидропневмо-аккумуляторы</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-16.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Дистанционное управление</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-17.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Электроника и автоматика</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-18.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">Сопутствующие товары</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+              <div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/aside-nav-19.png" alt="">
+                </div>
+                <div class="aside-nav-item__title">РВД</div>
+                <a href="#" class="full-link"></a>
+                <div class="triangle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
           @yield('content')
         </div>
       </div>
