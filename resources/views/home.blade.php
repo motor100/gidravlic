@@ -28,8 +28,71 @@
     </div>
   </div>
 
-  <div class="advantages"></div>
-  <div class="categories"></div>
+  <div class="advantages">
+    <div class="flex-container">
+      <div class="advantages-item">
+        <div class="advantages-item__image">
+          <img src="/img/temp-advantages-document.png" alt="">
+        </div>
+        <div class="advantages-item__title">Широкий ассортимент более 3000 позиций</div>
+      </div>
+      <div class="advantages-item">
+        <div class="advantages-item__image">
+          <img src="/img/temp-advantages-star.png" alt="">
+        </div>
+        <div class="advantages-item__title">Вся продукция имеет сертификат</div>
+      </div>
+      <div class="advantages-item">
+        <div class="advantages-item__image">
+          <img src="/img/temp-advantages-like.png" alt="">
+        </div>
+        <div class="advantages-item__title">200 дней гарантия на продукцию</div>
+      </div>
+      <div class="advantages-item">
+        <div class="advantages-item__image">
+          <img src="/img/temp-advantages-truck.png" alt="">
+        </div>
+        <div class="advantages-item__title">Доставка в любой регион по России</div>
+      </div>
+    </div>
+  </div>
+  <div class="categories">
+    <div class="row">
+      <div class="col-8">
+        <div class="categories-item">
+          <div class="categories-item__image">
+            <img src="/img/category-gidravlicheskie-raspredeliteli.jpg" alt="">
+          </div>
+          <div class="categories-item__title">ГИДРАВЛИЧЕСКИЕ РАСПРЕДЕЛИТЕЛИ</div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="categories-item">
+          <div class="categories-item__image">
+            <img src="/img/category-klapannaya-apparatura.jpg" alt="">
+          </div>
+          <div class="categories-item__title">КЛАПАННАЯ АППАРАТУРА</div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="categories-item">
+          <div class="categories-item__image">
+            <img src="/img/category-gidronasosy.jpg" alt="">
+          </div>
+          <div class="categories-item__title">ГИДРОНАСОСЫ</div>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="categories-item">
+          <div class="categories-item__image">
+            <img src="/img/category-rvd-fitingi-mufty-dlya-rvd.jpg" alt="">
+          </div>
+          <div class="categories-item__title">РВД. ФИТИНГИ, МУФТЫ ДЛЯ РВД</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 </div>
 
