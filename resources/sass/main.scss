@@ -95,15 +95,20 @@ ul {
 .primary-btn {
   display: block;
   padding: 0;
-  border: none;
+  border: 2px solid $bluecolor;
   background-color: $bluecolor;
   font-family: 'roboto-condensed-medium';
   color: #fff;
   text-align: center;
   text-transform: uppercase;
-  transition: background-color .3s;
+  transition: border .3s, background-color .3s;
   &:hover {
+    border: 2px solid $bluehovercolor;
     background-color: $bluehovercolor;
+  }
+  &.active {
+    background-color: #fff;
+    color: $bluecolor;
   }
 }
 
@@ -488,9 +493,14 @@ ul {
     margin: 0 0 25px 0;
   }
   .main-slider .slider-item-image {
-    height: 410px;
+    position: relative;
+    height: 0;
+    padding: 0 0 42.5% 0;
   }
   .main-slider .slider-item-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -608,8 +618,8 @@ ul {
     object-fit: cover;
   }
   .product-item__title {
-    display: block;
-    height: 50px;
+    display: -webkit-box;
+    height: 46px;
     margin: 0 0 5px 0;
     font-family: 'roboto-condensed-medium';
     font-size: 20px;
@@ -618,7 +628,6 @@ ul {
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     transition: color .3s;
@@ -723,10 +732,15 @@ ul {
     display: flex;
   }
   .how-to-order-top-item__image {
+    width: 65px;
     margin: 0 25px 0 0;
+  }
+  .how-to-order-top-item__image img {
+    width: 100%;
   }
   .how-to-order-top-item__content {
     padding: 0 15px 0 0;
+    flex-shrink: 0;
   }
   .how-to-order-top-item__title {
     font-family: 'roboto-condensed-bold';
@@ -741,7 +755,12 @@ ul {
     margin: 0 0 40px 0;
   }
   .how-to-order-bottom-item__image {
+    width: 65px;
     margin: 0 25px 0 0;
+    flex-shrink: 0;
+  }
+  .how-to-order-bottom-item__image img {
+    width: 100%;
   }
   .how-to-order-bottom-line {
     width: 2px;
@@ -1399,6 +1418,22 @@ ul {
       padding: 30px 45px;
     }
   }
+
+  .how-to-order-section {
+    .how-to-order-top-item__image,
+    .how-to-order-bottom-item__image {
+      width: 60px;
+    }
+    .how-to-order-top-item__title,
+    .how-to-order-bottom-item__title {
+      font-size: 22px;
+    }
+    .how-to-order-top-item__text,
+    .how-to-order-bottom-item__text,
+    .how-to-order-bottom-item__description {
+      font-size: 19px;
+    }
+  } 
 }
 
 @media only screen and (max-width : 1200px) {

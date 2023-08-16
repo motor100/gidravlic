@@ -336,7 +336,7 @@
                 </div>
                 <a href="#" class="product-item__title">Шланг гидравлический высокого давление TR-1721 d32мм</a>
                 <div class="product-item__price">
-                  <span class="product-item__value">325</span>
+                  <span class="product-item__value">{{ number_format(325, 0, "", " ") }}</span>
                   <span class="product-item__currency">р</span>
                 </div>
                 <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
@@ -362,9 +362,9 @@
                     <img src="/img/temp-product-image1.jpg" alt="">
                   </a>
                 </div>
-                <a href="#" class="product-item__title">Шланг гидравлический высокого давление TR-1721 d32мм</a>
+                <a href="#" class="product-item__title">Быстросъем гидравлический 3/8 автомат</a>
                 <div class="product-item__price">
-                  <span class="product-item__value">325</span>
+                  <span class="product-item__value">{{ number_format(43, 0, "", " ") }}</span>
                   <span class="product-item__currency">р</span>
                 </div>
                 <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
@@ -390,9 +390,9 @@
                     <img src="/img/temp-product-image1.jpg" alt="">
                   </a>
                 </div>
-                <a href="#" class="product-item__title">Шланг гидравлический высокого давление TR-1721 d32мм</a>
+                <a href="#" class="product-item__title">Муфта соединительная МТЗ (на гайке) под РВД-24</a>
                 <div class="product-item__price">
-                  <span class="product-item__value">325</span>
+                  <span class="product-item__value">{{ number_format(1012, 0, "", " ") }}</span>
                   <span class="product-item__currency">р</span>
                 </div>
                 <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
@@ -418,9 +418,9 @@
                     <img src="/img/temp-product-image1.jpg" alt="">
                   </a>
                 </div>
-                <a href="#" class="product-item__title">Шланг гидравлический высокого давление TR-1721 d32мм</a>
+                <a href="#" class="product-item__title">Гидравлический распределитель 3P80 1А1А1А1 GkZ1 без фиксации всех рычагов - МЗПО арт. 151-616/286</a>
                 <div class="product-item__price">
-                  <span class="product-item__value">325</span>
+                  <span class="product-item__value">{{ number_format(12960, 0, "", " ") }}</span>
                   <span class="product-item__currency">р</span>
                 </div>
                 <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>

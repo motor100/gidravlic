@@ -184,7 +184,6 @@ checkboxCallbackModal.forEach((item) => {
 });
 
 
-
 // Input mask
 let elementPhone = document.querySelector('#phone-callback-modal');
 
@@ -303,6 +302,24 @@ if (toTop) {
 
 }
 */
+
+
+// Add to cart
+const addToCartBtns = document.querySelectorAll('.add-to-cart');
+
+function addToCart(elem) {
+
+  // set active
+  elem.classList.add('active');
+  elem.innerText = 'В корзине';
+
+}
+
+addToCartBtns.forEach((item) => {
+  item.onclick = () => {
+    addToCart(item);
+  }
+});
 
 
 

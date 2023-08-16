@@ -32,25 +32,25 @@
     <div class="flex-container">
       <div class="advantages-item">
         <div class="advantages-item__image">
-          <img src="/img/temp-advantages-document.png" alt="">
+          <img src="/img/advantages-document.svg" alt="">
         </div>
         <div class="advantages-item__title">Широкий ассортимент более 3000 позиций</div>
       </div>
       <div class="advantages-item">
         <div class="advantages-item__image">
-          <img src="/img/temp-advantages-star.png" alt="">
+          <img src="/img/advantages-star.svg" alt="">
         </div>
         <div class="advantages-item__title">Вся продукция имеет сертификат</div>
       </div>
       <div class="advantages-item">
         <div class="advantages-item__image">
-          <img src="/img/temp-advantages-like.png" alt="">
+          <img src="/img/advantages-like.svg" alt="">
         </div>
         <div class="advantages-item__title">200 дней гарантия на продукцию</div>
       </div>
       <div class="advantages-item">
         <div class="advantages-item__image">
-          <img src="/img/temp-advantages-truck.png" alt="">
+          <img src="/img/advantages-truck.svg" alt="">
         </div>
         <div class="advantages-item__title">Доставка в любой регион по России</div>
       </div>

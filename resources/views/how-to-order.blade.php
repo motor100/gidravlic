@@ -4,7 +4,7 @@
   <div class="how-to-order-top-items">
     <div class="how-to-order-top-item">
       <div class="how-to-order-top-item__image">
-        <img src="/img/how-to-order-top-web.png" alt="">
+        <img src="/img/how-to-order-top-web.svg" alt="">
       </div>
       <div class="how-to-order-top-item__content">
         <div class="how-to-order-top-item__title">Сайт</div>
@@ -13,16 +13,16 @@
     </div>
     <div class="how-to-order-top-item">
       <div class="how-to-order-top-item__image">
-        <img src="/img/how-to-order-top-phone.png" alt="">
+        <img src="/img/how-to-order-top-phone.svg" alt="">
       </div>
       <div class="how-to-order-top-item__content">
         <div class="how-to-order-top-item__title">Телефон</div>
-        <div class="how-to-order-top-item__text">8 800 555-77-66<br>Звонок по России бесплатный</div>
+        <div class="how-to-order-top-item__text">8 800 555-77-66</div>
       </div>
     </div>
     <div class="how-to-order-top-item">
       <div class="how-to-order-top-item__image">
-        <img src="/img/how-to-order-top-email.png" alt="">
+        <img src="/img/how-to-order-top-email.svg" alt="">
       </div>
       <div class="how-to-order-top-item__content">
         <div class="how-to-order-top-item__title">Электронная почта</div>
@@ -31,11 +31,11 @@
     </div>
     <div class="how-to-order-top-item">
       <div class="how-to-order-top-item__image">
-        <img src="/img/how-to-order-top-chat.png" alt="">
+        <img src="/img/how-to-order-top-chat.svg" alt="">
       </div>
       <div class="how-to-order-top-item__content">
         <div class="how-to-order-top-item__title">Чат</div>
-        <div class="how-to-order-top-item__text">Открыть чат</div>
+        <div class="how-to-order-top-item__text">Напишите нам</div>
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@
 <div class="how-to-order-bottom">
   <div class="how-to-order-bottom-item">
     <div class="how-to-order-bottom-item__image">
-      <img src="/img/how-to-order-bottom-web.png" alt="">
+      <img src="/img/how-to-order-bottom-web.svg" alt="">
     </div>
     <div class="how-to-order-bottom-line"></div>
     <div class="how-to-order-bottom-item__content">
@@ -51,7 +51,7 @@
       <div class="how-to-order-bottom-item__text">Добавьте нужные товары в корзину, нажав «Купить», и нажмите «Корзина» ---- Оформить заказ:</div>
       <div class="how-to-order-bottom-item__description">
         <div class="image">
-          <img src="/img/how-to-order-bottom-description-image.png" alt="">
+          <img src="/img/how-to-order-bottom-description-image.svg" alt="">
         </div>
         <div class="content">
           <div class="title">Оставить заявку</div>
@@ -62,32 +62,32 @@
   </div>
   <div class="how-to-order-bottom-item">
     <div class="how-to-order-bottom-item__image">
-      <img src="/img/how-to-order-bottom-phone.png" alt="">
+      <img src="/img/how-to-order-bottom-phone.svg" alt="">
     </div>
     <div class="how-to-order-bottom-line"></div>
     <div class="how-to-order-bottom-item__content">
       <div class="how-to-order-bottom-item__title">Заказать по телефону 8 800-555-77-66 (звонок по России бесплатный)</div>
-      <div class="how-to-order-bottom-item__text">По телефону Вас проконсультируют по всем вопросам, расскажут про преимущества товаров, гарантию и примут заказ. Если Вы позвонили в не рабочее время (рабочее время с 9:00 до 19:00), оставьте свой номер, и Вам перезвонят.</div>
+      <div class="how-to-order-bottom-item__text">По телефону вас проконсультируют по всем вопросам, расскажут про преимущества товаров, гарантию и примут заказ. Если Вы позвонили в не рабочее время (рабочее время с 9:00 до 19:00), оставьте свой номер, и мы перезвоним.</div>
     </div>
   </div>
   <div class="how-to-order-bottom-item">
     <div class="how-to-order-bottom-item__image">
-      <img src="/img/how-to-order-bottom-email.png" alt="">
+      <img src="/img/how-to-order-bottom-email.svg" alt="">
     </div>
     <div class="how-to-order-bottom-line"></div>
     <div class="how-to-order-bottom-item__content">
       <div class="how-to-order-bottom-item__title">Заказать по электронной почте zakaz@gidravlic.com</div>
-      <div class="how-to-order-bottom-item__text">Напишите нам какие товары Вам нужны, и мы поможем оформить заказ. Оставьте свой телефон, чтобы мы могли перезвонить для уточнения деталей. Вы также можете прислать заказ в любом удобном формате, например, excel или pdf. Если Вы представитель юридического лица, то пришлите нам реквизиты, чтобы мы смогли выставить счет.</div>
+      <div class="how-to-order-bottom-item__text">Напишите нам какие товары вам нужны, и мы поможем оформить заказ. Оставьте свой телефон, чтобы мы могли перезвонить для уточнения деталей. Вы также можете прислать заказ в любом удобном формате, например, excel или pdf. Если вы представитель юридического лица, то пришлите нам реквизиты, чтобы мы смогли выставить счет.</div>
     </div>
   </div>
   <div class="how-to-order-bottom-item">
     <div class="how-to-order-bottom-item__image">
-      <img src="/img/how-to-order-bottom-chat.png" alt="">
+      <img src="/img/how-to-order-bottom-chat.svg" alt="">
     </div>
     <div class="how-to-order-bottom-line"></div>
     <div class="how-to-order-bottom-item__content">
       <div class="how-to-order-bottom-item__title">Заказать через чат</div>
-      <div class="how-to-order-bottom-item__text">Вам не придется ждать, мы отвечаем быстро. В чате Вы можете задать все интересующие вопросы и получить подробную консультацию по товару и оформлению заказа. Открыть чат</div>
+      <div class="how-to-order-bottom-item__text">Вам не придется ждать, мы отвечаем быстро. В чате вы можете задать все интересующие вопросы и получить подробную консультацию по товару и оформлению заказа. Открыть чат</div>
     </div>
   </div>
 </div>
