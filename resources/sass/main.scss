@@ -1,4 +1,4 @@
-@import '_config.sass';
+@import '_config.scss';
 
 input:active,
 input:focus,
@@ -142,8 +142,7 @@ ul {
     display: block;
     width: 100%;
     padding: 5px;
-    // border: 1px solid $bluecolor;
-    border: 1px solid $greycolor;
+    border: 1px solid $secondlightgreycolor;
     border-radius: 5px;
     font-family: inherit;
     font-size: inherit;
@@ -279,7 +278,7 @@ ul {
     border-top: none;
     border-right: none;
     border-left: none;
-    border-bottom: 1px solid #B9B9B9;
+    border-bottom: 1px solid $lightgreycolor;
     font-family: 'roboto-condensed-light';
     font-size: 20px;
     color: #000;
@@ -436,7 +435,7 @@ ul {
     margin: 0 0 20px 0;
     padding: 6px 0;
     border-radius: 0px 0px 10px 10px;
-    background-color: #EAEAEA;
+    background-color: $thirdlightgreycolor;
     font-family: 'roboto-condensed-medium';
     font-size: 30px;
     color: $accentcolor;
@@ -589,7 +588,7 @@ ul {
 // special offer section
 .special-offer-section {
   padding: 40px 0;
-  background-color: $lightgreycolor;
+  background-color: $thirdlightgreycolor;
   .section-title {
     color: $greycolor;
   }
@@ -606,7 +605,7 @@ ul {
     transition: all .3s;
   }
   .product-item:hover {
-    border: 1px solid #D9D9D9;
+    border: 1px solid $secondlightgreycolor;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
   .product-item__image {
@@ -851,14 +850,13 @@ ul {
     display: flex;
     margin: 0 0 -1px 0;
     padding: 43px 32px;
-    border: 1px solid $lightgreycolor;
+    border: 1px solid $thirdlightgreycolor;
     font-size: 20px;
     align-items: center;
   }
   .products .product-item__title {
-    // width: 50%;
     margin: 0 15px 0 0;
-    line-height: 1.4;
+    line-height: 1.2;
   }
   .products .product-item__stock {
     margin: 0 15px;
@@ -935,18 +933,47 @@ ul {
     flex-shrink: 0;
   }
   .products .product-item-favourites {
+    width: 27px;
+    height: 25px;
     margin: 0 10px;
   }
   .products .product-item-remove {
     margin: 0 0 0 10px;
   }
+  .products .product-item-remove .rm-from-cart-btn {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+  }
+  .products .product-item-remove .rm-from-cart-btn svg {
+    fill: $greycolor;
+    transition: fill .3s;
+  }
+  .products .product-item-remove:hover .rm-from-cart-btn svg {
+    fill: $accentcolor;
+  } 
 }
 
 .create-order {
+  .page-title-wrapper {
+    position: relative;
+  }
+  .back-to-cart-btn { // как place-order-btn
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 245px;
+    height: 45px;
+    margin: 0 auto 18px auto;
+    padding: 5px 0;
+    border-radius: 10px;
+    font-family: 'roboto-condensed-medium';
+    font-size: 20px;
+  }
   .create-order-item {
     padding: 0 0 30px 0;
     margin: 0 0 25px 0;
-    border-bottom: 1px solid #b9b9b9;
+    border-bottom: 1px solid $lightgreycolor;
   }
   .create-order-item__title {
     margin: 0 0 25px 0;
@@ -970,7 +997,7 @@ ul {
     display: block;
     width: 100%;
     padding: 19px 10px;
-    border: 1px solid #D9D9D9;
+    border: 1px solid $secondlightgreycolor;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
@@ -980,7 +1007,7 @@ ul {
   }
   .delivery-method-description {
     display: flex;
-    border: 1px solid #D9D9D9;
+    border: 1px solid $secondlightgreycolor;
     border-radius: 5px;
   }
   .delivery-method-description .content {
@@ -1001,20 +1028,21 @@ ul {
   }
   .delivery-method-description .map {
     width: 40%;
+    border-radius: 5px;
+    overflow: hidden;
   }
   .delivery-method-description .map img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
 }
 
 .order-info {
   width: 415px;
   padding: 23px;
   border-radius: 10px;
-  background-color: $lightbluecolor;
+  background-color: $secondlightbluecolor;
   .order-info__title {
     margin: 0 0 16px 0;
     font-size: 24px;
@@ -1044,7 +1072,7 @@ ul {
     width: 245px;
     height: 45px;
     margin: 0 auto 18px auto;
-    padding: 7px 0;
+    padding: 5px 0;
     border-radius: 10px;
     font-family: 'roboto-condensed-medium';
     font-size: 20px;
@@ -1102,7 +1130,7 @@ ul {
     width: 245px;
     height: 45px;
     margin: 0 0 35px 0;
-    padding: 7px 0;
+    padding: 5px 0;
     border-radius: 10px;
     font-family: 'roboto-condensed-medium';
     font-size: 20px;
@@ -1110,8 +1138,6 @@ ul {
     margin-left: auto;
     margin-right: auto;
   }
-
-  
 }
 
 .register {
@@ -1172,7 +1198,7 @@ ul {
     margin: 0 0 25px 0;
     font-family: 'roboto-condensed-bold';
     font-size: 24px;
-    color: #D9D9D9;
+    color: $secondlightgreycolor;
   }
   .footer-nav-item {
     margin: 0 0 20px 0;
@@ -1207,7 +1233,6 @@ ul {
     top: -200px;
     left: -50px;
   }
-  
 }
 
 // to top
@@ -1310,7 +1335,7 @@ ul {
     width: 2px;
     height: 20px;
     border-radius: 2px;
-    background-color: #A9A9A9;
+    background-color: $greycolor;
     transition: background-color .3s;
   }
   .close:before {

@@ -9,11 +9,18 @@
     <a href="{{ route('home') }}">Главная</a>
   </div>
   <div class="arrow">></div>
+  <div class="parent">
+    <a href="/cart">Корзина</a>
+  </div>
+  <div class="arrow">></div>
   <div class="active">Оформление заказа</div>
 </div>
 
 <div class="create-order">
-  <div class="page-title">Оформление заказа</div>
+  <div class="page-title-wrapper">
+    <div class="page-title">Оформление заказа</div>
+    <a href="/cart" class="primary-btn back-to-cart-btn">ВЕРНУТЬСЯ В КОРЗИНУ</a>
+  </div>
   <form action="" class="form">
     <div class="create-order-item customer-type">
       <div class="create-order-item__title">1. Покупатель</div>
@@ -89,6 +96,9 @@
         <label for="payment-method-online" class="custom-checkbox-label"></label>
         <span class="checkbox-text">Онлайн</span>
       </div>
+
+      
+
       <div class="checkbox-wrapper">
         <input type="radio" name="payment-method" id="payment-method-transfer" class="custom-checkbox" required>
         <label for="payment-method-transfer" class="custom-checkbox-label"></label>
@@ -99,6 +109,9 @@
         <label for="payment-method-cash" class="custom-checkbox-label"></label>
         <span class="checkbox-text">Наличными в офисе</span>
       </div>
+
+
+
     </div>
   </form>
 

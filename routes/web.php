@@ -18,6 +18,10 @@ use App\Http\Controllers\LkController;
 
 Route::get('/', [MainController::class, 'home'])->name('home');
 
+Route::get('/catalog', [MainController::class, 'catalog']);
+
+Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
+
 Route::get('/cart', [MainController::class, 'cart']);
 
 Route::get('/poisk', [MainController::class, 'poisk']);
