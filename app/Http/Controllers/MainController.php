@@ -13,6 +13,18 @@ class MainController extends Controller
         return view('home');
     }
 
+    public function catalog(): View
+    {
+        return view('catalog');
+    }
+
+    public function single_product(): View
+    {
+        $product = \App\Models\Product::find(1);
+        
+        return view('single-product', compact('product'));
+    }
+
     public function poisk(): View
     {
         return view('poisk');

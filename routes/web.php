@@ -20,7 +20,7 @@ Route::get('/', [MainController::class, 'home'])->name('home');
 
 Route::get('/catalog', [MainController::class, 'catalog']);
 
-Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
+// Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
 
 Route::get('/cart', [MainController::class, 'cart']);
 
@@ -50,10 +50,12 @@ Route::post('create-order-handler', [MainController::class, 'create_order_handle
 
 Route::get('/thank-you', [MainController::class, 'thank_you'])->name('thank-you');
 
-
+// temp
 Route::get('/register1', [MainController::class, 'register1']);
 
 Route::get('/login1', [MainController::class, 'login1']);
+
+Route::get('/catalog/single-product', [MainController::class, 'single_product']);
 
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
@@ -63,6 +65,7 @@ Route::get('/polzovatelskoe-soglashenie-s-publichnoj-ofertoj', [MainController::
 Route::get('/garantiya-vozvrata-denezhnyh-sredstv', [MainController::class, 'garantiya_vozvrata_denezhnyh_sredstv']);
 
 Route::get('/ajax/we-use-cookie', [MainController::class, 'we_use_cookie']);
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
