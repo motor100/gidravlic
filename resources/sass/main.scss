@@ -491,32 +491,49 @@ ul {
     background-color: #fff;
     transition: background-color .3s;
   }
-  .vertikal-line::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 3px;
-    border: 11px solid transparent;
-    border-left: 8px solid #fff;
-    transform: translate(0, 55%);
-    transition: border-left .3s;
-  }
   .aside-nav-item:hover .vertikal-line {
     background-color: $accentcolor;
   }
-  .aside-nav-item:hover .vertikal-line::after {
-    border-left: 8px solid $accentcolor;
-  }
-  .triangle {
+  .triangle-left {
     position: absolute;
     top: 0;
-    right: -15px;
-    border: 10px solid transparent;
-    border-left: 10px solid #fff;
-    transform: translate(0, 55%);
+    bottom: 0;
+    left: -7px;
+    width: 20px;
+    height: 20px;
+    margin: auto 0;
+  }
+  .triangle-left::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 11px solid transparent;
+    border-left: 8px solid #fff;
     transition: border-left .3s;
   }
-  .aside-nav-item:hover .triangle {
+  .aside-nav-item:hover .triangle-left::after {
+    border-left: 8px solid $accentcolor;
+  }
+  .triangle-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -15px;
+    width: 20px;
+    height: 20px;
+    margin: auto 0;
+  }
+  .triangle-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 10px solid transparent;
+    border-left: 10px solid #fff;
+    transition: border-left .3s;
+  }
+  .aside-nav-item:hover .triangle-right::after {
     border-left: 10px solid $accentcolor;
   }
 }
