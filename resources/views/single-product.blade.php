@@ -2,6 +2,10 @@
 
 @extends('layouts.main')
 
+@section('style')
+  <link rel="stylesheet" href="{{ asset('/css/photoswipe.css') }}">
+@endsection
+
 @section('content')
 
 <div class="breadcrumbs">
@@ -23,19 +27,27 @@
     <div class="row">
       <div class="col-2">
         <div class="single-product-gallery">
-          <div class="single-product-gallery-item">
-            <img src="/img/temp-single-product1.png" alt="">
+          <figure class="figure single-product-gallery-item">
+            <a href="/img/temp-single-product1.png" data-pswp-width="800" data-pswp-height="600" target="_blank">
+              <img src="/img/temp-single-product1.png" alt="">
+            </a>
             <!-- <img src="{{-- Storage::url($product->category->image) --}}" alt=""> -->
-          </div>
-          <div class="single-product-gallery-item">
-            <img src="/img/temp-single-product2.jpg" alt="">
-          </div>
-          <div class="single-product-gallery-item">
-            <img src="/img/temp-single-product3.jpg" alt="">
-          </div>
-          <div class="single-product-gallery-item">
-            <img src="/img/temp-single-product4.jpg" alt="">
-          </div>
+          </figure>
+          <figure class="figure single-product-gallery-item">
+            <a href="/img/temp-single-product2.jpg" data-pswp-width="800" data-pswp-height="600" target="_blank">
+              <img src="/img/temp-single-product2.jpg" alt="">
+            </a>
+          </figure>
+          <figure class="figure single-product-gallery-item">
+            <a href="/img/temp-single-product3.jpg" data-pswp-width="800" data-pswp-height="600" target="_blank">
+              <img src="/img/temp-single-product3.jpg" alt="">
+            </a>
+          </figure>
+          <figure class="figure single-product-gallery-item">
+            <a href="/img/temp-single-product4.jpg" data-pswp-width="800" data-pswp-height="600" target="_blank">
+              <img src="/img/temp-single-product4.jpg" alt="">
+            </a>
+          </figure>
         </div>
       </div>
       <div class="col-5">
@@ -107,4 +119,19 @@
   </div>
 </div>
 
+@endsection
+
+@section('script')
+  <script type="module" src="{{ asset('/js/photoswipe-lightbox.esm.min.js') }}"></script>
+  <script type="module">
+    import PhotoSwipeLightbox from '/js/photoswipe-lightbox.esm.min.js';
+    // Photoswipe
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '.single-product-gallery',
+      children: 'a',
+      pswpModule: () => import('/js/photoswipe.esm.js'),
+      loop: true
+    });
+    lightbox.init();
+  </script>
 @endsection

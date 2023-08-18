@@ -164,6 +164,7 @@
                 </div>
                 <div class="aside-nav-item__title">Гидравлические станции</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -172,6 +173,7 @@
                 </div>
                 <div class="aside-nav-item__title">Гидравлические распределители</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -180,6 +182,7 @@
                 </div>
                 <div class="aside-nav-item__title">Гидравлические насосы</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -188,6 +191,7 @@
                 </div>
                 <div class="aside-nav-item__title">Гидравлические моторы</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -196,6 +200,7 @@
                 </div>
                 <div class="aside-nav-item__title">Клапанная аппаратура</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -204,6 +209,7 @@
                 </div>
                 <div class="aside-nav-item__title">Коробки отбора мощности</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -212,6 +218,7 @@
                 </div>
                 <div class="aside-nav-item__title">Модульная гидроаппаратура</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -220,6 +227,7 @@
                 </div>
                 <div class="aside-nav-item__title">Фильтры гидравлические</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -228,6 +236,7 @@
                 </div>
                 <div class="aside-nav-item__title">Картриджная аппаратура</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -236,6 +245,7 @@
                 </div>
                 <div class="aside-nav-item__title">Измерительная аппаратура</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -244,6 +254,7 @@
                 </div>
                 <div class="aside-nav-item__title">Гидроцилиндры</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -252,6 +263,7 @@
                 </div>
                 <div class="aside-nav-item__title">Быстроразъемные соединения БРС</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -260,6 +272,7 @@
                 </div>
                 <div class="aside-nav-item__title">Редукторы и мультипликаторы</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -268,6 +281,7 @@
                 </div>
                 <div class="aside-nav-item__title">Маслоохладители</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -276,6 +290,7 @@
                 </div>
                 <div class="aside-nav-item__title">Гидропневмо-аккумуляторы</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -284,6 +299,7 @@
                 </div>
                 <div class="aside-nav-item__title">Дистанционное управление</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -292,6 +308,7 @@
                 </div>
                 <div class="aside-nav-item__title">Электроника и автоматика</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -300,6 +317,7 @@
                 </div>
                 <div class="aside-nav-item__title">Сопутствующие товары</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
               <div class="aside-nav-item">
@@ -308,6 +326,7 @@
                 </div>
                 <div class="aside-nav-item__title">РВД</div>
                 <a href="#" class="full-link"></a>
+                <div class="vertikal-line"></div>
                 <div class="triangle"></div>
               </div>
             </div>
@@ -334,7 +353,7 @@
                     <img src="/img/temp-product-image1.jpg" alt="">
                   </a>
                 </div>
-                <a href="#" class="product-item__title">Шланг гидравлический высокого давление TR-1721 d32мм</a>
+                <a href="/catalog/single-product" class="product-item__title">Шланг гидравлический высокого давление TR-1721 d32мм</a>
                 <div class="product-item__price">
                   <span class="product-item__value">{{ number_format(325, 0, "", " ") }}</span>
                   <span class="product-item__currency">р</span>
