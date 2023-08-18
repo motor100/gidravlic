@@ -47,7 +47,11 @@ class MainController extends Controller
 
     public function company(): View
     {
-        return view('company');
+        $testimonials = \App\Models\Testimonial::whereNotNull('publicated_at')
+                                                ->orderBy('id', 'desc')
+                                                ->paginate(5);
+        
+        return view('company', compact('testimonials'));
     }
 
     public function services(): View

@@ -105,23 +105,20 @@
     <div class="company-content">
       <a href="#add-testimonial" class="primary-btn add-testimonial-btn">ОСТАВИТЬ ОТЗЫВ</a>
       <div class="testimonials">
-        <div class="testimonials-item">
-          <div class="testimonials-item__name">Дмитрий Кузнецов</div>
-          <div class="testimonials-item__date">19 июля 2023</div>
-          <div class="testimonials-item__text">Большой выбор всего необходимого, регулярно здесь закупаемся. Рекомендую всем заинтересованным. Очень хороший ценник, в сравнении с остальными похожими организациями.</div>
-        </div>
-        <div class="testimonials-item">
-          <div class="testimonials-item__name">Алексей Воробьев</div>
-          <div class="testimonials-item__date">9 сентября 2023</div>
-          <div class="testimonials-item__text">Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый контент, который не должен нести никакого смысла, лишь показать наличие самого текста или продемонстрировать типографику в деле.</div>
-        </div>
+        @foreach($testimonials as $testimonial)
+          <div class="testimonials-item">
+            <div class="testimonials-item__name">{{ $testimonial->name }}</div>
+            <div class="testimonials-item__date">{{ $testimonial->created_at }}</div>
+            <div class="testimonials-item__text">{{ $testimonial->text }}</div>
+          </div>
+        @endforeach
       </div>
 
     </div>
   </div>
 
   <div class="pagination-links">
-
+    {{ $testimonials->onEachSide(1)->links() }}
   </div>
 
   <div id="add-testimonial" class="add-testimonial">

@@ -25,7 +25,7 @@
 
   <div class="single-product-content">
     <div class="row">
-      <div class="col-2">
+      <div class="col-1">
         <div class="single-product-gallery">
           <figure class="figure single-product-gallery-item">
             <a href="/img/temp-single-product1.png" data-pswp-width="800" data-pswp-height="600" target="_blank">
@@ -50,7 +50,7 @@
           </figure>
         </div>
       </div>
-      <div class="col-5">
+      <div class="col-6">
         <div class="single-product-image">
           <img src="/img/temp-single-product1.png" alt="">
           <!-- <img src="{{-- Storage::url($product->category->image) --}}" alt=""> -->
