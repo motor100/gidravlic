@@ -15,7 +15,7 @@
 <div class="register">
   <div class="page-title">Регистрация</div>
 
-  <form action="" class="form">
+  <form action="" class="form register-form">
     <div class="form-group">
       <label for="name-register" class="label">Имя <span class="accentcolor">*</span></label>
       <input type="text" name="name" id="name-register" class="input-field" required minlength="3" maxlength="20">
@@ -43,6 +43,7 @@
       <span class="checkbox-text">Ознакомлен с <a href="/politika-konfidencialnosti" class="privacy-policy-link" target="_blank">политикой конфиденциальности</a></span>
     </div>
 
+    @csrf
     <div class="g-recaptcha mb30" data-sitekey="{{ config('google.client_key') }}"></div>
 
     <button type="button" class="primary-btn register-btn">ЗАРЕГИСТРИРОВАТЬСЯ</button>

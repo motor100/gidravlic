@@ -33,6 +33,10 @@ ul {
   padding: 0;
   list-style: none;
 }
+p {
+  margin: 0 0 .5rem 0;
+  padding: 0;
+}
 .full-link {
   position: absolute;
   top: 0;
@@ -867,10 +871,6 @@ ul {
     margin: 0 0 40px 0;
     font-size: 20px;
   }
-  .payment-description p {
-    margin: 0 0 .5rem 0;
-    padding: 0;
-  }
   .payment-description ul {
     margin: 0 0 .5rem 0;
     padding: 0 0 0 30px;
@@ -1194,7 +1194,7 @@ ul {
 }
 
 .register {
-  .form {
+  .register-form {
     width: 50%;
   }
   .register-btn {
@@ -1307,6 +1307,86 @@ ul {
     font-family: 'roboto-condensed-medium';
   }
 
+}
+
+.company {
+  .company-item {
+    margin: 0 0 35px 0;
+  }
+  .company-title {
+    padding: 0 0 0 10px;
+    background-color: $secondlightbluecolor;
+    font-family: 'roboto-condensed-medium';
+    font-size: 24px;
+    color: #000;
+    text-transform: uppercase;
+  }
+  .company-content {
+    padding: 20px;
+    font-size: 20px;
+  }
+  .company-content ul {
+    margin: 0 0 .5rem 0;
+    padding: 0 0 0 30px;
+    list-style: disc;
+  }
+  .company-subtitle {
+    margin: 0 0 .5rem 0;
+    font-size: 24px;
+  }
+  .company-image {
+    width: 100%;
+    max-width: 800px;
+  }
+  .company-image img {
+    width: 100%;
+  }
+  .certificates {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .certificates-item {
+    width: 150px;
+    margin: 20px;
+    flex-shrink: 0;
+  }
+  .add-testimonial-btn { // как modal .submit-btn
+    width: 415px;
+    height: 60px;
+    // margin: 0 auto;
+    font-size: 24px;
+    border-radius: 10px;
+  }
+  .add-testimonial-title {
+    margin: 0 0 16px 0;
+    font-family: 'roboto-condensed-medium';
+    font-size: 30px;
+    color: #000;
+  }
+  .testimonials-item {
+    margin: 0 0 10px 0;
+  }
+  .testimonials-item__name {
+    font-family: 'roboto-condensed-medium';
+    font-size: 24px;
+  }
+  .testimonials-item__date {
+    font-size: 18px;
+  }
+  .testimonials-item__text {
+    font-size: 24px;
+  }
+  .add-testimonial-form {
+    width: 50%;
+  }
+  .add-testimonial-submit-btn {
+    width: 415px;
+    height: 60px;
+    // margin: 0 auto;
+    font-size: 24px;
+    border-radius: 10px;
+  }
 }
 
 
@@ -1484,7 +1564,7 @@ ul {
     text-align: center;
     text-transform: uppercase;
   }
-  .submit-btn {
+  .modal-submit-btn { // как .add-testimonial-btn
     width: 415px;
     height: 60px;
     margin: 0 auto;

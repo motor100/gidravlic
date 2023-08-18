@@ -618,7 +618,7 @@
           </div>
 
           @csrf
-          <button type="button" id="callback-submit-btn" class="primary-btn submit-btn">ОТПРАВИТЬ СООБЩЕНИЕ</button>
+          <button type="button" id="callback-submit-btn" class="primary-btn modal-submit-btn">ОТПРАВИТЬ СООБЩЕНИЕ</button>
         </form>
       </div>
     </div>
