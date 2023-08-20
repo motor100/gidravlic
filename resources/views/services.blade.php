@@ -4,6 +4,6 @@
 
 @section('content')
   <div class="services">
-    <p>Услуги</p>
+    <p>Услуги111</p>
   </div>
 @endsection
