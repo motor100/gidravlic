@@ -10,7 +10,7 @@ class CalculatorController extends Controller
 {
     public function raschet_moshchnosti_raskhoda_i_davleniya_gidroprivoda(): View
     {
-        return view();
+        return view('raschet-moshchnosti-raskhoda-i-davleniya-gidroprivoda');
     }
 
     public function raschet_diametra_truboprovoda_skorosti_potoka(): View
