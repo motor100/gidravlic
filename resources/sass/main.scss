@@ -1437,6 +1437,41 @@ p {
   }
 }
 
+.delivery {
+  .delivery-description {
+    margin: 0 0 35px 0;
+  }
+  .delivery-item ul {
+    margin: 0 0 30px 0;
+  }
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .transport-companies-item {
+    width: 31%;
+    margin: 0 0 20px 0;
+    padding: 15px 25px 25px 25px;
+    border: 2px solid $lightbluecolor;
+    border-radius: 10px;
+  }
+  .transport-companies-item__title {
+    margin: 0 0 5px 0;
+  }
+  .transport-companies-item__image {
+    display: flex;
+    height: 190px;
+    margin: 0 0 40px 0;
+    align-items: center;
+  }
+  .transport-companies-item__image img {
+    width: 100%;
+  }
+  .transport-companies-item__text {
+    line-height: 1.2;
+  }
+}
+
 
 // footer
 .footer {
@@ -1821,7 +1856,21 @@ p {
     .how-to-order-bottom-item__description {
       font-size: 19px;
     }
-  } 
+  }
+
+  .delivery {
+    .transport-companies-item {
+      width: 32%;
+      padding: 15px 15px 0 15px;
+    }
+    .transport-companies-item__image {
+      display: flex;
+      height: 160px;
+    }
+    .transport-companies-item__text {
+      font-size: 18px;
+    }
+  }
 }
 
 @media only screen and (max-width : 1200px) {
