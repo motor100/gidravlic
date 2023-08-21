@@ -15,9 +15,9 @@
 <div class="company">
   <div class="page-title">Компания</div>
 
-  <div class="company-item">
-    <div class="company-title">О НАС</div>
-    <div class="company-content">
+  <div class="company-item page-item">
+    <div class="company-title page-item__title">О НАС</div>
+    <div class="company-content page-item__content">
       <p>Интернет-магазин специализируется на поставках и продаже гидравлических систем и компонентов для автомобилей, спецтехники, промышленного оборудования. 20-тилетний опыт работы на рынке и опытные специалисты помогли нам создать современный бизнес.</p>
       <p>Наши поставщики — лучшие заводы-изготовители Болгарии, Китая, Италии, Турции. Наши клиенты — оптовые организации, крупные предприятия России, магазины по продаже запчастей для спецтехники, конечные покупатели.</p>
       <p>Наша компания станет надежным партнером вашего бизнеса и поможет поддерживать ваше оборудование, транспорт и спецтехнику в рабочем состоянии.</p>
@@ -56,9 +56,9 @@
     </div>
   </div>
 
-  <div class="company-item">
-    <div id="company-info" class="company-title">Реквизиты</div>
-    <div class="company-content">
+  <div class="company-item page-item">
+    <div id="company-info" class="company-title page-item__title">Реквизиты</div>
+    <div class="company-content page-item__content">
       <p>ОГРН: 5147746226030</p>
       <p>ИНН: 7724939863</p>
       <p>КПП: 772101001</p>
@@ -70,8 +70,8 @@
     </div>
   </div>
 
-  <div class="company-item">
-    <div class="company-title">СЕРТИФИКАТЫ</div>
+  <div class="company-item page-item">
+    <div class="company-title page-item__title">СЕРТИФИКАТЫ</div>
     <div class="certificates">
       <div class="certificates-item">
         <img src="/img/company-certificate.jpg" alt="">
@@ -100,9 +100,9 @@
     </div>
   </div>
 
-  <div class="company-item">
-    <div class="company-title">ОТЗЫВЫ О КОМПАНИИ</div>
-    <div class="company-content">
+  <div class="company-item page-item">
+    <div class="company-title page-item__title">ОТЗЫВЫ О КОМПАНИИ</div>
+    <div class="company-content page-item__content">
       <a href="#add-testimonial" class="primary-btn add-testimonial-btn">ОСТАВИТЬ ОТЗЫВ</a>
       <div class="testimonials">
         @foreach($testimonials as $testimonial)

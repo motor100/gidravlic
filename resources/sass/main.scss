@@ -225,6 +225,42 @@ p {
   }
 }
 
+// list item selection hover
+.main-list-item {
+  transition: background-color .3s,;
+  &:hover {
+    background-color: $lightaccentcolor;
+    .main-list-item__link {
+      color: #000 !important;
+    }
+  }
+  .main-list-item__link { 
+    transition: color .3s;
+  }
+}
+
+// Page text content
+.page-item {
+  margin: 0 0 35px 0;
+  .page-item__title {
+    padding: 0 0 0 10px;
+    background-color: $secondlightbluecolor;
+    font-family: 'roboto-condensed-medium';
+    font-size: 24px;
+    color: #000;
+    text-transform: uppercase;
+  }
+  .page-item__content {
+    padding: 20px;
+    font-size: 20px;
+  }
+  .page-item__content ul {
+    margin: 0 0 .5rem 0;
+    padding: 0 0 0 30px;
+    list-style: disc;
+  }
+}
+
 // header
 .header {
   .header-top {
@@ -360,12 +396,6 @@ p {
   .header-bottom .search-dropdown-active {
     opacity: 1;
     visibility: visible;
-  }
-  .header-bottom .search-dropdown .search-list-item {
-    transition: background-color .3s;
-  }
-  .header-bottom .search-dropdown .search-list-item:hover {
-    background-color: $lightaccentcolor;
   }
   .header-bottom .search-dropdown .search-list-item__link {
     display: block;
@@ -1314,26 +1344,6 @@ p {
 }
 
 .company {
-  .company-item {
-    margin: 0 0 35px 0;
-  }
-  .company-title {
-    padding: 0 0 0 10px;
-    background-color: $secondlightbluecolor;
-    font-family: 'roboto-condensed-medium';
-    font-size: 24px;
-    color: #000;
-    text-transform: uppercase;
-  }
-  .company-content {
-    padding: 20px;
-    font-size: 20px;
-  }
-  .company-content ul {
-    margin: 0 0 .5rem 0;
-    padding: 0 0 0 30px;
-    list-style: disc;
-  }
   .company-subtitle {
     margin: 0 0 .5rem 0;
     font-size: 24px;
@@ -1390,6 +1400,40 @@ p {
     // margin: 0 auto;
     font-size: 24px;
     border-radius: 10px;
+  }
+}
+
+.services {
+  .services-list {
+    margin: 0 0 35px 0;
+  }
+  .services-list-item {
+    margin: 0 0 10px 0;
+    padding: 0 0 0 20px;
+  }
+  .services-list-item .services-list-item__link {
+    font-family: 'roboto-condensed-medium';
+    font-size: 24px;
+    color: $greycolor;
+    text-transform: uppercase;
+  }
+  .services-item .services-item__price {
+    margin: 0 0 20px 0;
+    font-size: 30px;
+    color: $accentcolor;
+  }
+  .services-item .services-btn { // как .login-btn
+    width: 195px;
+    // height: 45px;
+    // margin: 0 0 35px 0;
+    // padding: 7px 0;
+    border-radius: 10px;
+    font-family: 'roboto-condensed-medium';
+    font-size: 20px;
+
+    margin: 35px 0 0 0;
+    padding: 5px 0;
+    border: 0;
   }
 }
 

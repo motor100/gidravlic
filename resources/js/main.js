@@ -59,8 +59,8 @@ function searchOnInput() {
         // Формирую html из массива данных
         json.forEach((item) => {
           let tmpEl = document.createElement('div');
-          tmpEl.className = "search-list-item";
-          tmpEl.innerHTML = '<a href="/catalog/' + item.slug + '" class="search-list-item__link">' + item.title + '</a>';
+          tmpEl.className = "search-list-item main-list-item";
+          tmpEl.innerHTML = '<a href="/catalog/' + item.slug + '" class="search-list-item__link main-list-item__link">' + item.title + '</a>';
           searchRezult.append(tmpEl);
         });
 
