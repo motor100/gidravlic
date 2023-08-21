@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LkController;
+use App\Http\Controllers\CalculatorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,26 @@ Route::get('/delivery', [MainController::class, 'delivery']);
 Route::get('/warranty', [MainController::class, 'warranty']);
 
 Route::get('/calculators', [MainController::class, 'calculators']);
+
+Route::get('/calculators/raschet-moshchnosti-raskhoda-i-davleniya-gidroprivoda', [CalculatorController::class, 'raschet_moshchnosti_raskhoda_i_davleniya_gidroprivoda']);
+
+Route::get('/calculators/raschet-diametra-truboprovoda-skorosti-potoka', [CalculatorController::class, 'raschet_diametra_truboprovoda_skorosti_potoka']);
+
+Route::get('/calculators/raschet-parametrov-gidrocilindra-po-ego-razmeram', [CalculatorController::class, 'raschet_parametrov_gidrocilindra_po_ego_razmeram']);
+
+Route::get('/calculators/raschet-razmerov-gidrocilindra-po-tekhnicheskim-parametram', [CalculatorController::class, 'raschet_razmerov_gidrocilindra_po_tekhnicheskim_parametram']);
+
+Route::get('/calculators/raschet-podachi-nasosa', [CalculatorController::class, 'raschet_podachi_nasosa']);
+
+Route::get('/calculators/raschet-oborotov-gidromotora', [CalculatorController::class, 'raschet_oborotov_gidromotora']);
+
+Route::get('/calculators/raschet-krutyashchego-momenta-gidromotora-obem-i-davlenie', [CalculatorController::class, 'raschet_krutyashchego_momenta_gidromotora_obem_i_davlenie']);
+
+Route::get('/calculators/raschet-krutyashchego-momenta-na-valu-moshchnost-i-oboroty', [CalculatorController::class, 'raschet_krutyashchego_momenta_na_valu_moshchnost_i_oboroty']);
+
+Route::get('/calculators/raschet-obema-plastinchatogo-nasosa-po-geometricheskim-razmeram', [CalculatorController::class, 'raschet_obema_plastinchatogo_nasosa_po_geometricheskim_razmeram']);
+
+Route::get('/calculators/raschet-obema-shesterennogo-nasosa-po-geometricheskim-razmeram', [CalculatorController::class, 'raschet_obema_shesterennogo_nasosa_po_geometricheskim_razmeram']);
 
 Route::get('/contacts', [MainController::class, 'contacts']);
 

@@ -1407,16 +1407,6 @@ p {
   .services-list {
     margin: 0 0 35px 0;
   }
-  .services-list-item {
-    margin: 0 0 10px 0;
-    padding: 0 0 0 20px;
-  }
-  .services-list-item .services-list-item__link {
-    font-family: 'roboto-condensed-medium';
-    font-size: 24px;
-    color: $greycolor;
-    text-transform: uppercase;
-  }
   .services-item .services-item__price {
     margin: 0 0 20px 0;
     font-size: 30px;
@@ -1477,6 +1467,26 @@ p {
     margin: 0 0 35px 0;
   }
 }
+
+// Список услуги и калькулятор
+.snc-list-item {
+  margin: 0 0 10px 0;
+  padding: 0 0 0 20px;
+  .snc-list-item__link {
+    font-family: 'roboto-condensed-medium';
+    font-size: 24px;
+    color: $greycolor;
+    text-transform: uppercase;
+  }
+}
+
+.calculators {
+  .calculators-description {
+    margin: 0 0 40px 0;
+    font-size: 20px;
+  }
+}
+
 
 
 // footer

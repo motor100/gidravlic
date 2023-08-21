@@ -15,22 +15,22 @@
 <div class="services">
   <div class="page-title">Услуги</div>
   <div class="services-list">
-    <div class="services-list-item main-list-item">
-      <a href="#gidrofikaciya-tyagachej" class="services-list-item__link main-list-item__link">ГИДРОФИКАЦИЯ ТЯГАЧЕЙ</a>
+    <div class="services-list-item snc-list-item main-list-item">
+      <a href="#gidrofikaciya-tyagachej" class="services-list-item__link snc-list-item__link main-list-item__link">ГИДРОФИКАЦИЯ ТЯГАЧЕЙ</a>
     </div>
-    <div class="services-list-item main-list-item">
-      <a href="#gidrofikaciya-samosvalov-pod-pricep" class="services-list-item__link main-list-item__link">ГИДРОФИКАЦИЯ САМОСВАЛОВ ПОД ПРИЦЕП</a>
+    <div class="services-list-item snc-list-item main-list-item">
+      <a href="#gidrofikaciya-samosvalov-pod-pricep" class="services-list-item__link snc-list-item__link main-list-item__link">ГИДРОФИКАЦИЯ САМОСВАЛОВ ПОД ПРИЦЕП</a>
     </div>
-    <div class="services-list-item main-list-item">
-      <a href="#gidrofikaciya-avtovozov" class="services-list-item__link main-list-item__link">ГИДРОФИКАЦИЯ АВТОВОЗОВ</a>
+    <div class="services-list-item snc-list-item main-list-item">
+      <a href="#gidrofikaciya-avtovozov" class="services-list-item__link snc-list-item__link main-list-item__link">ГИДРОФИКАЦИЯ АВТОВОЗОВ</a>
     </div>
-    <div class="services-list-item main-list-item">
-      <a href="#gidrofikaciya-otopitelej" class="services-list-item__link main-list-item__link">ГИДРОФИКАЦИЯ ОТОПИТЕЛЕЙ</a>
+    <div class="services-list-item snc-list-item main-list-item">
+      <a href="#gidrofikaciya-otopitelej" class="services-list-item__link snc-list-item__link main-list-item__link">ГИДРОФИКАЦИЯ ОТОПИТЕЛЕЙ</a>
     </div>
-    <div class="services-list-item main-list-item">
-      <a href="#ustanovka-kmu" class="services-list-item__link main-list-item__link">УСТАНОВКА КМУ</a>
+    <div class="services-list-item snc-list-item main-list-item">
+      <a href="#ustanovka-kmu" class="services-list-item__link snc-list-item__link main-list-item__link">УСТАНОВКА КМУ</a>
     </div>
-  </div> 
+  </div>
   <div id="gidrofikaciya-tyagachej" class="services-item page-item">
     <div class="page-item__title">ГИДРОФИКАЦИЯ ТЯГАЧЕЙ</div>
     <div class="page-item__content">
