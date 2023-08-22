@@ -1599,6 +1599,19 @@ p {
   }
 }
 
+.comparison { // как .register-btn и как .favourites-clear-btn
+  .comparison-clear-btn {
+    width: 305px;
+    height: 45px;
+    margin: 0 0 35px 0;
+    padding: 7px 0;
+    border-radius: 10px;
+    font-family: 'roboto-condensed-medium';
+    font-size: 20px;
+  }
+}
+
+
 
 
 
