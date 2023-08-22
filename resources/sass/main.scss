@@ -1866,15 +1866,17 @@ p {
 .pager {
   display: flex;
   margin: 0 0 50px 0;
+  padding: 0;
+  list-style: none;
   justify-content: center;
   .pager-item {
-    min-width: 42px;
-    height: 42px;
-    margin: 0 8px;
-    padding: 5px 15px;
+    min-width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    padding: 0;
     border-radius: 21px;
     background-color: #fff;
-    font-size: 20px;
+    text-align: center;
     transition: all .3s;
     @media only screen and (max-width : 768px) {
       min-width: 36px;
@@ -1895,6 +1897,7 @@ p {
     display: block;
     min-width: 12px;
     color: $greycolor;
+    line-height: 1.9;
   }
   .pager-item.active .pager-item-link,
   .pager-item.active .pager-item-span {
@@ -1914,14 +1917,6 @@ p {
   .pager-item .arrow-left {
     position: relative;
     display: block;
-    width: 70px;
-    height: 2px;
-    background-color: $greycolor;
-    transition: background-color .3s;
-  }
-  .pager-item-nav:hover .arrow-right,
-  .pager-item-nav:hover .arrow-left {
-    background-color: #fff;
   }
   .pager-item-nav:hover .arrow-right::before,
   .pager-item-nav:hover .arrow-right::after,
@@ -1942,26 +1937,26 @@ p {
   }
   .pager-item .arrow-right::before,
   .pager-item .arrow-right::after {
-    right: -2px;
+    right: 8px;
   }
   .pager-item .arrow-right::before {
-    top: -3px;
+    top: -5px;
     transform: rotate(45deg);
   }
   .pager-item .arrow-right::after {
-    top: 3px;
+    top: 2px;
     transform: rotate(-45deg);
   }
   .pager-item .arrow-left::before,
   .pager-item .arrow-left::after {
-    left: -2px;
+    left: 8px;
   }
   .pager-item .arrow-left::before {
-    top: -3px;
+    top: -5px;
     transform: rotate(-45deg);
   }
   .pager-item .arrow-left::after {
-    top: 3px;
+    top: 2px;
     transform: rotate(45deg);
   }
 }
