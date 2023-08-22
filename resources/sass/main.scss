@@ -1611,6 +1611,25 @@ p {
   }
 }
 
+// Политика, пользовательское соглашение, гарантия возврата
+.ppg {
+  line-height: 1.2;
+  .ppg-title {
+    margin: 0 0 10px 0;
+    font-family: 'roboto-condensed-medium';
+    font-size: 24px;
+  }
+  .ppg-subtitle {
+    margin: 0 0 10px 0;
+    font-family: 'roboto-condensed-medium';
+    font-size: 20px;
+  }
+  .ppg-second-subtitle {
+    margin: 0 0 10px 0;
+    font-family: 'roboto-condensed-medium';
+  }
+}
+
 
 
 

@@ -130,6 +130,16 @@ class MainController extends Controller
         return view('politika-konfidencialnosti');
     }
 
+    public function polzovatelskoe_soglashenie_s_publichnoj_ofertoj(): View
+    {
+        return view('polzovatelskoe-soglashenie-s-publichnoj-ofertoj');
+    }
+    
+    public function garantiya_vozvrata_denezhnyh_sredstv(): View
+    {
+        return view('garantiya-vozvrata-denezhnyh-sredstv');
+    }
+
 
     public function we_use_cookie(): void
     {
