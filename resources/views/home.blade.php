@@ -13,13 +13,13 @@
           <div class="slider-item-image">
             <img src="/img/main-slide1.jpg" alt="">
           </div>
-          <a href="#" class="primary-btn view-more-btn">Подробнее</a>
+          <a href="#" class="primary-btn view-more-btn btn-195">Подробнее</a>
         </div>
         <div class="main-slider-item swiper-slide">
           <div class="slider-item-image">
             <img src="/img/temp-main-slide2.jpg" alt="">
           </div>
-          <a href="#" class="primary-btn view-more-btn">Подробнее</a>
+          <a href="#" class="primary-btn view-more-btn btn-195">Подробнее</a>
         </div>
       </div>
       <div class="swiper-button-next"></div>

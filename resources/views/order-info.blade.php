@@ -21,6 +21,6 @@
       <span class="order-info-row__currency">р</span>
     </div>
   </div>
-  <a href="/create-order" class="primary-btn place-order-btn">ОФОРМИТЬ ЗАКАЗ</a>
+  <a href="/create-order" class="primary-btn place-order-btn btn-245">ОФОРМИТЬ ЗАКАЗ</a>
   <div class="delivery-description">Дата и стоимость доставки определяются при оформлении заказа</div>
 </div>

@@ -14,7 +14,7 @@
 
 <div class="cart">
   <div class="page-title">Корзина</div>
-  <a href="/clear-cart" class="primary-btn cart-btn">ОЧИСТИТЬ КОРЗИНУ</a>
+  <a href="/clear-cart" class="primary-btn clear-cart-btn btn-245">ОЧИСТИТЬ КОРЗИНУ</a>
   <div class="products">
     <div class="product-item">
       <div class="product-item__title">Шланг гидравлический высокого давления TR-1721 d32мм</div>

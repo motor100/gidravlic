@@ -14,7 +14,7 @@
 
 <div class="favourites">
   <div class="page-title">Избранное</div>
-  <button class="primary-btn favourites-clear-btn">ОЧИСТИТЬ ИЗБРАННОЕ</button>
+  <button class="primary-btn favourites-clear-btn btn-305">ОЧИСТИТЬ ИЗБРАННОЕ</button>
 
   <div class="favourites-products">
     <div class="row">

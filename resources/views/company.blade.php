@@ -103,7 +103,7 @@
   <div class="company-item page-item">
     <div class="company-title page-item__title">ОТЗЫВЫ О КОМПАНИИ</div>
     <div class="company-content page-item__content">
-      <a href="#add-testimonial" class="primary-btn add-testimonial-btn">ОСТАВИТЬ ОТЗЫВ</a>
+      <a href="#add-testimonial" class="primary-btn add-testimonial-btn btn-415">ОСТАВИТЬ ОТЗЫВ</a>
       <div class="testimonials">
         @foreach($testimonials as $testimonial)
           <div class="testimonials-item">
@@ -151,7 +151,7 @@
       @csrf
       <div class="g-recaptcha mb30" data-sitekey="{{ config('google.client_key') }}"></div>
 
-      <button type="button" id="callback-submit-btn" class="primary-btn add-testimonial-submit-btn">Оставить отзыв</button>
+      <button type="button" id="callback-submit-btn" class="primary-btn add-testimonial-submit-btn btn-415">Оставить отзыв</button>
 
     </form>
 

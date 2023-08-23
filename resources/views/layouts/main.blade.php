@@ -479,7 +479,7 @@
             </div>
           </div>
         </div>
-        <a href="#" class="primary-btn see-all-btn">СМОТРЕТЬ ВСЁ</a>
+        <a href="#" class="primary-btn see-all-btn btn-245">СМОТРЕТЬ ВСЕ</a>
       </div>
     </div>
 
@@ -618,7 +618,7 @@
           </div>
 
           @csrf
-          <button type="button" id="callback-submit-btn" class="primary-btn modal-submit-btn">ОТПРАВИТЬ СООБЩЕНИЕ</button>
+          <button type="button" id="callback-submit-btn" class="primary-btn modal-submit-btn btn-415">ОТПРАВИТЬ СООБЩЕНИЕ</button>
         </form>
       </div>
     </div>

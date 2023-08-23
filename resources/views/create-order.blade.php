@@ -19,7 +19,7 @@
 <div class="create-order">
   <div class="page-title-wrapper">
     <div class="page-title">Оформление заказа</div>
-    <a href="/cart" class="primary-btn back-to-cart-btn">ВЕРНУТЬСЯ В КОРЗИНУ</a>
+    <a href="/cart" class="primary-btn back-to-cart-btn btn-245">ВЕРНУТЬСЯ В КОРЗИНУ</a>
   </div>
   <form action="" class="form">
     <div class="create-order-item customer-type">

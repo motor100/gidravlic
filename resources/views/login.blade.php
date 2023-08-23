@@ -31,13 +31,13 @@
       <span class="checkbox-text">Запомнить меня</span>
     </div>
 
-    <button type="button" class="primary-btn login-btn">Войти</button>
+    <button type="button" class="primary-btn login-btn btn-195">Войти</button>
 
   </form>
 
   <div class="create-account">
     <div class="create-account__title">Нет личного кабинета?</div>
-    <a href="#" class="primary-btn login-btn">РЕГИСТРАЦИЯ</a>
+    <a href="#" class="primary-btn login-btn btn-195">РЕГИСТРАЦИЯ</a>
   </div>
 
 </div>

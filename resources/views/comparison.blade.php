@@ -14,7 +14,7 @@
 
 <div class="comparison">
   <div class="page-title">Сравнение</div>
-  <button class="primary-btn comparison-clear-btn">ОЧИСТИТЬ СРАВНЕНИЕ</button>
+  <button class="primary-btn comparison-clear-btn btn-305">ОЧИСТИТЬ СРАВНЕНИЕ</button>
   <div class="favourites-products">
     <div class="row">
       <div class="col-4">

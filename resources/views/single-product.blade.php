@@ -67,7 +67,7 @@
             <span class="single-product-price__text">1012</span>
             <span class="single-product-price__value">р</span>
           </div>
-          <button class="primary-btn add-to-cart add-to-cart-btn" data-id="1">КУПИТЬ</button>
+          <button class="primary-btn add-to-cart add-to-cart-btn btn-195" data-id="1">КУПИТЬ</button>
           <div class="single-product-stock">
             <div class="single-product-stock__image">
               <img src="/img/temp-single-product-in-stock.png" alt="">

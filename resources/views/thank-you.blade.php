@@ -34,7 +34,7 @@
     </div>
   </div>
 
-  <a href="#" class="primary-btn payment-btn">ОПЛАТИТЬ</a>
+  <a href="#" class="primary-btn thank-you-payment-btn btn-245">ОПЛАТИТЬ</a>
 
 </div>
 

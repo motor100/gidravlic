@@ -46,7 +46,7 @@
     @csrf
     <div class="g-recaptcha mb30" data-sitekey="{{ config('google.client_key') }}"></div>
 
-    <button type="button" class="primary-btn register-btn">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+    <button type="button" class="primary-btn register-btn btn-305">ЗАРЕГИСТРИРОВАТЬСЯ</button>
 
   </form>
 

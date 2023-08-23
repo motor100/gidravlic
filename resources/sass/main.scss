@@ -113,7 +113,6 @@ p {
 // primary btn
 .primary-btn {
   display: block;
-  padding: 0;
   border: 2px solid $bluecolor;
   background-color: $bluecolor;
   font-family: 'roboto-condensed-medium';
@@ -130,6 +129,40 @@ p {
     color: $bluecolor;
   }
 }
+
+.btn-195 {
+  width: 195px;
+  margin: 0 0 35px 0;
+  padding: 8px 0;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.btn-245 {
+  width: 245px;
+  margin: 0 0 35px 0;
+  padding: 8px 0;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.btn-305 {
+  width: 305px;
+  margin: 0 0 35px 0;
+  padding: 8px 0;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.btn-415 {
+  width: 415px;
+  margin: 0 0 35px 0;
+  padding: 10px 0;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+
 
 // badge counter
 .badge-counter {
@@ -408,7 +441,6 @@ p {
   }
   .header-bottom .search-dropdown .search-see-all-btn {
     width: 190px;
-    // height: 30px;
     margin: 15px 0 15px 40px;
     border-radius: 5px;
     font-size: 20px;
@@ -615,18 +647,11 @@ p {
     font-size: 16px;
     font-weight: bold;
   }
-  .main-slider .view-more-btn { // как .login-btn
-    width: 195px;
-    height: 45px;
-    // margin: 0 0 35px 0;
-    padding: 7px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
-
+  .main-slider .view-more-btn {
     position: absolute;
     right: 110px;
     bottom: 28px;
+    margin: 0;
   }
   .main-slider .swiper-pagination-bullet {
     width: 14px;
@@ -697,12 +722,7 @@ p {
     margin: 0 0 20px 0;
   }
   .see-all-btn {
-    width: 255px;
-    height: 45px;
     margin: 0 auto;
-    padding: 7px 0;
-    border-radius: 10px;
-    font-size: 20px;
   }
 }
 
@@ -881,7 +901,6 @@ p {
     width: 100%;
     height: 30px;
     border-radius: 5px;
-    font-family: 'roboto-condensed-medium';
   }
 }
 
@@ -925,15 +944,6 @@ p {
 
 // cart
 .cart {
-  .cart-btn {
-    width: 245px;
-    height: 45px;
-    margin: 0 0 35px 0;
-    padding: 7px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
-  }
   .products {
     margin: 0 0 54px 0;
   }
@@ -1052,17 +1062,10 @@ p {
   .page-title-wrapper {
     position: relative;
   }
-  .back-to-cart-btn { // как place-order-btn
+  .back-to-cart-btn {
     position: absolute;
     top: 0;
     right: 0;
-    width: 245px;
-    height: 45px;
-    margin: 0 auto 18px auto;
-    padding: 5px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
   }
   .create-order-item {
     padding: 0 0 30px 0;
@@ -1162,15 +1165,6 @@ p {
     font-size: 24px;
     color: #000;
   }
-  .place-order-btn {
-    width: 245px;
-    height: 45px;
-    margin: 0 auto 18px auto;
-    padding: 5px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
-  }
   .delivery-description {
     width: 245px;
     margin: 0 auto;
@@ -1179,6 +1173,10 @@ p {
     line-height: 1.2;
     color: $bluecolor;
     text-align: center;
+  }
+  .place-order-btn {
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -1220,15 +1218,7 @@ p {
   .thank-you-payment__summ .currency {
     color: #000;
   }
-  .payment-btn { // как .cart-btn и как .place-order-btn
-    width: 245px;
-    height: 45px;
-    margin: 0 0 35px 0;
-    padding: 5px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
-
+  .thank-you-payment-btn {
     margin-left: auto;
     margin-right: auto;
   }
@@ -1238,15 +1228,6 @@ p {
   .register-form {
     width: 50%;
   }
-  .register-btn { // как .favourites-clear-btn
-    width: 305px;
-    height: 45px;
-    margin: 0 0 35px 0;
-    padding: 7px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
-  }
 }
 
 .login {
@@ -1254,16 +1235,6 @@ p {
     width: 50%;
     margin: 0 0 50px 0;
   }
-  .login-btn {
-    width: 195px;
-    height: 45px;
-    margin: 0 0 35px 0;
-    padding: 7px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
-  }
-
   .create-account__title {
     margin: 0 0 30px 0;
     font-size: 24px;
@@ -1302,15 +1273,6 @@ p {
     font-family: 'roboto-condensed-medium';
     font-size: 30px;
     color: #000;
-  }
-  .add-to-cart-btn { // как .login-btn
-    width: 195px;
-    height: 45px;
-    margin: 0 0 35px 0;
-    padding: 7px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
   }
   .single-product-stock {
     display: flex;
@@ -1375,13 +1337,6 @@ p {
     margin: 20px;
     flex-shrink: 0;
   }
-  .add-testimonial-btn { // как modal .submit-btn
-    width: 415px;
-    height: 60px;
-    // margin: 0 auto;
-    font-size: 24px;
-    border-radius: 10px;
-  }
   .add-testimonial-title {
     margin: 0 0 16px 0;
     font-family: 'roboto-condensed-medium';
@@ -1404,16 +1359,12 @@ p {
   .add-testimonial-form {
     width: 50%;
   }
-  .add-testimonial-submit-btn {
-    width: 415px;
-    height: 60px;
-    // margin: 0 auto;
-    font-size: 24px;
-    border-radius: 10px;
-  }
 }
 
 .services {
+  .page-item {
+    margin: 0;
+  }
   .services-list {
     margin: 0 0 35px 0;
   }
@@ -1422,18 +1373,8 @@ p {
     font-size: 30px;
     color: $accentcolor;
   }
-  .services-item .services-btn { // как .login-btn
-    width: 195px;
-    // height: 45px;
-    // margin: 0 0 35px 0;
-    // padding: 7px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
-
-    margin: 35px 0 0 0;
-    padding: 5px 0;
-    border: 0;
+  .services-item .services-btn {
+    margin-top: 35px;
   }
 }
 
@@ -1588,27 +1529,11 @@ p {
 }
 
 .favourites {
-  .favourites-clear-btn { // как .register-btn
-    width: 305px;
-    height: 45px;
-    margin: 0 0 35px 0;
-    padding: 7px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
-  }
+
 }
 
-.comparison { // как .register-btn и как .favourites-clear-btn
-  .comparison-clear-btn {
-    width: 305px;
-    height: 45px;
-    margin: 0 0 35px 0;
-    padding: 7px 0;
-    border-radius: 10px;
-    font-family: 'roboto-condensed-medium';
-    font-size: 20px;
-  }
+.comparison {
+
 }
 
 // Политика, пользовательское соглашение, гарантия возврата
@@ -1808,12 +1733,8 @@ p {
     text-align: center;
     text-transform: uppercase;
   }
-  .modal-submit-btn { // как .add-testimonial-btn
-    width: 415px;
-    height: 60px;
+  .modal-submit-btn {
     margin: 0 auto;
-    font-size: 24px;
-    border-radius: 10px;
   }
 }
 
