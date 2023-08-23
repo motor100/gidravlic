@@ -102,13 +102,13 @@
 
   <div class="company-item page-item">
     <div class="company-title page-item__title">ОТЗЫВЫ О КОМПАНИИ</div>
-    <div class="company-content page-item__content">
+    <div class="testimonials-content">
       <a href="#add-testimonial" class="primary-btn add-testimonial-btn btn-415">ОСТАВИТЬ ОТЗЫВ</a>
       <div class="testimonials">
         @foreach($testimonials as $testimonial)
           <div class="testimonials-item">
             <div class="testimonials-item__name">{{ $testimonial->name }}</div>
-            <div class="testimonials-item__date">{{ $testimonial->created_at }}</div>
+            <div class="testimonials-item__date">{{ $testimonial->created_at->format("d.m.Y") }}</div>
             <div class="testimonials-item__text">{{ $testimonial->text }}</div>
           </div>
         @endforeach
