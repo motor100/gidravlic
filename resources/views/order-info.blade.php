@@ -21,6 +21,12 @@
       <span class="order-info-row__currency">р</span>
     </div>
   </div>
-  <a href="/create-order" class="primary-btn place-order-btn btn-245">ОФОРМИТЬ ЗАКАЗ</a>
+  
+  @if(Route::is('cart'))
+    <a href="/create-order" class="primary-btn place-order-btn btn-245">ОФОРМИТЬ ЗАКАЗ</a>
+  @else
+    <button type="submit" class="primary-btn place-order-btn btn-245">ПОДТВЕРДИТЬ ЗАКАЗ</button>
+  @endif
+
   <div class="delivery-description">Дата и стоимость доставки определяются при оформлении заказа</div>
 </div>

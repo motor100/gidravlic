@@ -21,7 +21,7 @@
     <div class="page-title">Оформление заказа</div>
     <a href="/cart" class="primary-btn back-to-cart-btn btn-245">ВЕРНУТЬСЯ В КОРЗИНУ</a>
   </div>
-  <form action="" class="form">
+  <form class="form" action="/create-order-handler" method="post">
     <div class="create-order-item customer-type">
       <div class="create-order-item__title">1. Покупатель</div>
       <div class="flex-container">
@@ -96,27 +96,23 @@
         <label for="payment-method-online" class="custom-checkbox-label"></label>
         <span class="checkbox-text">Онлайн</span>
       </div>
-
-      
-
-      <div class="checkbox-wrapper">
-        <input type="radio" name="payment-method" id="payment-method-transfer" class="custom-checkbox" required>
-        <label for="payment-method-transfer" class="custom-checkbox-label"></label>
-        <span class="checkbox-text">Банковский перевод</span>
-      </div>
-      <div class="checkbox-wrapper">
-        <input type="radio" name="payment-method" id="payment-method-cash" class="custom-checkbox" required>
-        <label for="payment-method-cash" class="custom-checkbox-label"></label>
-        <span class="checkbox-text">Наличными в офисе</span>
-      </div>
-
-
-
     </div>
+
+    @include('order-info')
+
   </form>
 
-  @include('order-info')
+</div>
 
+<div class="checkbox-wrapper">
+  <input type="radio" name="payment-method" id="payment-method-transfer" class="custom-checkbox" required>
+  <label for="payment-method-transfer" class="custom-checkbox-label"></label>
+  <span class="checkbox-text">Банковский перевод</span>
+</div>
+<div class="checkbox-wrapper">
+  <input type="radio" name="payment-method" id="payment-method-cash" class="custom-checkbox" required>
+  <label for="payment-method-cash" class="custom-checkbox-label"></label>
+  <span class="checkbox-text">Наличными в офисе</span>
 </div>
 
 @endsection
