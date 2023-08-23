@@ -25,9 +25,29 @@ class MainController extends Controller
         return view('single-product', compact('product'));
     }
 
-    public function poisk(): View
+    public function poisk(Request $request): View
     {
-        return view('poisk');
+        $search_query = $request->input('search_query');
+
+        if (mb_strlen($search_query) < 3 || mb_strlen($search_query) > 40) {
+            return redirect('/');
+        }
+
+        $search_query = htmlspecialchars($search_query);
+
+        if (!$search_query) {
+            return redirect('/');
+        }
+
+        $search_query = htmlspecialchars($search_query);
+
+        $products = \App\Models\Product::where('title', 'like', "%{$search_query}%")->get();
+
+        if (!$products) {
+            return redirect('/');
+        };
+
+        return view('poisk', compact('products', 'search_query'));
     }
 
     public function cart(): View
