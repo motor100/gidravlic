@@ -35,7 +35,7 @@
           </div>
           <div class="col-xxl-2 col-md-3">
             <div class="flex-container">
-              <button id="callback-btn" class="primary-btn header-feedback-btn">Оставить заявку</button>
+              <button id="callback-btn" class="secondary-btn header-feedback-btn">Оставить заявку</button>
             </div>
           </div>
           <div class="col-md-1">
@@ -62,17 +62,18 @@
             <div class="underlogo-text">ГИДРАВЛИЧЕСКОЕ ОБОРУДОВАНИЕ</div>
           </div>
           <div class="col-md-6">
-            <div class="flex-container">
+            <div class="search-wrapper">
               <form class="search-form" action="/poisk" method="get">
                 <input type="text" name="search_query" class="search-input" minlength="3" maxlength="20" autocomplete="off" required placeholder="Поиск по товарам">
                 <button type="submit" class="search-submit-btn">
                   <img src="/img/header-search-lens.svg" alt="">
                 </button>
+              </form>
                 <div class="search-close"></div>
                 <div class="search-dropdown">
                   <div class="search-list js-search-rezult"></div>
                 </div>
-              </form>
+              
             </div>
           </div>
           <div class="col-md-1">
@@ -377,7 +378,7 @@
                   <span class="regular-product-item__value">{{ number_format(325, 0, "", " ") }}</span>
                   <span class="regular-product-item__currency">р</span>
                 </div>
-                <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
+                <button class="secondary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
                 <div class="regular-product-item__label">
                   <span class="regular-product-item__label-text">ХИТ</span>
                   </div>
@@ -405,7 +406,7 @@
                   <span class="regular-product-item__value">{{ number_format(43, 0, "", " ") }}</span>
                   <span class="regular-product-item__currency">р</span>
                 </div>
-                <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
+                <button class="secondary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
                 <div class="regular-product-item__label">
                   <span class="regular-product-item__label-text">ХИТ</span>
                   </div>
@@ -433,7 +434,7 @@
                   <span class="regular-product-item__value">{{ number_format(1012, 0, "", " ") }}</span>
                   <span class="regular-product-item__currency">р</span>
                 </div>
-                <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
+                <button class="secondary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
                 <div class="regular-product-item__label">
                   <span class="regular-product-item__label-text">ХИТ</span>
                   </div>
@@ -461,7 +462,7 @@
                   <span class="regular-product-item__value">{{ number_format(12960, 0, "", " ") }}</span>
                   <span class="regular-product-item__currency">р</span>
                 </div>
-                <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
+                <button class="secondary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
                 <div class="regular-product-item__label">
                   <span class="regular-product-item__label-text">ХИТ</span>
                   </div>

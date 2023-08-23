@@ -29,7 +29,7 @@
             <span class="regular-product-item__value">{{ number_format(43, 0, "", " ") }}</span>
             <span class="regular-product-item__currency">р</span>
           </div>
-          <button class="primary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
+          <button class="secondary-btn add-to-cart-btn add-to-cart" data-id="1">КУПИТЬ</button>
           <div class="regular-product-item__label">
             <span class="regular-product-item__label-text">ХИТ</span>
             </div>
