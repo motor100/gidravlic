@@ -35,7 +35,7 @@
           </div>
           <div class="col-xxl-2 col-md-3">
             <div class="flex-container">
-              <button id="callback-btn" class="secondary-btn header-feedback-btn">Оставить заявку</button>
+              <button class="secondary-btn header-feedback-btn js-callback-btn">Оставить заявку</button>
             </div>
           </div>
           <div class="col-md-1">

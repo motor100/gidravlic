@@ -127,7 +127,7 @@ const mainSlider = new Swiper('.main-slider', {
 
 // Окна
 const modalWindow = document.querySelectorAll('.modal-window');
-const callbackBtn = document.querySelector('#callback-btn');
+const callbackBtns = document.querySelectorAll('.js-callback-btn');
 const callbackModal = document.querySelector('#callback-modal');
 const modalCloseBtn = document.querySelector('.modal-window .modal-close');
 
@@ -147,9 +147,11 @@ function modalWindowClose(win) {
   }, 300);
 }
 
-callbackBtn.onclick = () => {
-  modalWindowOpen(callbackModal);
-}
+callbackBtns.forEach((item) => {
+  item.onclick = () => {
+    modalWindowOpen(callbackModal);
+  }
+});
 
 modalCloseBtn.onclick = () => {
   modalWindowClose(callbackModal);
