@@ -85,7 +85,6 @@
               </div>
               <div class="header-bottom-item__text">Избранное</div>
               <div id="header-favourites-counter" class="badge-counter {{ isset($favourites_count) ? 'active' : '' }}">{{ isset($favourites_count) ? $favourites_count : '' }}</div>
-              <!-- <div id="header-favourites-counter" class="badge-counter active">1</div> -->
               <a href="/favourites" class="full-link"></a>
             </div>
           </div>

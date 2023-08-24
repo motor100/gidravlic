@@ -12,6 +12,9 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
+        // truncate table
+        \App\Models\Product::truncate();
+        
         \App\Models\Product::factory(500)->create();
     }
 }

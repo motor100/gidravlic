@@ -22,6 +22,8 @@ class ProductFactory extends Factory
 
         $title = $faker->catchPhrase();
         $slug = \Illuminate\Support\Str::slug($title);
+
+        $hit = random_int(0, 1);
         
         return [
             'title' => $title,
@@ -31,6 +33,7 @@ class ProductFactory extends Factory
             'description' => $description,
             'stock' => random_int(0, 100),
             'price' => random_int(50, 5000),
+            'hit' => $hit ? 1 : NULL,
             'created_at' => now(),
             'updated_at' => now()
         ];

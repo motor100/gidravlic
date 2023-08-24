@@ -10,9 +10,11 @@
     <span class="regular-product-item__currency">р</span>
   </div>
   <button class="secondary-btn add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">КУПИТЬ</button>
-  <div class="regular-product-item__label">
-    <span class="regular-product-item__label-text">ХИТ</span>
+  @if($product->hit)
+    <div class="regular-product-item__label">
+      <span class="regular-product-item__label-text">ХИТ</span>
     </div>
+  @endif
   <div class="regular-product-item-favourites add-to-favourites" data-id="{{ $product->id }}">
     <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M15.9293 0C13.7428 0 12.0708 1.28617 10.6239 2.66881C9.27339 1.22186 7.53705 0 5.31841 0C2.19943 0 0.0129395 2.66881 0.0129395 5.59485C0.0129395 7.17042 0.656026 8.29582 1.36342 9.35691L9.59493 19.2604C10.5274 20.2251 10.7203 20.2251 11.6528 19.2604L19.9165 9.35691C20.7203 8.29582 21.267 7.17042 21.267 5.59485C21.267 2.66881 19.0483 0 15.9293 0Z"/>
