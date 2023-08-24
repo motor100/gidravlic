@@ -9,47 +9,186 @@
     <a href="{{ route('home') }}">Главная</a>
   </div>
   <div class="arrow">></div>
-  <div class="active">Калькуляторы</div>
+  <div class="active">Клапанная аппаратура</div>
 </div>
 
-<div class="calculators">
-  <div class="page-title">Калькуляторы (расчет гидропривода)</div>
-  <div class="calculators-description">
-    <p>Гидравлические калькуляторы помогут Вам быстро рассчитать параметры гидравлической системы.</p>
-    <p>В данном разделе находятся наиболее распространенные типы расчетов элементов гидропривода.</p>
-    <p>Воспользовавшись калькуляторами Вы можете произвести ориентировочный расчет гидравлической станции, гидроцилиндров и гидромоторов:</p>
+<div class="category">
+  <div class="page-title-wrapper">
+    <div class="page-title">Клапанная аппаратура</div>
+    <div class="count_products">
+      <span class="count_products__text">Найдено:</span>
+      <span class="count_products__value">230</span>
+      <span class="count_products__text">товаров</span>
+    </div>
   </div>
-  <div class="calculators-list">
-    <div class="calculators-list-item snc-list-item main-list-item">
-      <a href="/calculators/raschet-moshchnosti-raskhoda-i-davleniya-gidroprivoda" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ МОЩНОСТИ, РАСХОДА И ДАВЛЕНИЯ ГИДРОПРИВОДА</a>
+
+  <div class="subcategories">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Гидрозамки</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Тормозные клапаны</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Предохранительные клапаны</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Клапаны обратные</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Делители потока</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Регуляторы расхода</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Клапаны управления давлением</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Клапаны редукционные</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Клапаны ограничения перемещения</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Диверторы</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Дроссели</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Краны шаровые</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Гидравлические соединения</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Пропорциональные регуляторы расхода</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/temp-category-image.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Диверторы электромагнитные</div>
+          <a href="#" class="full-link"></a>
+        </div>
+      </div>
     </div>
-    <div class="calculators-list-item snc-list-item main-list-item">
-      <a href="/calculators/raschet-diametra-truboprovoda-skorosti-potoka" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ ДИАМЕТРА ТРУБОПРОВОДА, СКОРОСТИ ПОТОКА</a>
+  </div>
+
+  <div class="category-description">Клапанная аппаратура входит в состав каждой гидросистемы (помимо насоса, гидрораспределителей и исполнительных гидродвигателей). Клапана могут использоваться в системе в количестве от единиц до нескольких десятков.</div>
+
+  <div class="products-filter">
+    <div class="products-filter-title">
+      <div class="products-filter-title__image">
+        <img src="/img/services-gear.png" alt="">
+      </div>
+      <div class="products-filter-title__text">Подобрать товары по параметрам</div>
+      <div class="products-filter-title__plus"></div>
     </div>
-    <div class="calculators-list-item snc-list-item main-list-item">
-      <a href="/calculators/raschet-parametrov-gidrocilindra-po-ego-razmeram" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ ПАРАМЕТРОВ ГИДРОЦИЛИНДРА ПО ЕГО РАЗМЕРАМ</a>
+    <div class="products-filter-content">
+
     </div>
-    <div class="calculators-list-item snc-list-item main-list-item">
-      <a href="/calculators/raschet-razmerov-gidrocilindra-po-tekhnicheskim-parametram" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ РАЗМЕРОВ ГИДРОЦИЛИНДРА ПО ТЕХНИЧЕСКИМ ПАРАМЕТРАМ</a>
+  </div>
+
+  <div class="products">
+    <div class="row">
+      @foreach($products as $product)
+        <div class="col-md-4">
+          @include('regular-product-item')
+        </div>
+      @endforeach
     </div>
-    <div class="calculators-list-item snc-list-item main-list-item">
-      <a href="/calculators/raschet-podachi-nasosa" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ ПОДАЧИ НАСОСА</a>
-    </div>
-    <div class="calculators-list-item snc-list-item main-list-item">
-      <a href="/calculators/raschet-oborotov-gidromotora" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ ОБОРОТОВ ГИДРОМОТОРА</a>
-    </div>
-    <div class="calculators-list-item snc-list-item main-list-item">
-      <a href="/calculators/raschet-krutyashchego-momenta-gidromotora-obem-i-davlenie" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ КРУТЯЩЕГО МОМЕНТА ГИДРОМОТОРА (ОБЪЕМ И ДАВЛЕНИЕ)</a>
-    </div>
-    <div class="calculators-list-item snc-list-item main-list-item">
-      <a href="/calculators/raschet-krutyashchego-momenta-na-valu-moshchnost-i-oboroty" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ КРУТЯЩЕГО МОМЕНТА НА ВАЛУ (МОЩНОСТЬ И ОБОРОТЫ)</a>
-    </div>
-    <div class="calculators-list-item snc-list-item main-list-item">
-      <a href="/calculators/raschet-obema-plastinchatogo-nasosa-po-geometricheskim-razmeram" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ ОБЪЕМА ПЛАСТИНЧАТОГО НАСОСА ПО ГЕОМЕТРИЧЕСКИМ РАЗМЕРАМ</a>
-    </div>
-    <div class="calculators-list-item snc-list-item main-list-item">
-      <a href="/calculators/raschet-obema-shesterennogo-nasosa-po-geometricheskim-razmeram" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ ОБЪЕМА ШЕСТЕРЕННОГО НАСОСА ПО ГЕОМЕТРИЧЕСКИМ РАЗМЕРАМ</a>
-    </div>
+  </div>
+
+  <div class="pagination-links">
+    {{ $products->onEachSide(1)->links() }}
   </div>
 
 </div>

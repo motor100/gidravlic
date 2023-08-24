@@ -169,6 +169,13 @@ class MainController extends Controller
         return view('login');
     }
 
+    public function category(): View
+    {
+        $products = \App\Models\Product::paginate(24);
+        
+        return view('category', compact('products'));
+    }
+
 
 
 

@@ -14,11 +14,13 @@
 
 <div class="calculators">
   <div class="page-title">Калькуляторы (расчет гидропривода)</div>
+
   <div class="calculators-description">
     <p>Гидравлические калькуляторы помогут Вам быстро рассчитать параметры гидравлической системы.</p>
     <p>В данном разделе находятся наиболее распространенные типы расчетов элементов гидропривода.</p>
     <p>Воспользовавшись калькуляторами Вы можете произвести ориентировочный расчет гидравлической станции, гидроцилиндров и гидромоторов:</p>
   </div>
+  
   <div class="calculators-list">
     <div class="calculators-list-item snc-list-item main-list-item">
       <a href="/calculators/raschet-moshchnosti-raskhoda-i-davleniya-gidroprivoda" class="calculators-list-item__link snc-list-item__link main-list-item__link">РАСЧЕТ МОЩНОСТИ, РАСХОДА И ДАВЛЕНИЯ ГИДРОПРИВОДА</a>

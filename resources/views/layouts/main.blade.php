@@ -163,7 +163,7 @@
                   <img src="/img/aside-nav-1.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Гидравлические станции</div>
-                <a href="#" class="full-link"></a>
+                <a href="/category" class="full-link"></a>
                 <div class="vertikal-line"></div>
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>

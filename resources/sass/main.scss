@@ -1559,7 +1559,92 @@ p {
 }
 
 .category {
-  
+  .page-title-wrapper {
+    display: flex;
+    align-items: baseline;
+  }
+  .page-title {
+    margin-right: 60px;
+  }
+  .subcategories {
+    margin: 0 0 35px 0;
+    .subcategories-item {
+      position: relative;
+      display: flex;
+      margin: 0 0 10px 0;      
+      padding: 5px 15px;
+      border: 1px solid $thirdlightgreycolor;
+      border-radius: 5px;
+      align-items: center;
+      transition: border .3s, box-shadow .3s;
+    }
+    .subcategories-item__image {
+      margin: 0 30px 0 0;
+    }
+    .subcategories-item__title {
+      max-height: 39px;
+      font-family: 'roboto-condensed-medium';
+      line-height: 1.2;
+      overflow: hidden;
+      transition: color .3s;
+    }
+    .subcategories-item:hover {
+      border: 1px solid $bluecolor;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .subcategories-item:hover .subcategories-item__title {
+      color: $accentcolor;
+    }
+  }
+  .category-description {
+    margin: 0 0 35px 0;
+  }
+  .products-filter {
+    margin: 0 0 55px 0;
+    .products-filter-title {
+      position: relative;
+      display: flex;
+      margin: 0 0 15px 0;
+      padding: 2px 12px;
+      border-radius: 5px 5px 0px 0px;
+      background-color: $lightbluecolor;
+    }
+    .products-filter-title__image {
+      margin: 0 18px 0 0;
+    }
+    .products-filter-title__text {
+      font-family: 'roboto-condensed-medium';
+      color: #fff;
+    }
+    .products-filter-title__plus {
+      position: absolute;
+      top: 6px;
+      right: 12px;
+      width: 19px;
+      height: 19px;
+    }
+    .products-filter-title__plus::before,
+    .products-filter-title__plus::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 0px;
+      width: 19px;
+      height: 3px;
+      background-color: #fff;
+    }
+    .products-filter-title__plus::after {
+      transform: rotate(90deg);
+    }
+    .products-filter-content {
+      padding: 10px;
+      border-radius: 0px 0px 5px 5px;
+      background-color: $secondlightbluecolor;
+    }
+  }
+
+    
+
 }
 
 // Политика, пользовательское соглашение, гарантия возврата
