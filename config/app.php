@@ -169,6 +169,12 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        /*
+         * Custom Application Service Providers...
+         */
+        App\Providers\ViewServiceProvider::class,
+
     ])->toArray(),
 
     /*

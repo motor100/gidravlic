@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -10,7 +11,11 @@ class MainController extends Controller
 {
     public function home(): View
     {
-        return view('home');
+        $special_offer_products = \App\Models\Product::limit(4)
+                                                        ->inRandomOrder()
+                                                        ->get();
+        
+        return view('home', compact('special_offer_products'));
     }
 
     public function catalog(): View
@@ -55,9 +60,31 @@ class MainController extends Controller
         return view('cart');
     }
 
-    public function favourites(): View
+    public function favourites(Request $request): View
     {
-        return view('favourites');
+        $products = collect();
+
+        if ($request->hasCookie('favourites')) {
+
+            // Получение куки через фасад Cookie метод get
+            $favourites = json_decode(\Illuminate\Support\Facades\Cookie::get('favourites'), true);
+
+            $keys = array_keys($favourites);
+
+            $products = \App\Models\Product::whereIn('id', $keys)->get();
+        }
+        
+        return view('favourites', compact('products'));
+    }
+
+
+    public function clear_favourites(): RedirectResponse
+    {
+        // Удаление из куки favourites через фасад Cookie метод forget
+        \Illuminate\Support\Facades\Cookie::queue(\Illuminate\Support\Facades\Cookie::forget('favourites'));
+
+        // return redirect('/favourites');
+        return back();
     }
 
     public function comparison(): View
@@ -160,10 +187,4 @@ class MainController extends Controller
         return view('garantiya-vozvrata-denezhnyh-sredstv');
     }
 
-
-    public function we_use_cookie(): void
-    {
-        // Записываю в куки через фасад Cookie метод queue
-        \Illuminate\Support\Facades\Cookie::queue('we-use-cookie', 'yes', 525600);
-    }
 }

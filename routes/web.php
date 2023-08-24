@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LkController;
 use App\Http\Controllers\CalculatorController;
+use App\Http\Controllers\AjaxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 Route::get('/poisk', [MainController::class, 'poisk']);
 
 Route::get('/favourites', [MainController::class, 'favourites']);
+
+
+Route::get('/clear-favourites', [MainController::class, 'clear_favourites']);
 
 Route::get('/comparison', [MainController::class, 'comparison']);
 
@@ -85,7 +89,9 @@ Route::get('/polzovatelskoe-soglashenie-s-publichnoj-ofertoj', [MainController::
 
 Route::get('/garantiya-vozvrata-denezhnyh-sredstv', [MainController::class, 'garantiya_vozvrata_denezhnyh_sredstv']);
 
-Route::get('/ajax/we-use-cookie', [MainController::class, 'we_use_cookie']);
+Route::get('/ajax/we-use-cookie', [AjaxController::class, 'we_use_cookie']);
+
+Route::get('/ajax/add-to-favourites', [AjaxController::class, 'add_to_favourites']);
 
 
 // Route::get('/dashboard', function () {

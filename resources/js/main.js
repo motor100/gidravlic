@@ -125,6 +125,64 @@ const mainSlider = new Swiper('.main-slider', {
 });
 
 
+// Add to favourites
+const addToFavouritesBtns = document.querySelectorAll('.add-to-favourites');
+
+function addToFavourites(elem) {
+
+  // Add class to elem
+  elem.classList.add('active');
+
+  /**
+   * Функция обновления счетчиков товара в избранном
+   * В хедере, в закрепленном меню, в мобильном меню
+   * str строка
+   * return false
+   * @param {*} str 
+   * @returns void
+   */
+  function favouritesCounterUpdate(str) {
+
+    // Header favourites counter
+    const headerFavouritesCounter = document.querySelector('#header-favourites-counter');
+    headerFavouritesCounter.innerText = str;
+    headerFavouritesCounter.classList.add('active');
+
+    // Sticky desktop menu favourites counter
+    /*
+    const stickyDesktopMenuFavouritesCounter = document.querySelector('#sticky-desktop-menu-favourites-counter');
+    stickyDesktopMenuFavouritesCounter.innerText = str;
+    stickyDesktopMenuFavouritesCounter.classList.add('active');
+    */
+
+    // Mobile favourites counter
+    /*
+    const mobileFavouritesCounter = document.querySelector('#mobile-favourites-counter');
+    mobileFavouritesCounter.innerText = str;
+    mobileFavouritesCounter.classList.add('active');
+    */
+  }
+
+  fetch('/ajax/add-to-favourites?id=' + elem.dataset.id, {
+    method: 'GET',
+    cache: 'no-cache',
+  })
+  .then((response) => response.text())
+  .then((text) => {
+    favouritesCounterUpdate(text);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+}
+
+addToFavouritesBtns.forEach((item) => {
+  item.onclick = function() {
+    addToFavourites(item);
+  }
+});
+
+
 // Окна
 const modalWindow = document.querySelectorAll('.modal-window');
 const callbackBtns = document.querySelectorAll('.js-callback-btn');
@@ -234,7 +292,7 @@ function ajaxCallback(form) {
     for (let i = 0; i < inputs.length; i++) {
       inputs[i].classList.remove('required');
     }
-    console.log(new FormData(form));
+
     fetch('/api/callback', {
       method: 'POST',
       cache: 'no-cache',
