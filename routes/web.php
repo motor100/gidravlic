@@ -87,6 +87,8 @@ Route::get('/catalog/single-product', [MainController::class, 'single_product'])
 
 Route::get('/category', [MainController::class, 'category']);
 
+Route::get('/lk1', [LkController::class, 'home']);
+
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 
