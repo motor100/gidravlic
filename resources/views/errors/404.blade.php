@@ -3,11 +3,24 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="page404">
-  <div class="row">
-    <div class="col-md-10 mx-auto">
-      <div class="text404">УПС.... Что-то пошло не так или такой страницы не существует</div>
-    </div>
+
+<div class="breadcrumbs">
+  <div class="parent">
+    <a href="{{ route('home') }}">Главная</a>
   </div>
+  <div class="arrow">></div>
+  <div class="active">404</div>
 </div>
-@endsection  
+
+<div class="page404">
+  <div class="page404-image">
+    <img src="/img/404-cloud.svg" alt="">
+  </div>
+  <div class="page404-title">404</div>
+  <div class="page404-subtitle">СТРАНИЦА НЕ НАЙДЕНА</div>
+  <div class="page404-text">страница, на которую вы пытаетесь попасть<br>
+    не существует или была удалена.<br>
+    Перейдите на <a href="/">Главную страницу</a></div>
+</div>
+
+@endsection
