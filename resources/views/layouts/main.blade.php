@@ -46,8 +46,7 @@
                     <path d="M31.9308 34.6287C30.4431 34.6287 29.2573 35.8145 29.2573 37.2806C29.2573 38.7467 30.4431 39.954 31.9308 39.954C33.3969 39.954 34.5827 38.7467 34.5827 37.2806C34.5827 35.8145 33.3969 34.6287 31.9308 34.6287ZM18.6281 34.6287C17.162 34.6287 15.9546 35.8145 15.9546 37.2806C15.9546 38.7467 17.162 39.954 18.6281 39.954C20.0942 39.954 21.28 38.7467 21.28 37.2806C21.28 35.8145 20.0942 34.6287 18.6281 34.6287ZM35.9194 26.6513C35.9194 28.1174 34.7121 29.3033 33.246 29.3033H18.6281C17.162 29.3033 15.9546 28.1174 15.9546 26.6513L13.7339 13.3487H39.2397L35.9194 26.6513ZM13.2596 10.6967L9.93929 0.0459566H1.33674C0.603688 0.0459566 0 0.649645 0 1.38269C0 2.11574 0.603688 2.69787 1.33674 2.69787H7.97731L10.6508 10.6967L13.3027 26.6513C13.3027 29.5835 15.6743 31.9767 18.6281 31.9767H33.246C36.1997 31.9767 38.5714 29.5835 38.5714 26.6513L42.56 10.6967H13.2596Z"/>
                   </svg>
                 </div>
-                <!-- <div id="header-cart-counter" class="badge-counter {{ isset($cart_count) ? 'active' : '' }}">{{ isset($cart_count) ? $cart_count : '' }}</div> -->
-                <div id="header-cart-counter" class="badge-counter active">1</div>
+                <div id="header-cart-counter" class="badge-counter {{ isset($cart_count) ? 'active' : '' }}">{{ isset($cart_count) ? $cart_count : '' }}</div>
                 <a href="/cart" class="full-link"></a>
               </div>
               </div>
@@ -96,8 +95,7 @@
                 </svg>
               </div>
               <div class="header-bottom-item__text">Сравнение</div>
-              <!-- <div id="header-comparison-counter" class="badge-counter {{ isset($comparison_count) ? 'active' : '' }}">{{ isset($comparison_count) ? $comparison_count : '' }}</div> -->
-              <div id="header-comparison-counter" class="badge-counter active">1</div>
+              <div id="header-comparison-counter" class="badge-counter {{ isset($comparison_count) ? 'active' : '' }}">{{ isset($comparison_count) ? $comparison_count : '' }}</div>
               <a href="/comparison" class="full-link"></a>
             </div>
           </div>

@@ -88,6 +88,15 @@ class ViewServiceProvider extends ServiceProvider
                 $view->with('favourites_count', $favourites_count);
             }
 
+            // Count products in comparison
+            $comparison = json_decode(\Illuminate\Support\Facades\Cookie::get('comparison'), true);
+
+            if ($comparison) {
+                $comparison_count = count($comparison);
+                $comparison_count = $comparison_count > 9 ? 9 : $comparison_count;
+                $view->with('comparison_count', $comparison_count);
+            }
+
         });
 
         // Шаблон панели администратора

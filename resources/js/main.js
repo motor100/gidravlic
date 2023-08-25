@@ -6,6 +6,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 // Common
 const body = document.querySelector('body');
 
+
 // Products search dropdown
 const searchForm = document.querySelector('.search-form');
 const searchInput = document.querySelector('.search-input');
@@ -125,6 +126,65 @@ const mainSlider = new Swiper('.main-slider', {
 });
 
 
+// Add to cart
+const addToCartBtns = document.querySelectorAll('.add-to-cart');
+
+function addToCart(elem) {
+
+  // Add class to elem (set active)
+  elem.classList.add('active');
+  elem.innerText = 'В корзине';
+
+  /**
+   * Функция обновления счетчиков товара в избранном
+   * В хедере, в закрепленном меню, в мобильном меню
+   * str строка
+   * return false
+   * @param {*} str 
+   * @returns void
+   */
+  function cartCounterUpdate(str) {
+
+    // Header cart counter
+    const headerCartCounter = document.querySelector('#header-cart-counter');
+    headerCartCounter.innerText = str;
+    headerCartCounter.classList.add('active');
+
+    // Sticky desktop menu cart counter
+    /*
+    const stickyDesktopMenuCartCounter = document.querySelector('#sticky-desktop-menu-cart-counter');
+    stickyDesktopMenuCartCounter.innerText = str;
+    stickyDesktopMenuCartCounter.classList.add('active');
+    */
+
+    // Mobile cart counter
+    /*
+    const mobileCartCounter = document.querySelector('#mobile-cart-counter');
+    mobileCartCounter.innerText = str;
+    mobileCartCounter.classList.add('active');
+    */
+  }
+
+  fetch('/ajax/add-to-cart?id=' + elem.dataset.id, {
+    method: 'GET',
+    cache: 'no-cache',
+  })
+  .then((response) => response.text())
+  .then((text) => {
+    cartCounterUpdate(text);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+}
+
+addToCartBtns.forEach((item) => {
+  item.onclick = function() {
+    addToCart(item);
+  }
+});
+
+
 // Add to favourites
 const addToFavouritesBtns = document.querySelectorAll('.add-to-favourites');
 
@@ -179,6 +239,64 @@ function addToFavourites(elem) {
 addToFavouritesBtns.forEach((item) => {
   item.onclick = function() {
     addToFavourites(item);
+  }
+});
+
+
+// Add to comparison
+const addToComparisonBtns = document.querySelectorAll('.add-to-comparison');
+
+function addToComparison(elem) {
+
+  // Add class to elem
+  elem.classList.add('active');
+
+  /**
+   * Функция обновления счетчиков товара в избранном
+   * В хедере, в закрепленном меню, в мобильном меню
+   * str строка
+   * return false
+   * @param {*} str 
+   * @returns void
+   */
+  function comparisonCounterUpdate(str) {
+
+    // Header comparison counter
+    const headerComparisonCounter = document.querySelector('#header-comparison-counter');
+    headerComparisonCounter.innerText = str;
+    headerComparisonCounter.classList.add('active');
+
+    // Sticky desktop menu comparison counter
+    /*
+    const stickyDesktopMenuComparisonCounter = document.querySelector('#sticky-desktop-menu-comparison-counter');
+    stickyDesktopMenuComparisonCounter.innerText = str;
+    stickyDesktopMenuComparisonCounter.classList.add('active');
+    */
+
+    // Mobile comparison counter
+    /*
+    const mobileComparisonCounter = document.querySelector('#mobile-comparison-counter');
+    mobileComparisonCounter.innerText = str;
+    mobileComparisonCounter.classList.add('active');
+    */
+  }
+
+  fetch('/ajax/add-to-comparison?id=' + elem.dataset.id, {
+    method: 'GET',
+    cache: 'no-cache',
+  })
+  .then((response) => response.text())
+  .then((text) => {
+    comparisonCounterUpdate(text);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+}
+
+addToComparisonBtns.forEach((item) => {
+  item.onclick = function() {
+    addToComparison(item);
   }
 });
 
@@ -245,13 +363,13 @@ checkboxCallbackModal.forEach((item) => {
 
 
 // Input mask
-let elementPhone = document.querySelector('#phone-callback-modal');
+const elementPhone = document.querySelector('#phone-callback-modal');
 
-let maskOptionsPhone = {
+const maskOptionsPhone = {
   mask: '+{7} (000) 000 00 00'
 };
 
-let mask = IMask(elementPhone, maskOptionsPhone);
+const mask = IMask(elementPhone, maskOptionsPhone);
 
 
 // Отправка формы ajax в модальном окне
@@ -364,22 +482,7 @@ if (toTop) {
 */
 
 
-// Add to cart
-const addToCartBtns = document.querySelectorAll('.add-to-cart');
 
-function addToCart(elem) {
-
-  // set active
-  elem.classList.add('active');
-  elem.innerText = 'В корзине';
-
-}
-
-addToCartBtns.forEach((item) => {
-  item.onclick = () => {
-    addToCart(item);
-  }
-});
 
 
 

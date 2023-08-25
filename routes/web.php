@@ -26,14 +26,17 @@ Route::get('/catalog', [MainController::class, 'catalog']);
 
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 
+Route::get('/clear-cart', [MainController::class, 'clear_cart']);
+
 Route::get('/poisk', [MainController::class, 'poisk']);
 
 Route::get('/favourites', [MainController::class, 'favourites']);
 
-
 Route::get('/clear-favourites', [MainController::class, 'clear_favourites']);
 
 Route::get('/comparison', [MainController::class, 'comparison']);
+
+Route::get('/clear-comparison', [MainController::class, 'clear_comparison']);
 
 Route::get('/company', [MainController::class, 'company']);
 
@@ -93,7 +96,11 @@ Route::get('/garantiya-vozvrata-denezhnyh-sredstv', [MainController::class, 'gar
 
 Route::get('/ajax/we-use-cookie', [AjaxController::class, 'we_use_cookie']);
 
+Route::get('/ajax/add-to-cart', [AjaxController::class, 'add_to_cart']);
+
 Route::get('/ajax/add-to-favourites', [AjaxController::class, 'add_to_favourites']);
+
+Route::get('/ajax/add-to-comparison', [AjaxController::class, 'add_to_comparison']);
 
 
 // Route::get('/dashboard', function () {

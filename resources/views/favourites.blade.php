@@ -28,12 +28,12 @@
       </div>
     </div>
   @else
-    <div class="favourites-is-empty">
-      <div class="favourites-is-empty-image">
+    <div class="favourites-is-empty ccf-is-empty">
+      <div class="favourites-is-empty-image ccf-is-empty-image">
         <img src="/img/favourites-is-empty-heart.svg" alt="">
       </div>
-      <div class="favourites-is-empty-text">В списке желаемых покупок нет товаров</div>
-      <button class="primary-btn btn-305 favourites-is-empty-btn" onclick="history.back();">ВЕРНУТЬСЯ НАЗАД</button>
+      <div class="favourites-is-empty-text ccf-is-empty-text">В списке желаемых покупок нет товаров</div>
+      <button class="primary-btn btn-305 ccf-is-empty-btn" onclick="history.back();">ВЕРНУТЬСЯ НАЗАД</button>
     </div>
   @endif
 

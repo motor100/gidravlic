@@ -55,41 +55,49 @@ class MainController extends Controller
         return view('poisk', compact('products', 'search_query'));
     }
 
-    public function cart(): View
+    public function cart(Request $request): View
     {
-        return view('cart');
+        $products = (new \App\Services\Cart($request))->get();
+        
+        return view('cart', compact('products'));
+    }
+
+    public function clear_cart(): RedirectResponse
+    {
+        // Удаление из куки cart через фасад Cookie метод forget
+        \Illuminate\Support\Facades\Cookie::queue(\Illuminate\Support\Facades\Cookie::forget('cart'));
+
+        return back();
     }
 
     public function favourites(Request $request): View
     {
-        $products = collect();
-
-        if ($request->hasCookie('favourites')) {
-
-            // Получение куки через фасад Cookie метод get
-            $favourites = json_decode(\Illuminate\Support\Facades\Cookie::get('favourites'), true);
-
-            $keys = array_keys($favourites);
-
-            $products = \App\Models\Product::whereIn('id', $keys)->get();
-        }
+        $products = (new \App\Services\Favourites($request))->get();
         
         return view('favourites', compact('products'));
     }
-
 
     public function clear_favourites(): RedirectResponse
     {
         // Удаление из куки favourites через фасад Cookie метод forget
         \Illuminate\Support\Facades\Cookie::queue(\Illuminate\Support\Facades\Cookie::forget('favourites'));
 
-        // return redirect('/favourites');
         return back();
     }
 
-    public function comparison(): View
+    public function comparison(Request $request): View
     {
-        return view('comparison');
+        $products = (new \App\Services\Comparison($request))->get();
+        
+        return view('comparison', compact('products'));
+    }
+
+    public function clear_comparison(): RedirectResponse
+    {
+        // Удаление из куки comparison через фасад Cookie метод forget
+        \Illuminate\Support\Facades\Cookie::queue(\Illuminate\Support\Facades\Cookie::forget('comparison'));
+
+        return back();
     }
 
     public function company(): View
