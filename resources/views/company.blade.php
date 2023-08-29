@@ -145,7 +145,7 @@
       </div>
       <div class="form-group mb30">
         <label for="testimonial-text" class="label">Сообщение</label>
-        <textarea name="text" id="testimonial-text" class="input-field textarea" required minlength="3" maxlength="100"></textarea>
+        <textarea name="text" id="testimonial-text" class="input-field textarea" required minlength="3" maxlength="500"></textarea>
       </div>
       <div class="checkbox-wrapper">
         <input type="checkbox" name="checkbox-agree" class="custom-checkbox js-checkbox-callback-modal" id="testimonial-checkbox-agree" checked required>

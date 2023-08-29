@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\CdekController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\MainSliderController;
 use App\Http\Controllers\Admin\PromoController;
 
@@ -37,7 +37,7 @@ Route::prefix('admin')->group(static function () {
     });
 
     // Authenticated routes
-    Route::middleware(['auth:admin'])->group(static function () {
+    // Route::middleware(['auth:admin'])->group(static function () {
         // Confirm password routes
         Route::get('confirm-password', [\App\Http\Controllers\Admin\Auth\ConfirmablePasswordController::class, 'show'])->name('admin.password.confirm');
         Route::post('confirm-password', [\App\Http\Controllers\Admin\Auth\ConfirmablePasswordController::class, 'store']);
@@ -58,6 +58,7 @@ Route::prefix('admin')->group(static function () {
 
         // Route::get('/dashboard', [AdminController::class, 'home'])->name('dashboard');
 
+        /*
         Route::get('/main-slider', [MainSliderController::class, 'index']);
 
         Route::get('/main-slider/create', [MainSliderController::class, 'create'])->name('main-slider-create');
@@ -86,8 +87,6 @@ Route::prefix('admin')->group(static function () {
 
         Route::get('/promos/{id}/destroy', [PromoController::class, 'destroy'])->name('promos-destroy');
 
-        Route::get('/testimonials', [AdminController::class, 'testimonials'])->name('admin.testimonials');
-
         Route::get('/orders', [AdminController::class, 'orders'])->name('admin.orders');
 
         Route::get('/orders/{id}', [AdminController::class, 'orders_show'])->name('admin.orders-show');
@@ -101,27 +100,17 @@ Route::prefix('admin')->group(static function () {
         Route::get('order/{id}/sdek-create-order', [CdekController::class, 'cdek_create_order'])->name('admin.cdek-create-order');
 
         Route::get('order/{id}/sdek-download-waybill', [CdekController::class, 'cdek_download_waybill'])->name('admin.cdek-download-waybill');
+        */
 
-        Route::post('/testimonials-update', [AdminController::class, 'testimonials_update']);
+        Route::get('/testimonials', [TestimonialController::class, 'index'])->name('admin.testimonials');
 
-        Route::post('/testimonials-destroy', [AdminController::class, 'testimonials_destroy']);
+        Route::post('/testimonials/{id}/update', [TestimonialController::class, 'update'])->name('admin.tesimonials-update');
 
-        Route::get('/polzovatelskoe-soglashenie-s-publichnoj-ofertoj', [AdminController::class, 'polzovatelskoe_soglashenie_s_publichnoj_ofertoj']);
+        Route::post('/testimonials/{id}/destroy', [TestimonialController::class, 'destroy'])->name('admin.tesimonials-destroy');
 
-        Route::post('/polzovatelskoe-soglashenie-s-publichnoj-ofertoj/update', [AdminController::class, 'polzovatelskoe_soglashenie_s_publichnoj_ofertoj_update']);
-
-        Route::get('/politika-konfidencialnosti', [AdminController::class, 'politika_konfidencialnosti']);
-
-        Route::post('/politika-konfidencialnosti/update', [AdminController::class, 'politika_konfidencialnosti_update']);
-
-        Route::get('/garantiya-vozvrata-denezhnyh-sredstv', [AdminController::class, 'garantiya_vozvrata_denezhnyh_sredstv']);
-
-        Route::post('/garantiya-vozvrata-denezhnyh-sredstv/update', [AdminController::class, 'garantiya_vozvrata_denezhnyh_sredstv_update']);
 
         Route::get('/page-404', [AdminController::class, 'page_404']);
 
-        // Route::fallback([AdminController::class, 'page_404']);
-
-    });
+    // });
 });
 

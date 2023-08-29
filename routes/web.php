@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LkController;
@@ -92,7 +92,6 @@ Route::get('/lk1', [LkController::class, 'home']);
 Route::get('/profile1', [LkController::class, 'profile']);
 
 Route::get('/dashboard1', [App\Http\Controllers\Admin\AdminController::class, 'home']);
-
 
 
 

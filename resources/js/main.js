@@ -460,7 +460,7 @@ function ajaxAddTestimonial(form) {
   }
 
   const inputText = form.querySelector('#testimonial-text');
-  if (inputText.value.length < 3 || inputText.value.length > 1000 ) {
+  if (inputText.value.length < 3 || inputText.value.length > 500 ) {
     inputText.classList.add('required');
     arr.push(false);
   }
