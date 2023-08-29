@@ -44,46 +44,56 @@
     <p>Затем нажмите «Q», чтобы вычислить.</p>
   </div>
   <div class="calc">
-    <div class="calc-rows">
-      <div class="calc-row">
-        <div class="calc-row-label">Мощность (N), кВт</div>
-        <input type="text" class="calc-row-input">
-        <button class="calc-row-btn">Вычислить N</button>
+    <form name="output-power">
+      <div class="calc-rows">
+        <div class="calc-row">
+          <div class="calc-row-label">Мощность (N), кВт</div>
+          <input type="text" name="N" class="calc-row-input">
+          <button type="button" name="get_N" class="calc-row-btn">Вычислить N</button>
+        </div>
+        <div class="calc-row">
+          <div class="calc-row-label">Расход (Q), л/мин</div>
+          <input type="text" name="Q" class="calc-row-input">
+          <button type="button" name="get_Q" class="calc-row-btn">Вычислить Q</button>
+        </div>
+        <div class="calc-row">
+          <div class="calc-row-label">Давление (P), бар</div>
+          <input type="text" name="P" class="calc-row-input">
+          <button type="button" name="get_P" class="calc-row-btn">Вычислить P</button>
+        </div>
+        <div class="calc-row">
+          <div class="calc-row-label">КПД насоса</div>
+          <input type="text" name="eta" class="calc-row-input">
+        </div>
+        <div class="calc-row">
+          <div class="calc-row-label">Результат</div>
+          <input type="text" name="result" class="calc-row-input">
+        </div>
       </div>
-      <div class="calc-row">
-        <div class="calc-row-label">Расход (Q), л/мин</div>
-        <input type="text" class="calc-row-input">
-        <button class="calc-row-btn">Вычислить Q</button>
-      </div>
-      <div class="calc-row">
-        <div class="calc-row-label">Давление (P), бар</div>
-        <input type="text" class="calc-row-input">
-        <button class="calc-row-btn">Вычислить P</button>
-      </div>
-      <div class="calc-row">
-        <div class="calc-row-label">КПД насоса</div>
-        <input type="text" class="calc-row-input">
-      </div>
-      <div class="calc-row">
-        <div class="calc-row-label">Результат</div>
-        <input type="text" class="calc-row-input">
-      </div>
-    </div>
-    <div class="calc-rezult">КПД насоса 0.85-0.99</div>
+    </form>
+
+    <div class="calc-result">КПД насоса 0.85-0.99</div>
   </div>
   <div class="convert">
-    <div class="convert-title">Пересчет единиц мощности</div>
-    <div class="convert-item">
-      <input type="text" class="convert-input">
-      <div class="convert-label">кВт</div>
-      <button class="convert-btn">в ЛС</button>
-    </div>
-    <div class="convert-item">
-      <input type="text" class="convert-input">
-      <div class="convert-label">ЛС</div>
-      <button class="convert-btn">в кВт</button>
-    </div>
+    <form name="output-power-convert">
+      <div class="convert-title">Пересчет единиц мощности</div>
+      <div class="convert-item">
+        <input type="text" name="kW" class="convert-input">
+        <div class="convert-label">кВт</div>
+        <button type="button" name="to_cv" class="convert-btn">в ЛС</button>
+      </div>
+      <div class="convert-item">
+        <input type="text" name="CV" class="convert-input">
+        <div class="convert-label">ЛС</div>
+        <button type="button" name="to_kw" class="convert-btn">в кВт</button>
+      </div>
+    </form>
   </div>
 
 </div>
+
+@endsection
+
+@section('script')
+  <script src="{{ asset('/js/calculators.js') }}"></script>
 @endsection
