@@ -524,6 +524,19 @@ if (weUseCookie) {
 }
 
 
+// Фильтр товаров в категории
+const productsFilter = document.querySelector('.products-filter');
+
+if (productsFilter) {
+  const productsFilterTitle = document.querySelector('.products-filter-title');
+
+  productsFilterTitle.onclick = () => {
+    productsFilter.classList.toggle('active');
+  }
+}
+
+
+
 // To top
 const toTop = document.getElementById("to-top");
 

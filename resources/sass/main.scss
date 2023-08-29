@@ -1641,6 +1641,7 @@ p {
       padding: 2px 12px;
       border-radius: 5px 5px 0px 0px;
       background-color: $lightbluecolor;
+      cursor: pointer;
     }
     .products-filter-title__image {
       margin: 0 18px 0 0;
@@ -1668,16 +1669,24 @@ p {
     }
     .products-filter-title__plus::after {
       transform: rotate(90deg);
+      transition: transform .2s;
     }
     .products-filter-content {
-      padding: 10px;
+      height: 0;
+      padding: 0 10px;
       border-radius: 0px 0px 5px 5px;
       background-color: $secondlightbluecolor;
+      overflow: hidden;
+      transition: height .2s;
+    }
+    &.active .products-filter-content {
+      height: 300px;
+      padding: 10px;
+    }
+    &.active .products-filter-title__plus::after {
+      transform: rotate(0deg);
     }
   }
-
-    
-
 }
 
 // Политика, пользовательское соглашение, гарантия возврата
