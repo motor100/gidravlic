@@ -89,6 +89,8 @@ Route::get('/category', [MainController::class, 'category']);
 
 Route::get('/lk1', [LkController::class, 'home']);
 
+Route::get('/profile1', [LkController::class, 'profile']);
+
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 

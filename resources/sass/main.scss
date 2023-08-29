@@ -2061,7 +2061,6 @@ p {
   .order-item__number {
     color: #000;
   }
-  
 }
 
 .lk-nav {
@@ -2102,6 +2101,13 @@ p {
     text-transform: uppercase;
   }
     
+}
+
+.lk-profile {
+  .lk-profile-text {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+  }
 }
 
 
