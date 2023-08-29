@@ -105,7 +105,7 @@ class MainController extends Controller
         $testimonials = \App\Models\Testimonial::whereNotNull('publicated_at')
                                                 ->orderBy('id', 'desc')
                                                 ->paginate(5);
-        
+
         return view('company', compact('testimonials'));
     }
 

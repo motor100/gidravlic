@@ -91,6 +91,10 @@ Route::get('/lk1', [LkController::class, 'home']);
 
 Route::get('/profile1', [LkController::class, 'profile']);
 
+Route::get('/dashboard1', [App\Http\Controllers\Admin\AdminController::class, 'home']);
+
+
+
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 

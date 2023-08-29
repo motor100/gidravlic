@@ -434,6 +434,73 @@ callbackSubmitBtn.onclick = () => {
 }
 
 
+// Добавление отзывов
+const addTestimonialForm = document.querySelector("#add-testimonial-form");
+const addTestimonialBtn = document.querySelector('#add-testimonial-btn');
+
+addTestimonialBtn.onclick = function() {
+  ajaxAddTestimonial(addTestimonialForm);
+}
+
+function ajaxAddTestimonial(form) {
+
+  const inputs = form.querySelectorAll('.input-field');
+  let arr = [];
+
+  const inputName = form.querySelector('#testimonial-name');
+  if (inputName.value.length < 3 || inputName.value.length > 50 ) {
+    inputName.classList.add('required');
+    arr.push(false);
+  }
+
+  const inputEmail = form.querySelector('#testimonial-email');
+  if (inputEmail.value.length < 3 || inputEmail.value.length > 50 ) {
+    inputEmail.classList.add('required');
+    arr.push(false);
+  }
+
+  const inputText = form.querySelector('#testimonial-text');
+  if (inputText.value.length < 3 || inputText.value.length > 1000 ) {
+    inputText.classList.add('required');
+    arr.push(false);
+  }
+
+  const inputCheckboxAgree = form.querySelector('#testimonial-checkbox-agree');
+  if (!inputCheckboxAgree.checked) {
+    inputCheckboxAgree.classList.add('required');
+    arr.push(false);
+  }
+
+  const inputCheckboxRead = form.querySelector('#testimonial-checkbox-read');
+  if (!inputCheckboxRead.checked) {
+    inputCheckboxRead.classList.add('required');
+    arr.push(false);
+  }
+
+  if (arr.length == 0) {
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].classList.remove('required');
+    }
+
+    fetch('/api/add-testimonial', {
+      method: 'POST',
+      cache: 'no-cache',
+      body: new FormData(form)
+    })
+    .then((response) => response.json())
+    .then((json) => {
+      // Если в объекте есть ключ message, то ошибка
+      typeof json.message !== "undefined" ? alert("Ошибка") : alert("Спасибо за отзыв.");
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+
+    form.reset();
+  }
+}
+
+
 // Скрывание кнопки Мы используем куки we use cookie
 const weUseCookie = document.querySelector('.we-use-cookie');
 const weUseCookieClose = document.querySelector('.we-use-cookie-close');

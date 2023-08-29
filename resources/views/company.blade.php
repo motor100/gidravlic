@@ -103,16 +103,26 @@
   <div class="company-item page-item">
     <div class="company-title page-item__title">ОТЗЫВЫ О КОМПАНИИ</div>
     <div class="testimonials-content">
-      <a href="#add-testimonial" class="primary-btn add-testimonial-btn btn-415">ОСТАВИТЬ ОТЗЫВ</a>
-      <div class="testimonials">
-        @foreach($testimonials as $testimonial)
-          <div class="testimonials-item">
-            <div class="testimonials-item__name">{{ $testimonial->name }}</div>
-            <div class="testimonials-item__date">{{ $testimonial->created_at->format("d.m.Y") }}</div>
-            <div class="testimonials-item__text">{{ $testimonial->text }}</div>
+
+      @if($testimonials->count() > 0)
+        <a href="#add-testimonial" class="primary-btn add-testimonial-btn btn-415">ОСТАВИТЬ ОТЗЫВ</a>
+        <div class="testimonials">
+          @foreach($testimonials as $testimonial)
+            <div class="testimonials-item">
+              <div class="testimonials-item__name">{{ $testimonial->name }}</div>
+              <div class="testimonials-item__date">{{ $testimonial->created_at->format("d.m.Y") }}</div>
+              <div class="testimonials-item__text">{{ $testimonial->text }}</div>
+            </div>
+          @endforeach
+        </div>
+      @else
+        <div class="testimoinals-is-empty">
+          <div class="testimoinals-is-empty__image">
+            <img src="/img/testimonials-is-empty.svg" alt="">
           </div>
-        @endforeach
-      </div>
+          <div class="testimoinals-is-empty__text">Здесь нет ещё отзывов о нашей компании.<br>Ваш отзыв может стать первым!</div>
+        </div>
+      @endif
 
     </div>
   </div>
@@ -124,34 +134,34 @@
   <div id="add-testimonial" class="add-testimonial">
     <div class="add-testimonial-title">НАПИСАТЬ ОТЗЫВ</div>
   
-    <form class="form add-testimonial-form" method="post">
+    <form id="add-testimonial-form" class="form add-testimonial-form" method="post">
       <div class="form-group">
-        <label for="name-callback-modal" class="label">Имя <span class="accentcolor">*</span></label>
-        <input type="text" name="name" id="name-callback-modal" class="input-field js-name-callback-modal" required minlength="3" maxlength="20">
+        <label for="testimonial-name" class="label">Имя <span class="accentcolor">*</span></label>
+        <input type="text" name="name" id="testimonial-name" class="input-field" required minlength="3" maxlength="50">
       </div>
       <div class="form-group">
-        <label for="email-callback-modal" class="label">E-mail <span class="accentcolor">*</span></label>
-        <input type="email" name="email" id="email-callback-modal" class="input-field js-email-callback-modal" required minlength="3" maxlength="50">
+        <label for="testimonial-email" class="label">E-mail <span class="accentcolor">*</span></label>
+        <input type="email" name="email" id="testimonial-email" class="input-field" required minlength="3" maxlength="50">
       </div>
       <div class="form-group mb30">
-        <label for="message-callback-modal" class="label">Сообщение</label>
-        <textarea name="message" id="message-callback-modal" class="input-field textarea" minlength="3" maxlength="100"></textarea>
+        <label for="testimonial-text" class="label">Сообщение</label>
+        <textarea name="text" id="testimonial-text" class="input-field textarea" required minlength="3" maxlength="100"></textarea>
       </div>
       <div class="checkbox-wrapper">
-        <input type="checkbox" name="checkbox-agree" class="custom-checkbox js-checkbox-callback-modal" id="checkbox-agree-callback-modal" checked required>
-        <label for="checkbox-agree-callback-modal" class="custom-checkbox-label"></label>
+        <input type="checkbox" name="checkbox-agree" class="custom-checkbox js-checkbox-callback-modal" id="testimonial-checkbox-agree" checked required>
+        <label for="testimonial-checkbox-agree" class="custom-checkbox-label"></label>
         <span class="checkbox-text">Согласен на обработку персональных данных</span>
       </div>
       <div class="checkbox-wrapper mb30">
-        <input type="checkbox" name="checkbox-read" class="custom-checkbox js-checkbox-callback-modal" id="checkbox-read-callback-modal" checked required>
-        <label for="checkbox-read-callback-modal" class="custom-checkbox-label"></label>
+        <input type="checkbox" name="checkbox-read" class="custom-checkbox js-checkbox-callback-modal" id="testimonial-checkbox-read" checked required>
+        <label for="testimonial-checkbox-read" class="custom-checkbox-label"></label>
         <span class="checkbox-text">Ознакомлен с <a href="/politika-konfidencialnosti" class="privacy-policy-link" target="_blank">политикой конфиденциальности</a></span>
       </div>
 
       @csrf
       <div class="g-recaptcha mb30" data-sitekey="{{ config('google.client_key') }}"></div>
 
-      <button type="button" id="callback-submit-btn" class="primary-btn add-testimonial-submit-btn btn-415">Оставить отзыв</button>
+      <button type="button" id="add-testimonial-btn" class="primary-btn add-testimonial-submit-btn btn-415">Оставить отзыв</button>
 
     </form>
 

@@ -22,4 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/products-search', [ApiController::class, 'products_search']);
 
+Route::post('/add-testimonial', [ApiController::class, 'add_testimonial']);
+
 Route::post('/callback', MailerController::class);
