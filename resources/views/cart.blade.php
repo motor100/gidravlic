@@ -57,7 +57,7 @@
   @else
     <div class="cart-is-empty ccf-is-empty">
       <div class="cart-is-empty-image ccf-is-empty-image">
-        <img src="/img/cart-is-empty-running-man.svg" alt="">
+        <img src="/img/cart-is-empty-cart.svg" alt="">
       </div>
       <div class="cart-is-empty-text ccf-is-empty-text">В корзине пока нет товаров</div>
       <button class="primary-btn btn-305 ccf-is-empty-btn" onclick="history.back();">ВЕРНУТЬСЯ НАЗАД</button>

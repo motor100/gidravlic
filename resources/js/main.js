@@ -438,8 +438,10 @@ callbackSubmitBtn.onclick = () => {
 const addTestimonialForm = document.querySelector("#add-testimonial-form");
 const addTestimonialBtn = document.querySelector('#add-testimonial-btn');
 
-addTestimonialBtn.onclick = function() {
-  ajaxAddTestimonial(addTestimonialForm);
+if (addTestimonialBtn) {
+  addTestimonialBtn.onclick = function() {
+    ajaxAddTestimonial(addTestimonialForm);
+  }
 }
 
 function ajaxAddTestimonial(form) {

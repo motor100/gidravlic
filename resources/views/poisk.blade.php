@@ -27,6 +27,14 @@
     </div>
   @else
     <div class="poisk-title page-title">По запросу «{{ $search_query }}» ничего не найдено</div>
+    <div class="search-is-empty ccf-is-empty">
+      <div class="search-is-empty-image ccf-is-empty-image">
+        <img src="/img/search-is-empty-lens.svg" alt="">
+      </div>
+      <div class="search-is-empty-text ccf-is-empty-text">Товаров не найдено</div>
+      <button class="primary-btn btn-305 ccf-is-empty-btn" onclick="history.back();">ВЕРНУТЬСЯ НАЗАД</button>
+    </div>
+    
   @endif
 
   </div>
