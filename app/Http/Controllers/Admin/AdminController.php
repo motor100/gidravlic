@@ -72,6 +72,7 @@ class AdminController extends Controller
         return Redirect::to('/');
     }
 
+    /*
     public function orders()
     {
         $orders = \App\Models\Order::orderBy('id', 'desc')
@@ -162,4 +163,5 @@ class AdminController extends Controller
     {
         return view('dashboard.404');
     }
+    */
 }
