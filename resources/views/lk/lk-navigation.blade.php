@@ -1,9 +1,9 @@
 <div class="lk-nav">
   <div class="lk-nav-item">
-    <a href="#" class="lk-nav-item__link">ЗАКАЗЫ</a>
+    <a href="{{ route('lk.index') }}" class="lk-nav-item__link">ЗАКАЗЫ</a>
   </div>
   <div class="lk-nav-item">
-    <a href="#" class="lk-nav-item__link">ПРОФИЛЬ</a>
+    <a href="{{ route('profile.edit') }}" class="lk-nav-item__link">ПРОФИЛЬ</a>
   </div>
   <form action="{{ route('logout') }}" class="lk-nav-item logout-form" method="post">
     @csrf

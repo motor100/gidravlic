@@ -68,7 +68,7 @@
             </div>
           </div>
           <div class="nav-item">
-            <a href="{{-- route('admin.index') --}}" class="header-item display-block">Главная</a>
+            <a href="{{ route('admin.index') }}" class="header-item display-block">Главная</a>
           </div>
         </div>
 
@@ -76,7 +76,7 @@
           
           <div class="nav-item">
             
-            <a href="{{-- route('admin.testimonials') --}}" class="header-item">
+            <a href="{{ route('admin.testimonials') }}" class="header-item">
               <i class="far fa-comments"></i>
               @if(isset($testimonials_count))
                 @if($testimonials_count > 0)
@@ -88,7 +88,7 @@
           </div>
           
           <div class="nav-item">
-            <a href="{{-- route('admin.orders') --}}" class="header-item display-block pos-relative">
+            <a href="{{ route('admin.orders') }}" class="header-item display-block pos-relative">
               <i class="far fa-bell"></i>
 
               @if(isset($orders_count))
@@ -104,7 +104,7 @@
               <div class="user-image">
                 <i class="far fa-user"></i>
               </div>
-              <div class="user-name">{{-- Auth::user()->name --}}</div>
+              <div class="user-name">{{ Auth::guard('admin')->user()-> name }}</div>
             </div>
           </div>
         </div>
@@ -119,10 +119,10 @@
 
         <div class="user-menu">
           <div class="menu-item">
-            <a href="{{-- route('admin.profile') --}}" class="item-link">Профиль</a>
+            <a href="{{ route('admin.profile') }}" class="item-link">Профиль</a>
           </div>
           <div class="menu-item">
-            <form action="{{-- route('admin.logout') --}}" class="form" method="POST">
+            <form action="{{ route('admin.logout') }}" class="form" method="POST">
               @csrf
               <button class="logout-btn">Выйти</button>
             </form>

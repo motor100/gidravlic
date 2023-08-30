@@ -8,6 +8,11 @@ use Illuminate\View\View;
 
 class CalculatorController extends Controller
 {
+    public function calculators(): View
+    {
+        return view('calculators');
+    }
+    
     public function raschet_moshchnosti_raskhoda_i_davleniya_gidroprivoda(): View
     {
         return view('raschet-moshchnosti-raskhoda-i-davleniya-gidroprivoda');

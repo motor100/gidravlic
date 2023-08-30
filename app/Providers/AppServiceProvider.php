@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        Paginator::defaultView('pagination.custom');
+        //
     }
 
     /**
@@ -21,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // View Composer in ViewServiceProvider class
+        
+        Paginator::defaultView('pagination.custom');
+        
         Schema::defaultStringLength(191);
     }
     

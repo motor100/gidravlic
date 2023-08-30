@@ -27,7 +27,7 @@
       <div class="row">
         <div class="col-md-8">
           <div class="lk-profile-text">Обновить данные</div>
-          <form id="send-verification" class="form" action="" method="post">
+          <form id="send-verification" class="form" action="{{ route('verification.send') }}" method="post">
               @csrf
           </form>
           <form class="form" action="" method="post">
@@ -36,12 +36,12 @@
 
             <div class="form-group">
               <label for="name" class="label">Имя</label>
-              <input type="text" name="name" id="name" class="input-field" value="" required autofocus>
+              <input type="text" name="name" id="name" class="input-field" required autofocus value="{{ $user->name }}">
             </div>
 
             <div class="form-group">
               <label for="email" class="label">Емайл</label>
-              <input type="email" name="email" id="email" class="input-field" value="" required>
+              <input type="email" name="email" id="email" class="input-field" required value="{{ $user->email }}">
             </div>
 
             <button type="submit" class="primary-btn btn-195 profile-update-btn">Обновить</button>
@@ -51,11 +51,19 @@
     </div>
 
     <div class="edit-item">
+
+      @if($errors->updatePassword)
+        <div class="alert alert-danger">
+          <div>{{ $errors->updatePassword->first('current_password') }}</div>
+          <div>{{ $errors->updatePassword->first('password') }}</div>
+        </div>
+      @endif
+
       <div class="row">
         <div class="col-md-8">
           <div class="lk-profile-text">Обновить пароль</div>
           
-          <form class="form" action="" method="post">
+          <form class="form" action="{{ route('password.update') }}" method="post">
             @csrf
             @method('put')
 
@@ -81,10 +89,17 @@
     </div>
 
     <div class="edit-item">
+
+      @if($errors->userDeletion)
+        <div class="alert alert-danger">
+          <div>{{ $errors->userDeletion->first('password') }}</div>
+        </div>
+      @endif
+
       <div class="row">
         <div class="col-md-8">
           <div class="lk-profile-text">Удалить профиль</div>
-          <form class="form" action="" method="post">
+          <form class="form" action="{{ route('profile.destroy') }}" method="post">
               @csrf
               @method('delete')
 

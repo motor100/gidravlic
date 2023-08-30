@@ -15,14 +15,24 @@
 <div class="register">
   <div class="page-title">Регистрация</div>
 
-  <form action="" class="form register-form">
+  @if($errors->any())
+    <div class="alert alert-danger cart-errors">
+      <ul>
+        @foreach($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+
+  <form class="form register-form" action="{{ route('register') }}" method="POST">
     <div class="form-group">
       <label for="name-register" class="label">Имя <span class="accentcolor">*</span></label>
-      <input type="text" name="name" id="name-register" class="input-field" required minlength="3" maxlength="20">
+      <input type="text" name="name" id="name-register" class="input-field" required autofocus minlength="3" maxlength="20" value="{{ old('name') }}">
     </div>
     <div class="form-group">
       <label for="email-register" class="label">E-mail <span class="accentcolor">*</span></label>
-      <input type="email" name="email" id="email-register" class="input-field" required minlength="3" maxlength="50">
+      <input type="email" name="email" id="email-register" class="input-field" required minlength="3" maxlength="50" value="{{ old('email') }}">
     </div>
     <div class="form-group">
       <label for="password-register" class="label">Пароль</label>

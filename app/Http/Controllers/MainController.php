@@ -129,11 +129,6 @@ class MainController extends Controller
         return view('warranty');
     }
 
-    public function calculators(): View
-    {
-        return view('calculators');
-    }
-
     public function contacts(): View
     {
         return view('contacts');
@@ -166,16 +161,6 @@ class MainController extends Controller
     }
 
 
-
-    public function register1(): View
-    {
-        return view('register');
-    }
-
-    public function login1(): View
-    {
-        return view('login');
-    }
 
     public function category(): View
     {

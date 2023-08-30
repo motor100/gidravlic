@@ -4,8 +4,9 @@ use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\TestimonialController;
-use App\Http\Controllers\Admin\MainSliderController;
-use App\Http\Controllers\Admin\PromoController;
+use App\Http\Controllers\Admin\ProfileController;
+// use App\Http\Controllers\Admin\MainSliderController;
+// use App\Http\Controllers\Admin\PromoController;
 
 
 /*
@@ -37,7 +38,7 @@ Route::prefix('admin')->group(static function () {
     });
 
     // Authenticated routes
-    // Route::middleware(['auth:admin'])->group(static function () {
+    Route::middleware(['auth:admin'])->group(static function () {
         // Confirm password routes
         Route::get('confirm-password', [\App\Http\Controllers\Admin\Auth\ConfirmablePasswordController::class, 'show'])->name('admin.password.confirm');
         Route::post('confirm-password', [\App\Http\Controllers\Admin\Auth\ConfirmablePasswordController::class, 'store']);
@@ -50,11 +51,11 @@ Route::prefix('admin')->group(static function () {
         // Админ панель
         Route::get('/', [AdminController::class, 'home'])->name('admin.index');
 
-        Route::get('/profile', [AdminController::class, 'profile'])
+        Route::get('/profile', [ProfileController::class, 'edit'])
                     ->middleware('password.confirm.admin')
                     ->name('admin.profile');
-        Route::patch('/profile', [AdminController::class, 'update'])->name('admin.profile.update');
-        Route::delete('/profile', [AdminController::class, 'destroy'])->name('admin.profile.destroy');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');
 
         // Route::get('/dashboard', [AdminController::class, 'home'])->name('dashboard');
 
@@ -86,9 +87,11 @@ Route::prefix('admin')->group(static function () {
         Route::post('/promos/{id}/update', [PromoController::class, 'update'])->name('promos-update');
 
         Route::get('/promos/{id}/destroy', [PromoController::class, 'destroy'])->name('promos-destroy');
+        */
 
         Route::get('/orders', [AdminController::class, 'orders'])->name('admin.orders');
 
+        /*
         Route::get('/orders/{id}', [AdminController::class, 'orders_show'])->name('admin.orders-show');
 
         Route::post('order/{id}/update', [AdminController::class, 'order_update'])->name('admin.order-update');
@@ -111,6 +114,6 @@ Route::prefix('admin')->group(static function () {
 
         Route::get('/page-404', [AdminController::class, 'page_404']);
 
-    // });
+    });
 });
 

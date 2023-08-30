@@ -12,6 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // truncate table
+        \App\Models\User::truncate();
+        \App\Models\Admin::truncate();
+        
         \App\Models\User::factory(3)->create();
         \App\Models\Admin::factory(1)->create();
 

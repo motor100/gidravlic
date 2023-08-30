@@ -15,10 +15,10 @@
 <div class="login">
   <div class="page-title">Войти в личный кабинет</div>
 
-  <form action="" class="form">
+  <form class="form" action="{{ route('login') }}" method="POST">
     <div class="form-group">
-      <label for="email-register" class="label">E-mail <span class="accentcolor">*</span></label>
-      <input type="email" name="email" id="email-register" class="input-field" required minlength="3" maxlength="50">
+      <label for="email-register" class="label">Емайл <span class="accentcolor">*</span></label>
+      <input type="email" name="email" id="email-register" class="input-field" required autofocus minlength="3" maxlength="50" value="{{ old('email') }}">
     </div>
     <div class="form-group mb30">
       <label for="password-register" class="label">Пароль</label>
@@ -31,19 +31,16 @@
       <span class="checkbox-text">Запомнить меня</span>
     </div>
 
-    <button type="button" class="primary-btn login-btn btn-195">Войти</button>
+    @csrf
+    <button type="submit" class="primary-btn login-btn btn-195">Войти</button>
 
   </form>
 
   <div class="create-account">
     <div class="create-account__title">Нет личного кабинета?</div>
-    <a href="#" class="primary-btn login-btn btn-195">РЕГИСТРАЦИЯ</a>
+    <a href="{{ route('register') }}" class="primary-btn login-btn btn-195">РЕГИСТРАЦИЯ</a>
   </div>
 
 </div>
 
-@endsection
-
-@section('script')
-  <script src="https://www.google.com/recaptcha/api.js"></script>
 @endsection

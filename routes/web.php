@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LkController;
@@ -48,7 +48,7 @@ Route::get('/delivery', [MainController::class, 'delivery']);
 
 Route::get('/warranty', [MainController::class, 'warranty']);
 
-Route::get('/calculators', [MainController::class, 'calculators']);
+Route::get('/calculators', [CalculatorController::class, 'calculators']);
 
 Route::get('/calculators/raschet-moshchnosti-raskhoda-i-davleniya-gidroprivoda', [CalculatorController::class, 'raschet_moshchnosti_raskhoda_i_davleniya_gidroprivoda']);
 
@@ -78,20 +78,13 @@ Route::post('create-order-handler', [MainController::class, 'create_order_handle
 
 Route::get('/thank-you', [MainController::class, 'thank_you'])->name('thank-you');
 
+
+
 // temp
-Route::get('/register1', [MainController::class, 'register1']);
-
-Route::get('/login1', [MainController::class, 'login1']);
-
 Route::get('/catalog/single-product', [MainController::class, 'single_product']);
 
 Route::get('/category', [MainController::class, 'category']);
 
-Route::get('/lk1', [LkController::class, 'home']);
-
-Route::get('/profile1', [LkController::class, 'profile']);
-
-Route::get('/dashboard1', [App\Http\Controllers\Admin\AdminController::class, 'home']);
 
 
 
@@ -113,12 +106,6 @@ Route::get('/ajax/add-to-comparison', [AjaxController::class, 'add_to_comparison
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
 
 // Личный кабинет
 Route::middleware('auth')->group(function () {
