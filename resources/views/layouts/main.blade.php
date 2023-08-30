@@ -526,7 +526,7 @@
 
       <div class="we-use-cookie-wrapper">
         <div class="we-use-cookie-text">Этот сайт использует cookie-файлы и другие технологии для улучшения его работы. Продолжая работу с сайтом, вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</div>
-        <button class="primary-btn we-use-cookie-close">ХОРОШО</button>
+        <button class="primary-btn btn-195 we-use-cookie-close">ХОРОШО</button>
       </div>
 
     </div>
