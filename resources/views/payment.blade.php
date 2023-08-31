@@ -16,7 +16,7 @@
   <div class="page-title">Оплата</div>
   <div class="payment-description">Интернет-магазин работает круглосуточно без выходных и праздников, оформить заказ можно самостоятельно через сайт и по телефону. Сделать заказ по телефону можно каждый день с 9-00 до 18-00. Все заказы, оформленные после этого времени и в выходные дни, обрабатываются в рабочее время в порядке очередности.</div>
 
-  <div class="how-to-order-section">
+  <div class="how-to-order-section payment-how-to-order-section">
     @include('how-to-order')
   </div>
 
