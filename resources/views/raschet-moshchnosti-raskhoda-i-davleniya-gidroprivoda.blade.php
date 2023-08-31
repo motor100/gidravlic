@@ -14,6 +14,7 @@
 
 <div class="calculators">
   <div class="page-title">Расчет мощности, расхода и давления гидропривода</div>
+
   <div class="calculators-description">
     <p>Этот калькулятор позволяет Вам вычислить три параметра, важные для проектирования гидравлической станции:</p>
     <ul>
@@ -43,6 +44,7 @@
     </ol>
     <p>Затем нажмите «Q», чтобы вычислить.</p>
   </div>
+
   <div class="calc">
     <form name="output-power">
       <div class="calc-rows">
@@ -74,6 +76,7 @@
 
     <div class="calc-result">КПД насоса 0.85-0.99</div>
   </div>
+  
   <div class="convert">
     <form name="output-power-convert">
       <div class="convert-title">Пересчет единиц мощности</div>

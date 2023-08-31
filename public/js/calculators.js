@@ -81,11 +81,15 @@ if (undefined !== document.forms['output-torque']) {
     var result = getVgp4(M, P, eta);
     document.forms['output-torque'].result.value = result;
   }
-  document.forms['output-torque'].to_nm.onclick = function() {
-    var Kgm = document.forms['output-torque'].Kgm.value;  Kgm=Kgm.rpl();
+}
+
+//output-torque-convert form
+if (undefined !== document.forms['output-torque-convert']) {
+  document.forms['output-torque-convert'].to_nm.onclick = function() {
+    var Kgm = document.forms['output-torque-convert'].Kgm.value;  Kgm=Kgm.rpl();
     var result = Kgm * 9.81;
-    document.forms['output-torque'].Nm.value = result;
-  }	
+    document.forms['output-torque-convert'].Nm.value = result;
+  }
 }
 
 //output-power form
