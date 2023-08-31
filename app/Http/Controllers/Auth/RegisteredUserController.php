@@ -34,7 +34,7 @@ class RegisteredUserController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'min:6', 'max:20', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', 'min:8', 'max:20', 'confirmed', Rules\Password::defaults()],
             'g-recaptcha-response' => ['required'],
         ]);
 
@@ -50,6 +50,7 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'email_verified_at' => now(),
             'password' => Hash::make($request->password),
         ]);
 

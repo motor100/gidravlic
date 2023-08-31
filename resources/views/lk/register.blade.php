@@ -16,7 +16,7 @@
   <div class="page-title">Регистрация</div>
 
   @if($errors->any())
-    <div class="alert alert-danger cart-errors">
+    <div class="alert alert-danger">
       <ul>
         @foreach($errors->all() as $error)
           <li>{{ $error }}</li>
@@ -27,20 +27,20 @@
 
   <form class="form register-form" action="{{ route('register') }}" method="POST">
     <div class="form-group">
-      <label for="name-register" class="label">Имя <span class="accentcolor">*</span></label>
-      <input type="text" name="name" id="name-register" class="input-field" required autofocus minlength="3" maxlength="20" value="{{ old('name') }}">
+      <label for="name" class="label">Имя <span class="accentcolor">*</span></label>
+      <input type="text" name="name" id="name" class="input-field" required autofocus minlength="3" maxlength="20" value="{{ old('name') }}">
     </div>
     <div class="form-group">
-      <label for="email-register" class="label">E-mail <span class="accentcolor">*</span></label>
-      <input type="email" name="email" id="email-register" class="input-field" required minlength="3" maxlength="50" value="{{ old('email') }}">
+      <label for="email" class="label">E-mail <span class="accentcolor">*</span></label>
+      <input type="email" name="email" id="email" class="input-field" required minlength="3" maxlength="50" value="{{ old('email') }}">
     </div>
     <div class="form-group">
-      <label for="password-register" class="label">Пароль</label>
-      <input type="password" name="password" id="password-register" class="input-field" required minlength="8" maxlength="50">
+      <label for="password" class="label">Пароль</label>
+      <input type="password" name="password" id="password" class="input-field" required minlength="8" maxlength="20">
     </div>
     <div class="form-group mb30">
-      <label for="confirm-password-register" class="label">Подтверждение пароля</label>
-      <input type="password" name="confirm_password" id="confirm-password-register" class="input-field" required minlength="8" maxlength="50">
+      <label for="password_confirmation" class="label">Подтверждение пароля</label>
+      <input type="password" name="password_confirmation" id="password_confirmation" class="input-field" required minlength="8" maxlength="20">
     </div>
     <div class="checkbox-wrapper">
       <input type="checkbox" name="checkbox-agree" class="custom-checkbox" id="checkbox-agree-register" checked required>
@@ -56,7 +56,7 @@
     @csrf
     <div class="g-recaptcha mb30" data-sitekey="{{ config('google.client_key') }}"></div>
 
-    <button type="button" class="primary-btn register-btn btn-305">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+    <button type="submit" class="primary-btn register-btn btn-305">ЗАРЕГИСТРИРОВАТЬСЯ</button>
 
   </form>
 
