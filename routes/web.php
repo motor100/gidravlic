@@ -113,6 +113,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/lk/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/lk/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/lk', [LkController::class, 'home'])->name('lk.index');
+    Route::get('/lk/{id}', [LkController::class, 'order'])->name('lk.order');
 });
 
 require __DIR__.'/auth.php';

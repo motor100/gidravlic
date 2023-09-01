@@ -17,30 +17,32 @@
 
   @include('lk.lk-navigation')
 
-  <div class="orders-wrapper">
+  <!-- @ if($orders->count() > 0) -->
     <div class="orders-title">Заказы</div>
     <div class="orders">
+      <!-- @ foreach($orders as $order) -->
+        <div class="order-item">
+          <div class="order-item__number">456823 {{-- $order->id --}}</div>
+          <div class="order-item__date">28.07.2023 {{-- $order->created_at->format("d.m.Y") --}}</div>
+          <a href="/lk/1{{-- $order->id --}}" class="full-link"></a>
+        </div>
+      <!-- @ endforeach -->
+
       <div class="order-item">
         <div class="order-item__number">456823</div>
         <div class="order-item__date">28.07.2023</div>
-        <a href="#" class="full-link">{{-- $order->id --}}</a>
+        <a href="/lk/{{-- $order->id --}}" class="full-link"></a>
       </div>
       <div class="order-item">
         <div class="order-item__number">456823</div>
         <div class="order-item__date">28.07.2023</div>
-        <a href="#" class="full-link">{{-- $order->id --}}</a>
-      </div>
-      <div class="order-item">
-        <div class="order-item__number">456823</div>
-        <div class="order-item__date">28.07.2023</div>
-        <a href="#" class="full-link">{{-- $order->id --}}</a>
+        <a href="/lk/{{-- $order->id --}}" class="full-link"></a>
       </div>
     </div>
-  </div>
 
-
-
-  <div class="no-orders">Заказов нет</div>
+  <!-- @ else -->
+    <div class="no-orders">Заказов нет</div>
+  <!-- @ endif -->
 
 </div>
 @endsection
