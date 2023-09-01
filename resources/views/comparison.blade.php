@@ -23,6 +23,28 @@
         @foreach($products as $product)
           <div class="col-4">
             @include('regular-product-item')
+            <div class="product-info">
+              <div class="product-info-item">
+                <div class="product-info__title">Производитель</div>
+                <div class="product-info__value">Россия</div>
+              </div>
+              <div class="product-info-item">
+                <div class="product-info__title">Мощность, кВт</div>
+                <div class="product-info__value">3000</div>
+              </div>
+              <div class="product-info-item">
+                <div class="product-info__title">Расход, л/мин</div>
+                <div class="product-info__value">3000</div>
+              </div>
+              <div class="product-info-item">
+                <div class="product-info__title">Расход, л/мин</div>
+                <div class="product-info__value">3000</div>
+              </div>
+              <div class="product-info-item">
+                <div class="product-info__title">Тип</div>
+                <div class="product-info__value">3000</div>
+              </div>
+            </div>
           </div>
         @endforeach
       </div>

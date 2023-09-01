@@ -1197,6 +1197,7 @@ p {
   }
 }
 
+// Описание заказа в корзине и в оформлении
 .order-info {
   width: 415px;
   padding: 23px;
@@ -1658,6 +1659,26 @@ p {
 .comparison {
   .comparison-clear-btn {
     margin-left: auto;
+  }
+  .regular-product-item {
+    margin: 0 0 50px 0;
+  }
+  .product-info {
+    margin: 0 0 50px 0;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid $lightgreycolor;
+    .product-info-item {
+      font-size: 20px;
+      text-align: center;
+    }
+    .product-info__title {
+      padding: 8px 0;
+      background-color: $secondlightbluecolor;
+    }
+    .product-info__value {
+      padding: 2px 0;
+      color: #000;
+    }
   }
 }
 
