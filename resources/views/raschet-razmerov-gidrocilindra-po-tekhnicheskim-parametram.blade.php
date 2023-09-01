@@ -61,7 +61,7 @@
       </div>
     </form>
 
-    <div class="calc-result">v - скорость выдвижения штока м/с</div>
+    <div class="calc-text">v - скорость выдвижения штока м/с</div>
   </div>
 
 </div>

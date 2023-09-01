@@ -53,12 +53,90 @@
           <input type="text" name="result" class="calc-row-input">
         </div>
       </div>
+
+      <div class="info-table">
+        <div class="calc-text">Значения для одного цилиндра</div>
+        <div class="table raschet-parametrov">
+          <div class="tr">
+            <div class="td first-column">Площадь поршня (cm2)</div>
+            <button type="button" name="get_Sp" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Площадь кольца (шток. полость) (cm2)</div>
+            <button type="button" name="get_Sa" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Общий объем поршневой полости (л)</div>
+            <button type="button" name="get_Vispt" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Общий объем штоковой полости (л)</div>
+            <button type="button" name="get_Viat" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Расход в поршневой полости (л/мин)</div>
+            <button type="button" name="get_Qt" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Мощность втягивания штока (kW)</div>
+            <button type="button" name="get_Ns" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Усилие выталкивания штока цилиндра (Кг)</div>
+            <button type="button" name="get_Fs" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Усилие втягивания штока цилиндра (Кг)</div>
+            <button type="button" name="get_Ft" class="calc-btn">Вычислить</button>
+          </div>
+        </div>
+
+        <div class="calc-text">Значения для n-количества</div>
+        <div class="table raschet-parametrov">
+          <div class="tr">
+            <div class="td first-column">Площадь штока (см2)</div>
+            <button type="button" name="get_Sst" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Объем поршневой полости (л)</div>
+            <button type="button" name="get_Visp" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Объем штоковой полости (л)</div>
+            <button type="button" name="get_Via" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Расход при втягивании штока (l/мин)</div>
+            <button type="button" name="get_Qs" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Разница расхода полостей (л/мин)</div>
+            <button type="button" name="get_Kq" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Мощность выталкивания штока цилиндра (kW) </div>
+            <button type="button" name="get_Nt" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Суммарное усилие втягивания (Кг)</div>
+            <button type="button" name="get_Fst" class="calc-btn">Вычислить</button>
+          </div>
+          <div class="tr">
+            <div class="td first-column">Суммарное усилие выталкивания (Кг)</div>
+            <button type="button" name="get_Fft" class="calc-btn">Вычислить</button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
     </form>
   </div>
 
-  <div class="info-table">
+    
 
-  </div>
 
 </div>
 

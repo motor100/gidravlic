@@ -57,7 +57,37 @@
   </div>
 
   <div class="info-table">
-
+    <div class="calc-text">Таблица рекомендуемой скорости потока рабочей жидкости в гидроприводе:</div>
+    <div class="table raschet-diametra">
+      <div class="tr">
+        <div class="th first-column">Тип магистрали</div>
+        <div class="th second-column">Допустимая скорость потока (V)</div>
+      </div>
+      <div class="tr">
+        <div class="td first-column">всасывающая труба</div>
+        <div class="td second-column">от 0.5 до 1 м/с</div>
+      </div>
+      <div class="tr">
+        <div class="td first-column">сливная магистраль</div>
+        <div class="td second-column">от 1.25 до 3 м/с</div>
+      </div>
+      <div class="tr">
+        <div class="td first-column">напорная магистраль</div>
+        <div class="td second-column">3.25 м/с при давлении более 100 бар</div>
+      </div>
+      <div class="tr">
+        <div class="td first-column">напорная магистраль</div>
+        <div class="td second-column">от 3.5 до 5 м/с при давлении более 150 бар</div>
+      </div>
+      <div class="tr">
+        <div class="td first-column">напорная магистраль</div>
+        <div class="td second-column">от 5.25 до 7 м/с при давлении более 200 бар</div>
+      </div>
+      <div class="tr">
+        <div class="td first-column">напорная магистраль</div>
+        <div class="td second-column">от 7.25 до 9 м/с при давлении более 350 бар</div>
+      </div>
+    </div>
   </div>
 
 </div>

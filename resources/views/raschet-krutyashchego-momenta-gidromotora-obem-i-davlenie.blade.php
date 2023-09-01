@@ -68,7 +68,7 @@
       </div>
     </form>
 
-    <div class="calc-result">1Нм=0,102кгм</div>
+    <div class="calc-text">1Нм=0,102кгм</div>
   </div>
 
   <div class="convert">

@@ -74,7 +74,7 @@
       </div>
     </form>
 
-    <div class="calc-result">КПД насоса 0.85-0.99</div>
+    <div class="calc-text">КПД насоса 0.85-0.99</div>
   </div>
   
   <div class="convert">
