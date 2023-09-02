@@ -116,7 +116,6 @@ p {
   }
 }
 
-
 // primary btn
 .primary-btn {
   display: block;
@@ -140,24 +139,20 @@ p {
     background-color: #fff;
     color: $bluecolor;
   }
-}
-
-.btn-195 {
-  width: 195px;
-}
-
-.btn-245 {
-  width: 245px;
-}
-
-.btn-305 {
-  width: 305px;
-}
-
-.btn-415 {
-  width: 415px;
-  padding: 10px 0;
-  font-size: 24px;
+  &.btn-195 {
+    width: 195px;
+  }
+  &.btn-245 {
+    width: 245px;
+  }
+  &.btn-305 {
+    width: 305px;
+  }
+  &.btn-415 {
+    width: 415px;
+    padding: 10px 0;
+    font-size: 24px;
+  }
 }
 
 // secondary btn
