@@ -9,18 +9,14 @@
   <div class="main-slider-wrapper">
     <div class="main-slider swiper">
       <div class="swiper-wrapper">
+        @foreach($sliders as $slide)
         <div class="main-slider-item swiper-slide">
           <div class="slider-item-image">
-            <img src="/img/main-slide1.jpg" alt="">
+            <img src="{{ Storage::url($slide->image) }}" alt="">
           </div>
           <a href="#" class="primary-btn view-more-btn btn-195">Подробнее</a>
         </div>
-        <div class="main-slider-item swiper-slide">
-          <div class="slider-item-image">
-            <img src="/img/temp-main-slide2.jpg" alt="">
-          </div>
-          <a href="#" class="primary-btn view-more-btn btn-195">Подробнее</a>
-        </div>
+        @endforeach
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>

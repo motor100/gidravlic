@@ -5,14 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\MainSlider;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class MainSliderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         $sliders = MainSlider::all();
 
@@ -22,7 +24,7 @@ class MainSliderController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
         return view('dashboard.main-slider-create');
     }
@@ -30,29 +32,32 @@ class MainSliderController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'title' => 'required|min:4|max:255',
-            'text' => 'required|min:4|max:255',
-            'input-main-file' => 'required|image|mimes:jpg,png,jpeg',
+            'input-main-file' => [
+                                'required',
+                                \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
+                                                                    ->min(50)
+                                                                    ->max(5 * 1024)
+            ]
         ]);
 
-        $path = Storage::putFile('public/uploads/main-slider', $validated["input-main-file"]);
+        $path = Storage::putFile('public/uploads/slider', $validated["input-main-file"]);
 
         MainSlider::create([
             'title' => $validated["title"],
-            'text' => $validated["text"],
             'image' => $path
         ]);
 
-        return redirect('/dashboard/main-slider');
+        return redirect('/admin/main-slider');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id): View
     {
         $slide = MainSlider::findOrFail($id);
 
@@ -62,7 +67,7 @@ class MainSliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View
     {
         $slide = MainSlider::findOrFail($id);
 
@@ -72,12 +77,17 @@ class MainSliderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'id' => 'required|numeric',
             'title' => 'required|min:4|max:255',
-            'text' => 'required|min:4|max:255',
+            'input-main-file' => [
+                                'nullable',
+                                \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
+                                                                    ->min(50)
+                                                                    ->max(5 * 1024)
+            ],
         ]);
 
         $slide = MainSlider::findOrFail($validated["id"]);
@@ -86,24 +96,24 @@ class MainSliderController extends Controller
             if (Storage::exists($slide->image)) {
                 Storage::delete($slide->image);
             }
-            $path = Storage::putFile('public/uploads/main-slider', $request->file('input-main-file'));
+
+            $path = Storage::putFile('public/uploads/slider', $validated["input-main-file"]);
         } else {
             $path = $slide->image;
         }
 
         $slide->update([
-                'title' => $validated["title"],
-                'text' => $validated["text"],
-                'image' => $path,
+            'title' => $validated["title"],
+            'image' => $path,
         ]);
 
-        return redirect('/dashboard/main-slider');
+        return redirect('/admin/main-slider');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): RedirectResponse
     {
         $slide = MainSlider::find($id);
 
@@ -114,6 +124,6 @@ class MainSliderController extends Controller
 
         $slide->delete();
 
-        return redirect('/dashboard/main-slider');
+        return redirect('/admin/main-slider');
     }
 }

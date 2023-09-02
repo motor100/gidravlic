@@ -11,11 +11,15 @@ class MainController extends Controller
 {
     public function home(): View
     {
+        // slider
+        $sliders = \App\Models\MainSlider::orderby('id', 'desc')->get();
+        
+        // sprecial offer
         $special_offer_products = \App\Models\Product::limit(4)
                                                         ->inRandomOrder()
                                                         ->get();
         
-        return view('home', compact('special_offer_products'));
+        return view('home', compact('sliders', 'special_offer_products'));
     }
 
     public function catalog(): View

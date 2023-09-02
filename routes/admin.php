@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\ProfileController;
-// use App\Http\Controllers\Admin\MainSliderController;
+use App\Http\Controllers\Admin\MainSliderController;
 // use App\Http\Controllers\Admin\PromoController;
 
 
@@ -57,9 +57,6 @@ Route::prefix('admin')->group(static function () {
         Route::patch('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');
 
-        // Route::get('/dashboard', [AdminController::class, 'home'])->name('dashboard');
-
-        /*
         Route::get('/main-slider', [MainSliderController::class, 'index']);
 
         Route::get('/main-slider/create', [MainSliderController::class, 'create'])->name('main-slider-create');
@@ -70,10 +67,11 @@ Route::prefix('admin')->group(static function () {
 
         Route::get('/main-slider/{id}/edit', [MainSliderController::class, 'edit'])->name('main-slider-edit');
 
-        Route::post('/main-slider/update', [MainSliderController::class, 'update'])->name('main-slider-update');
+        Route::post('/main-slider/{id}/update', [MainSliderController::class, 'update'])->name('main-slider-update');
 
         Route::get('/main-slider/{id}/destroy', [MainSliderController::class, 'destroy'])->name('main-slider-destroy');
 
+        /*
         Route::get('/promos', [PromoController::class, 'index']);
 
         Route::get('/promos/create', [PromoController::class, 'create'])->name('promos-create');
