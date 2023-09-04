@@ -12,7 +12,7 @@
   <div class="active">Корзина</div>
 </div>
 
-<div class="cart">
+<div class="cart-page">
   <div class="page-title">Корзина</div>
 
   @if($products->count() > 0)

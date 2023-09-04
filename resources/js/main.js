@@ -564,10 +564,10 @@ if (toTop) {
 }
 */
 
-const cartPage = document.querySelector('.cart');
+const cartPage = document.querySelector('.cart-page');
 
 if (cartPage) {
-
+  
   /**
    * Расчет количества всех товаров в корзине
    * @param NodeList
@@ -711,10 +711,3 @@ if (cartPage) {
 
 }
 
-
-
-
-
-
-
-  

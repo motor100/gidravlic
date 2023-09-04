@@ -55,8 +55,10 @@ Route::prefix('admin')->group(static function () {
                     ->middleware('password.confirm.admin')
                     ->name('admin.profile');
 
+        Route::put('password', [ProfileController::class, 'new_password'])->name('admin.newpassword');
+
         Route::patch('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
-        
+
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');
 
         Route::get('/main-slider', [MainSliderController::class, 'index']);
