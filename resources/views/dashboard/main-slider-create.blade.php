@@ -6,12 +6,14 @@
 
 <div class="dashboard-content">
 
-  @if(session()->get('status'))
-    <ul class="alert alert-success">
-      @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-      @endforeach
-    </ul>
+  @if($errors->any())
+    <div class="alert alert-danger cart-errors">
+      <ul>
+        @foreach($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
   @endif
 
   <form class="form" action="{{ route('main-slider-store') }}" enctype="multipart/form-data" method="post">
