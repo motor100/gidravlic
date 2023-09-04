@@ -6,9 +6,6 @@ use Illuminate\Http\Request;
 
 class AjaxController extends Controller
 {
-    
-
-
     public function add_to_cart(Request $request): int
     {
         $id = $request->input('id');
@@ -42,6 +39,43 @@ class AjaxController extends Controller
         \Illuminate\Support\Facades\Cookie::queue('cart', $cart_json, 525600);
         
         return $cart_count;
+    }
+
+    public function ajax_plus_cart(Request $request): bool
+    {   
+        $id = $request->input('id');
+
+        // Получение куки через фасад Cookie метод get
+        $cart = json_decode(\Illuminate\Support\Facades\Cookie::get('cart'), true);
+
+        $cart[$id] = $cart[$id] + 1;
+
+        $cart_json = json_encode($cart);
+
+        // Установка куки через фасад Cookie метод queue
+        \Illuminate\Support\Facades\Cookie::queue('cart', $cart_json, 525600);
+
+        return false;
+    }
+
+    public function ajax_minus_cart(Request $request): bool
+    {   
+        $id = $request->input('id');
+
+        // Получение куки через фасад Cookie метод get
+        $cart = json_decode(\Illuminate\Support\Facades\Cookie::get('cart'), true);
+
+        $cart[$id] = $cart[$id] - 1;
+        
+        if ($cart[$id] > 1) {
+
+            $cart_json = json_encode($cart);
+            
+            // Установка куки через фасад Cookie метод queue
+            \Illuminate\Support\Facades\Cookie::queue('cart', $cart_json, 525600);
+        }
+
+        return false;
     }
 
     public function add_to_favourites(Request $request): int

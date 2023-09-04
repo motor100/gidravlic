@@ -74,6 +74,29 @@ class MainController extends Controller
         return back();
     }
 
+    public function rm_from_cart(Request $request): RedirectResponse
+    {   
+        $id = $request->input('id');
+
+        if ($request->hasCookie('cart') && $id) {
+
+            // Получение куки через фасад Cookie метод get
+            $cart = json_decode(\Illuminate\Support\Facades\Cookie::get('cart'), true);
+
+            // Удаляю ключ из массива если он существует
+            if (array_key_exists($id, $cart)) {
+                unset($cart[$id]);
+            }
+
+            $cart_json = json_encode($cart);
+
+            // Записываю новый массив в куки через фасад Cookie метод queue
+            \Illuminate\Support\Facades\Cookie::queue('cart', $cart_json, 525600);
+        }
+
+        return redirect('/cart');
+    }
+
     public function favourites(Request $request): View
     {
         $products = (new \App\Services\Favourites($request))->get();

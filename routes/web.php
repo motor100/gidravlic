@@ -26,6 +26,8 @@ Route::get('/catalog', [MainController::class, 'catalog']);
 
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 
+Route::post('/rmfromcart', [MainController::class, 'rm_from_cart']);
+
 Route::get('/clear-cart', [MainController::class, 'clear_cart']);
 
 Route::get('/poisk', [MainController::class, 'poisk']);
@@ -101,6 +103,10 @@ Route::get('/ajax/add-to-cart', [AjaxController::class, 'add_to_cart']);
 Route::get('/ajax/add-to-favourites', [AjaxController::class, 'add_to_favourites']);
 
 Route::get('/ajax/add-to-comparison', [AjaxController::class, 'add_to_comparison']);
+
+Route::post('/ajax/pluscart', [AjaxController::class, 'ajax_plus_cart']);
+
+Route::post('/ajax/minuscart', [AjaxController::class, 'ajax_minus_cart']);
 
 
 // Route::get('/dashboard', function () {

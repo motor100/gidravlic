@@ -33,7 +33,7 @@
             </button>
           </div>
           <div class="product-item__price">
-            <span class="product-item__value">{{ $product->price }}</span>
+            <span class="product-item__value js-item-price">{{ $product->price }}</span>
             <span class="product-item__currency">p</span>
           </div>
           <div class="product-item-favourites add-to-favourites" data-id="{{ $product->id }}">
@@ -44,6 +44,7 @@
           <div class="product-item-remove">
             <form class="form rm-from-cart-form" action="/rmfromcart" method="post">
               <input type="hidden" name="id" value="{{ $product->id }}">
+              @csrf
               <button type="submit" class="rm-from-cart-btn">
                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14.5659 0.434191C14.0133 -0.157914 13.1054 -0.157914 12.5527 0.434191L7.5001 5.48682L2.44747 0.434191C1.89484 -0.157914 0.986945 -0.157914 0.434313 0.434191C-0.157792 0.986823 -0.157792 1.89472 0.434313 2.44735L5.48694 7.49998L0.434313 12.5526C-0.157792 13.1052 -0.157792 14.0131 0.434313 14.5658C0.986945 15.1579 1.89484 15.1579 2.44747 14.5658L7.5001 9.51314L12.5527 14.5658C13.1054 15.1579 14.0133 15.1579 14.5659 14.5658C15.158 14.0131 15.158 13.1052 14.5659 12.5526L9.51326 7.49998L14.5659 2.44735C15.158 1.89472 15.158 0.986823 14.5659 0.434191Z"/>

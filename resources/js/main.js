@@ -5,6 +5,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 // Common
 const body = document.querySelector('body');
+const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content'); // csrf token
 
 
 // Products search dropdown
@@ -562,6 +563,153 @@ if (toTop) {
 
 }
 */
+
+const cartPage = document.querySelector('.cart');
+
+if (cartPage) {
+
+  /**
+   * Расчет количества всех товаров в корзине
+   * @param NodeList
+   * @returns Boolean
+   */
+  function quantityCalc(cartItems) {
+
+    // const summaryQuantity = document.querySelectorAll('.js-summary-quantity');
+    const summaryQuantity = document.querySelector('.js-summary-quantity');
+
+    let quantitySumm = 0;
+
+    cartItems.forEach((item) => {
+      const itemQuantity = item.querySelector('.js-item-quantity');
+
+      let itemQuantityValue = typeof itemQuantity.value !== 'undefined' ? itemQuantity.value : itemQuantity.innerText;
+
+      itemQuantityValue = Number(itemQuantityValue);
+      quantitySumm += itemQuantityValue;
+
+    });
+    
+    /*
+    summaryQuantity.forEach((item) => {
+      item.innerText = quantitySumm;
+    });
+    */
+    summaryQuantity.innerText = quantitySumm;
+
+    return false;
+  }
+
+  /**
+   * Расчет суммы всех товаров
+   * @param NodeList
+   * @returns Number
+   */
+  function summCalc(cartItems) {
+
+    const summarySumm = document.querySelector('.js-summary-summ');
+
+    let totalSumm = 0;
+
+    cartItems.forEach((item) => {
+      const quantityNumber = item.querySelector('.js-item-quantity');
+
+      let itemPrice = item.querySelector('.js-item-price').innerText,
+          summItemSumm = 0;
+
+      let quantityNumberValue = typeof quantityNumber.value !== 'undefined' ? quantityNumber.value : quantityNumber.innerText;
+        
+      summItemSumm = Number(quantityNumberValue) * Number(itemPrice);
+      totalSumm += summItemSumm;
+    });
+
+    /*
+    summarySumm.forEach((item) => {
+      item.innerText = totalSumm;
+    });
+    */
+    summarySumm.innerText = totalSumm;
+
+    return totalSumm;
+  }
+
+  const cartItems = document.querySelectorAll('.product-item');
+
+  quantityCalc(cartItems);
+  summCalc(cartItems);
+
+  // Увеличение количество одного товара в корзине
+  function ajax_plus_cart(elem) {
+
+    fetch('/ajax/pluscart', {
+      method: 'POST',
+      headers: {'Content-Type':'application/x-www-form-urlencoded'},
+      cache: 'no-cache',
+      body: 'id=' + encodeURIComponent(elem.dataset.id) + '&_token=' + encodeURIComponent(token),
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+
+  }
+
+  // Уменьшение количество одного товара в корзине
+  function ajax_minus_cart(elem) {
+
+    fetch('/ajax/minuscart', {
+      method: 'POST',
+      headers: {'Content-Type':'application/x-www-form-urlencoded'},
+      cache: 'no-cache',
+      body: 'id=' + encodeURIComponent(elem.dataset.id) + '&_token=' + encodeURIComponent(token),
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+
+  }
+
+  cartItems.forEach((item) => {
+
+    // quantity step
+    const quantityMinus = item.querySelector('.quantity-minus'),
+        quantityPlus = item.querySelector('.quantity-plus'),
+        quantityNumber = item.querySelector('.js-item-quantity');
+
+    // Расчет товар +1
+    quantityPlus.onclick = function() {
+
+      // Ограничение на увеличение количества если больше max
+      if (Number(quantityNumber.value) >= Number(quantityNumber.max)) {
+        return false;
+      }
+
+      quantityNumber.stepUp();
+      ajax_plus_cart(this);
+
+      quantityCalc(cartItems);
+      summCalc(cartItems);
+
+    }
+
+    // Расчет товар -1
+    quantityMinus.onclick = function() {
+
+      // Ограничение на уменьшение количества если меньше 1
+      if (Number(quantityNumber.value) == 1) {
+        return false;
+      }
+
+      quantityNumber.stepDown();
+      ajax_minus_cart(this);
+
+      quantityCalc(cartItems);
+      summCalc(cartItems);
+
+    }
+
+  });
+
+}
 
 
 
