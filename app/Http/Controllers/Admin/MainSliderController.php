@@ -16,7 +16,8 @@ class MainSliderController extends Controller
      */
     public function index(): View
     {
-        $sliders = MainSlider::all();
+        // LIFO
+        $sliders = MainSlider::orderby('id', 'desc')->get();
 
         return view('dashboard.main-slider', compact('sliders'));
     }

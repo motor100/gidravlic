@@ -11,10 +11,10 @@ class MainController extends Controller
 {
     public function home(): View
     {
-        // slider
+        // Main slider LIFO
         $sliders = \App\Models\MainSlider::orderby('id', 'desc')->get();
         
-        // sprecial offer
+        // Special offer
         $special_offer_products = \App\Models\Product::limit(4)
                                                         ->inRandomOrder()
                                                         ->get();
