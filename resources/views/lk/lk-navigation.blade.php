@@ -1,8 +1,8 @@
 <div class="lk-nav">
-  <div class="lk-nav-item">
+  <div class="lk-nav-item {{ request()->getPathInfo() != '/lk/profile' ? 'active' : '' }}">
     <a href="{{ route('lk.index') }}" class="lk-nav-item__link">ЗАКАЗЫ</a>
   </div>
-  <div class="lk-nav-item">
+  <div class="lk-nav-item {{ request()->getPathInfo() == '/lk/profile' ? 'active' : '' }}">
     <a href="{{ route('profile.edit') }}" class="lk-nav-item__link">ПРОФИЛЬ</a>
   </div>
   <form action="{{ route('logout') }}" class="lk-nav-item logout-form" method="post">

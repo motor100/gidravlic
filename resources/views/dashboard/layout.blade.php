@@ -32,12 +32,14 @@
               <span>Слайдер</span>
             </a>
           </div>
+          <!-- 
           <div class="nav-item">
             <a href="/admin/promos" class="item-link">
               <i class="nav-icon fas fa-percent"></i>
               <span>Акции</span>
             </a>
           </div>
+           -->
           <div class="nav-item">
             <a href="/admin/testimonials" class="item-link">
               <i class="nav-icon far fa-comments"></i>

@@ -9,15 +9,17 @@
     <a href="{{ route('home') }}">Главная</a>
   </div>
   <div class="arrow">></div>
-  <div class="active">Личный кабинет</div>
+  <div class="parent">
+    <a href="{{ route('lk.index') }}">Личный кабинет</a>
+  </div>
+  <div class="arrow">></div>
+  <div class="active">Заказы</div>
 </div>
 
 <div class="lk-order">
-  <div class="page-title">Личный кабинет</div>
+  <div class="page-title">Заказ 1 {{-- $rd->id --}}</div>
 
   @include('lk.lk-navigation')
-
-    <div class="orders-title">Заказ 1 {{-- $rd->id --}}</div>
 
     <div class="order-description">
       <div class="order-description-row">

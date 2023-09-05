@@ -1,4 +1,4 @@
-@section('title', 'Личный кабинет')
+@section('title', 'Заказы')
 
 @extends('layouts.main')
 
@@ -9,16 +9,19 @@
     <a href="{{ route('home') }}">Главная</a>
   </div>
   <div class="arrow">></div>
-  <div class="active">Личный кабинет</div>
+  <div class="parent">
+    <a href="{{ route('lk.index') }}">Личный кабинет</a>
+  </div>
+  <div class="arrow">></div>
+  <div class="active">Заказы</div>
 </div>
 
 <div class="lk-home">
-  <div class="page-title">Личный кабинет</div>
+  <div class="page-title">Заказы</div>
 
   @include('lk.lk-navigation')
 
   <!-- @ if($orders->count() > 0) -->
-    <div class="orders-title">Заказы</div>
     <div class="orders">
       <!-- @ foreach($orders as $order) -->
         <div class="order-item">
@@ -41,7 +44,7 @@
     </div>
 
   <!-- @ else -->
-    <div class="no-orders">Заказов нет</div>
+    <div class="no-orders">У вас пока нет заказов</div>
   <!-- @ endif -->
 
 </div>
