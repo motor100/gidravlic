@@ -80,6 +80,7 @@ Route::post('create-order-handler', [MainController::class, 'create_order_handle
 
 Route::get('/thank-you', [MainController::class, 'thank_you'])->name('thank-you');
 
+Route::get('/sitemap.xml', [MainController::class, 'sitemap']);
 
 
 // temp

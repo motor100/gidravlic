@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\View\View;
-
 
 class MainController extends Controller
 {
@@ -237,5 +237,14 @@ class MainController extends Controller
         
         // Во всех других случаях
         return abort(404);
+    }
+
+    public function sitemap(): Response
+    {
+        $products = \App\Models\Product::select('slug')->get();
+
+        return response()
+                ->view('sitemap', compact('products'))
+                ->header('Content-Type', 'text/xml');
     }
 }
