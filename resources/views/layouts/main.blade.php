@@ -532,6 +532,24 @@
     </div>
   @endif
 
+  @if(Auth::guard('admin')->user())
+    <div class="top-line-is-login">
+      <div class="container-fluid">
+        <div class="text-wrapper">
+          <div class="top-line__text dashboard">
+            <a href="/admin">Панель управления</a>
+          </div>
+          <div class="top-line__text logout">
+            <form class="form" action="{{ route('admin.logout') }}" method="POST">
+              @csrf
+              <button class="logout-btn" type="submit">Выйти</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endif
+
   @yield('script')
   @vite(['resources/js/main.js'])
 

@@ -26,7 +26,7 @@
     </div>
 
     <div class="checkbox-wrapper mb30">
-      <input type="checkbox" name="remember_me" class="custom-checkbox" id="remember_me" checked required>
+      <input type="checkbox" name="remember_me" class="custom-checkbox" id="remember_me" checked>
       <label for="remember_me" class="custom-checkbox-label"></label>
       <span class="checkbox-text">Запомнить меня</span>
     </div>
