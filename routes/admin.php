@@ -112,10 +112,6 @@ Route::prefix('admin')->group(static function () {
         Route::post('/testimonials/{id}/update', [TestimonialController::class, 'update'])->name('admin.tesimonials-update');
 
         Route::post('/testimonials/{id}/destroy', [TestimonialController::class, 'destroy'])->name('admin.tesimonials-destroy');
-
-
-        Route::get('/page-404', [AdminController::class, 'page_404']);
-
     });
 });
 

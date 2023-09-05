@@ -121,3 +121,6 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// Fallback route
+Route::fallback([MainController::class, 'page_404']);

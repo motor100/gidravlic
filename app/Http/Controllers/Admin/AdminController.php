@@ -156,11 +156,5 @@ class AdminController extends Controller
 
         return view('dashboard.order-check', compact('id', 'products', 'total'));
     }
-
-
-    public function page_404(Request $request)
-    {
-        return view('dashboard.404');
-    }
     */
 }

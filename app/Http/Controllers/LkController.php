@@ -40,10 +40,12 @@ class LkController extends Controller
                                     ->paginate(20)
                                     ->onEachSide(1);
         */
+
         // Заказ
         /*
         $order = $orders->find($id);
         */
+
         // Если пользователя и заказа нет, то редирект на /lk
         /*
         if (!$user || !$order) {

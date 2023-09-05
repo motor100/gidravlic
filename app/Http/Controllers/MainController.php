@@ -224,4 +224,18 @@ class MainController extends Controller
     {
         return view('garantiya-vozvrata-denezhnyh-sredstv');
     }
+
+    public function page_404(Request $request): mixed
+    {
+        // Получаю текущий URL без доменного имени
+        $requestUri = $request->getRequestUri();
+
+        // Если строка содержит /admin/
+        if (str_contains($requestUri, "/admin/")) {
+            return view('dashboard.404');
+        }
+        
+        // Во всех других случаях
+        return abort(404);
+    }
 }
