@@ -22,7 +22,7 @@ Route::get('/', [MainController::class, 'home'])->name('home');
 
 Route::get('/catalog', [MainController::class, 'catalog']);
 
-// Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
+Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
 
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 
@@ -83,8 +83,6 @@ Route::get('/thank-you', [MainController::class, 'thank_you'])->name('thank-you'
 
 
 // temp
-Route::get('/catalog/single-product', [MainController::class, 'single_product']);
-
 Route::get('/category', [MainController::class, 'category']);
 
 

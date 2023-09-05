@@ -27,11 +27,22 @@ class MainController extends Controller
         return view('catalog');
     }
 
-    public function single_product(): View
+    public function single_product($slug): mixed
     {
-        $product = \App\Models\Product::find(1);
-        
-        return view('single-product', compact('product'));
+        if (strlen($slug) > 3 && strlen($slug) < 100) {
+
+            $product = \App\Models\Product::where('slug', $slug)->first();
+
+            if ($product) {
+
+                // Ограничение количества элементов в коллекции галерея
+                // $product->galleries->slice(0, 3);
+
+                return view('single-product', compact('product'));
+            }
+        }
+
+        return abort(404);
     }
 
     public function poisk(Request $request): View
@@ -188,7 +199,7 @@ class MainController extends Controller
     }
 
 
-
+    // temp
     public function category(): View
     {
         $products = \App\Models\Product::paginate(24);
@@ -213,5 +224,4 @@ class MainController extends Controller
     {
         return view('garantiya-vozvrata-denezhnyh-sredstv');
     }
-
 }
