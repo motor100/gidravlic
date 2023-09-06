@@ -461,13 +461,15 @@ p {
     fill: $greycolor;
     transition: fill .3s;
   }
-  .header-bottom .header-bottom-item:hover .header-bottom-item__image svg {
+  .header-bottom .header-bottom-item:hover .header-bottom-item__image svg,
+  .header-bottom .header-bottom-item.active .header-bottom-item__image svg {
     fill: $accentcolor;
   }
   .header-bottom .header-bottom-item__text {
     transition: color .3s;
   }
-  .header-bottom .header-bottom-item:hover .header-bottom-item__text {
+  .header-bottom .header-bottom-item:hover .header-bottom-item__text,
+  .header-bottom .header-bottom-item.active .header-bottom-item__text {
     color: $accentcolor;
   }
   .header-bottom .badge-counter {

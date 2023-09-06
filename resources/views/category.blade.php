@@ -195,9 +195,4 @@
   </div>
 
 </div>
-
-<script>
-  const menuItemActive = 0;
-</script>
-
 @endsection

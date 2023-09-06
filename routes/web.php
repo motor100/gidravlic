@@ -32,25 +32,25 @@ Route::get('/clear-cart', [MainController::class, 'clear_cart']);
 
 Route::get('/poisk', [MainController::class, 'poisk']);
 
-Route::get('/favourites', [MainController::class, 'favourites']);
+Route::get('/favourites', [MainController::class, 'favourites'])->name('favourites');
 
 Route::get('/clear-favourites', [MainController::class, 'clear_favourites']);
 
-Route::get('/comparison', [MainController::class, 'comparison']);
+Route::get('/comparison', [MainController::class, 'comparison'])->name('comparison');
 
 Route::get('/clear-comparison', [MainController::class, 'clear_comparison']);
 
-Route::get('/company', [MainController::class, 'company']);
+Route::get('/company', [MainController::class, 'company'])->name('company');
 
-Route::get('/services', [MainController::class, 'services']);
+Route::get('/services', [MainController::class, 'services'])->name('services');
 
-Route::get('/payment', [MainController::class, 'payment']);
+Route::get('/payment', [MainController::class, 'payment'])->name('payment');
 
-Route::get('/delivery', [MainController::class, 'delivery']);
+Route::get('/delivery', [MainController::class, 'delivery'])->name('delivery');
 
-Route::get('/warranty', [MainController::class, 'warranty']);
+Route::get('/warranty', [MainController::class, 'warranty'])->name('warranty');
 
-Route::get('/calculators', [CalculatorController::class, 'calculators']);
+Route::get('/calculators', [CalculatorController::class, 'calculators'])->name('calculators');
 
 Route::get('/calculators/raschet-moshchnosti-raskhoda-i-davleniya-gidroprivoda', [CalculatorController::class, 'raschet_moshchnosti_raskhoda_i_davleniya_gidroprivoda']);
 

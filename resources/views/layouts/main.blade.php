@@ -76,7 +76,7 @@
             </div>
           </div>
           <div class="col-md-1">
-            <div class="header-bottom-item">
+            <div class="header-bottom-item {{ Route::is('favourites') ? 'active' : '' }}">
               <div class="header-bottom-item__image">
               <svg width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M23.2585 11.3491L13.2841 23.2417L3.34165 11.3171C2.15879 9.65473 1.67925 8.53581 1.67925 7.00128C1.67925 4.15601 3.72529 1.5665 6.66646 1.5665C9.06416 1.53453 11.8135 3.99616 13.2841 5.88235C14.7227 4.0601 17.5041 1.5665 19.9337 1.5665C22.811 1.5665 24.9209 4.15601 24.9209 7.00128C24.9209 8.53581 24.5373 9.71867 23.2585 11.3491ZM19.9337 0C17.1524 0 15.0744 1.63043 13.2841 3.32481C11.5897 1.53453 9.41582 0 6.66646 0C2.76621 0 0.0168457 3.35678 0.0168457 7.00128C0.0168457 8.95141 0.816078 10.3581 1.71122 11.7008L12.0053 24.0729C13.1882 25.2877 13.38 25.2877 14.5629 24.0729L24.889 11.7008C25.912 10.3581 26.5833 8.95141 26.5833 7.00128C26.5833 3.35678 23.834 0 19.9337 0Z"/>
@@ -88,7 +88,7 @@
             </div>
           </div>
           <div class="col-md-1">
-            <div class="header-bottom-item">
+            <div class="header-bottom-item {{ Route::is('comparison') ? 'active' : '' }}">
               <div class="header-bottom-item__image">
                 <svg width="21" height="25" viewBox="0 0 21 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.7411 22.6536C18.7411 23.0818 18.3896 23.4334 17.9613 23.4334C17.5267 23.4334 17.1815 23.0818 17.1815 22.6536V14.8426C17.1815 14.4144 17.5267 14.0628 17.9613 14.0628C18.3896 14.0628 18.7411 14.4144 18.7411 14.8426V22.6536ZM18.7411 12.5032H17.1815C16.3186 12.5032 15.6155 13.1999 15.6155 14.0628V23.4334C15.6155 24.2963 16.3186 24.993 17.1815 24.993H18.7411C19.604 24.993 20.3008 24.2963 20.3008 23.4334V14.0628C20.3008 13.1999 19.604 12.5032 18.7411 12.5032ZM3.12565 22.6536C3.12565 23.0818 2.7741 23.4334 2.33944 23.4334C1.91119 23.4334 1.55963 23.0818 1.55963 22.6536V9.37754C1.55963 8.94928 1.91119 8.59773 2.33944 8.59773C2.7741 8.59773 3.12565 8.94928 3.12565 9.37754V22.6536ZM3.12565 7.03171H1.55963C0.69672 7.03171 0 7.73482 0 8.59773V23.4334C0 24.2963 0.69672 24.993 1.55963 24.993H3.12565C3.98856 24.993 4.68528 24.2963 4.68528 23.4334V8.59773C4.68528 7.73482 3.98856 7.03171 3.12565 7.03171ZM10.9302 22.6536C10.9302 23.0818 10.585 23.4334 10.1504 23.4334C9.72212 23.4334 9.37056 23.0818 9.37056 22.6536V2.34643C9.37056 1.91817 9.72212 1.56661 10.1504 1.56661C10.585 1.56661 10.9302 1.91817 10.9302 2.34643V22.6536ZM10.9302 0.0069809H9.37056C8.50765 0.0069809 7.81093 0.703701 7.81093 1.56661V23.4334C7.81093 24.2963 8.50765 24.993 9.37056 24.993H10.9302C11.7931 24.993 12.4962 24.2963 12.4962 23.4334V1.56661C12.4962 0.703701 11.7931 0.0069809 10.9302 0.0069809Z"/>
@@ -100,7 +100,7 @@
             </div>
           </div>
           <div class="col-md-1">
-            <div class="header-bottom-item">
+            <div class="header-bottom-item {{ Route::is('login') ? 'active' : '' }}">
               <div class="header-bottom-item__image">
                 <svg width="18" height="25" viewBox="0 0 18 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_376_40)">
@@ -123,26 +123,26 @@
     <div class="top-menu">
       <div class="container">
         <ul class="menu">
-          <li class="menu-item">
+          <li class="menu-item {{ Route::is('company') ? 'active' : '' }}">
             <a href="/company">КОМПАНИЯ</a>
           </li>
-          <li class="menu-item">
+          <li class="menu-item {{ Route::is('services') ? 'active' : '' }}">
             <a href="/services">УСЛУГИ</a>
           </li>
-          <li class="menu-item">
+          <li class="menu-item {{ Route::is('payment') ? 'active' : '' }}">
             <a href="/payment">ОПЛАТА</a>
           </li>
-          <li class="menu-item">
+          <li class="menu-item {{ Route::is('delivery') ? 'active' : '' }}">
             <a href="/delivery">ДОСТАВКА</a>
           </li>
-          <li class="menu-item">
+          <li class="menu-item {{ Route::is('warranty') ? 'active' : '' }}">
             <a href="/warranty">ГАРАНТИЯ</a>
           </li>
-          <li class="menu-item">
+          <li class="menu-item {{ Route::is('calculators') ? 'active' : '' }}">
             <a href="/calculators">КАЛЬКУЛЯТОРЫ</a>
           </li>
           <li class="menu-item">
-            <a href="/contacts">КОНТАКТЫ</a>
+            <a href="/contacts {{ Route::is('contacts') ? 'active' : '' }}">КОНТАКТЫ</a>
           </li>
         </ul>
       </div>

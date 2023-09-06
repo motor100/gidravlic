@@ -112,14 +112,6 @@ searchClose.onclick = searchResetForm;
 searchInput.oninput = searchOnInput;
 
 
-// Top menu nav item set active
-const topMenuItems = document.querySelectorAll('.top-menu .menu-item');
-
-if(typeof(menuItemActive) != "undefined" && menuItemActive !== null) {
-  topMenuItems[menuItemActive].classList.add('active');
-}
-
-
 // Slider
 const mainSlider = new Swiper('.main-slider', {
   modules: [Navigation, Pagination],
