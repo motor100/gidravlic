@@ -720,11 +720,12 @@ if (createOrderPage) {
 
   // Переключение типа покупателя
   const customerTypeRadios = document.getElementsByName('customer-type');
-  let customerFormGroups = document.querySelector('#customer-form-groups');
+  let customerFormContent = document.querySelector('#customer-form-content');
+  let paymentMethodContent = document.querySelector('#payment-method-content');
 
-  function customerTypeChecked() {
+  function customerType() {
 
-    customerFormGroups.innerHTML = '';
+    customerFormContent.innerHTML = '';
 
     let tmpEl = document.createElement('div');
     tmpEl.className = "customer-info";
@@ -775,18 +776,54 @@ if (createOrderPage) {
     }
 
     tmpEl.innerHTML = str;
-    customerFormGroups.append(tmpEl);
+    customerFormContent.append(tmpEl);
   }
 
-  customerTypeRadios[0].onchange = customerTypeRadios[1].onchange = customerTypeChecked;
+  function paymentMethod() {
+    paymentMethodContent.innerHTML = '';
 
+    let tmpEl = document.createElement('div');
+    tmpEl.className = "customer-info";
+    let str = '';
+
+    if (customerTypeRadios[0].checked) { // физическое лицо
+      str = '<div class="checkbox-wrapper">';
+      str += '<input type="radio" name="payment-method" id="payment-method-online" class="custom-checkbox" checked required>';
+      str += '<label for="payment-method-online" class="custom-checkbox-label"></label>';
+      str += '<span class="checkbox-text">Онлайн</span>';
+      str += '</div>';
+      str += '<div class="checkbox-wrapper">';
+      str += '<input type="radio" name="payment-method" id="payment-method-cash" class="custom-checkbox" required>';
+      str += '<label for="payment-method-cash" class="custom-checkbox-label"></label>';
+      str += '<span class="checkbox-text">Наличными в офисе</span>';
+      str += '</div>';
+    } else { // юридическое лицо
+      str = '<div class="checkbox-wrapper">';
+      str += '<input type="radio" name="payment-method" id="payment-method-bank-transfer" class="custom-checkbox" checked required>';
+      str += '<label for="payment-method-bank-transfer" class="custom-checkbox-label"></label>';
+      str += '<span class="checkbox-text">Банковский перевод</span>';
+      str += '</div>';
+      str += '<div class="checkbox-wrapper">';
+      str += '<input type="radio" name="payment-method" id="payment-method-cash" class="custom-checkbox" required>';
+      str += '<label for="payment-method-cash" class="custom-checkbox-label"></label>';
+      str += '<span class="checkbox-text">Наличными в офисе</span>';
+      str += '</div>';
+    }
+
+    tmpEl.innerHTML = str;
+    paymentMethodContent.append(tmpEl);
+  }
+
+  customerTypeRadios[0].onchange = customerTypeRadios[1].onchange = () => {
+    customerType();
+    paymentMethod();
+  };
 
   // Переключение способа доставки
   const deliveryMethodRadios = document.getElementsByName('delivery-method');
   let deliveryMethodDescription = document.querySelector('#delivery-method-description');
-  deliveryMethodRadios[0].onchange = deliveryMethodRadios[1].onchange = deliveryMethodChecked;
 
-  function deliveryMethodChecked() {
+  function deliveryMethod() {
 
     deliveryMethodDescription.innerHTML = '';
 
@@ -815,9 +852,8 @@ if (createOrderPage) {
       str += '<img src="/img/create-order-map.jpg" alt="">';
       str += '</div>';
       str += '</div>';
-    } else {
-      str = '<div class="content">';
-      str += '<div class="checkbox-wrapper">';
+    } else {  // транспортная компания
+      str = '<div class="checkbox-wrapper">';
       str += '<input type="radio" name="delivery-company" id="tk-delovye-linii" class="custom-checkbox" checked required>';
       str += '<label for="tk-delovye-linii" class="custom-checkbox-label"></label>';
       str += '<span class="checkbox-text">ТК «Деловые Линии»</span>';
@@ -833,11 +869,13 @@ if (createOrderPage) {
       str += '<span class="checkbox-text">ТК «ПЭК»</span>';
       str += '</div>';
       str += '<div class="delivery-method-text">Стоимость доставки рассчитывается индивидуально</div>';
-      str += '</div>';
     }
 
     tmpEl.innerHTML = str;
     deliveryMethodDescription.append(tmpEl);
   }
+
+  deliveryMethodRadios[0].onchange = deliveryMethodRadios[1].onchange = deliveryMethod;
+
 
 }
