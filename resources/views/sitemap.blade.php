@@ -24,40 +24,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>{{ url('/') }}/o-kompanii/</loc>
-    <lastmod>{{ now()->toAtomString() }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>{{ url('/') }}/dostavka-i-oplata/</loc>
-    <lastmod>{{ now()->toAtomString() }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>{{ url('/') }}/otzyvy/</loc>
-    <lastmod>{{ now()->toAtomString() }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>{{ url('/') }}/kontakty/</loc>
-    <lastmod>{{ now()->toAtomString() }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>{{ url('/') }}/novinki/</loc>
-    <lastmod>{{ now()->toAtomString() }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>{{ url('/') }}/akcii/</loc>
-    <lastmod>{{ now()->toAtomString() }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 </urlset>
