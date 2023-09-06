@@ -564,6 +564,7 @@ if (toTop) {
 }
 */
 
+// Корзина
 const cartPage = document.querySelector('.cart-page');
 
 if (cartPage) {
@@ -711,3 +712,132 @@ if (cartPage) {
 
 }
 
+
+// Оформить заказ
+const createOrderPage = document.querySelector('.create-order');
+
+if (createOrderPage) {
+
+  // Переключение типа покупателя
+  const customerTypeRadios = document.getElementsByName('customer-type');
+  let customerFormGroups = document.querySelector('#customer-form-groups');
+
+  function customerTypeChecked() {
+
+    customerFormGroups.innerHTML = '';
+
+    let tmpEl = document.createElement('div');
+    tmpEl.className = "customer-info";
+    let str = '';
+
+    if (customerTypeRadios[0].checked) { // физическое лицо
+      str = '<div class="form-group">';
+      str += '<label for="customer-name-create-order" class="label">Имя <span class="accentcolor">*</span></label>';
+      str += '<input type="text" name="name" id="customer-name-create-order" class="input-field" required minlength="3" maxlength="50">';
+      str += '</div>';
+      str += '<div class="form-group">';
+      str += '<label for="email-create-order" class="label">E-mail <span class="accentcolor">*</span></label>';
+      str += '<input type="email" name="email" id="email-create-order" class="input-field" required minlength="3" maxlength="50">';
+      str += '</div>';
+      str += '<div class="form-group">';
+      str += '<label for="phone-create-order" class="label">Телефон <span class="accentcolor">*</span></label>';
+      str += '<input type="email" name="phone" id="phone-create-order" class="input-field" required size="18">';
+      str += '</div>';
+      str += '<div class="form-group">';
+      str += '<label for="message-create-order" class="label">Комментарии к заказу</label>';
+      str += '<textarea name="message" id="message-create-order" class="input-field textarea" minlength="3" maxlength="100"></textarea>';
+      str += '</div>';
+    } else { // юридическое лицо
+      str = '<div class="form-group">';
+      str += '<label for="company-name-create-order" class="label">Название компании <span class="accentcolor">*</span></label>';
+      str += '<input type="text" name="name" id="company-name-create-order" class="input-field" required minlength="3" maxlength="50">';
+      str += '</div>';
+      str += '<div class="form-group">';
+      str += '<label for="company-inn-create-order" class="label">ИНН <span class="accentcolor">*</span></label>';
+      str += '<input type="number" name="inn" id="company-inn-create-order" class="input-field input-number" required minlength="3" maxlength="50">';
+      str += '</div>';
+      str += '<div class="form-group">';
+      str += '<label for="company-manager-create-order" class="label">Контактное лицо <span class="accentcolor">*</span></label>';
+      str += '<input type="text" name="manager" id="company-manager-create-order" class="input-field" required minlength="3" maxlength="50">';
+      str += '</div>';
+      str += '<div class="form-group">';
+      str += '<label for="email-create-order" class="label">E-mail <span class="accentcolor">*</span></label>';
+      str += '<input type="email" name="email" id="email-create-order" class="input-field" required minlength="3" maxlength="50">';
+      str += '</div>';
+      str += '<div class="form-group">';
+      str += '<label for="phone-create-order" class="label">Телефон <span class="accentcolor">*</span></label>';
+      str += '<input type="email" name="phone" id="phone-create-order" class="input-field" required size="18">';
+      str += '</div>';
+      str += '<div class="form-group">';
+      str += '<label for="message-create-order" class="label">Комментарии к заказу</label>';
+      str += '<textarea name="message" id="message-create-order" class="input-field textarea" minlength="3" maxlength="100"></textarea>';
+      str += '</div>';
+    }
+
+    tmpEl.innerHTML = str;
+    customerFormGroups.append(tmpEl);
+  }
+
+  customerTypeRadios[0].onchange = customerTypeRadios[1].onchange = customerTypeChecked;
+
+
+  // Переключение способа доставки
+  const deliveryMethodRadios = document.getElementsByName('delivery-method');
+  let deliveryMethodDescription = document.querySelector('#delivery-method-description');
+  deliveryMethodRadios[0].onchange = deliveryMethodRadios[1].onchange = deliveryMethodChecked;
+
+  function deliveryMethodChecked() {
+
+    deliveryMethodDescription.innerHTML = '';
+
+    let tmpEl = document.createElement('div');
+    tmpEl.className = "content";
+    let str = '';
+
+    if (deliveryMethodRadios[0].checked) { // самовывоз
+      str = '<div class="flex-container">';
+      str += '<div class="address">';
+      str += '<div class="text">Стоимость: бесплатно<br>Вы можете самостоятельно забрать заказ с нашего<br> склада по адресу:</div>';
+      str += '<div class="description-item first-description-item">';
+      str += '<div class="description-item__image">';
+      str += '<img src="/img/create-order-geolocation.png" alt="">';
+      str += '</div>';
+      str += '<div class="description-item__text">​Миасс, Челябинская область, 456300<br>Тургоякское шоссе, 5/11<br>1 этаж</div>';
+      str += '</div>';
+      str += '<div class="description-item">';
+      str += '<div class="description-item__image">';
+      str += '<img src="/img/create-order-clock.png" alt="">';
+      str += '</div>';
+      str += '<div class="description-item__text">с 9:00 до 18:00</div>';
+      str += '</div>';
+      str += '</div>';
+      str += '<div class="map">';
+      str += '<img src="/img/create-order-map.jpg" alt="">';
+      str += '</div>';
+      str += '</div>';
+    } else {
+      str = '<div class="content">';
+      str += '<div class="checkbox-wrapper">';
+      str += '<input type="radio" name="delivery-company" id="tk-delovye-linii" class="custom-checkbox" checked required>';
+      str += '<label for="tk-delovye-linii" class="custom-checkbox-label"></label>';
+      str += '<span class="checkbox-text">ТК «Деловые Линии»</span>';
+      str += '</div>';
+      str += '<div class="checkbox-wrapper">';
+      str += '<input type="radio" name="delivery-company" id="tk-sdek" class="custom-checkbox" required>';
+      str += '<label for="tk-sdek" class="custom-checkbox-label"></label>';
+      str += '<span class="checkbox-text">ТК «СДЭК»</span>';
+      str += '</div>';
+      str += '<div class="checkbox-wrapper">';
+      str += '<input type="radio" name="delivery-company" id="tk-pek" class="custom-checkbox" required>';
+      str += '<label for="tk-pek" class="custom-checkbox-label"></label>';
+      str += '<span class="checkbox-text">ТК «ПЭК»</span>';
+      str += '</div>';
+      str += '<div class="delivery-method-text">Стоимость доставки рассчитывается индивидуально</div>';
+      str += '</div>';
+    }
+
+    tmpEl.innerHTML = str;
+    deliveryMethodDescription.append(tmpEl);
+  }
+
+}

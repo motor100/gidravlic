@@ -2,17 +2,11 @@
 
 namespace App\Services;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
+use App\Models\Product;
 
 class Cart
 {
-    protected $request;
-
-    public function __construct($request)
-    {
-        $this->request = $request;
-    }
-
     /**
      * Получение товаров в корзине
      */
@@ -20,19 +14,19 @@ class Cart
     {
         $products = collect();
 
-        if ($this->request->hasCookie('cart')) {
+        if (Cookie::has('cart')) {
 
             // Получение куки через фасад Cookie метод get
-            $cart = json_decode(\Illuminate\Support\Facades\Cookie::get('cart'), true);
+            $cart = json_decode(Cookie::get('cart'), true);
 
             $keys = array_keys($cart);
 
-            $products = \App\Models\Product::whereIn('id', $keys)->get();
-        }
+            $products = Product::whereIn('id', $keys)->get();
 
-        // Добавляю количество к каждому товару
-        foreach ($products as $product) {
-            $product->quantity = $cart[$product->id];
+            // Добавляю количество к каждому товару
+            foreach ($products as $product) {
+                $product->quantity = $cart[$product->id];
+            }
         }
 
         return $products;

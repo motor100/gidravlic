@@ -1164,13 +1164,17 @@ p {
     border: 1px solid $lightbluecolor;
   }
   .delivery-method-description {
-    display: flex;
+    // display: flex;
     border: 1px solid $secondlightgreycolor;
     border-radius: 5px;
   }
   .delivery-method-description .content {
+    // display: flex;
+    padding: 14px 0 14px 20px;
+  }
+  .delivery-method-description .address {
     width: 60%;
-    padding: 14px 20px;
+    padding: 0 20px 14px 0;
   }
   .delivery-method-description .text {
     margin: 0 0 16px 0;
@@ -1193,6 +1197,18 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .input-number {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  .input-number::-webkit-inner-spin-button,
+  .input-number::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 }
 

@@ -22,6 +22,7 @@ class MainController extends Controller
         return view('home', compact('sliders', 'special_offer_products'));
     }
 
+    // 
     public function catalog(): View
     {
         return view('catalog');
@@ -70,9 +71,9 @@ class MainController extends Controller
         return view('poisk', compact('products', 'search_query'));
     }
 
-    public function cart(Request $request): View
+    public function cart(): View
     {
-        $products = (new \App\Services\Cart($request))->get();
+        $products = (new \App\Services\Cart())->get();
         
         return view('cart', compact('products'));
     }
@@ -174,7 +175,19 @@ class MainController extends Controller
 
     public function create_order(): View
     {
-        return view('create-order');
+        // Получение моделей товаров
+        $products = (new \App\Services\Cart())->get();
+
+        // Расчет стоимости и количества всех товаров
+        $quantity_summ = 0;
+        $total_summ = 0;
+
+        foreach($products as $product) {
+            $quantity_summ += $product->quantity;
+            $total_summ += $product->quantity * $product->price;
+        }
+
+        return view('create-order', compact('products', 'quantity_summ', 'total_summ'));
     }
 
     public function thank_you(Request $request): View
@@ -207,6 +220,12 @@ class MainController extends Controller
         return view('category', compact('products'));
     }
 
+    public function subcategory(): View
+    {
+        $products = \App\Models\Product::paginate(24);
+        
+        return view('subcategory', compact('products'));
+    }
 
 
 
