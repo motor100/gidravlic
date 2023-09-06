@@ -59,9 +59,9 @@
   <div class="company-item page-item">
     <div id="company-info" class="company-title page-item__title">Реквизиты</div>
     <div class="company-content page-item__content">
-      <p>ОГРН: 5147746226030</p>
-      <p>ИНН: 7724939863</p>
-      <p>КПП: 772101001</p>
+      <p>ОГРН: 1237400032231</p>
+      <p>ИНН: 7415113283</p>
+      <p>КПП: 741501001</p>
       <p>Р/счёт: № 40702810502290000229 в АО «АЛЬФА-БАНК»</p>
       <p>К/счёт: № 30101810200000000593</p>
       <p>БИК: 044525593</p>

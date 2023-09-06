@@ -364,13 +364,19 @@ checkboxCallbackModal.forEach((item) => {
 
 
 // Input mask
-const elementPhone = document.querySelector('#phone-callback-modal');
+function inputPhoneMask() {
+  const elementPhone = document.querySelectorAll('.js-input-phone-mask');
 
-const maskOptionsPhone = {
-  mask: '+{7} (000) 000 00 00'
-};
+  const maskOptionsPhone = {
+    mask: '+{7} (000) 000 00 00'
+  };
 
-const mask = IMask(elementPhone, maskOptionsPhone);
+  elementPhone.forEach((item) => {
+    const mask = IMask(item, maskOptionsPhone);
+  });
+}
+
+inputPhoneMask();
 
 
 // Отправка формы ajax в модальном окне
@@ -719,7 +725,7 @@ const createOrderPage = document.querySelector('.create-order');
 if (createOrderPage) {
 
   // Переключение типа покупателя
-  const customerTypeRadios = document.getElementsByName('customer-type');
+  const customerTypeRadios = document.getElementsByName('customer_type');
   let customerFormContent = document.querySelector('#customer-form-content');
   let paymentMethodContent = document.querySelector('#payment-method-content');
 
@@ -742,7 +748,7 @@ if (createOrderPage) {
       str += '</div>';
       str += '<div class="form-group">';
       str += '<label for="phone-create-order" class="label">Телефон <span class="accentcolor">*</span></label>';
-      str += '<input type="email" name="phone" id="phone-create-order" class="input-field" required size="18">';
+      str += '<input type="email" name="phone" id="phone-create-order" class="input-field js-input-phone-mask" required size="18">';
       str += '</div>';
       str += '<div class="form-group">';
       str += '<label for="message-create-order" class="label">Комментарии к заказу</label>';
@@ -755,7 +761,7 @@ if (createOrderPage) {
       str += '</div>';
       str += '<div class="form-group">';
       str += '<label for="company-inn-create-order" class="label">ИНН <span class="accentcolor">*</span></label>';
-      str += '<input type="number" name="inn" id="company-inn-create-order" class="input-field input-number" required minlength="3" maxlength="50">';
+      str += '<input type="number" name="inn" id="company-inn-create-order" class="input-field input-number" required minlength="8" maxlength="13">';
       str += '</div>';
       str += '<div class="form-group">';
       str += '<label for="company-manager-create-order" class="label">Контактное лицо <span class="accentcolor">*</span></label>';
@@ -767,7 +773,7 @@ if (createOrderPage) {
       str += '</div>';
       str += '<div class="form-group">';
       str += '<label for="phone-create-order" class="label">Телефон <span class="accentcolor">*</span></label>';
-      str += '<input type="email" name="phone" id="phone-create-order" class="input-field" required size="18">';
+      str += '<input type="text" name="phone" id="phone-create-order" class="input-field js-input-phone-mask" required size="18">';
       str += '</div>';
       str += '<div class="form-group">';
       str += '<label for="message-create-order" class="label">Комментарии к заказу</label>';
@@ -788,23 +794,23 @@ if (createOrderPage) {
 
     if (customerTypeRadios[0].checked) { // физическое лицо
       str = '<div class="checkbox-wrapper">';
-      str += '<input type="radio" name="payment-method" id="payment-method-online" class="custom-checkbox" checked required>';
+      str += '<input type="radio" name="payment_method" id="payment-method-online" class="custom-checkbox" checked required value="Онлайн">';
       str += '<label for="payment-method-online" class="custom-checkbox-label"></label>';
       str += '<span class="checkbox-text">Онлайн</span>';
       str += '</div>';
       str += '<div class="checkbox-wrapper">';
-      str += '<input type="radio" name="payment-method" id="payment-method-cash" class="custom-checkbox" required>';
+      str += '<input type="radio" name="payment_method" id="payment-method-cash" class="custom-checkbox" required value="Наличными в офисе">';
       str += '<label for="payment-method-cash" class="custom-checkbox-label"></label>';
       str += '<span class="checkbox-text">Наличными в офисе</span>';
       str += '</div>';
     } else { // юридическое лицо
       str = '<div class="checkbox-wrapper">';
-      str += '<input type="radio" name="payment-method" id="payment-method-bank-transfer" class="custom-checkbox" checked required>';
+      str += '<input type="radio" name="payment_method" id="payment-method-bank-transfer" class="custom-checkbox" checked required value="Банковский перевод">';
       str += '<label for="payment-method-bank-transfer" class="custom-checkbox-label"></label>';
       str += '<span class="checkbox-text">Банковский перевод</span>';
       str += '</div>';
       str += '<div class="checkbox-wrapper">';
-      str += '<input type="radio" name="payment-method" id="payment-method-cash" class="custom-checkbox" required>';
+      str += '<input type="radio" name="payment_method" id="payment-method-cash" class="custom-checkbox" required value="Наличными в офисе">';
       str += '<label for="payment-method-cash" class="custom-checkbox-label"></label>';
       str += '<span class="checkbox-text">Наличными в офисе</span>';
       str += '</div>';
@@ -817,10 +823,11 @@ if (createOrderPage) {
   customerTypeRadios[0].onchange = customerTypeRadios[1].onchange = () => {
     customerType();
     paymentMethod();
+    inputPhoneMask();
   };
 
   // Переключение способа доставки
-  const deliveryMethodRadios = document.getElementsByName('delivery-method');
+  const deliveryMethodRadios = document.getElementsByName('delivery_method');
   let deliveryMethodDescription = document.querySelector('#delivery-method-description');
 
   function deliveryMethod() {
@@ -854,17 +861,17 @@ if (createOrderPage) {
       str += '</div>';
     } else {  // транспортная компания
       str = '<div class="checkbox-wrapper">';
-      str += '<input type="radio" name="delivery-company" id="tk-delovye-linii" class="custom-checkbox" checked required>';
+      str += '<input type="radio" name="delivery_company" id="tk-delovye-linii" class="custom-checkbox" checked required value="ТК «Деловые Линии»">';
       str += '<label for="tk-delovye-linii" class="custom-checkbox-label"></label>';
       str += '<span class="checkbox-text">ТК «Деловые Линии»</span>';
       str += '</div>';
       str += '<div class="checkbox-wrapper">';
-      str += '<input type="radio" name="delivery-company" id="tk-sdek" class="custom-checkbox" required>';
+      str += '<input type="radio" name="delivery_company" id="tk-sdek" class="custom-checkbox" required value="ТК «СДЭК»">';
       str += '<label for="tk-sdek" class="custom-checkbox-label"></label>';
       str += '<span class="checkbox-text">ТК «СДЭК»</span>';
       str += '</div>';
       str += '<div class="checkbox-wrapper">';
-      str += '<input type="radio" name="delivery-company" id="tk-pek" class="custom-checkbox" required>';
+      str += '<input type="radio" name="delivery_company" id="tk-pek" class="custom-checkbox" required value="ТК «ПЭК»">';
       str += '<label for="tk-pek" class="custom-checkbox-label"></label>';
       str += '<span class="checkbox-text">ТК «ПЭК»</span>';
       str += '</div>';

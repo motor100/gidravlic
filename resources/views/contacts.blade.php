@@ -15,7 +15,7 @@
 <div class="contacts">
   <div class="page-title">Контакты</div>
   <div class="contacts-item">
-    <div class="contacts-text">ООО "ГИДРАВЛИКА"</div>
+    <div class="contacts-text">ООО "ГИДРАВЛИК-КОМ"</div>
     <div class="contacts-text">Продажа гидравлического оборудования, обслуживание, гидрофикация</div>
   </div>
   <div class="contacts-item">

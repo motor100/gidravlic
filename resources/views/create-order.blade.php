@@ -16,22 +16,33 @@
   <div class="active">Оформление заказа</div>
 </div>
 
+@if($errors->any())
+  <div class="alert alert-danger">
+    <ul>
+      @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+@endif
+
 <div class="create-order">
   <div class="page-title-wrapper">
     <div class="page-title">Оформление заказа</div>
     <a href="/cart" class="primary-btn back-to-cart-btn btn-245">ВЕРНУТЬСЯ В КОРЗИНУ</a>
   </div>
   <form class="form" action="/create-order-handler" method="post">
+    
     <div class="create-order-item customer-type">
       <div class="create-order-item__title">1. Покупатель</div>
       <div class="flex-container">
         <div class="checkbox-wrapper">
-          <input type="radio" name="customer-type" id="customer-type-client" class="custom-checkbox" checked required>
+          <input type="radio" name="customer_type" id="customer-type-client" class="custom-checkbox" checked required value="Физическое лицо">
           <label for="customer-type-client" class="custom-checkbox-label"></label>
           <span class="checkbox-text">Физическое лицо</span>
         </div>
         <div class="checkbox-wrapper">
-          <input type="radio" name="customer-type" id="customer-type-company" class="custom-checkbox" required>
+          <input type="radio" name="customer_type" id="customer-type-company" class="custom-checkbox" required value="Юридическое лицо">
           <label for="customer-type-company" class="custom-checkbox-label"></label>
           <span class="checkbox-text">Юридическое лицо</span>
         </div>
@@ -51,7 +62,7 @@
         </div>
         <div class="form-group">
           <label for="phone-create-order" class="label">Телефон <span class="accentcolor">*</span></label>
-          <input type="email" name="phone" id="phone-create-order" class="input-field" required size="18">
+          <input type="text" name="phone" id="phone-create-order" class="input-field js-input-phone-mask" required size="18">
         </div>
         <div class="form-group">
           <label for="message-create-order" class="label">Комментарии к заказу</label>
@@ -64,11 +75,11 @@
       <div class="create-order-item__title">3. Способ доставки</div>
       <div class="flex-container">
         <div class="delivery-method-item">
-          <input type="radio" name="delivery-method" id="delivery-method-pickup" class="custom-checkbox" checked>
+          <input type="radio" name="delivery_method" id="delivery-method-pickup" class="custom-checkbox" checked value="Самовывоз">
           <label for="delivery-method-pickup" class="label">Самовывоз</label>
         </div>
         <div class="delivery-method-item">
-          <input type="radio" name="delivery-method" id="delivery-method-transport-company" class="custom-checkbox">
+          <input type="radio" name="delivery_method" id="delivery-method-transport-company" class="custom-checkbox" value="Транспортная компания">
           <label for="delivery-method-transport-company" class="label">Транспортная компания</label>
         </div>
       </div>
@@ -103,12 +114,12 @@
 
       <div id="payment-method-content">
         <div class="checkbox-wrapper">
-          <input type="radio" name="payment-method" id="payment-method-online" class="custom-checkbox" checked required>
+          <input type="radio" name="payment_method" id="payment-method-online" class="custom-checkbox" checked required value="Онлайн">
           <label for="payment-method-online" class="custom-checkbox-label"></label>
           <span class="checkbox-text">Онлайн</span>
         </div>
         <div class="checkbox-wrapper">
-          <input type="radio" name="payment-method" id="payment-method-cash" class="custom-checkbox" required>
+          <input type="radio" name="payment_method" id="payment-method-cash" class="custom-checkbox" required value="Наличными в офисе">
           <label for="payment-method-cash" class="custom-checkbox-label"></label>
           <span class="checkbox-text">Наличными в офисе</span>
         </div>
@@ -142,6 +153,7 @@
         </div>
       </div>
 
+      @csrf
       <button type="submit" class="primary-btn place-order-btn btn-245">ПОДТВЕРДИТЬ ЗАКАЗ</button>
 
     </div>

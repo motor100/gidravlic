@@ -190,6 +190,72 @@ class MainController extends Controller
         return view('create-order', compact('products', 'quantity_summ', 'total_summ'));
     }
 
+    public function create_order_handler(Request $request)
+    {
+        $validated = $request->validate([
+            'customer_type' => 'required',
+            'name'=> 'required|min:3|max:50',
+            'email'=> 'required|min:3|max:50',
+            'phone'=> 'required|size:18',
+            'message'=> 'required|min:3|max:100',
+            'delivery_method' => 'required',
+            'payment_method' => 'required',
+            'inn' => 'nullable|numeric',
+            'manager' => 'nullable',
+            'delivery_company' => 'nullable'
+        ]);
+
+        // Получение аутентифицированного пользователя
+        $user = $request->user();
+
+        // тут
+        // Создаю новую модель Order и получаю id новой записи
+        $order_id = \App\Models\Order::insertGetId([
+            'first_name' => $validated['first-name'],
+            'last_name' => $validated['last-name'],
+            'phone'=> $phone,
+            'email'=> $validated['email'],
+            'address'=> $validated['address'],
+            'price' => $validated['summ'],
+            'user_id' => $user ? $user->id : NULL,
+            'status' => 'В обработке',
+            'comment' => NULL,
+            'delivery' => $validated['delivery'],
+            'payment' => $validated['payment'],
+            'payment_status' => 0,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        // Получение куки через фасад Cookie метод get
+        $cart = json_decode(\Illuminate\Support\Facades\Cookie::get('cart'), true);
+        
+        $insert_array = [];
+
+        foreach($cart as $key => $value) {
+            $row['order_id'] = $order_id;
+            $row['product_id'] = $key;
+            $row['quantity'] = $value;
+            $row['created_at'] = now();
+            $row['updated_at'] = now();
+            $insert_array[] = $row;
+        }
+
+        // Создание моделей OrderProduct
+        \App\Models\OrderProduct::insert($insert_array);
+
+        // Удаление куки
+        \Illuminate\Support\Facades\Cookie::queue(\Illuminate\Support\Facades\Cookie::forget('cart'));
+        
+        // Редирект на страницу оплаты
+        return redirect()
+                ->route('thankyou', [
+                    'order_id' => $order_id,
+                    'summ' => $validated['summ'],
+                    'payment' => $validated['payment']
+                ]);
+    }
+
     public function thank_you(Request $request): View
     {
         if ($request->has('order_id') && $request->has('summ')) {
