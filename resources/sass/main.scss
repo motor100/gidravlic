@@ -498,7 +498,8 @@ p {
     border-bottom: 2px solid #fff;
     transition: border-bottom .3s;
   }
-  .top-menu .menu-item:hover {
+  .top-menu .menu-item:hover,
+  .top-menu .menu-item.active {
     border-bottom: 2px solid $accentcolor;
   }
   .top-menu .menu-item a {
@@ -507,7 +508,8 @@ p {
     text-transform: uppercase;
     transition: color .3s;
   }
-  .top-menu .menu-item:hover a {
+  .top-menu .menu-item:hover a,
+  .top-menu .menu-item.active a {
     color: $accentcolor;
   }
 }
