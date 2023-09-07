@@ -90,6 +90,7 @@ Route::get('/sitemap.xml', [MainController::class, 'sitemap']);
 // temp
 Route::get('/category', [MainController::class, 'category']);
 
+Route::get('/category/subcategory', [MainController::class, 'subcategory']);
 
 
 

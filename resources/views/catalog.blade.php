@@ -9,12 +9,12 @@
     <a href="{{ route('home') }}">Главная</a>
   </div>
   <div class="arrow">></div>
-  <div class="active">Клапанная аппаратура</div>
+  <div class="active">Каталог</div>
 </div>
 
 <div class="category">
   <div class="page-title-wrapper">
-    <div class="page-title">Клапанная аппаратура</div>
+    <div class="page-title">Каталог</div>
     <div class="count_products">
       <span class="count_products__text">Найдено:</span>
       <span class="count_products__value">230</span>
@@ -161,24 +161,6 @@
       </div>
     </div>
   </div>
-
-  <div class="category-description">Клапанная аппаратура входит в состав каждой гидросистемы (помимо насоса, гидрораспределителей и исполнительных гидродвигателей). Клапана могут использоваться в системе в количестве от единиц до нескольких десятков.</div>
-
-  <!-- 
-  <div class="products-filter">
-    <div class="products-filter-title">
-      <div class="products-filter-title__image">
-        <img src="/img/services-gear.png" alt="">
-      </div>
-      <div class="products-filter-title__text">Подобрать товары по параметрам</div>
-      <div class="products-filter-title__plus"></div>
-    </div>
-    <div class="products-filter-content active">
-      <p>Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый контент, который не должен нести никакого смысла, лишь показать наличие самого текста или продемонстрировать типографику в деле.</p>
-      <p>Также как начало повседневной работы по формированию позиции обеспечивает широкому кругу (специалистов) участие в формировании приоретизации разума над эмоциями. Лишь предприниматели в сети интернет функционально разнесены на независимые элементы. Есть над чем задуматься: элементы политического процесса представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть призваны к ответу!</p>
-    </div>
-  </div>
-   -->
 
   <div class="products">
     <div class="row">

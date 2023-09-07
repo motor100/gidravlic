@@ -22,10 +22,11 @@ class MainController extends Controller
         return view('home', compact('sliders', 'special_offer_products'));
     }
 
-    // 
     public function catalog(): View
     {
-        return view('catalog');
+        $products = \App\Models\Product::paginate(24);
+        
+        return view('catalog', compact('products'));
     }
 
     public function single_product($slug): mixed
