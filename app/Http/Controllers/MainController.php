@@ -163,6 +163,30 @@ class MainController extends Controller
         return back();
     }
 
+    public function rm_from_comparison(Request $request)
+    {
+        $id = $request->input('id');
+
+        if ($request->hasCookie('comparison') && $id) {
+            
+            // Получение куки через фасад Cookie метод get
+            $comparison = json_decode(\Illuminate\Support\Facades\Cookie::get('comparison'), true);
+
+            // Удаляю ключ из массива если он существует
+            if (array_key_exists($id, $comparison)) {
+                unset($comparison[$id]);
+            }
+
+            $comparison_json = json_encode($comparison);
+
+            // Записываю новый массив в куки через фасад Cookie метод queue
+            \Illuminate\Support\Facades\Cookie::queue('comparison', $comparison_json, 525600);
+
+        }
+
+        return redirect('/comparison');
+    }
+
     public function company(): View
     {
         $testimonials = \App\Models\Testimonial::whereNotNull('publicated_at')

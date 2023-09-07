@@ -42,6 +42,8 @@ Route::get('/comparison', [MainController::class, 'comparison'])->name('comparis
 
 Route::get('/clear-comparison', [MainController::class, 'clear_comparison']);
 
+Route::post('/rm-from-comparison', [MainController::class, 'rm_from_comparison']);
+
 Route::get('/company', [MainController::class, 'company'])->name('company');
 
 Route::get('/services', [MainController::class, 'services'])->name('services');
