@@ -1,6 +1,6 @@
 import IMask from 'imask';
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+// import Swiper from 'swiper';
+// import { Navigation, Pagination } from 'swiper/modules';
 
 
 // Common
@@ -114,7 +114,7 @@ searchInput.oninput = searchOnInput;
 
 // Slider
 const mainSlider = new Swiper('.main-slider', {
-  modules: [Navigation, Pagination],
+  // modules: [Navigation, Pagination],
   slidesPerView: 1,
   loop: true,
   navigation: {
@@ -547,7 +547,6 @@ if (productsFilter) {
 // To top
 const toTop = document.getElementById("to-top");
 
-/*
 if (toTop) {
 
   toTop.onclick = () => {
@@ -557,7 +556,8 @@ if (toTop) {
   // Показать to-top при скролле
   window.onscroll = () => {
     
-    let scrToTop = window.pageYOffset || document.documentElement.scrollTop;
+    // let scrToTop = window.pageYOffset || document.documentElement.scrollTop;
+    let scrToTop = window.scrollY || document.documentElement.scrollTop;
     
     if (scrToTop > 400) {
       toTop.classList.add('active');
@@ -568,7 +568,7 @@ if (toTop) {
   }
 
 }
-*/
+
 
 // Корзина
 const cartPage = document.querySelector('.cart-page');

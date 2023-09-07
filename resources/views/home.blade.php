@@ -2,6 +2,10 @@
 
 @extends('layouts.main')
 
+@section('style')
+  <link rel="stylesheet" href="{{ asset('/css/swiper-bundle.min.css') }}">
+@endsection
+
 @section('content')
 
 <div class="home">
@@ -97,4 +101,8 @@
 
 </div>
 
+@endsection
+
+@section('script')
+  <script src="{{ asset('/js/swiper-bundle.min.js') }}"></script>
 @endsection
