@@ -13,6 +13,12 @@
   <div class="main-slider-wrapper">
     <div class="main-slider swiper">
       <div class="swiper-wrapper">
+        <div class="main-slider-item swiper-slide">
+          <div class="slider-item-image">
+            <img src="/img/main-slide1.jpg" alt="">
+          </div>
+          <a href="/services#izgotovlenie-shlangov-rvd" class="primary-btn view-more-btn btn-195">Подробнее</a>
+        </div>
         @foreach($sliders as $slide)
         <div class="main-slider-item swiper-slide">
           <div class="slider-item-image">
