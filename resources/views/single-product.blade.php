@@ -51,8 +51,15 @@
         </div>
       </div>
       <div class="col-6">
-        <div class="single-product-image">
-          <img src="{{ Storage::url($product->image) }}" alt="">
+        <div class="single-product-image-wrapper">
+          <div class="single-product-image">
+            <img src="{{ Storage::url($product->image) }}" alt="">
+          </div>
+          @if($product->hit)
+            <div class="product-label-hit">
+              <span class="product-label-hit-text">ХИТ</span>
+            </div>
+          @endif
         </div>
       </div>
       <div class="col-3">
