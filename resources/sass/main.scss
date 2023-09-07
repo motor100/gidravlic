@@ -1667,6 +1667,35 @@ p {
   .favourites-clear-btn {
     margin-left: auto;
   }
+  .regular-product-item-favourites {
+    right: 73px;
+  }
+  .regular-product-item-comparison {
+    right: 47px;
+  }
+  .rm-from-favourites-form {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+  .rm-from-favourites {
+    display: block;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: none;
+    background-color: #fff;
+  }
+  .rm-from-favourites svg {
+    fill: $greycolor;
+    transition: fill .3s;
+  }
+  .rm-from-favourites:hover svg {
+    fill: $accentcolor;
+  }
 }
 
 .comparison {

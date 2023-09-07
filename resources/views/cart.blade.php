@@ -42,7 +42,7 @@
             </svg>
           </div>
           <div class="product-item-remove">
-            <form class="form rm-from-cart-form" action="/rmfromcart" method="post">
+            <form class="form rm-from-cart-form" action="/rm-from-cart" method="post">
               <input type="hidden" name="id" value="{{ $product->id }}">
               @csrf
               <button type="submit" class="rm-from-cart-btn">

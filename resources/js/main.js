@@ -113,18 +113,22 @@ searchInput.oninput = searchOnInput;
 
 
 // Slider
-const mainSlider = new Swiper('.main-slider', {
-  // modules: [Navigation, Pagination],
-  slidesPerView: 1,
-  loop: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: ".swiper-pagination",
-  },
-});
+const mainSlider = document.querySelector('.main-slider')
+
+if (mainSlider) {
+  const slider = new Swiper('.main-slider', {
+    // modules: [Navigation, Pagination],
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+}
 
 
 // Add to cart

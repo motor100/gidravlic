@@ -124,6 +124,30 @@ class MainController extends Controller
         return back();
     }
 
+    public function rm_from_favourites(Request $request)
+    {
+        $id = $request->input('id');
+
+        if ($request->hasCookie('favourites') && $id) {
+            
+            // Получение куки через фасад Cookie метод get
+            $favourites = json_decode(\Illuminate\Support\Facades\Cookie::get('favourites'), true);
+
+            // Удаляю ключ из массива если он существует
+            if (array_key_exists($id, $favourites)) {
+                unset($favourites[$id]);
+            }
+
+            $favourites_json = json_encode($favourites);
+
+            // Записываю новый массив в куки через фасад Cookie метод queue
+            \Illuminate\Support\Facades\Cookie::queue('favourites', $favourites_json, 525600);
+
+        }
+
+        return redirect('/favourites');
+    }
+
     public function comparison(Request $request): View
     {
         $products = (new \App\Services\Comparison($request))->get();

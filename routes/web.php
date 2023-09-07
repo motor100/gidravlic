@@ -26,7 +26,7 @@ Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
 
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 
-Route::post('/rmfromcart', [MainController::class, 'rm_from_cart']);
+Route::post('/rm-from-cart', [MainController::class, 'rm_from_cart']);
 
 Route::get('/clear-cart', [MainController::class, 'clear_cart']);
 
@@ -35,6 +35,8 @@ Route::get('/poisk', [MainController::class, 'poisk']);
 Route::get('/favourites', [MainController::class, 'favourites'])->name('favourites');
 
 Route::get('/clear-favourites', [MainController::class, 'clear_favourites']);
+
+Route::post('/rm-from-favourites', [MainController::class, 'rm_from_favourites']);
 
 Route::get('/comparison', [MainController::class, 'comparison'])->name('comparison');
 
