@@ -239,7 +239,7 @@ class MainController extends Controller
         return view('create-order', compact('products', 'quantity_summ', 'total_summ'));
     }
 
-    public function create_order_handler(Request $request)
+    public function create_order_handler(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'customer_type' => 'required',
@@ -254,26 +254,35 @@ class MainController extends Controller
             'delivery_company' => 'nullable'
         ]);
 
-        // Получение аутентифицированного пользователя
+        // Получаю аутентифицированного пользователя
         $user = $request->user();
 
-        // тут
         // Создаю новую модель Order и получаю id новой записи
         $order_id = \App\Models\Order::insertGetId([
-            'first_name' => $validated['first-name'],
-            'last_name' => $validated['last-name'],
-            'phone'=> $phone,
-            'email'=> $validated['email'],
-            'address'=> $validated['address'],
-            'price' => $validated['summ'],
             'user_id' => $user ? $user->id : NULL,
             'status' => 'В обработке',
             'comment' => NULL,
-            'delivery' => $validated['delivery'],
-            'payment' => $validated['payment'],
+            'delivery_method' => $validated['delivery_method'],
+            'payment_method' => $validated['payment_method'],
+            'delivery_company' => $validated['delivery_company'],
             'payment_status' => 0,
+            'summ' => $summ,
+            'message' => $validated['message'],
             'created_at' => now(),
             'updated_at' => now(),
+        ]);
+        
+        // Телефон из строки в цисло
+        $phone = \App\Services\Common::phone_to_int($validated['phone']);
+        
+        // Создаю новую модель OrderCustomer
+        \App\Models\OrderCustomer::create([
+            'customer_type' => $validated['customer_type'],
+            'name' => $validated['name'],
+            'email'=> $validated['email'],
+            'phone'=> $phone,
+            'inn' => $validated['inn'] ? $validated['inn'] : NULL,
+            'manager' => $validated['manager'] ? $validated['manager'] : NULL,
         ]);
 
         // Получение куки через фасад Cookie метод get
