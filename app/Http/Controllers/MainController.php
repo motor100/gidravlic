@@ -31,17 +31,14 @@ class MainController extends Controller
 
     public function single_product($slug): mixed
     {
-        if (strlen($slug) > 3 && strlen($slug) < 100) {
+        $product = \App\Models\Product::where('slug', $slug)->first();
 
-            $product = \App\Models\Product::where('slug', $slug)->first();
+        if ($product) {
 
-            if ($product) {
+            // Ограничение количества элементов в коллекции галерея
+            // $product->galleries->slice(0, 3);
 
-                // Ограничение количества элементов в коллекции галерея
-                // $product->galleries->slice(0, 3);
-
-                return view('single-product', compact('product'));
-            }
+            return view('single-product', compact('product'));
         }
 
         return abort(404);
@@ -233,11 +230,7 @@ class MainController extends Controller
         }
 
         // Расчет количества всех товаров
-        $quantity_summ = 0;
-
-        foreach($products as $product) {
-            $quantity_summ += $product->quantity;
-        }
+        $quantity_summ = (new \App\Services\Cart())->quantity_summ();
 
         // Расчет стоимости всех товаров
         $total_summ = (new \App\Services\Cart())->total_summ();
@@ -260,72 +253,10 @@ class MainController extends Controller
             'delivery_company' => 'nullable'
         ]);
 
-
-
-
-        // Получаю аутентифицированного пользователя
-        $user = $request->user();
+        $order_id = (new \App\Services\Order($request, $validated))->create();       
 
         // Расчет суммы всех товаров
         $summ = (new \App\Services\Cart())->total_summ();
-
-        // Транспортная компания
-        $delivery_company = array_key_exists('delivery_company', $validated) ? $validated['delivery_company'] : 'Самовывоз';
-
-        // Создаю новую модель Order и получаю id новой записи
-        $order_id = \App\Models\Order::insertGetId([
-            'user_id' => $user ? $user->id : NULL,
-            'status' => 'В обработке',
-            'comment' => NULL,
-            'delivery_method' => $validated['delivery_method'],
-            'payment_method' => $validated['payment_method'],
-            'delivery_company' => $delivery_company,
-            'payment_status' => 0,
-            'summ' => $summ,
-            'message' => $validated['message'],
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-        
-        // Телефон из строки в цисло
-        $phone = (new \App\Services\Phone($validated['phone']))->phone_to_int();
-
-        // ИНН
-        $inn = array_key_exists('inn', $validated) ? $validated['inn'] : NULL;
-
-        // Контактное лицо (менеджер)
-        $manager = array_key_exists('manager', $validated) ? $validated['manager'] : NULL;
-
-        // Создаю новую модель OrderCustomer
-        \App\Models\OrderCustomer::create([
-            'order_id' => $order_id,
-            'customer_type' => $validated['customer_type'],
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'phone' => $phone,
-            'inn' => $inn,
-            'manager' => $manager,
-        ]);
-
-        // Получение куки через фасад Cookie метод get
-        $cart = json_decode(\Illuminate\Support\Facades\Cookie::get('cart'), true);
-        
-        $insert_array = [];
-
-        foreach($cart as $key => $value) {
-            $row['order_id'] = $order_id;
-            $row['product_id'] = $key;
-            $row['quantity'] = $value;
-            $row['created_at'] = now();
-            $row['updated_at'] = now();
-            $insert_array[] = $row;
-        }
-
-        // Создание моделей OrderProduct
-        \App\Models\OrderProduct::insert($insert_array);
-
-
-
 
         // Удаление куки
         \Illuminate\Support\Facades\Cookie::queue(\Illuminate\Support\Facades\Cookie::forget('cart'));
@@ -345,9 +276,9 @@ class MainController extends Controller
 
             $order_id = $request->input('order_id');
             $summ = $request->input('summ');
-            $payment = $request->input('payment');
+            $payment_method = $request->input('payment_method');
 
-            return view('thank-you', compact('order_id', 'summ', 'payment'));
+            return view('thank-you', compact('order_id', 'summ', 'payment_method'));
         } else {
             return view('thank-you');
         }

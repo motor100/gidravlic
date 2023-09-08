@@ -20,21 +20,25 @@
     <div class="thank-you-content__image">
       <img src="/img/thank-you-checkmark.png" alt="">
     </div>
-    <div class="thank-you-content__text">Ваш заказ №C733 от 24.07.2023 09:02 успешно создан. Номер вашей оплаты: №C733/1</div>
-    <div class="thank-you-content__text">Вы можете следить за выполнением своего заказа В ПЕРСОНАЛЬНОМ РАЗДЕЛЕ САЙТА.<br>Обратите внимание, что для входа в этот раздел вам необходимо будет ввести логин и пароль пользователя сайта.</div>
+    @if (isset($order_id) && isset($summ))
+      <div class="thank-you-content__text">Ваш заказ {{ $order_id }} успешно создан.</div>
+      <div class="thank-you-content__text">Вы можете следить за выполнением своего заказа В ПЕРСОНАЛЬНОМ РАЗДЕЛЕ САЙТА.<br>Обратите внимание, что для входа в этот раздел вам необходимо будет ввести логин и пароль пользователя сайта.</div>
+    @endif
   </div>
 
   <div class="thank-you-payment">
     <div class="thank-you-payment__title">Оплата заказа</div>
-    <div class="thank-you-payment__text">Вы выбрали способ оплаты: Оплата онлайн</div>
+    <div class="thank-you-payment__text">Вы выбрали способ оплаты: {{ $payment_method }}</div>
     <div class="thank-you-payment__summ">
       <span class="text">Сумма к оплате:</span>
-      <span class="value">2 160</span>
+      <span class="value">{{ $summ }}</span>
       <span class="currency">р</span>
     </div>
   </div>
 
-  <a href="#" class="primary-btn thank-you-payment-btn btn-245">ОПЛАТИТЬ</a>
+  @if (isset($payment_method) && $payment_method == 'Онлайн')
+    <a href="#" class="primary-btn thank-you-payment-btn btn-245">ОПЛАТИТЬ</a>
+  @endif
 
 </div>
 

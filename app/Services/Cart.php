@@ -47,4 +47,20 @@ class Cart
 
         return $total_summ;
     }
+
+    /**
+     * Расчет количества всех товаров
+     */
+    public function quantity_summ(): int
+    {
+        $products = $this->get();
+        
+        $quantity_summ = 0;
+
+        foreach($products as $product) {
+            $quantity_summ += $product->quantity;
+        }
+
+        return $quantity_summ;
+    }
 }
