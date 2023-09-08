@@ -752,7 +752,7 @@ if (createOrderPage) {
       str += '</div>';
       str += '<div class="form-group">';
       str += '<label for="phone-create-order" class="label">Телефон <span class="accentcolor">*</span></label>';
-      str += '<input type="email" name="phone" id="phone-create-order" class="input-field js-input-phone-mask" required size="18">';
+      str += '<input type="text" name="phone" id="phone-create-order" class="input-field js-input-phone-mask" required size="18">';
       str += '</div>';
       str += '<div class="form-group">';
       str += '<label for="message-create-order" class="label">Комментарии к заказу</label>';

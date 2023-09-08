@@ -8,7 +8,7 @@ use App\Models\Product;
 class Cart
 {
     /**
-     * Получение товаров в корзине
+     * Получение всех товаров в корзине
      */
     public function get()
     {
@@ -30,5 +30,21 @@ class Cart
         }
 
         return $products;
+    }
+
+    /**
+     * Расчет суммы всех товаров в корзине
+     */
+    public function total_summ(): int
+    {
+        $products = $this->get();
+        
+        $total_summ = 0;
+
+        foreach($products as $product) {
+            $total_summ += $product->quantity * $product->price;
+        }
+
+        return $total_summ;
     }
 }

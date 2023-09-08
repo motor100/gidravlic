@@ -222,19 +222,25 @@ class MainController extends Controller
         return view('contacts');
     }
 
-    public function create_order(): View
+    public function create_order(): mixed
     {
         // Получение моделей товаров
         $products = (new \App\Services\Cart())->get();
 
-        // Расчет стоимости и количества всех товаров
+        // Если в корзине товаров нет, то редирект на главную
+        if($products->count() == 0) {
+            return redirect('/');
+        }
+
+        // Расчет количества всех товаров
         $quantity_summ = 0;
-        $total_summ = 0;
 
         foreach($products as $product) {
             $quantity_summ += $product->quantity;
-            $total_summ += $product->quantity * $product->price;
         }
+
+        // Расчет стоимости всех товаров
+        $total_summ = (new \App\Services\Cart())->total_summ();
 
         return view('create-order', compact('products', 'quantity_summ', 'total_summ'));
     }
@@ -257,6 +263,12 @@ class MainController extends Controller
         // Получаю аутентифицированного пользователя
         $user = $request->user();
 
+        // Расчет суммы всех товаров
+        $summ = (new \App\Services\Cart())->total_summ();
+
+        // Транспортная компания
+        $delivery_company = array_key_exists('delivery_company', $validated) ? $validated['delivery_company'] : 'Самовывоз';
+
         // Создаю новую модель Order и получаю id новой записи
         $order_id = \App\Models\Order::insertGetId([
             'user_id' => $user ? $user->id : NULL,
@@ -264,7 +276,7 @@ class MainController extends Controller
             'comment' => NULL,
             'delivery_method' => $validated['delivery_method'],
             'payment_method' => $validated['payment_method'],
-            'delivery_company' => $validated['delivery_company'],
+            'delivery_company' => $delivery_company,
             'payment_status' => 0,
             'summ' => $summ,
             'message' => $validated['message'],
@@ -273,16 +285,23 @@ class MainController extends Controller
         ]);
         
         // Телефон из строки в цисло
-        $phone = \App\Services\Common::phone_to_int($validated['phone']);
-        
+        $phone = (new \App\Services\Phone($validated['phone']))->phone_to_int();
+
+        // ИНН
+        $inn = array_key_exists('inn', $validated) ? $validated['inn'] : NULL;
+
+        // Контактное лицо (менеджер)
+        $manager = array_key_exists('manager', $validated) ? $validated['manager'] : NULL;
+
         // Создаю новую модель OrderCustomer
         \App\Models\OrderCustomer::create([
+            'order_id' => $order_id,
             'customer_type' => $validated['customer_type'],
             'name' => $validated['name'],
-            'email'=> $validated['email'],
-            'phone'=> $phone,
-            'inn' => $validated['inn'] ? $validated['inn'] : NULL,
-            'manager' => $validated['manager'] ? $validated['manager'] : NULL,
+            'email' => $validated['email'],
+            'phone' => $phone,
+            'inn' => $inn,
+            'manager' => $manager,
         ]);
 
         // Получение куки через фасад Cookie метод get
@@ -307,10 +326,10 @@ class MainController extends Controller
         
         // Редирект на страницу оплаты
         return redirect()
-                ->route('thankyou', [
+                ->route('thank-you', [
                     'order_id' => $order_id,
-                    'summ' => $validated['summ'],
-                    'payment' => $validated['payment']
+                    'summ' => $summ,
+                    'payment_method' => $validated['payment_method']
                 ]);
     }
 
