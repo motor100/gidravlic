@@ -21,31 +21,24 @@
 
   @include('lk.lk-navigation')
 
-  <!-- @ if($orders->count() > 0) -->
+  @if($orders->count() > 0)
     <div class="orders">
-      <!-- @ foreach($orders as $order) -->
+      @foreach($orders as $order)
         <div class="order-item">
-          <div class="order-item__number">456823 {{-- $order->id --}}</div>
-          <div class="order-item__date">28.07.2023 {{-- $order->created_at->format("d.m.Y") --}}</div>
-          <a href="/lk/1{{-- $order->id --}}" class="full-link"></a>
+          <div class="order-item__number">{{ $order->id }}</div>
+          <div class="order-item__date">{{ $order->created_at->format("d.m.Y") }}</div>
+          <a href="/lk/{{ $order->id }}" class="full-link"></a>
         </div>
-      <!-- @ endforeach -->
-
-      <div class="order-item">
-        <div class="order-item__number">456823</div>
-        <div class="order-item__date">28.07.2023</div>
-        <a href="/lk/{{-- $order->id --}}" class="full-link"></a>
-      </div>
-      <div class="order-item">
-        <div class="order-item__number">456823</div>
-        <div class="order-item__date">28.07.2023</div>
-        <a href="/lk/{{-- $order->id --}}" class="full-link"></a>
-      </div>
+      @endforeach
     </div>
 
-  <!-- @ else -->
+    <div class="pagination-links">
+      {{ $orders->onEachSide(1)->links() }}
+    </div>
+
+  @else
     <div class="no-orders">У вас пока нет заказов</div>
-  <!-- @ endif -->
+  @endif
 
 </div>
 @endsection

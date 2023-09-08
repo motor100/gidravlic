@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\View\View;
+use App\Models\Order;
 
 class LkController extends Controller
 {
-    public function home(Request $request): View
-    {       
+    public function home(): mixed
+    {
         // Пользователь
         $user = Auth::user();
 
@@ -19,41 +18,24 @@ class LkController extends Controller
         }
 
         // Заказы
-        /*
-        $orders = \App\Models\Order::where('user_id', $user->id)
-                                    ->paginate(20)
-                                    ->onEachSide(1);
-        */
-        $orders = collect();
+        $orders = Order::where('user_id', $user->id)->paginate(20);
 
         return view('lk.home', compact('orders'));
     }
 
-    public function order($id): View
+    public function order($id): mixed
     {
         // Пользователь
         $user = Auth::user();
-        
-        // Заказы
-        /*
-        $orders = \App\Models\Order::where('user_id', $user->id)
-                                    ->paginate(20)
-                                    ->onEachSide(1);
-        */
 
         // Заказ
-        /*
-        $order = $orders->find($id);
-        */
+        $order = Order::findOrFail($id);
 
-        // Если пользователя и заказа нет, то редирект на /lk
-        /*
+        // Если пользователя и заказа нет, то редирект на главную
         if (!$user || !$order) {
-            return redirect('/lk');
+            return redirect('/');
         }
-        */
 
-        // return view('lk.order', compact('orders', 'order'));
-        return view('lk.order');
+        return view('lk.order', compact('order'));
     }
 }

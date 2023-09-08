@@ -252,13 +252,16 @@ class MainController extends Controller
             'name'=> 'required|min:3|max:50',
             'email'=> 'required|min:3|max:50',
             'phone'=> 'required|size:18',
-            'message'=> 'required|min:3|max:100',
+            'message'=> 'nullable|min:3|max:100',
             'delivery_method' => 'required',
             'payment_method' => 'required',
-            'inn' => 'nullable|numeric',
+            'inn' => 'nullable|numeric|min:8|max:13',
             'manager' => 'nullable',
             'delivery_company' => 'nullable'
         ]);
+
+
+
 
         // Получаю аутентифицированного пользователя
         $user = $request->user();
@@ -320,6 +323,9 @@ class MainController extends Controller
 
         // Создание моделей OrderProduct
         \App\Models\OrderProduct::insert($insert_array);
+
+
+
 
         // Удаление куки
         \Illuminate\Support\Facades\Cookie::queue(\Illuminate\Support\Facades\Cookie::forget('cart'));
