@@ -42,7 +42,7 @@ class Order
         ]);
         
         // Телефон из строки в цисло
-        $phone = (new \App\Services\Phone($this->validated['phone']))->phone_to_int();
+        $phone = (new \App\Services\Phone())->phone_to_int($this->validated['phone']);
 
         // ИНН
         $inn = array_key_exists('inn', $this->validated) ? $this->validated['inn'] : NULL;

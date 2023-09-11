@@ -14,7 +14,7 @@ function showUserMenu() {
 // Nav menu item set active
 const itemLink = document.querySelectorAll('.aside .item-link');
 
-if(typeof(menuItem) != "undefined" && menuItem !== null) {
+if (typeof(menuItem) != "undefined" && menuItem !== null) {
   itemLink[menuItem].classList.add('active');
 }
 

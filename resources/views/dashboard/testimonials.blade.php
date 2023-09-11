@@ -40,6 +40,6 @@
 </div>
 
 <script>
-  const menuItem = 2;
+  const menuItem = 1;
 </script>
 @endsection

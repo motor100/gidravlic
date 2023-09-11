@@ -32,6 +32,21 @@
               <span>Слайдер</span>
             </a>
           </div>
+          
+          <div class="nav-item">
+            <a href="/admin/testimonials" class="item-link">
+              <i class="nav-icon far fa-comments"></i>
+              <span>Отзывы</span>
+            </a>
+          </div>
+
+          <div class="nav-item">
+            <a href="/admin/orders" class="item-link">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <span>Заказы</span>
+            </a>
+          </div>
+
           <!-- 
           <div class="nav-item">
             <a href="/admin/promos" class="item-link">
@@ -40,18 +55,6 @@
             </a>
           </div>
            -->
-          <div class="nav-item">
-            <a href="/admin/testimonials" class="item-link">
-              <i class="nav-icon far fa-comments"></i>
-              <span>Отзывы</span>
-            </a>
-          </div>
-          <div class="nav-item">
-            <a href="/admin/orders" class="item-link">
-              <i class="nav-icon fas fa-shopping-cart"></i>
-              <span>Заказы</span>
-            </a>
-          </div>
 
         </div>
       </div>
@@ -77,8 +80,7 @@
         <div class="header-nav display-flex flexdirection-row alignitems-center">
           
           <div class="nav-item">
-            
-            <a href="{{ route('admin.testimonials') }}" class="header-item">
+            <a href="{{ route('admin.testimonials') }}" class="header-item display-block pos-relative">
               <i class="far fa-comments"></i>
               @if(isset($testimonials_count))
                 @if($testimonials_count > 0)
@@ -86,27 +88,25 @@
                 @endif
               @endif
             </a>
-            
           </div>
           
           <div class="nav-item">
             <a href="{{ route('admin.orders') }}" class="header-item display-block pos-relative">
               <i class="far fa-bell"></i>
-
               @if(isset($orders_count))
                 @if($orders_count > 0)
                   <span id="notifications-counter" class="tp-badge tp-badge-warning">{{ $orders_count }}</span>
                 @endif
               @endif
-
             </a>
           </div>
+          
           <div class="nav-item">
             <div class="user display-flex header-item">
               <div class="user-image">
                 <i class="far fa-user"></i>
               </div>
-              <div class="user-name">{{ Auth::guard('admin')->user()-> name }}</div>
+              <div class="user-name">{{ Auth::guard('admin')->user()->name }}</div>
             </div>
           </div>
         </div>

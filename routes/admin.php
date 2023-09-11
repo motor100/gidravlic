@@ -3,9 +3,10 @@
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\TestimonialController;
-use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\MainSliderController;
+use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ProfileController;
 // use App\Http\Controllers\Admin\PromoController;
 
 
@@ -91,21 +92,11 @@ Route::prefix('admin')->group(static function () {
         Route::get('/promos/{id}/destroy', [PromoController::class, 'destroy'])->name('promos-destroy');
         */
 
-        Route::get('/orders', [AdminController::class, 'orders'])->name('admin.orders');
+        Route::get('/orders', [OrderController::class, 'index'])->name('admin.orders');
 
-        /*
-        Route::get('/orders/{id}', [AdminController::class, 'orders_show'])->name('admin.orders-show');
+        Route::get('/orders/{id}', [OrderController::class, 'show'])->name('admin.orders-show');
 
-        Route::post('order/{id}/update', [AdminController::class, 'order_update'])->name('admin.order-update');
-
-        Route::get('order/{id}/print', [AdminController::class, 'order_print'])->name('admin.order-print');
-
-        Route::get('order/{id}/check', [AdminController::class, 'order_check'])->name('admin.order-check');
-
-        Route::get('order/{id}/sdek-create-order', [CdekController::class, 'cdek_create_order'])->name('admin.cdek-create-order');
-
-        Route::get('order/{id}/sdek-download-waybill', [CdekController::class, 'cdek_download_waybill'])->name('admin.cdek-download-waybill');
-        */
+        Route::post('order/{id}/update', [OrderController::class, 'update'])->name('admin.order-update');
 
         Route::get('/testimonials', [TestimonialController::class, 'index'])->name('admin.testimonials');
 

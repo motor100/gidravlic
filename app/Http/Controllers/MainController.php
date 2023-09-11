@@ -248,7 +248,7 @@ class MainController extends Controller
             'message'=> 'nullable|min:3|max:100',
             'delivery_method' => 'required',
             'payment_method' => 'required',
-            'inn' => 'nullable|numeric|min:8|max:13',
+            'inn' => 'nullable|numeric',
             'manager' => 'nullable',
             'delivery_company' => 'nullable'
         ]);
