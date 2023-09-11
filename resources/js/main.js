@@ -313,6 +313,9 @@ const callbackModal = document.querySelector('#callback-modal');
 const modalCloseBtn = document.querySelector('.modal-window .modal-close');
 
 function modalWindowOpen(win) {
+  // Закрытие мобильного меню
+  closeMobileMenu();
+  // Открытие окна
   body.classList.add('overflow-hidden');
   win.classList.add('active');
   setTimeout(() => {
@@ -535,19 +538,6 @@ if (weUseCookie) {
 }
 
 
-// Фильтр товаров в категории
-const productsFilter = document.querySelector('.products-filter');
-
-if (productsFilter) {
-  const productsFilterTitle = document.querySelector('.products-filter-title');
-
-  productsFilterTitle.onclick = () => {
-    productsFilter.classList.toggle('active');
-  }
-}
-
-
-
 // To top
 const toTop = document.getElementById("to-top");
 
@@ -571,6 +561,44 @@ if (toTop) {
 
   }
 
+}
+
+
+// mobile menu
+const burgerMenuWrapper = document.querySelector('.burger-menu-wrapper');
+const mobileMenu = document.querySelector('.mobile-menu');
+const burgerMenu = document.querySelector('.burger-menu');
+
+function openMobileMenu() {
+  body.classList.add('overflow-hidden');
+  mobileMenu.classList.add('active');
+  burgerMenuWrapper.classList.add('menu-is-open');
+}
+
+function closeMobileMenu() {
+  body.classList.remove('overflow-hidden');
+  burgerMenuWrapper.classList.remove('menu-is-open');
+  mobileMenu.classList.remove('active');
+}
+
+burgerMenuWrapper.onclick = function() {
+  if (burgerMenuWrapper.classList.contains('menu-is-open')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+
+const listParentClick = document.querySelectorAll('.mobile-menu li.menu-item a');
+for (let i=0; i < listParentClick.length; i++) {
+  listParentClick[i].onclick = function (event) {
+    event.preventDefault();
+    closeMobileMenu();
+    let hrefClick = this.href;
+    setTimeout(function() {
+      location.href = hrefClick
+    }, 500);
+  }
 }
 
 
@@ -888,5 +916,16 @@ if (createOrderPage) {
 
   deliveryMethodRadios[0].onchange = deliveryMethodRadios[1].onchange = deliveryMethod;
 
+}
 
+
+// Фильтр товаров в категории
+const productsFilter = document.querySelector('.products-filter');
+
+if (productsFilter) {
+  const productsFilterTitle = document.querySelector('.products-filter-title');
+
+  productsFilterTitle.onclick = () => {
+    productsFilter.classList.toggle('active');
+  }
 }
