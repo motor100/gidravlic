@@ -1507,6 +1507,9 @@ p {
   .delivery-item ul {
     margin: 0 0 30px 0;
   }
+  .delivery-item .map {
+    height: 400px;
+  }
   .flex-container {
     display: flex;
     justify-content: space-between;
@@ -3038,6 +3041,32 @@ p {
     }
     .services-item .services-btn {
       margin-top: 25px;
+    }
+  }
+
+  .delivery {
+    .delivery-item .map {
+      height: 300px;
+    }
+    .transport-companies-item__image {
+      height: 130px;
+      margin: 0 0 30px 0;
+    }
+    .transport-companies-item__text {
+      font-size: 16px;
+    }
+    .delivery-item ul {
+      margin: 0 0 20px 0;
+    }
+    .flex-container {
+      justify-content: left;
+      flex-wrap: wrap;
+    }
+    .transport-companies-item {
+      width: 155px;
+      margin: 0 10px 10px 0;
+      padding: 10px 10px 0 10px;
+      flex-shrink: 0;
     }
   }
 
