@@ -1,6 +1,6 @@
 <div class="section-title">КАК СДЕЛАТЬ ЗАКАЗ?</div>
 <div class="how-to-order-top">
-  <div class="how-to-order-top__title">Сделать заказ очень просто! Для этого подойдет любой удобный способ:</div>
+  <div class="how-to-order-top__title">Сделать заказ очень просто! <br>Для этого подойдет любой удобный способ:</div>
   <div class="how-to-order-top-items">
     <div class="how-to-order-top-item">
       <div class="how-to-order-top-item__image">
@@ -55,7 +55,7 @@
         </div>
         <div class="content">
           <div class="title">Оставить заявку</div>
-          <div class="text">Вы можете сделать заказ быстро, заполнив всего несколько полей: имя и телефон. Операторы колл-центра свяжутся с Вами для уточнения деталей заказа.</div>
+          <div class="text">Вы можете сделать заказ быстро, заполнив всего несколько полей: имя и телефон. Операторы колл-центра свяжутся с вами для уточнения деталей заказа.</div>
         </div>
       </div>
     </div>
@@ -87,7 +87,7 @@
     <div class="how-to-order-bottom-line"></div>
     <div class="how-to-order-bottom-item__content">
       <div class="how-to-order-bottom-item__title">Заказать через чат</div>
-      <div class="how-to-order-bottom-item__text">Вам не придется ждать, мы отвечаем быстро. В чате вы можете задать все интересующие вопросы и получить подробную консультацию по товару и оформлению заказа. Открыть чат</div>
+      <div class="how-to-order-bottom-item__text">Вам не придется ждать, мы отвечаем быстро. В чате вы можете задать все интересующие вопросы и получить подробную консультацию по товару и оформлению заказа.</div>
     </div>
   </div>
 </div>

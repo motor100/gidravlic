@@ -149,7 +149,7 @@
   <div class="content-wrapper">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 d-md-block d-none">
+        <div class="col-lg-3 d-lg-block d-none">
           <div class="aside-nav">
             <div class="aside-nav-title">КАТАЛОГ</div>
             <div class="aside-nav-items">
@@ -346,7 +346,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-lg-9 col-md-12">
           @yield('content')
         </div>
       </div>
