@@ -21,7 +21,7 @@
     <div class="comparison-products">
       <div class="row">
         @foreach($products as $product)
-          <div class="col-4">
+          <div class="col-md-4 col-6">
             
             <div class="regular-product-item">
               <div class="regular-product-item__image">
@@ -36,8 +36,8 @@
               </div>
               <button class="secondary-btn add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">КУПИТЬ</button>
               @if($product->hit)
-                <div class="regular-product-item__label">
-                  <span class="regular-product-item__label-text">ХИТ</span>
+                <div class="product-label-hit">
+                  <span class="product-label-hit-text">ХИТ</span>
                 </div>
               @endif
               <div class="regular-product-item-favourites add-to-favourites" data-id="{{ $product->id }}">

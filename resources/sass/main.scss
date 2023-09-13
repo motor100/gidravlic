@@ -1802,8 +1802,9 @@ p {
     width: 100%;
   }
   .ccf-is-empty-text {
-    margin: 0 0 25px 0;
+    margin: 0 0 30px 0;
     font-size: 24px;
+    line-height: 1.2;
     text-align: center;
   }
   .ccf-is-empty-btn {
@@ -2067,7 +2068,7 @@ p {
   .modal-close {
     position: absolute;
     top: 35px;
-    right: 28px;
+    right: 25px;
     cursor: pointer;
   }
   .close {
@@ -2096,7 +2097,6 @@ p {
   }
   .modal-title {
     margin: 0 0 20px 0;
-    padding: 0 0 3px 0;
     font-family: 'roboto-condensed-medium';
     font-size: 30px;
     color: #000;
@@ -3108,6 +3108,50 @@ p {
     }
   }
 
+  .ccf-is-empty {
+    .ccf-is-empty-text {
+      font-size: 22px;
+    }
+  }
+
+  .comparison {
+    .regular-product-item {
+      margin: 0 0 30px 0;
+    }
+    .product-info {
+      .product-info-item {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .login {
+    .form {
+      width: 60%;
+    }
+  }
+
+  .register {
+    .register-form {
+      width: 60%;
+    }
+  }
+
+  .modal-window {
+    .modal-area {
+      padding: 25px 50px;
+    }
+    .modal-title {
+      font-size: 28px;
+    }
+    .label {
+      font-size: 16px;
+    }
+    .checkbox-text {
+      font-size: 14px;
+    }
+  }
+
 }
 
 @media only screen and (max-width : 575px) {
@@ -3245,8 +3289,77 @@ p {
     font-size: 16px;
   }
 
+  .ccf-is-empty {
+    .ccf-is-empty-text {
+      font-size: 20px;
+    }
+  }
+
+  .comparison {
+    .regular-product-item {
+      margin: 0 0 20px 0;
+    }
+    .product-info {
+      .product-info-item {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .login {
+    .form {
+      width: 100%;
+    }
+  }
+
+  .register {
+    .register-form {
+      width: 100%;
+    }
+  }
+
+  .modal-window {
+    .modal-area {
+      padding: 25px;
+    }
+    .modal-title {
+      font-size: 26px;
+    }
+  }
+
 }
 
 @media only screen and (max-width : 360px) {
+  .favourites {
+    .regular-product-item-favourites {
+      display: none;
+    }
+  }
 
+  .comparison {
+    .regular-product-item-favourites {
+      display: none;
+    }
+  }
+
+  .login {
+    .login-btn {
+      width: 100%;
+    }
+  }
+
+  .register {
+    .register-btn {
+      width: 100%;
+    }
+  }
+
+  .modal-window {
+    .modal-title {
+      font-size: 24px;
+    }
+    .modal-submit-btn {
+      font-size: 20px;
+    }
+  }
 }
