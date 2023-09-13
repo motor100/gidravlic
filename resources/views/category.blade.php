@@ -24,7 +24,7 @@
 
   <div class="subcategories">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -33,7 +33,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -42,7 +42,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -51,7 +51,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -60,7 +60,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -69,7 +69,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -78,7 +78,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -87,7 +87,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -96,7 +96,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -105,7 +105,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -114,7 +114,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -123,7 +123,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -132,7 +132,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -141,7 +141,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -150,7 +150,7 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
             <img src="/img/temp-category-image.png" alt="">
@@ -183,7 +183,7 @@
   <div class="products">
     <div class="row">
       @foreach($products as $product)
-        <div class="col-md-4">
+        <div class="col-lg-4 col-6">
           @include('regular-product-item')
         </div>
       @endforeach
