@@ -23,22 +23,24 @@
     <form name="pump-cubv">
       <div class="calc-rows">
         <div class="calc-row">
-          <div class="calc-row-label">Ширина (W)</div>
-          <input type="text" name="W" class="calc-row-input">
-          <button type="button" name="getres" class="calc-row-btn">Вычислить N</button>
+          <label for="W" class="calc-row-label">Ширина (W)</label>
+          <input type="text" id="W" name="W" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Диаметр (D)</div>
-          <input type="text" name="D" class="calc-row-input">
+          <label for="D" class="calc-row-label">Диаметр (D)</label>
+          <input type="text" id="D" name="D" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Длина (L)</div>
-          <input type="text" name="L" class="calc-row-input">
+          <label for="L" class="calc-row-label">Длина (L)</label>
+          <input type="text" id="L" name="L" class="calc-row-input">
         </div>
         <div class="calc-row">
           <div class="calc-row-label">Результат</div>
-          <input type="text" name="result" class="calc-row-input">
+          <input type="text" name="result" class="calc-row-input" readonly>
         </div>
+      </div>
+      <div class="calc-btns">
+        <button type="button" name="getres" class="primary-btn btn-195 calc-btn">Вычислить N</button>
       </div>
     </form>
   </div>

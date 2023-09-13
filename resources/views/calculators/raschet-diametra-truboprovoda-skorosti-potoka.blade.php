@@ -34,24 +34,26 @@
     <form name="oil-pipe">
       <div class="">
         <div class="calc-row">
-          <div class="calc-row-label">Диаметр (d), мм</div>
-          <input type="text" name="d" class="calc-row-input">
-          <button type="button" name="get_Q" class="calc-row-btn">Вычислить Q</button>
+          <label for="d" class="calc-row-label">Диаметр (d), мм</label>
+          <input type="text" id="d" name="d" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Скорость потока (v), м/сек</div>
-          <input type="text" name="v" class="calc-row-input">
-          <button type="button" name="get_d" class="calc-row-btn">Вычислить d</button>
+          <label for="v" class="calc-row-label">Скорость потока (v), м/сек</label>
+          <input type="text" id="v" name="v" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Подача насоса (Q), л/мин</div>
-          <input type="text" name="Q" class="calc-row-input">
-          <button type="button" name="get_v" class="calc-row-btn">Вычислить v</button>
+          <label for="Q" class="calc-row-label">Подача насоса (Q), л/мин</label>
+          <input type="text" id="Q" name="Q" class="calc-row-input">
         </div>
         <div class="calc-row">
           <div class="calc-row-label">Результат</div>
-          <input type="text" name="result" class="calc-row-input">
+          <input type="text" name="result" class="calc-row-input" readonly>
         </div>
+      </div>
+      <div class="calc-btns">
+        <button type="button" name="get_Q" class="primary-btn btn-195 calc-btn">Вычислить Q</button>
+        <button type="button" name="get_d" class="primary-btn btn-195 calc-btn">Вычислить d</button>
+        <button type="button" name="get_v" class="primary-btn btn-195 calc-btn">Вычислить v</button>
       </div>
     </form>
   </div>

@@ -25,32 +25,32 @@
     <form name="known-cylinder">
       <div class="calc-rows">
         <div class="calc-row">
-          <div class="calc-row-label">Количество цилиндров (n)</div>
-          <input type="text" name="n" class="calc-row-input">
+          <label for="n" class="calc-row-label">Количество цилиндров (n)</label>
+          <input type="text" id="n" name="n" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Диаметр поршня, мм</div>
-          <input type="text" name="fi" class="calc-row-input">
+          <label for="fi" class="calc-row-label">Диаметр поршня, мм</label>
+          <input type="text" id="fi" name="fi" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Диаметр штока, мм</div>
-          <input type="text" name="fs" class="calc-row-input">
+          <label for="fs" class="calc-row-label">Диаметр штока, мм</label>
+          <input type="text" id="fs" name="fs" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Ход штока (L), мм</div>
-          <input type="text" name="L" class="calc-row-input">
+          <label for="L" class="calc-row-label">Ход штока (L), мм</label>
+          <input type="text" id="L" name="L" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Рабочее давление(P), бар</div>
-          <input type="text" name="P" class="calc-row-input">
+          <label for="P" class="calc-row-label">Рабочее давление(P), бар</label>
+          <input type="text" id="P" name="P" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Скорость хода(v), м/мин</div>
-          <input type="text" name="v" class="calc-row-input">
+          <label for="v" class="calc-row-label">Скорость хода(v), м/мин</label>
+          <input type="text" id="v" name="v" class="calc-row-input">
         </div>
         <div class="calc-row">
           <div class="calc-row-label">Результат</div>
-          <input type="text" name="result" class="calc-row-input">
+          <input type="text" name="result" class="calc-row-input" readonly>
         </div>
       </div>
 

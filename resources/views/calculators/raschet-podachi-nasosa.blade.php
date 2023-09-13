@@ -37,27 +37,29 @@
     <form name="pump-flow">
       <div class="calc-rows">
         <div class="calc-row">
-          <div class="calc-row-label">Подача насоса (Q), л/мин</div>
-          <input type="text" name="Q" class="calc-row-input">
-          <button type="button" name="get_Vg" class="calc-row-btn">Вычислить Vg</button>
+          <label for="Q" class="calc-row-label">Подача насоса (Q), л/мин</label>
+          <input type="text" id="Q" name="Q" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Обороты вала (n), об/мин</div>
-          <input type="text" name="n" class="calc-row-input">
-          <button type="button" name="get_Q" class="calc-row-btn">Вычислить Q</button>
+          <label for="n" class="calc-row-label">Обороты вала (n), об/мин</label>
+          <input type="text" id="n" name="n" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Объем камеры (Vg), cm3</div>
-          <input type="text" name="Vg" class="calc-row-input">
+          <label for="Vg" class="calc-row-label">Объем камеры (Vg), cm3</label>
+          <input type="text" id="Vg" name="Vg" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">КПД насоса</div>
-          <input type="text" name="eta" class="calc-row-input">
+          <label for="eta" class="calc-row-label">КПД насоса</label>
+          <input type="text" id="eta" name="eta" class="calc-row-input">
         </div>
         <div class="calc-row">
           <div class="calc-row-label">Результат</div>
-          <input type="text" name="result" class="calc-row-input">
+          <input type="text" name="result" class="calc-row-input" readonly>
         </div>
+      </div>
+      <div class="calc-btns">
+        <button type="button" name="get_Vg" class="primary-btn btn-195 calc-btn">Вычислить Vg</button>
+        <button type="button" name="get_Q" class="primary-btn btn-195 calc-btn">Вычислить Q</button>
       </div>
     </form>
   </div>

@@ -27,7 +27,7 @@
     <div class="contacts-text"><span class="text-bold">График работы:</span> ПН-ПТ с 9:00 до 18:00, СБ-ВС выходной</div>
   </div>
   <div class="map">
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aacd74efbff533d7ec22ecf2b646d7fbcf5ea179505e342c8dbd67af0e3ac1202&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aacd74efbff533d7ec22ecf2b646d7fbcf5ea179505e342c8dbd67af0e3ac1202&amp;width=100%25&amp;height=100%25&amp;lang=ru_RU&amp;scroll=true"></script>
   </div>
 </div>
 @endsection

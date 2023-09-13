@@ -28,24 +28,26 @@
     <form name="motor-speed">
       <div class="calc-rows">
         <div class="calc-row">
-          <div class="calc-row-label">Расход (Q), л/мин</div>
-          <input type="text" name="Q" class="calc-row-input">
-          <button type="button" name="get_n" class="calc-row-btn">Вычислить n</button>
+          <label for="Q" class="calc-row-label">Расход (Q), л/мин</label>
+          <input type="text" id="Q" name="Q" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Объем камеры (Vg), cm3</div>
-          <input type="text" name="Vg" class="calc-row-input">
+          <label for="Vg" class="calc-row-label">Объем камеры (Vg), cm3</label>
+          <input type="text" id="Vg" name="Vg" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">КПД насоса</div>
-          <input type="text" name="eta" class="calc-row-input">
+          <label for="eta" class="calc-row-label">КПД насоса</label>
+          <input type="text" id="eta" name="eta" class="calc-row-input">
         </div>
         <div class="calc-row">
           <div class="calc-row-label">Результат</div>
-          <input type="text" name="result" class="calc-row-input">
+          <input type="text" name="result" class="calc-row-input" readonly>
         </div>
       </div>
     </form>
+    <div class="calc-btns">
+      <button type="button" name="get_n" class="primary-btn btn-195 calc-btn">Вычислить n</button>
+    </div>
   </div>
 
 </div>

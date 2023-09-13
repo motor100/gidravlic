@@ -28,20 +28,22 @@
     <form name="input-torque">
       <div class="calc-rows">
         <div class="calc-row">
-          <div class="calc-row-label">Мощность (N), кВт</div>
-          <input type="text" name="N" class="calc-row-input">
-          <button type="button" name="get_M" class="calc-row-btn">Вычислить M</button>
+          <label for="N" class="calc-row-label">Мощность (N), кВт</label>
+          <input type="text" id="N" name="N" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Частота вала (n), об/мин</div>
-          <input type="text" name="n" class="calc-row-input">
+          <label for="n" class="calc-row-label">Частота вала (n), об/мин</label>
+          <input type="text" id="n" name="n" class="calc-row-input">
         </div>
         <div class="calc-row">
           <div class="calc-row-label">Результат</div>
-          <input type="text" name="result" class="calc-row-input">
+          <input type="text" name="result" class="calc-row-input" readonly>
         </div>
       </div>
     </form>
+    <div class="calc-btns">
+      <button type="button" name="get_M" class="primary-btn btn-195 calc-btn">Вычислить M</button>
+    </div>
   </div>
 
 </div>

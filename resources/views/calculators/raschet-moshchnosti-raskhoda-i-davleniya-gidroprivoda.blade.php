@@ -49,28 +49,30 @@
     <form name="output-power">
       <div class="calc-rows">
         <div class="calc-row">
-          <div class="calc-row-label">Мощность (N), кВт</div>
-          <input type="text" name="N" class="calc-row-input">
-          <button type="button" name="get_N" class="calc-row-btn">Вычислить N</button>
+          <label for="N" class="calc-row-label">Мощность (N), кВт</label>
+          <input type="text" id="N" name="N" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Расход (Q), л/мин</div>
-          <input type="text" name="Q" class="calc-row-input">
-          <button type="button" name="get_Q" class="calc-row-btn">Вычислить Q</button>
+          <label for="Q" class="calc-row-label">Расход (Q), л/мин</label>
+          <input type="text" id="Q" name="Q" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Давление (P), бар</div>
-          <input type="text" name="P" class="calc-row-input">
-          <button type="button" name="get_P" class="calc-row-btn">Вычислить P</button>
+          <label for="P" class="calc-row-label">Давление (P), бар</label>
+          <input type="text" id="P" name="P" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">КПД насоса</div>
-          <input type="text" name="eta" class="calc-row-input">
+          <label for="eta" class="calc-row-label">КПД насоса</label>
+          <input type="text" id="eta" name="eta" class="calc-row-input">
         </div>
         <div class="calc-row">
           <div class="calc-row-label">Результат</div>
-          <input type="text" name="result" class="calc-row-input">
+          <input type="text" name="result" class="calc-row-input" readonly>
         </div>
+      </div>
+      <div class="calc-btns">
+        <button type="button" name="get_N" class="primary-btn btn-195 calc-btn">Вычислить N</button>
+        <button type="button" name="get_Q" class="primary-btn btn-195 calc-btn">Вычислить Q</button>
+        <button type="button" name="get_P" class="primary-btn btn-195 calc-btn">Вычислить P</button>
       </div>
     </form>
 

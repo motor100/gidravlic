@@ -23,41 +23,43 @@
     <form name="unknown-cylinder">
       <div class="calc-rows">
         <div class="calc-row">
-          <div class="calc-row-label">Общее усилие (Fst), Кг</div>
-          <input type="text" name="Fst" class="calc-row-input">
-          <button type="button" name="get_Sp" class="calc-row-btn">Вычислить Sp</button>
+          <label for="Fst" class="calc-row-label">Общее усилие (Fst), Кг</label>
+          <input type="text" id="Fst" name="Fst" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Количество цилиндров</div>
-          <input type="text" name="n" class="calc-row-input">
-          <button type="button" name="get_P" class="calc-row-btn">Вычислить P</button>
+          <label for="n" class="calc-row-label">Количество цилиндров</label>
+          <input type="text" id="n" name="n" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Давление (P), бар</div>
-          <input type="text" name="P" class="calc-row-input">
-          <button type="button" name="get_fi" class="calc-row-btn">Вычислить fi</button>
+          <label for="P" class="calc-row-label">Давление (P), бар</label>
+          <input type="text" id="P" name="P" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Диаметр поршня (fi), мм</div>
-          <input type="text" name="fi" class="calc-row-input">
-          <button type="button" name="get_v" class="calc-row-btn">Вычислить v</button>
+          <label for="fi" class="calc-row-label">Диаметр поршня (fi), мм</label>
+          <input type="text" id="fi" name="fi" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Длина хода (L), мм</div>
-          <input type="text" name="L" class="calc-row-input">
+          <label for="L" class="calc-row-label">Длина хода (L), мм</label>
+          <input type="text" id="L" name="L" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Время выдвижения, сек.</div>
-          <input type="text" name="t" class="calc-row-input">
+          <label for="t" class="calc-row-label">Время выдвижения, сек.</label>
+          <input type="text" id="t" name="t" class="calc-row-input">
         </div>
         <div class="calc-row">
-          <div class="calc-row-label">Площадь поршня (Sp), см2</div>
-          <input type="text" name="Sp" class="calc-row-input">
+          <label for="Sp" class="calc-row-label">Площадь поршня (Sp), см2</label>
+          <input type="text" id="Sp" name="Sp" class="calc-row-input">
         </div>
         <div class="calc-row">
           <div class="calc-row-label">Результат</div>
-          <input type="text" name="result" class="calc-row-input">
+          <input type="text" name="result" class="calc-row-input" readonly>
         </div>
+      </div>
+      <div class="calc-btns">
+        <button type="button" name="get_Sp" class="primary-btn btn-195 calc-btn">Вычислить Sp</button>
+        <button type="button" name="get_P" class="primary-btn btn-195 calc-btn">Вычислить P</button>
+        <button type="button" name="get_fi" class="primary-btn btn-195 calc-btn">Вычислить fi</button>
+        <button type="button" name="get_v" class="primary-btn btn-195 calc-btn">Вычислить v</button>
       </div>
     </form>
 
