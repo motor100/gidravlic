@@ -22,140 +22,176 @@
     </div>
   </div>
 
-  <div class="subcategories">
+  <div class="categories subcategories">
     <div class="row">
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-1.png" alt="">
           </div>
-          <div class="subcategories-item__title">Гидрозамки</div>
+          <div class="subcategories-item__title">Гидравлические станции</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-2.png" alt="">
           </div>
-          <div class="subcategories-item__title">Тормозные клапаны</div>
+          <div class="subcategories-item__title">Гидравлические распределители</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-3.png" alt="">
           </div>
-          <div class="subcategories-item__title">Предохранительные клапаны</div>
+          <div class="subcategories-item__title">Гидравлические насосы</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-4.png" alt="">
           </div>
-          <div class="subcategories-item__title">Клапаны обратные</div>
+          <div class="subcategories-item__title">Гидравлические моторы</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-5.png" alt="">
           </div>
-          <div class="subcategories-item__title">Делители потока</div>
+          <div class="subcategories-item__title">Клапанная аппаратура</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-6.png" alt="">
           </div>
-          <div class="subcategories-item__title">Регуляторы расхода</div>
+          <div class="subcategories-item__title">Коробки отбора мощности</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-7.png" alt="">
           </div>
-          <div class="subcategories-item__title">Клапаны управления давлением</div>
+          <div class="subcategories-item__title">Модульная гидроаппаратура</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-8.png" alt="">
           </div>
-          <div class="subcategories-item__title">Клапаны редукционные</div>
+          <div class="subcategories-item__title">Фильтры гидравлические</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-9.png" alt="">
           </div>
-          <div class="subcategories-item__title">Клапаны ограничения перемещения</div>
+          <div class="subcategories-item__title">Картриджная аппаратура</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-10.png" alt="">
           </div>
-          <div class="subcategories-item__title">Диверторы</div>
+          <div class="subcategories-item__title">Измерительная аппаратура</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-11.png" alt="">
           </div>
-          <div class="subcategories-item__title">Дроссели</div>
+          <div class="subcategories-item__title">Гидроцилиндры</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-12.png" alt="">
           </div>
-          <div class="subcategories-item__title">Краны шаровые</div>
+          <div class="subcategories-item__title">Быстроразъемные соединения БРС</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-13.png" alt="">
           </div>
-          <div class="subcategories-item__title">Гидравлические соединения</div>
+          <div class="subcategories-item__title">Редукторы и мультипликаторы</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-14.png" alt="">
           </div>
-          <div class="subcategories-item__title">Пропорциональные регуляторы расхода</div>
+          <div class="subcategories-item__title">Маслоохладители</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
-            <img src="/img/temp-category-image.png" alt="">
+            <img src="/img/aside-nav-15.png" alt="">
           </div>
-          <div class="subcategories-item__title">Диверторы электромагнитные</div>
+          <div class="subcategories-item__title">Гидропневмо-аккумуляторы</div>
+          <a href="/category/subcategory" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/aside-nav-16.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Дистанционное управление</div>
+          <a href="/category/subcategory" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/aside-nav-17.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Электроника и автоматика</div>
+          <a href="/category/subcategory" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/aside-nav-18.png" alt="">
+          </div>
+          <div class="subcategories-item__title">Сопутствующие товары</div>
+          <a href="/category/subcategory" class="full-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcategories-item">
+          <div class="subcategories-item__image">
+            <img src="/img/aside-nav-19.png" alt="">
+          </div>
+          <div class="subcategories-item__title">РВД</div>
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
@@ -165,7 +201,7 @@
   <div class="products">
     <div class="row">
       @foreach($products as $product)
-        <div class="col-md-4">
+        <div class="col-lg-4 col-6">
           @include('regular-product-item')
         </div>
       @endforeach
