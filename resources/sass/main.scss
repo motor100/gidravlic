@@ -2720,10 +2720,10 @@ p {
 }
 
 @media only screen and (max-width : 1200px) {
-  
   .secondary-btn {
     font-size: 18px;
   }
+
   .header {
     .header-top .header-phone {
       font-size: 18px;
@@ -2849,6 +2849,13 @@ p {
   }
 
   .category {
+    .page-title-wrapper {
+      display: block;
+      margin: 0 0 40px 0;
+    }
+    .page-title {
+      margin: 0;
+    }
     .subcategories {
       .subcategories-item__image {
         width: 50px;
@@ -2950,7 +2957,6 @@ p {
       }
     }
   }
-  
     
 }
 
