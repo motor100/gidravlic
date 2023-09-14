@@ -163,11 +163,9 @@ function addToCart(elem) {
     */
 
     // Mobile cart counter
-    /*
     const mobileCartCounter = document.querySelector('#mobile-cart-counter');
     mobileCartCounter.innerText = str;
     mobileCartCounter.classList.add('active');
-    */
   }
 
   fetch('/ajax/add-to-cart?id=' + elem.dataset.id, {
@@ -221,11 +219,9 @@ function addToFavourites(elem) {
     */
 
     // Mobile favourites counter
-    /*
     const mobileFavouritesCounter = document.querySelector('#mobile-favourites-counter');
     mobileFavouritesCounter.innerText = str;
     mobileFavouritesCounter.classList.add('active');
-    */
   }
 
   fetch('/ajax/add-to-favourites?id=' + elem.dataset.id, {
@@ -279,11 +275,9 @@ function addToComparison(elem) {
     */
 
     // Mobile comparison counter
-    /*
     const mobileComparisonCounter = document.querySelector('#mobile-comparison-counter');
     mobileComparisonCounter.innerText = str;
     mobileComparisonCounter.classList.add('active');
-    */
   }
 
   fetch('/ajax/add-to-comparison?id=' + elem.dataset.id, {

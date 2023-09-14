@@ -184,13 +184,9 @@ p {
 .badge-counter {
   position: absolute;
   display: none;
-  width: 22px;
-  height: 22px;
   border-radius: 5px;
   background-color: $bluecolor;
-  font-size: 15px;
   color: #fff;
-  line-height: 1.5;
   text-align: center;
   &.active {
     display: block;
@@ -489,6 +485,10 @@ p {
   .header-bottom .badge-counter {
     top: -9px;
     right: 10px;
+    width: 22px;
+    height: 22px;
+    font-size: 15px;
+    line-height: 1.5;
   }
   .top-menu {
     position: relative;
@@ -2555,16 +2555,15 @@ p {
   bottom: 0;
   width: 100%;
   height: 86px;
-  padding: 17px 13px;
-  border-radius: 30px 30px 0px 0px;
-  background-color: #fff;
+  padding: 17px 10px;
+  background-color: $thirdlightgreycolor;
   z-index: 2;
-  box-shadow: 0px 0px 20px 0px rgba(54, 54, 54, 0.20);
   .menu-wrapper {
     display: flex;
     justify-content: space-between;
   }
   .menu-item {
+    width: 54px;
     position: relative;
     text-align: center;
   }
@@ -2572,14 +2571,23 @@ p {
     margin-bottom: 7px;
   }
   .menu-item img {
-    height: 28px;
+    height: 23px;
   }
   .menu-item .menu-item__title {
+    font-size: 12px;
+  }
+  // .fixed-bottom-menu-catalog-btn {
+  //   cursor: pointer;
+  // }
+  .menu-item .badge-counter {
+    top: -5px;
+    right: 5px;
+    width: 18px;
+    height: 18px;
     font-size: 13px;
+    line-height: 1.2;
   }
-  .fixed-bottom-menu-catalog-btn {
-    cursor: pointer;
-  }
+  /*
   .cart-counter {
     position: absolute;
     top: -5px;
@@ -2588,7 +2596,7 @@ p {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: var(--m-main-green);
+    background-color: red;
     font-size: 10px;
     color: #fff;
     line-height: 1.7;
@@ -2597,6 +2605,7 @@ p {
   .cart-counter.active {
     display: block;
   }
+  */
 }
 
 
