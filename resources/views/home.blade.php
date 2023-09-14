@@ -65,7 +65,7 @@
 
   <div class="categories">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-8 col-sm-7">
         <div class="categories-item">
           <div class="categories-item__image">
             <img src="/img/category-gidravlicheskie-raspredeliteli.jpg" alt="">
@@ -74,7 +74,7 @@
           <a href="/category" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-5">
         <div class="categories-item">
           <div class="categories-item__image">
             <img src="/img/category-klapannaya-apparatura.jpg" alt="">
@@ -83,7 +83,7 @@
           <a href="/category" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-5">
         <div class="categories-item">
           <div class="categories-item__image">
             <img src="/img/category-gidronasosy.jpg" alt="">
@@ -92,7 +92,7 @@
           <a href="/category" class="full-link"></a>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 col-sm-7">
         <div class="categories-item">
           <div class="categories-item__image">
             <img src="/img/category-rvd-fitingi-mufty-dlya-rvd.jpg" alt="">

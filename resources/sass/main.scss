@@ -645,7 +645,7 @@ p {
   .main-slider .slider-item-image {
     position: relative;
     height: 0;
-    padding: 0 0 42.5% 0;
+    padding: 0 0 42% 0;
   }
   .main-slider .slider-item-image img {
     position: absolute;
@@ -675,8 +675,8 @@ p {
   }
   .main-slider .view-more-btn {
     position: absolute;
-    right: 110px;
-    bottom: 28px;
+    right: 100px;
+    bottom: 45px;
     margin: 0;
   }
   .main-slider .swiper-pagination-bullet {
@@ -2524,9 +2524,6 @@ p {
     opacity: 1;
     visibility: visible;
   }
-  .header-btn {
-    border: 1px solid $accentcolor;
-  }
   .city-select {
     margin: 0 0 20px 0;
     cursor: pointer;
@@ -2760,6 +2757,12 @@ p {
     }
   }
 
+  .home {
+    .main-slider .view-more-btn {
+      right: 60px;
+    }
+  }
+
   .aside-nav {
     .aside-nav-item__image {
       width: 40px;
@@ -2926,6 +2929,12 @@ p {
 
   .home {
     padding: 40px 0 0 0;
+    .main-slider .view-more-btn {
+      display: none;
+    }
+    .main-slider .swiper-pagination {
+      display: none;
+    }
     .advantages {
       .flex-container {
         flex-wrap: wrap;
@@ -2991,14 +3000,22 @@ p {
 
 @media only screen and (max-width : 768px) {
   .container {
-    padding-right: 10px;
-    padding-left: 10px;
+    --bs-gutter-x: 20px;
   }
+  .row {
+    --bs-gutter-x: 20px;
+  }
+
   .hidden-mobile {
     display: none !important;
   }
   .hidden-desktop {
     display: block;
+  }
+
+  .section-title,
+  .page-title {
+    font-size: 24px;
   }
 
   .primary-btn {
@@ -3031,6 +3048,10 @@ p {
       .categories-item__image {
         height: 250px;
       }
+    }
+    .categories .categories-item__title {
+      padding: 7px;
+      font-size: 16px;
     }
   }
 
@@ -3262,8 +3283,12 @@ p {
 
 }
 
-@media only screen and (max-width : 575px) {
-
+@media only screen and (max-width : 576px) {
+  .home {
+    .main-slider .slider-item-image {
+      padding: 0 0 50% 0;
+    }
+  }
 }
 
 @media only screen and (max-width : 480px) {
@@ -3462,6 +3487,14 @@ p {
 }
 
 @media only screen and (max-width : 360px) {
+  .home {
+    .categories {
+      .categories-item__image {
+        height: 190px;
+      }
+    }
+  }
+  
   .favourites {
     .regular-product-item-favourites {
       display: none;

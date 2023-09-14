@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
   <header class="header">
     <div class="header-top">
       <div class="container">
@@ -475,6 +476,7 @@
       <span class="span"></span>
     </div>
   </div>
+
   <div class="mobile-menu hidden-desktop">
 
     <div class="lk-login header-btn">
@@ -485,7 +487,6 @@
         </svg>
       </div>
       <div class="lk-login-select__text header-btn__text">Личный кабинет</div>
-      <!-- <a href="/lk" class="full-link header-btn__link"></a> -->
     </div>
 
     <ul class="menu">
