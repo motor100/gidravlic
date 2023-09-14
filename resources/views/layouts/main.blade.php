@@ -387,7 +387,7 @@
       <div class="footer-nav">
         <div class="row">
           <div class="col-xl-1"></div>
-          <div class="col-xl-2 col-md-3">
+          <div class="col-xl-2 col-md-3 col-sm-6">
             <div class="footer-nav__title">Компания</div>
             <div class="footer-nav-item">
               <a href="/company" class="footer-nav-item__link">О компании</a>
@@ -398,11 +398,11 @@
             <div class="footer-nav-item">
               <a href="/company#company-info" class="footer-nav-item__link">Реквизиты</a>
             </div>
-            <div class="footer-nav-item">
+            <div class="footer-nav-item footer-nav-last-item">
               <a href="/contacts" class="footer-nav-item__link">Контакты</a>
             </div>
           </div>
-          <div class="col-xl-2 col-md-3">
+          <div class="col-xl-2 col-md-3 col-sm-6">
             <div class="footer-nav__title">Покупателям</div>
             <div class="footer-nav-item">
               <a href="/services" class="footer-nav-item__link">Услуги</a>
@@ -413,7 +413,7 @@
             <div class="footer-nav-item">
               <a href="/delivery" class="footer-nav-item__link">Доставка</a>
             </div>
-            <div class="footer-nav-item">
+            <div class="footer-nav-item footer-nav-last-item">
               <a href="/warranty" class="footer-nav-item__link">Гарантия</a>
             </div>
           </div>
