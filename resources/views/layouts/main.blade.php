@@ -58,7 +58,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <div class="underlogo-text hidden-mobile">ГИДРАВЛИЧЕСКОЕ ОБОРУДОВАНИЕ</div>
+            <div class="underlogo-text">ГИДРАВЛИЧЕСКОЕ ОБОРУДОВАНИЕ</div>
           </div>
           <div class="col-xxl-6 col-lg-5 col-md-4">
             <div class="search-wrapper">
