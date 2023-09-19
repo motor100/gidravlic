@@ -643,5 +643,7 @@
   @yield('script')
   @vite(['resources/js/main.js'])
 
+  <!-- <script src="//code.jivo.ru/widget/qXz1GgymN2" async></script> -->
+
 </body>
 </html>
