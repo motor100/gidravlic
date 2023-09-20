@@ -1038,6 +1038,9 @@ p {
 
 // cart
 .cart-page {
+  .clear-cart-btn {
+    margin-left: auto;
+  }
   .cart-products {
     margin: 0 0 54px 0;
   }
@@ -1106,7 +1109,6 @@ p {
     margin: 0 auto;
     padding: 0px;
     border: none;
-    border-radius: 50%;
   }
   .cart-products .product-item__quantity .quantity-button .circle:before,
   .cart-products .product-item__quantity .quantity-button .circle:after {
@@ -1129,6 +1131,9 @@ p {
     font-size: 20px;
     color: #000;
     flex-shrink: 0;
+  }
+  .cart-products .product-item-action {
+    display: flex;
   }
   .cart-products .product-item-favourites {
     margin: 0 10px;
@@ -3041,6 +3046,12 @@ p {
       }
     }
   }
+
+  .cart-page {
+    .cart-products .product-item {
+      padding: 33px 22px;
+    }
+  }
     
 }
 
@@ -3369,6 +3380,47 @@ p {
     }
   }
 
+  .cart-page {
+    .cart-products .product-item {
+      padding: 25px 15px;
+      flex-wrap: wrap;
+    }
+    .cart-products .product-item__title {
+      width: 100%;
+      margin: 0 0 15px 0;
+    }
+    .cart-products .product-item__stock {
+      margin: 0 15px 15px 0;
+    }
+    .cart-products .product-item__quantity {
+      margin: 0 0 15px 0;
+      padding: 3px 5px;
+    }
+    .cart-products .product-item__quantity .quantity-button {
+      width: 18px;
+      height: 21px;
+    }
+    .cart-products .product-item__quantity .quantity-button .circle {
+      width: 18px;
+      height: 21px;
+    }
+    .cart-products .product-item__quantity .quantity-button .circle::before,
+    .cart-products .product-item__quantity .quantity-button .circle::after {
+      top: 10px;
+      left: 0;
+    }
+    .cart-products .product-item__quantity .quantity-number {
+      width: 35px;
+      font-size: 18px;
+    }
+    .cart-products .product-item__price {
+      width: 74%;
+      margin: 0;
+      flex-grow: 2;
+    }
+  
+  }
+
   .wrap_b3c7 {
     bottom: 100px !important;
   }
@@ -3585,6 +3637,12 @@ p {
       margin: 0 0 10px 0;
     }
   }
+
+  .order-info {
+    width: 100%;
+    padding: 10px 15px 15px 15px;
+  }
+
 
 }
 
