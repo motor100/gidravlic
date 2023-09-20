@@ -308,9 +308,6 @@ p {
     padding: 5px 0;
     background-color: $greycolor;
   }
-  // .header-top .logo-link {
-  //   display: flex;
-  // }
   .header-top .logo img {
     width: 100%;
   }
@@ -451,7 +448,6 @@ p {
     padding: 10px 40px;
     font-family: 'roboto-condensed-light';
     font-size: 20px;
-    // color: #000;
     color: $greycolor;
     line-height: 1.2;
     word-break: break-all;
@@ -1178,7 +1174,6 @@ p {
     margin: 0 100px 0 0;
   }
   .delivery-method .flex-container {
-    // margin: 0 0 18px 0;
     justify-content: space-between;
   }
   .delivery-method-item {
@@ -2465,11 +2460,6 @@ p {
       width: 100%;
       font-size: 16px;
     }
-
-    // .table td {
-    //   padding: 5px 0;
-    //   border-bottom: 1px solid $secondlightgreycolor;
-    // }
   }
 }
 
@@ -2485,9 +2475,6 @@ p {
   background-color: $greycolor;
   cursor: pointer;
   z-index: 10;
-  // &.menu-is-open {
-  //   background-color: transparent;
-  // }
   .burger-menu {
     position: relative;
     height: 100%;
@@ -2573,7 +2560,7 @@ p {
   }
 }
 
-/* fixed bottom menu */
+// fixed bottom menu
 .fixed-bottom-menu {
   position: fixed;
   left: 0;
@@ -2629,7 +2616,6 @@ p {
   }
   */
 }
-
 
 @media only screen and (max-width : 1400px) {
   .section-title,
@@ -2690,14 +2676,6 @@ p {
       padding: 30px 45px;
     }
   }
-
-  /*
-  .how-to-order-section {
-    .how-to-order-bottom-line {
-      margin: 0 25px 0 0;
-    }
-  }
-  */
 
   .main-how-to-order-section {
     .how-to-order-top-item__image,
@@ -2930,7 +2908,6 @@ p {
       margin-right: 20px;
     }
   }
-
 }
 
 @media only screen and (max-width : 992px) {
@@ -3054,13 +3031,13 @@ p {
       display: none;
     }
   }
-    
 }
 
 @media only screen and (max-width : 768px) {
   .container {
     --bs-gutter-x: 20px;
   }
+
   .row {
     --bs-gutter-x: 20px;
   }
@@ -3068,6 +3045,7 @@ p {
   .hidden-mobile {
     display: none !important;
   }
+
   .hidden-desktop {
     display: block;
   }
@@ -3438,7 +3416,6 @@ p {
   .wrap_b3c7 {
     bottom: 100px !important;
   }
-
 }
 
 @media only screen and (max-width : 576px) {
@@ -3678,7 +3655,19 @@ p {
     }
   }
   
-
+  .thank-you {
+    .thank-you-content__title {
+      font-size: 26px;
+    }
+    .thank-you-content__text,
+    .thank-you-payment__text {
+      font-size: 18px;
+    }
+    .thank-you-payment .thank-you-payment__title {
+      margin: 0 0 15px 0;
+      font-size: 28px;
+    }
+  }
 }
 
 @media only screen and (max-width : 360px) {

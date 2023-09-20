@@ -27,16 +27,18 @@
   </div>
 
   <div class="thank-you-payment">
-    <div class="thank-you-payment__title">Оплата заказа</div>
-    <div class="thank-you-payment__text">Вы выбрали способ оплаты: {{ $payment_method }}</div>
-    <div class="thank-you-payment__summ">
-      <span class="text">Сумма к оплате:</span>
-      <span class="value">{{ $summ }}</span>
-      <span class="currency">р</span>
-    </div>
+    @if(isset($payment_method))
+      <div class="thank-you-payment__title">Оплата заказа</div>
+      <div class="thank-you-payment__text">Вы выбрали способ оплаты: {{ $payment_method }}</div>
+      <div class="thank-you-payment__summ">
+        <span class="text">Сумма к оплате:</span>
+        <span class="value">{{ $summ }}</span>
+        <span class="currency">р</span>
+      </div>
+    @endif
   </div>
 
-  @if (isset($payment_method) && $payment_method == 'Онлайн')
+  @if(isset($payment_method) && $payment_method == 'Онлайн')
     <a href="#" class="primary-btn thank-you-payment-btn btn-245">ОПЛАТИТЬ</a>
   @endif
 
