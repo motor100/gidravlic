@@ -27,10 +27,10 @@
 @endif
 
 <div class="create-order">
-  <div class="page-title-wrapper">
-    <div class="page-title">Оформление заказа</div>
-    <a href="/cart" class="primary-btn back-to-cart-btn btn-245">ВЕРНУТЬСЯ В КОРЗИНУ</a>
-  </div>
+  <div class="page-title">Оформление заказа</div>
+
+  <a href="/cart" class="primary-btn back-to-cart-btn btn-245">ВЕРНУТЬСЯ В КОРЗИНУ</a>
+
   <form class="form" action="/create-order-handler" method="post">
     
     <div class="create-order-item customer-type">
@@ -87,12 +87,12 @@
         <div class="content">
           <div class="flex-container">
             <div class="address">
-              <div class="text">Стоимость: бесплатно<br>Вы можете самостоятельно забрать заказ с нашего<br> склада по адресу:</div>
+              <div class="text">Стоимость: бесплатно<br>Вы можете самостоятельно забрать заказ с нашего<br class="br"> склада по адресу:</div>
               <div class="description-item first-description-item">
                 <div class="description-item__image">
                   <img src="/img/create-order-geolocation.png" alt="">
                 </div>
-                <div class="description-item__text">​Миасс, Челябинская область, 456300<br>Тургоякское шоссе, 5/11<br>1 этаж</div>
+                <div class="description-item__text">​Миасс, Челябинская область, 456300<br>Тургоякское шоссе 5/11, <br class="br">1 этаж</div>
               </div>
               <div class="description-item">
                 <div class="description-item__image">

@@ -867,12 +867,12 @@ if (createOrderPage) {
     if (deliveryMethodRadios[0].checked) { // самовывоз
       str = '<div class="flex-container">';
       str += '<div class="address">';
-      str += '<div class="text">Стоимость: бесплатно<br>Вы можете самостоятельно забрать заказ с нашего<br> склада по адресу:</div>';
+      str += '<div class="text">Стоимость: бесплатно<br>Вы можете самостоятельно забрать заказ с нашего<br class="br"> склада по адресу:</div>';
       str += '<div class="description-item first-description-item">';
       str += '<div class="description-item__image">';
       str += '<img src="/img/create-order-geolocation.png" alt="">';
       str += '</div>';
-      str += '<div class="description-item__text">​Миасс, Челябинская область, 456300<br>Тургоякское шоссе, 5/11<br>1 этаж</div>';
+      str += '<div class="description-item__text">​Миасс, Челябинская область, 456300<br>Тургоякское шоссе 5/11, <br class="br">1 этаж</div>';
       str += '</div>';
       str += '<div class="description-item">';
       str += '<div class="description-item__image">';
