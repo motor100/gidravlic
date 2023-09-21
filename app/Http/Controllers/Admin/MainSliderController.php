@@ -48,10 +48,13 @@ class MainSliderController extends Controller
 
         $path = Storage::putFile('public/uploads/slider', $validated["input-main-file"]);
 
+        // Позиция вхождения подстроки
+        $start = strripos($validated["link"], "/catalog");
+
         MainSlider::create([
             'title' => $validated["title"],
             'image' => $path,
-            'link' => $validated["link"]
+            'link' => mb_substr($validated["link"], $start)
         ]);
 
         return redirect('/admin/main-slider');
@@ -106,10 +109,13 @@ class MainSliderController extends Controller
             $path = $slide->image;
         }
 
+        // Позиция вхождения подстроки
+        $start = strripos($validated["link"], "/catalog");
+
         $slide->update([
             'title' => $validated["title"],
             'image' => $path,
-            'link' => $validated["link"]
+            'link' => mb_substr($validated["link"], $start)
         ]);
 
         return redirect('/admin/main-slider');
