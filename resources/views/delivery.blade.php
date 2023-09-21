@@ -38,10 +38,10 @@
           </div>
           <div class="transport-companies-item__text">
             <div class="transport-companies-item__title">Деловые Линии</div>
-            <ul>
-              <li>275 пунктов самовывоза</li>
-              <li>1 700 городов доставки</li>
-              <li>от 2 дней</li>
+            <ul class="list">
+              <li class="list-item">275 пунктов самовывоза</li>
+              <li class="list-item">1 700 городов доставки</li>
+              <li class="list-item">от 2 дней</li>
             </ul>
           </div>
         </div>

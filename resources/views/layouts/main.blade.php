@@ -471,22 +471,22 @@
     </div>
   </footer>
 
-  <div class="burger-menu-wrapper hidden-desktop">
+  <div class="burger-menu-wrapper">
     <div class="burger-menu">
       <span class="span"></span>
     </div>
   </div>
 
-  <div class="mobile-menu hidden-desktop">
+  <div class="mobile-menu">
 
     <div class="lk-login header-btn">
-      <div class="lk-login-select__image header-btn__image">
-        <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.49988 8.5C9.57095 8.5 11.2499 6.82107 11.2499 4.75C11.2499 2.67893 9.57095 1 7.49988 1C5.42881 1 3.74988 2.67893 3.74988 4.75C3.74988 6.82107 5.42881 8.5 7.49988 8.5Z"/>
-          <path d="M11.25 9.99991H11.5138C12.6484 9.99991 13.6056 10.8449 13.7464 11.9708L14.0392 14.3138C14.1511 15.2091 13.453 15.9999 12.5508 15.9999H2.44916C1.54692 15.9999 0.84884 15.2091 0.960748 14.3138L1.25362 11.9708C1.39437 10.8449 2.35153 9.99991 3.48625 9.99991H3.74999" stroke-linecap="round" stroke-linejoin="round"/>
+      <div class="lk-login__image header-btn__image">
+        <svg width="21" height="30" viewBox="0 0 21 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.8127 23.9071C18.8127 26.2363 16.7525 28.1262 14.2099 28.1262H6.5391C3.99831 28.1262 1.93806 26.2363 1.93806 23.9071V21.0938C1.93806 19.0999 3.44963 17.4413 5.4758 17.0002C6.86006 18.0975 8.54735 18.7502 10.3745 18.7502C12.2034 18.7502 13.8907 18.0975 15.2732 17.0002C17.3012 17.4413 18.8127 19.0999 18.8127 21.0938V23.9071ZM3.81183 9.37422C3.81183 5.2322 6.75068 1.87556 10.3745 1.87556C14.0001 1.87556 16.9372 5.2322 16.9372 9.37422C16.9372 13.518 14.0001 16.8747 10.3745 16.8747C6.75068 16.8747 3.81183 13.518 3.81183 9.37422ZM16.8923 15.3308C18.0901 13.7063 18.8127 11.6335 18.8127 9.37422C18.8127 4.19939 15.0347 0 10.3745 0C5.71428 0 1.93806 4.19939 1.93806 9.37422C1.93806 11.6335 2.65888 13.7063 3.85845 15.3308C1.65475 16.0929 0.0625 18.1621 0.0625 20.6258V24.3751C0.0625 27.4807 2.58178 30 5.68739 30H15.0634C18.169 30 20.6883 27.4807 20.6883 24.3751V20.6258C20.6883 18.1621 19.0942 16.0929 16.8923 15.3308Z" fill="#868686"/>
         </svg>
       </div>
-      <div class="lk-login-select__text header-btn__text">Личный кабинет</div>
+      <div class="lk-login__text header-btn__text">Войти</div>
+      <a href="/lk" class="full-link"></a>
     </div>
 
     <ul class="menu">
@@ -513,9 +513,11 @@
       </li>
     </ul>
 
+    <div class="secondary-btn callback-btn js-callback-btn">Оставить заявку</div>
+
     <div class="info">
-      <div class="info-phone">тел.: 8 (800) 575-55-88</div>
-      <div class="callback-btn js-callback-btn">заказать обратный звонок</div>
+      <div class="phone">+7 (982) 292-88-79</div>
+      <div class="phone">8 (800) 575-55-88</div>
     </div>          
 
   </div>
@@ -579,7 +581,7 @@
     </div>
   @endif
 
-  <div class="fixed-bottom-menu hidden-desktop">
+  <div class="fixed-bottom-menu">
     <div class="menu-wrapper">
       <div class="menu-item">
         <div class="menu-item__image">
@@ -643,7 +645,7 @@
   @yield('script')
   @vite(['resources/js/main.js'])
 
-  <!-- <script src="//code.jivo.ru/widget/qXz1GgymN2" async></script> -->
+  <script src="//code.jivo.ru/widget/qXz1GgymN2" async></script>
 
 </body>
 </html>

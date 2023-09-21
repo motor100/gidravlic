@@ -1533,7 +1533,7 @@ p {
   .delivery-description {
     margin: 0 0 35px 0;
   }
-  .delivery-item ul {
+  .delivery-item .list {
     margin: 0 0 30px 0;
   }
   .delivery-item .map {
@@ -2519,18 +2519,18 @@ p {
 }
 
 .mobile-menu {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
+  display: none;
   width: 100%;
   height: 100vh;
-  padding: 130px 30px 30px 30px;
+  padding: 80px 30px 30px 30px;
   background-color: #fff;
   z-index: 9;
   opacity: 0;
   visibility: hidden;
-  transition: all 1s;
+  transition: opacity .5s, visibility .5s;
   &.active {
     opacity: 1;
     visibility: visible;
@@ -2540,26 +2540,42 @@ p {
     cursor: pointer;
   }
   .lk-login {
-    margin: 0 0 40px 0;
+    position: relative;
+    display: flex;
+    margin: 0 0 20px 0;
+  }
+  .lk-login__image {
+    margin: 0 10px 0 0;
+  }
+  .lk-login__text {
+    font-size: 20px;
   }
   .menu {
-    margin: 0 0 50px 0;
+    margin: 0 0 35px 0;
     padding: 0;
     list-style: none;
   }
   .menu-item {
-    padding: 10px 0;
+    padding: 5px 0;
   }
   .menu-item a {
-    color: #3E3E3E;
+    font-size: 18px;
+    color: $greycolor;
+    text-transform: uppercase;
   }
-  .info .question-phone {
+  .callback-btn {
+    width: 170px;
+    margin: 0 0 35px 0;
+    padding: 2px 0px;
+    font-size: 16px;
+  }
+  .info .phone {
     margin: 0 0 5px 0;
+    font-family: 'roboto-condensed-bold';
+    font-size: 20px;
+    color: $accentcolor;
   }
-  .info .callback-btn {
-    text-decoration: underline;
-    cursor: pointer;
-  }
+  
 }
 
 // fixed bottom menu
@@ -2567,6 +2583,7 @@ p {
   position: fixed;
   left: 0;
   bottom: 0;
+  display: none;
   width: 100%;
   height: 86px;
   padding: 17px 10px;
@@ -2598,25 +2615,6 @@ p {
     font-size: 13px;
     line-height: 1.2;
   }
-  /*
-  .cart-counter {
-    position: absolute;
-    top: -5px;
-    right: 5px;
-    display: none;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: red;
-    font-size: 10px;
-    color: #fff;
-    line-height: 1.7;
-    text-align: center;
-  }
-  .cart-counter.active {
-    display: block;
-  }
-  */
 }
 
 @media only screen and (max-width : 1400px) {
@@ -3254,18 +3252,21 @@ p {
   }
 
   .delivery {
+    .delivery-description {
+      margin: 0 0 25px;
+    }
     .delivery-item .map {
       height: 300px;
     }
     .transport-companies-item__image {
-      height: 130px;
+      height: 110px;
       margin: 0 0 30px 0;
     }
     .transport-companies-item__text {
       font-size: 16px;
     }
-    .delivery-item ul {
-      margin: 0 0 20px 0;
+    .delivery-item .list {
+      margin: 0 0 15px 0;
     }
     .flex-container {
       justify-content: left;
@@ -3510,8 +3511,21 @@ p {
     }
   }
 
+  .burger-menu-wrapper {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .fixed-bottom-menu {
+    display: block;
+  }
+
   .wrap_b3c7 {
     bottom: 100px !important;
+    z-index: 8 !important;
   }
 }
 
@@ -3613,9 +3627,16 @@ p {
       }
     }
   }
+
+  .delivery {
+    .transport-companies-item__image {
+      height: 90px;
+    }
+  }
   
   .page-item {
     .page-item__content {
+      padding: 10px 0;
       font-size: 16px;
     }
   }
