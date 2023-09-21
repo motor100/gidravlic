@@ -24,7 +24,7 @@
           <div class="slider-item-image">
             <img src="{{ Storage::url($slide->image) }}" alt="">
           </div>
-          <a href="#" class="primary-btn view-more-btn btn-195">Подробнее</a>
+          <a href="{{ $slide->link }}" class="primary-btn view-more-btn btn-195">Подробнее</a>
         </div>
         @endforeach
       </div>

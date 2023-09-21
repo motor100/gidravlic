@@ -17,5 +17,6 @@ class MainSlider extends Model
     protected $fillable = [
         'title',
         'image',
+        'link',
     ];
 }

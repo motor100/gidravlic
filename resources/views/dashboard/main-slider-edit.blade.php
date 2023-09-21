@@ -23,6 +23,10 @@
       <input type="text" name="title" id="title" class="form-control" required value="{{ $slide->title }}">
     </div>
     <div class="form-group mb-3">
+      <label for="link" class="form-check-label mb-1">Ссылка на товар</label>
+      <input type="text" name="link" id="link" class="form-control" required value="{{ $slide->link }}">
+    </div>
+    <div class="form-group mb-3">
       <div class="image-preview">
         <img src="{{ Storage::url($slide->image) }}" alt="">
       </div>

@@ -37,6 +37,7 @@ class MainSliderController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|min:4|max:255',
+            'link' => 'required|min:4|max:255',
             'input-main-file' => [
                                 'required',
                                 \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
@@ -49,7 +50,8 @@ class MainSliderController extends Controller
 
         MainSlider::create([
             'title' => $validated["title"],
-            'image' => $path
+            'image' => $path,
+            'link' => $validated["link"]
         ]);
 
         return redirect('/admin/main-slider');
@@ -83,6 +85,7 @@ class MainSliderController extends Controller
         $validated = $request->validate([
             'id' => 'required|numeric',
             'title' => 'required|min:4|max:255',
+            'link' => 'required|min:4|max:255',
             'input-main-file' => [
                                 'nullable',
                                 \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
@@ -106,6 +109,7 @@ class MainSliderController extends Controller
         $slide->update([
             'title' => $validated["title"],
             'image' => $path,
+            'link' => $validated["link"]
         ]);
 
         return redirect('/admin/main-slider');

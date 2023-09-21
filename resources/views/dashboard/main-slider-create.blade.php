@@ -22,6 +22,10 @@
       <label for="title" class="form-check-label mb-1">Заголовок</label>
       <input type="text" name="title" id="title" class="form-control" required>
     </div>
+    <div class="form-group mb-3">
+      <label for="link" class="form-check-label mb-1">Ссылка на товар</label>
+      <input type="text" name="link" id="link" class="form-control" required>
+    </div>
     <div class="form-group mb-5">
       <div class="label-text mb-1">Изображение</div>
       <input type="file" name="input-main-file" id="input-main-file" class="inputfile" required accept="image/jpeg,image/png">
