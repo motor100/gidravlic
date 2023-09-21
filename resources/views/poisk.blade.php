@@ -19,7 +19,7 @@
     <div class="products">
       <div class="row">
         @foreach($products as $product)
-          <div class="col-4">
+          <div class="col-lg-4 col-6">
             @include('regular-product-item')
           </div>
         @endforeach

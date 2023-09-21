@@ -542,7 +542,7 @@
             <label for="phone-callback-modal" class="label">Телефон <span class="accentcolor">*</span></label>
             <input type="text" name="phone" id="phone-callback-modal" class="input-field js-phone-callback-modal js-input-phone-mask" required size="18">
           </div>
-          <div class="form-group mb30">
+          <div class="form-group">
             <label for="message-callback-modal" class="label">Сообщение</label>
             <textarea name="message" id="message-callback-modal" class="input-field textarea" minlength="3" maxlength="100"></textarea>
           </div>
@@ -551,7 +551,7 @@
             <label for="checkbox-agree-callback-modal" class="custom-checkbox-label"></label>
             <span class="checkbox-text">Согласен на обработку персональных данных</span>
           </div>
-          <div class="checkbox-wrapper mb30">
+          <div class="checkbox-wrapper mb25">
             <input type="checkbox" name="checkbox-read" class="custom-checkbox js-checkbox-callback-modal" id="checkbox-read-callback-modal" checked required>
             <label for="checkbox-read-callback-modal" class="custom-checkbox-label"></label>
             <span class="checkbox-text">Ознакомлен с <a href="/politika-konfidencialnosti" class="privacy-policy-link" target="_blank">политикой конфиденциальности</a></span>

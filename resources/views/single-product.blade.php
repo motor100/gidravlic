@@ -24,28 +24,23 @@
   <div class="page-title">{{ $product->title }}</div>
 
   <div class="single-product-content">
+
+    @php
+      $rand = mt_rand(0, 4);
+    @endphp
+
+    @if($rand > 0)
     <div class="single-product-gallery">
-      <figure class="figure single-product-gallery-item">
-        <a href="/img/temp-single-product1.png" data-pswp-width="800" data-pswp-height="600" target="_blank">
-          <img src="/img/temp-single-product1.png" alt="">
-        </a>
-      </figure>
-      <figure class="figure single-product-gallery-item">
-        <a href="/img/temp-single-product2.jpg" data-pswp-width="800" data-pswp-height="600" target="_blank">
-          <img src="/img/temp-single-product2.jpg" alt="">
-        </a>
-      </figure>
-      <figure class="figure single-product-gallery-item">
-        <a href="/img/temp-single-product3.jpg" data-pswp-width="800" data-pswp-height="600" target="_blank">
-          <img src="/img/temp-single-product3.jpg" alt="">
-        </a>
-      </figure>
-      <figure class="figure single-product-gallery-item">
-        <a href="/img/temp-single-product4.jpg" data-pswp-width="800" data-pswp-height="600" target="_blank">
-          <img src="/img/temp-single-product4.jpg" alt="">
-        </a>
-      </figure>
+      @for($i = 1; $i <= $rand; $i++)
+        <figure class="figure single-product-gallery-item">
+          <a href="/img/temp-single-product{{ $i }}.jpg" data-pswp-width="800" data-pswp-height="600" target="_blank">
+            <img src="/img/temp-single-product{{ $i }}.jpg" alt="">
+          </a>
+        </figure>
+      @endfor
     </div>
+    @endif
+
     <div class="single-product-image-wrapper">
       <div class="single-product-image">
         <img src="{{ Storage::url($product->image) }}" alt="">
@@ -101,13 +96,13 @@
       <div class="single-product-document-item__image">
         <img src="/img/single-product-pdf.png" alt="">
       </div>
-      <div class="single-product-document-item__title">Сертификат</div>
+      <a href="{{ Storage::url('uploads/documents/doc.pdf') }}" class="single-product-document-item__link" target="_blank">Сертификат</a>
     </div>
     <div class="single-product-document-item">
       <div class="single-product-document-item__image">
         <img src="/img/single-product-pdf.png" alt="">
       </div>
-      <div class="single-product-document-item__title">Свидетельство</div>
+      <a href="{{ Storage::url('uploads/documents/doc.pdf') }}" class="single-product-document-item__link" target="_blank">Свидетельство</a>
     </div>
   </div>
 </div>

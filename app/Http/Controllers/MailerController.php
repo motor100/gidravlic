@@ -47,10 +47,10 @@ class MailerController extends Controller
                 $mail->FromName = config('mail.from.name');
 
                 // Кому
-                $mail->addAddress('260443@mail.ru', 'info');
+                $mail->addAddress('zakaz@gidravlic.com', 'info');
 
                 // Тема письма
-                $mail->Subject = 'Сообщение с сайта gidravlic';
+                $mail->Subject = 'Сообщение с сайта gidravlic.com';
 
                 $mail->isHTML(true);
 
