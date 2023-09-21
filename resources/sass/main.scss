@@ -3059,6 +3059,21 @@ p {
       }
     }
   }
+
+  .we-use-cookie {
+    .we-use-cookie-wrapper {
+      padding: 25px;
+    }
+    .we-use-cookie-text {
+      padding: 0 25px 0 0;
+      font-size: 14px;
+    }
+    .we-use-cookie-close {
+      width: 150px;
+      padding: 5px 0;
+      font-size: 18px;
+    }
+  }
 }
 
 @media only screen and (max-width : 768px) {
@@ -3475,6 +3490,23 @@ p {
       .table .title {
         word-break: break-all;
       }
+    }
+  }
+
+  .we-use-cookie {
+    max-width: 450px;
+    right: 0;
+    left: 0;
+    .we-use-cookie-wrapper {
+      display: block;
+      padding: 20px;
+    }
+    .we-use-cookie-text {
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
+    .we-use-cookie-close {
+      margin-left: auto;
     }
   }
 
