@@ -78,6 +78,8 @@ Route::get('/calculators/raschet-obema-shesterennogo-nasosa-po-geometricheskim-r
 
 Route::get('/contacts', [MainController::class, 'contacts']);
 
+Route::get('/special-offer', [MainController::class, 'special_offer']);
+
 Route::get('/create-order', [MainController::class, 'create_order']);
 
 Route::post('create-order-handler', [MainController::class, 'create_order_handler']);

@@ -368,7 +368,7 @@
             @endforeach
           </div>
         </div>
-        <a href="#" class="primary-btn see-all-btn btn-245">СМОТРЕТЬ ВСЕ</a>
+        <a href="/special-offer" class="primary-btn see-all-btn btn-245">СМОТРЕТЬ ВСЕ</a>
       </div>
     </div>
 

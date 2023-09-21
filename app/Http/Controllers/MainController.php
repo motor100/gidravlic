@@ -219,6 +219,13 @@ class MainController extends Controller
         return view('contacts');
     }
 
+    public function special_offer(): View
+    {
+        $products = \App\Models\Product::paginate(24);
+        
+        return view('special-offer', compact('products'));
+    }
+
     public function create_order(): mixed
     {
         // Получение моделей товаров
