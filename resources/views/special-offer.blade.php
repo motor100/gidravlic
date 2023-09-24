@@ -12,7 +12,7 @@
   <div class="active">Специальные предложения</div>
 </div>
 
-<div class="contacts">
+<div class="special-offer">
   <div class="page-title">Специальные предложения</div>
 
   <div class="products">
