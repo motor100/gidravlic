@@ -40,10 +40,10 @@
           <input type="text" name="result" class="calc-row-input" readonly>
         </div>
       </div>
+      <div class="calc-btns">
+        <button type="button" name="get_M" class="primary-btn btn-195 calc-btn">Вычислить M</button>
+      </div>
     </form>
-    <div class="calc-btns">
-      <button type="button" name="get_M" class="primary-btn btn-195 calc-btn">Вычислить M</button>
-    </div>
   </div>
 
 </div>
