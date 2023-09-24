@@ -1,4 +1,4 @@
-# УК Счастье
+# Гидравлика
 
 Laravel v10.10
 
@@ -6,4 +6,4 @@ Laravel v10.10
 Custom Dashboard Template
 
 #### Plugins
-TinyMCE Editor, Input Mask, PHPMailer
+Input Mask, PHPMailer
