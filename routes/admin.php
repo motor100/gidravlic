@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MainSliderController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ProductController;
 // use App\Http\Controllers\Admin\PromoController;
 
 
@@ -62,6 +63,26 @@ Route::prefix('admin')->group(static function () {
 
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');
 
+        Route::get('/products', [ProductController::class, 'index']);
+
+        // Route::get('/products/create', [ProductController::class, 'create'])->name('products-create');
+
+        // Route::post('/products/store', [ProductController::class, 'store'])->name('products-store');
+
+        Route::get('/products/{id}', [ProductController::class, 'show'])->name('products-show');
+
+        Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products-edit');
+
+        Route::post('/products/{id}/update', [ProductController::class, 'update'])->name('products-update');
+
+        // Route::get('/products/{id}/destroy', [ProductController::class, 'destroy'])->name('products-destroy');
+
+        Route::get('/orders', [OrderController::class, 'index'])->name('admin.orders');
+
+        Route::get('/orders/{id}', [OrderController::class, 'show'])->name('admin.orders-show');
+
+        Route::post('order/{id}/update', [OrderController::class, 'update'])->name('admin.order-update');
+
         Route::get('/main-slider', [MainSliderController::class, 'index']);
 
         Route::get('/main-slider/create', [MainSliderController::class, 'create'])->name('main-slider-create');
@@ -91,12 +112,6 @@ Route::prefix('admin')->group(static function () {
 
         Route::get('/promos/{id}/destroy', [PromoController::class, 'destroy'])->name('promos-destroy');
         */
-
-        Route::get('/orders', [OrderController::class, 'index'])->name('admin.orders');
-
-        Route::get('/orders/{id}', [OrderController::class, 'show'])->name('admin.orders-show');
-
-        Route::post('order/{id}/update', [OrderController::class, 'update'])->name('admin.order-update');
 
         Route::get('/testimonials', [TestimonialController::class, 'index'])->name('admin.testimonials');
 
