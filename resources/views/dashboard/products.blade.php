@@ -20,15 +20,15 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th class="number-column" scope="col">№</th>
-        <th scope="col">Название</th>
+        <th class="number-column">№</th>
+        <th>Название</th>
         <th class="button-column"></th>
       </tr>
     </thead>
     <tbody>
       @foreach($products as $pr)
         <tr>
-          <th scope="row">{{ $loop->index + 1 }}</th>
+          <td>{{ $loop->index + 1 }}</td>
           <td>{{ $pr->title }}</td>
           <td class="table-button">
             <a href="/catalog/{{ $pr->slug }}" class="btn btn-success" target="_blank">

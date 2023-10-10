@@ -94,6 +94,9 @@ Route::get('/category', [MainController::class, 'category']);
 
 Route::get('/category/subcategory', [MainController::class, 'subcategory']);
 
+Route::get('/http-auth', [MainController::class, 'http_auth']);
+
+Route::get('/http-auth-form', [MainController::class, 'http_auth_form']);
 
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
