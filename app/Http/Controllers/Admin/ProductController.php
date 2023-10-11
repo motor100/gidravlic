@@ -78,6 +78,7 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|min:2|max:250',
+            
             'input-main-file' => [
                                 'nullable',
                                 \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
@@ -90,7 +91,7 @@ class ProductController extends Controller
                                                                         ->min(50)
                                                                         ->max(5 * 1024)
                                     ],
-            'delete_gallery' => 'nullable|numeric',
+            'delete-gallery' => 'nullable|numeric',
         ]);
 
         $product = Product::findOrFail($id);
@@ -137,7 +138,9 @@ class ProductController extends Controller
         }
 
         // Удаление галереи
-        if (array_key_exists('delete_gallery', $validated)) {
+
+        // if (array_key_exists('delete-gallery', $validated)) {
+        if ($validated['delete-gallery']) {
             foreach($product->gallery as $gl) {
                 // Удаление файлов
                 if (Storage::exists($gl->image)) {

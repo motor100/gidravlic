@@ -65,7 +65,7 @@
       <span class="namefile gallery-file-text">Файлы не выбраны</span>
     </div>
 
-    <input type="hidden" name="delete_gallery" value="">
+    <input type="hidden" name="delete-gallery" id="delete-gallery" value="">
 
     @csrf
     <button type="submit" class="btn btn-primary">Обновить</button>
@@ -93,7 +93,7 @@
   // Удаление всех файлов из галереи
   const galleryDelete = document.querySelector('.gallery-delete');
   const galleryImagePreview = document.querySelector('.gallery-image-preview');
-  const inputDeleteGallery = document.querySelector('[name="delete_gallery"]');
+  const inputDeleteGallery = document.querySelector('#delete-gallery');
 
   if (galleryDelete) {
     galleryDelete.onclick = function() {

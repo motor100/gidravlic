@@ -25,20 +25,16 @@
 
   <div class="single-product-content">
 
-    @php
-      $rand = mt_rand(0, 4);
-    @endphp
-
-    @if($rand > 0)
-    <div class="single-product-gallery">
-      @for($i = 1; $i <= $rand; $i++)
-        <figure class="figure single-product-gallery-item">
-          <a href="/img/temp-single-product{{ $i }}.jpg" data-pswp-width="800" data-pswp-height="600" target="_blank">
-            <img src="/img/temp-single-product{{ $i }}.jpg" alt="">
-          </a>
-        </figure>
-      @endfor
-    </div>
+    @if($product->gallery->count() > 0)
+      <div class="single-product-gallery">
+        @foreach($product->gallery as $gl)
+          <figure class="figure single-product-gallery-item">
+            <a href="{{ Storage::url($gl->image) }}" data-pswp-width="800" data-pswp-height="800" target="_blank">
+              <img src="{{ Storage::url($gl->image) }}" alt="">
+            </a>
+          </figure>
+        @endforeach
+      </div>
     @endif
 
     <div class="single-product-image-wrapper">
@@ -91,20 +87,22 @@
     <p>Описание</p>
     {!! $product->description !!}
   </div>
+  <!-- 
   <div class="single-product-documents">
     <div class="single-product-document-item">
       <div class="single-product-document-item__image">
         <img src="/img/single-product-pdf.png" alt="">
       </div>
-      <a href="{{ Storage::url('uploads/documents/doc.pdf') }}" class="single-product-document-item__link" target="_blank">Сертификат</a>
+      <a href="{{-- Storage::url('uploads/documents/doc.pdf') --}}" class="single-product-document-item__link" target="_blank">Сертификат</a>
     </div>
     <div class="single-product-document-item">
       <div class="single-product-document-item__image">
         <img src="/img/single-product-pdf.png" alt="">
       </div>
-      <a href="{{ Storage::url('uploads/documents/doc.pdf') }}" class="single-product-document-item__link" target="_blank">Свидетельство</a>
+      <a href="{{-- Storage::url('uploads/documents/doc.pdf') --}}" class="single-product-document-item__link" target="_blank">Свидетельство</a>
     </div>
   </div>
+   -->
 </div>
 
 @endsection
