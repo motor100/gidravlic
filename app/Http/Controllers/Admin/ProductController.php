@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Product;
+use App\Models\ProductGallery;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -55,7 +58,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View
     {
         $product = Product::findOrFail($id);
 
@@ -64,15 +67,88 @@ class ProductController extends Controller
         // $current_category = $category->where('id', $product->category_id)->first();
 
         // return view('dashboard.products-edit', compact('product', 'category', 'current_category'));
+
         return view('dashboard.products-edit', compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|min:2|max:250',
+            'input-main-file' => [
+                                'nullable',
+                                \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
+                                                                    ->min(50)
+                                                                    ->max(5 * 1024)
+                                ],
+            'input-gallery-file' => 'nullable|max:4',
+            'input-gallery-file.*' => [
+                                    \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
+                                                                        ->min(50)
+                                                                        ->max(5 * 1024)
+                                    ],
+            'delete_gallery' => 'nullable|numeric',
+        ]);
+
+        $product = Product::findOrFail($id);
+
+        // Обновление изображения
+        if (array_key_exists('input-main-file', $validated)) {
+            if (Storage::exists($product->image)) {
+                Storage::delete($product->image);
+            }
+            $path = Storage::putFile('public/uploads/products', $validated["input-main-file"]);
+        } else {
+            $path = $product->image;
+        }
+
+        $product->update([
+            'image' => $path,
+        ]);
+
+        // Обновление галереи
+        if (array_key_exists('input-gallery-file', $validated)) {
+            // Удаление галереи
+            foreach ($product->gallery as $gl) {
+                // Удаление файлов
+                if (Storage::exists($gl->image)) {
+                    Storage::delete($gl->image);
+                }
+                // Удаление модели
+                $gl->delete();
+            }
+
+            // Вставка новых файлов и моделей
+            $gallery_array = [];
+
+            foreach ($validated['input-gallery-file'] as $value) {
+                $item = [];
+                $item["product_id"] = $product->id;
+                $item["image"] = Storage::putFile('public/uploads/products-galleries', $value);
+                $item["created_at"] = now();
+                $item["updated_at"] = now();
+                $gallery_array[] = $item;
+            }
+
+            ProductGallery::insert($gallery_array);
+        }
+
+        // Удаление галереи
+        if (array_key_exists('delete_gallery', $validated)) {
+            foreach($product->gallery as $gl) {
+                // Удаление файлов
+                if (Storage::exists($gl->image)) {
+                    Storage::delete($gl->image);
+                }
+                // Удаление модели
+                $gl->delete();
+            }
+        }
+
+        return redirect('/admin/products');
     }
 
     /**

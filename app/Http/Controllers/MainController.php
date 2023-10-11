@@ -314,32 +314,61 @@ class MainController extends Controller
         return view('subcategory', compact('products'));
     }
 
+    /*
     public function http_auth()
     {
         $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('http://lartest1.ru/1c_exchange.php?type=catalog&mode=checkauth');
 
         return $response;
     }
+    */
 
-    /*
+
+
     public function http_auth()
     {
+        // dd(file_get_contents('storage/uploads/test.txt'));
+        
         // $response = \Illuminate\Support\Facades\Http::attach('attachment', file_get_contents('storage/test.txt'), 'test.txt')
         //                                                 ->get('http://lartest1.ru/1c_exchange.php?type=catalog&mode=file&filename=test.txt');
 
-        $response = \Illuminate\Support\Facades\Http::attach('attachment', file_get_contents('storage/test.txt'), 'test.txt')
+        /*
+        $response = \Illuminate\Support\Facades\Http::attach('attachment', file_get_contents('storage/uploads/test.txt'), 'test.txt')
                                                         // ->withHeaders([ 'Content-Type' => 'multipart/form-data' ])
                                                         ->post('http://lartest1.ru/1c_exchange.php', [
                                                             'type' => 'catalog',
                                                             'mode' => 'file',
                                                         ]);
+        */
+        
+        /*
+        $response = \Illuminate\Support\Facades\Http::withBody(file_get_contents('storage/uploads/test.txt'), 'text/plain')
 
-        // $response = \Illuminate\Support\Facades\Http::withBody(file_get_contents('storage/test.txt'), 'text/plain')
-        //                                                 ->post('http://lartest1.ru/1c_exchange.php', [
-        //                                                     'type' => 'catalog',
-        //                                                     'mode' => 'file',
-        //                                                     '_token' => 'dlgkJCWVLiJil0W7FKrfd3nGzmMAzAy6YTde445e',
-        //                                                 ]);
+                                                        // ->withHeaders([ 'Content-Type' => 'multipart/form-data' ])
+                                                        ->post('http://lartest1.ru/1c_exchange.php', [
+                                                            'type' => 'sale',
+                                                            'mode' => 'query',
+                                                            'filename' => 'test.txt',
+                                                        ]);
+        */
+        // https://test.mybutton.ru/1c_exchange.php
+
+        $response = \Illuminate\Support\Facades\Http::post('https://test.mybutton.ru/1c_exchange.php', [
+                                                            'type' => 'sale',
+                                                            'mode' => 'query',
+                                                        ]);
+
+        $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('https://test.mybutton.ru/1c_exchange.php?type=sale&mode=checkauth');
+
+        $response = \Illuminate\Support\Facades\Http::get('https://test.mybutton.ru/1c_exchange.php?type=sale&mode=init');
+
+        /*
+        $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')
+                                                        ->get('http://lartest1.ru/1c_exchange.php', [
+                                                            'type' => 'sale',
+                                                            'mode' => 'checkout',
+                                                        ]);
+        */
 
         // $response = \Illuminate\Support\Facades\Http::withHeaders([ 'Content-Type' => 'multipart/form-data' ])
         //                                         ->withToken('dlgkJCWVLiJil0W7FKrfd3nGzmMAzAy6YTde445e')
@@ -354,13 +383,15 @@ class MainController extends Controller
 
         return $response;
     }
-    
 
+    
+    /*
     public function http_auth_form()
     {
         return view('http-auth-form');
     }
     */
+
 
 
 

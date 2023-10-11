@@ -21,7 +21,7 @@
   <form class="form" action="{{ route('products-update', $product->id) }}" method="post" enctype="multipart/form-data">
     <div class="form-group mb-3">
       <label for="title" class="label-text">Название</label>
-      <input type="text" class="form-control" name="title" id="title" maxlength="200" required value="{{ $product->title }}">
+      <input type="text" class="form-control" name="title" id="title" maxlength="200" required readonly value="{{ $product->title }}">
     </div>
     <!-- 
     <div class="form-group mb-3">
@@ -39,7 +39,7 @@
      -->
     <div class="form-group mb-3">
       <div class="image-preview">
-        <img src="{{ asset('storage/uploads/products/' . $product->image) }}" alt="">
+        <img src="{{ Storage::url($product->image) }}" alt="">
       </div>
     </div>
     <div class="form-group mb-3">
@@ -48,26 +48,23 @@
       <label for="input-main-file" class="custom-inputfile-label">Выберите файл</label>
       <span class="namefile main-file-text">Файл не выбран</span>
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
       <div class="image-preview gallery-image-preview">
-        <!-- 
-        @ if($product->galleries->count() > 0)
-          @ foreach($product->galleries as $gl)
-            <img src="{{-- asset('storage/uploads/products/' . $gl->image) --}}" alt="">
-          @ endforeach
+        @if($product->gallery->count() > 0)
+          @foreach($product->gallery as $gl)
+            <img src="{{ Storage::url($gl->image) }}" alt="">
+          @endforeach
           <div class="gallery-delete">Удалить галерею</div>
-        @ endif
-         -->
+        @endif
       </div>
     </div>
     <div class="form-group mb-5">
       <div class="label-text">Галерея</div>
-      <input type="file" name="input-gallery-file[]" id="input-gallery-file" class="inputfile" accept="image/jpeg,image/png" multiple value="">
+      <input type="file" name="input-gallery-file[]" id="input-gallery-file" class="inputfile" accept="image/jpeg,image/png" multiple>
       <label for="input-gallery-file" class="custom-inputfile-label">Выберите файлы</label>
       <span class="namefile gallery-file-text">Файлы не выбраны</span>
     </div>
 
-    <input type="hidden" name="id" value="{{ $product->id }}">
     <input type="hidden" name="delete_gallery" value="">
 
     @csrf
@@ -94,14 +91,16 @@
   }
 
   // Удаление всех файлов из галереи
-  let galleryDelete = document.querySelector('.gallery-delete'),
-      galleryImagePreview = document.querySelector('.gallery-image-preview'),
-      inputDeleteGallery = document.querySelector('[name="delete_gallery"]');
+  const galleryDelete = document.querySelector('.gallery-delete');
+  const galleryImagePreview = document.querySelector('.gallery-image-preview');
+  const inputDeleteGallery = document.querySelector('[name="delete_gallery"]');
 
-  galleryDelete.onclick = function() {
-    galleryDelete.classList.add('hidden');
-    galleryImagePreview.innerHTML = '';
-    inputDeleteGallery.value = 1;
+  if (galleryDelete) {
+    galleryDelete.onclick = function() {
+      galleryDelete.classList.add('hidden');
+      galleryImagePreview.innerHTML = '';
+      inputDeleteGallery.value = 1;
+    }
   }
 </script>
 
