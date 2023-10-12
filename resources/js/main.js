@@ -923,3 +923,27 @@ if (productsFilter) {
     productsFilter.classList.toggle('active');
   }
 }
+
+
+// Отправка сообщения о новом заказе
+/*
+const thankYou = document.querySelector('.thank-you');
+
+if (thankYou) {
+  let params = (new URL(document.location)).searchParams;
+  let orderId = params.get('order_id');
+  let summ = params.get('summ');
+  
+  if (orderId & summ) {
+    fetch('/ajax/send-message', {
+      method: 'POST',
+      headers: {'Content-Type':'application/x-www-form-urlencoded'},
+      cache: 'no-cache',
+      body: 'order_id=' + encodeURIComponent(orderId) + '&_token=' + encodeURIComponent(token),
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+}
+*/

@@ -260,7 +260,7 @@ class MainController extends Controller
             'delivery_company' => 'nullable'
         ]);
 
-        $order_id = (new \App\Services\Order($request, $validated))->create();       
+        $order_id = (new \App\Services\Order($request, $validated))->create();        
 
         // Расчет суммы всех товаров
         $summ = (new \App\Services\Cart())->total_summ();

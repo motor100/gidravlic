@@ -117,6 +117,8 @@ Route::post('/ajax/pluscart', [AjaxController::class, 'ajax_plus_cart']);
 
 Route::post('/ajax/minuscart', [AjaxController::class, 'ajax_minus_cart']);
 
+// Route::post('/ajax/send-message', [AjaxController::class, 'send_message']);
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

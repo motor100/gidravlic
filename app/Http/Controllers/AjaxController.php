@@ -153,4 +153,17 @@ class AjaxController extends Controller
         // Записываю в куки через фасад Cookie метод queue
         \Illuminate\Support\Facades\Cookie::queue('we-use-cookie', 'yes', 525600);
     }
+
+    /**
+     * @param string order_id
+     * @return void
+     */
+    public function send_message(Request $request): void
+    {
+        $order_id = $request->input('order_id');
+        
+        // Сообщение на почту о новом заказе
+        (new \App\Services\Mailer($order_id))->send();
+    }
+    
 }
