@@ -8,7 +8,6 @@ use Illuminate\View\View;
 use App\Models\Product;
 use App\Models\ProductGallery;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -97,58 +96,20 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
 
         // Обновление изображения
-        if (array_key_exists('input-main-file', $validated)) {
-            if (Storage::exists($product->image)) {
-                Storage::delete($product->image);
-            }
-            $path = Storage::putFile('public/uploads/products', $validated["input-main-file"]);
-        } else {
-            $path = $product->image;
-        }
-
         $product->update([
-            'image' => $path,
+            'image' => (new \App\Services\Product($product, $validated))->image_update(),
         ]);
 
         // Обновление галереи
         if (array_key_exists('input-gallery-file', $validated)) {
-            // Удаление галереи
-            foreach ($product->gallery as $gl) {
-                // Удаление файлов
-                if (Storage::exists($gl->image)) {
-                    Storage::delete($gl->image);
-                }
-                // Удаление модели
-                $gl->delete();
-            }
-
-            // Вставка новых файлов и моделей
-            $gallery_array = [];
-
-            foreach ($validated['input-gallery-file'] as $value) {
-                $item = [];
-                $item["product_id"] = $product->id;
-                $item["image"] = Storage::putFile('public/uploads/products-galleries', $value);
-                $item["created_at"] = now();
-                $item["updated_at"] = now();
-                $gallery_array[] = $item;
-            }
+            $gallery_array = (new \App\Services\ProductGallery($product, $validated))->gallery_update();
 
             ProductGallery::insert($gallery_array);
         }
 
         // Удаление галереи
-
-        // if (array_key_exists('delete-gallery', $validated)) {
         if ($validated['delete-gallery']) {
-            foreach($product->gallery as $gl) {
-                // Удаление файлов
-                if (Storage::exists($gl->image)) {
-                    Storage::delete($gl->image);
-                }
-                // Удаление модели
-                $gl->delete();
-            }
+            (new \App\Services\ProductGallery($product, $validated))->gallery_destroy();
         }
 
         return redirect('/admin/products');

@@ -22,7 +22,7 @@ class Phone
      * @param number
      * @return string
      */
-    public function int_to_phone($number)
+    public function int_to_phone($number): string
     {
         $phone = strval($number);
         $phone = '+'.substr($phone, 0, 1).' '.'('.substr($phone, 1, 3).')'.' '.substr($phone, 4, 3).' '.substr($phone, 7, 2).' '.substr($phone, 9, 2);
