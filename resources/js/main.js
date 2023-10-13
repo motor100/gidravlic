@@ -300,11 +300,51 @@ addToComparisonBtns.forEach((item) => {
 });
 
 
+// mobile menu
+const burgerMenuWrapper = document.querySelector('.burger-menu-wrapper');
+const mobileMenu = document.querySelector('.mobile-menu');
+const burgerMenu = document.querySelector('.burger-menu'); // тут
+
+function openMobileMenu() {
+  body.classList.add('overflow-hidden');
+  mobileMenu.classList.add('active');
+  burgerMenuWrapper.classList.add('menu-is-open');
+}
+
+function closeMobileMenu() {
+  body.classList.remove('overflow-hidden');
+  burgerMenuWrapper.classList.remove('menu-is-open');
+  mobileMenu.classList.remove('active');
+}
+
+burgerMenuWrapper.onclick = function() {
+  if (burgerMenuWrapper.classList.contains('menu-is-open')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+
+const listParentClick = document.querySelectorAll('.mobile-menu li.menu-item a');
+
+for (let i=0; i < listParentClick.length; i++) {
+  listParentClick[i].onclick = function (event) {
+    event.preventDefault();
+    closeMobileMenu();
+    let hrefClick = this.href;
+    setTimeout(function() {
+      location.href = hrefClick
+    }, 500);
+  }
+}
+
+
 // Окна
 const modalWindow = document.querySelectorAll('.modal-window');
 const callbackBtns = document.querySelectorAll('.js-callback-btn');
 const callbackModal = document.querySelector('#callback-modal');
 const modalCloseBtn = document.querySelector('.modal-window .modal-close');
+const rateOfCurrencyModal = document.querySelector('#rate-of-currency-modal');
 
 function modalWindowOpen(win) {
   // Закрытие мобильного меню
@@ -334,6 +374,32 @@ callbackBtns.forEach((item) => {
 modalCloseBtn.onclick = () => {
   modalWindowClose(callbackModal);
 }
+
+
+// Окно о курсе валют
+if (rateOfCurrencyModal) {
+
+  // Открытие окна о курсе валют через 5с
+  setTimeout(() => {
+    modalWindowOpen(rateOfCurrencyModal)
+  }, 5000);
+
+  // Закрытие окна при клике в любую точку
+  rateOfCurrencyModal.addEventListener('click', () => {
+
+    modalWindowClose(rateOfCurrencyModal);
+
+    fetch('/ajax/rate-of-currency', {
+      method: 'GET',
+      cache: 'no-cache',
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+    
+  });
+}
+
 
 // Закрытие окна если клик за его пределами
 for (let i = 0; i < modalWindow.length; i++) {
@@ -555,44 +621,6 @@ if (toTop) {
 
   }
 
-}
-
-
-// mobile menu
-const burgerMenuWrapper = document.querySelector('.burger-menu-wrapper');
-const mobileMenu = document.querySelector('.mobile-menu');
-const burgerMenu = document.querySelector('.burger-menu');
-
-function openMobileMenu() {
-  body.classList.add('overflow-hidden');
-  mobileMenu.classList.add('active');
-  burgerMenuWrapper.classList.add('menu-is-open');
-}
-
-function closeMobileMenu() {
-  body.classList.remove('overflow-hidden');
-  burgerMenuWrapper.classList.remove('menu-is-open');
-  mobileMenu.classList.remove('active');
-}
-
-burgerMenuWrapper.onclick = function() {
-  if (burgerMenuWrapper.classList.contains('menu-is-open')) {
-    closeMobileMenu();
-  } else {
-    openMobileMenu();
-  }
-}
-
-const listParentClick = document.querySelectorAll('.mobile-menu li.menu-item a');
-for (let i=0; i < listParentClick.length; i++) {
-  listParentClick[i].onclick = function (event) {
-    event.preventDefault();
-    closeMobileMenu();
-    let hrefClick = this.href;
-    setTimeout(function() {
-      location.href = hrefClick
-    }, 500);
-  }
 }
 
 

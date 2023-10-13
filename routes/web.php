@@ -107,6 +107,8 @@ Route::get('/garantiya-vozvrata-denezhnyh-sredstv', [MainController::class, 'gar
 
 Route::get('/ajax/we-use-cookie', [AjaxController::class, 'we_use_cookie']);
 
+Route::get('/ajax/rate-of-currency', [AjaxController::class, 'rate_of_currency']);
+
 Route::get('/ajax/add-to-cart', [AjaxController::class, 'add_to_cart']);
 
 Route::get('/ajax/add-to-favourites', [AjaxController::class, 'add_to_favourites']);

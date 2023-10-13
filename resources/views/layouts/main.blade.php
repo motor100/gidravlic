@@ -564,6 +564,21 @@
     </div>
   </div>
 
+  @if(!request()->cookie('rate-of-currency'))
+    <div id="rate-of-currency-modal" class="modal-window rate-of-currency">
+      <div class="modal-wrapper">
+        <div class="modal-area">
+          <div class="modal-close">
+            <div class="close"></div>
+          </div>
+          <div class="rate-of-currency-title">Уважаемые клиенты!</div>
+          <div class="rate-of-currency-title">В связи с нестабильным курсом валют - актуальную стоимость товаров уточняйте по телефону: 8(800)575-55-88 или почте: zakaz@gidravlic.com</div>
+          <button class="primary-btn btn-195 rate-of-currency-close">ХОРОШО</button>
+        </div>
+      </div>
+    </div>
+  @endif
+
   @if(Route::is('home'))
     <div id="to-top" class="to-top hidden-mobile">
       <div class="circle"></div>
@@ -572,12 +587,10 @@
 
   @if(!request()->cookie('we-use-cookie'))
     <div class="we-use-cookie">
-
       <div class="we-use-cookie-wrapper">
         <div class="we-use-cookie-text">Этот сайт использует cookie-файлы и другие технологии для улучшения его работы. Продолжая работу с сайтом, вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</div>
         <button class="primary-btn btn-195 we-use-cookie-close">ХОРОШО</button>
       </div>
-
     </div>
   @endif
 

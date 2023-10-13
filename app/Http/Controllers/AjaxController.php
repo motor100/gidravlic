@@ -154,6 +154,12 @@ class AjaxController extends Controller
         \Illuminate\Support\Facades\Cookie::queue('we-use-cookie', 'yes', 525600);
     }
 
+    public function rate_of_currency(): void
+    {
+        // Записываю в куки через фасад Cookie метод queue
+        \Illuminate\Support\Facades\Cookie::queue('rate-of-currency', 'yes', 525600);
+    }
+
     /**
      * @param string order_id
      * @return void
