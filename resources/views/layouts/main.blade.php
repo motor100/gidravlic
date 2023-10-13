@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Гидравлика">
-  <meta name="keywords" content="Гидравлика">
+  <meta name="description" content="Гидравлическое оборудование в наличии и под заказ для различных отраслей промышленности. Доставка по России. Звоните 8 (800) 575-55-88">
+  <meta name="keywords" content="Гидравлические системы, Гидросистема, Гидравлическое оборудование, Гидроагрегат, Гидрооборудование, РВД">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   @yield('robots')
   <link rel="shortcut icon" href="{{ asset('/img/favicon.svg') }}" type="image/x-icon">
