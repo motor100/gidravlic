@@ -2150,6 +2150,47 @@ p {
   }
 }
 
+// rate of currency modal
+.rate-of-currency {
+  .modal-wrapper {
+    top: 100px;
+  }
+  .modal-area {
+    padding: 25px 70px 40px 70px;
+  }
+  .rate-of-currency-title {
+    margin: 0 0 25px 0;
+    font-family: 'roboto-condensed-medium';
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .rate-of-currency-text {
+    margin: 0 0 20px 0;
+    font-size: 30px;
+    line-height: 1.2;
+    .phone {
+      font-family: 'roboto-condensed-medium';
+      color: $accentcolor;
+    }
+    .email {
+      color: $bluecolor;
+    }
+  }
+  .rate-of-currency-image {
+    width: 150px;
+    margin: 0 auto 30px auto;
+  }
+  .rate-of-currency-image img {
+    width: 100%;
+  }
+  .rate-of-currency-close {
+    margin: 0 auto;
+  }
+}
+
+
 // Полоса если админ
 .top-line-is-login {
   position: fixed;
@@ -2438,7 +2479,7 @@ p {
       margin: 0 0 10px 0;
       padding: 0 0 0 35px;
       font-family: 'roboto-condensed-medium';
-      font-size: 30px;      
+      font-size: 30px;
     }
     .table .tr {
       display: flex;

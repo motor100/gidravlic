@@ -572,7 +572,10 @@
             <div class="close"></div>
           </div>
           <div class="rate-of-currency-title">Уважаемые клиенты!</div>
-          <div class="rate-of-currency-title">В связи с нестабильным курсом валют - актуальную стоимость товаров уточняйте по телефону: 8(800)575-55-88 или почте: zakaz@gidravlic.com</div>
+          <div class="rate-of-currency-text">В связи с нестабильным курсом валют - актуальную стоимость товаров уточняйте по телефону: <span class="phone">8(800)575-55-88</span> или почте: <span class="email">zakaz@gidravlic.com</span></div>
+          <div class="rate-of-currency-image">
+            <img src="/img/rate-of-currency.png" alt="">
+          </div>
           <button class="primary-btn btn-195 rate-of-currency-close">ХОРОШО</button>
         </div>
       </div>

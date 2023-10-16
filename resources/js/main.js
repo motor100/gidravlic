@@ -303,7 +303,6 @@ addToComparisonBtns.forEach((item) => {
 // mobile menu
 const burgerMenuWrapper = document.querySelector('.burger-menu-wrapper');
 const mobileMenu = document.querySelector('.mobile-menu');
-const burgerMenu = document.querySelector('.burger-menu'); // тут
 
 function openMobileMenu() {
   body.classList.add('overflow-hidden');
