@@ -19,7 +19,7 @@
       @foreach($sliders as $slide)
         <tr>
           <td>{{ $loop->index + 1 }}</td>
-          <td>{{ $slide->title}}</td>
+          <td>{{ $slide->title }}</td>
           <td class="table-button">
             <a href="{{ route('main-slider-show', $slide->id) }}" class="btn btn-success">
               <i class="fas fa-eye"></i>
