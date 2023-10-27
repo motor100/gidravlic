@@ -341,12 +341,13 @@ class MainController extends Controller
                                                         ]);
         */
         
-
+        /*
         $response = \Illuminate\Support\Facades\Http::post('https://test.mybutton.ru/1c_exchange.php', [
                                                             'type' => 'catalog',
                                                             'mode' => 'import',
                                                             'filename' => 'test.txt',
                                                         ]);
+        */
 
         // https://test.mybutton.ru/1c_exchange.php
 
@@ -358,7 +359,7 @@ class MainController extends Controller
         // $response = \Illuminate\Support\Facades\Http::get('https://test.mybutton.ru/1c_exchange.php?type=catalog&mode=init');
 
         // $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('https://test.mybutton.ru/1c_exchange.php?type=sale&mode=checkauth');
-        // $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('https://test.mybutton.ru/1c_exchange.php?type=catalog&mode=checkauth');
+        $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('https://test.mybutton.ru/1c_exchange.php?type=catalog&mode=checkauth');
         // $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('http://lartest1.ru/1c_exchange.php?type=catalog&mode=checkauth');
 
         // $response = \Illuminate\Support\Facades\Http::get('https://test.mybutton.ru/1c_exchange.php?type=sale&mode=init');

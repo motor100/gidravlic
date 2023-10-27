@@ -6,6 +6,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\LkController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\ExchangeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,7 +120,11 @@ Route::post('/ajax/pluscart', [AjaxController::class, 'ajax_plus_cart']);
 
 Route::post('/ajax/minuscart', [AjaxController::class, 'ajax_minus_cart']);
 
+// Отправка сообщения на почту о новом заказе
 // Route::post('/ajax/send-message', [AjaxController::class, 'send_message']);
+
+// 1С exchange
+Route::any('1c_exchange.php', [ExchangeController::class, 'exchange']);
 
 
 // Route::get('/dashboard', function () {
