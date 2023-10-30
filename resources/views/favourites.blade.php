@@ -34,10 +34,12 @@
                 <span class="regular-product-item__currency">р</span>
               </div>
               <button class="secondary-btn add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">КУПИТЬ</button>
-              @if($product->content->hit)
-                <div class="product-label-hit">
-                  <span class="product-label-hit-text">ХИТ</span>
-                </div>
+              @if($product->content)
+                @if($product->content->hit)
+                  <div class="product-label-hit">
+                    <span class="product-label-hit-text">ХИТ</span>
+                  </div>
+                @endif
               @endif
               <div class="regular-product-item-favourites add-to-favourites active" data-id="{{ $product->id }}">
                 <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">

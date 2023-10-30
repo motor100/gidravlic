@@ -41,10 +41,12 @@
       <div class="single-product-image">
         <img src="{{ Storage::url($product->content->image) }}" alt="">
       </div>
-      @if($product->content->hit)
-        <div class="product-label-hit">
-          <span class="product-label-hit-text">ХИТ</span>
-        </div>
+      @if($product->content)
+        @if($product->content->hit)
+          <div class="product-label-hit">
+            <span class="product-label-hit-text">ХИТ</span>
+          </div>
+        @endif
       @endif
     </div>
     <div class="single-product-info">
