@@ -39,20 +39,20 @@
 
     <div class="single-product-image-wrapper">
       <div class="single-product-image">
-        <img src="{{ Storage::url($product->image) }}" alt="">
+        <img src="{{ Storage::url($product->content->image) }}" alt="">
       </div>
-      @if($product->hit)
+      @if($product->content->hit)
         <div class="product-label-hit">
           <span class="product-label-hit-text">ХИТ</span>
         </div>
       @endif
     </div>
     <div class="single-product-info">
-      <div class="single-product-sku">
+      <div class="single-product-sku mb75">
         <span class="single-product-sku__text">Артикул:</span>
-        <span class="single-product-sku__value">РГ000090149</span>
+        <span class="single-product-sku__value">{{ $product->sku }}</span>
       </div>
-      <div class="single-product-maker">Производитель: Китай</div>
+      <!-- <div class="single-product-maker mb75">Производитель: Китай</div> -->
       <div class="single-product-price">{{ $product->price }} р</div>
       <button class="primary-btn add-to-cart add-to-cart-btn btn-195" data-id="{{ $product->id }}">КУПИТЬ</button>
       <div class="single-product-stock">

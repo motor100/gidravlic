@@ -38,8 +38,12 @@
     </div>
      -->
     <div class="form-group mb-3">
+      <input type="checkbox" name="hit" id="hit" class="form-check-input me-1" @checked($product->content->hit)>
+      <label for="hit" class="form-check-label">Хит</label>
+    </div>
+    <div class="form-group mb-3">
       <div class="image-preview">
-        <img src="{{ Storage::url($product->image) }}" alt="">
+        <img src="{{ Storage::url($product->content->image) }}" alt="">
       </div>
     </div>
     <div class="form-group mb-3">

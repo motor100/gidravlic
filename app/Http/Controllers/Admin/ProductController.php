@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Product;
 use App\Models\ProductGallery;
+use App\Models\ProductContent;
 use Illuminate\Http\RedirectResponse;
 
 class ProductController extends Controller
@@ -77,7 +78,7 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|min:2|max:250',
-            
+            'hit' => 'nullable',
             'input-main-file' => [
                                 'nullable',
                                 \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
@@ -95,10 +96,17 @@ class ProductController extends Controller
 
         $product = Product::findOrFail($id);
 
+        // Обновление отметки хит
+        ProductContent::where('product_id', $product->id)
+                        ->update([
+                            'hit' => (new \App\Services\ProductContent($product, $validated))->hit()
+                        ]);
+
         // Обновление изображения
-        $product->update([
-            'image' => (new \App\Services\Product($product, $validated))->image_update(),
-        ]);
+        ProductContent::where('product_id', $product->id)
+                        ->update([
+                            'image' => (new \App\Services\ProductContent($product, $validated))->image(),
+                        ]);
 
         // Обновление галереи
         if (array_key_exists('input-gallery-file', $validated)) {

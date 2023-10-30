@@ -10,7 +10,7 @@
     <span class="regular-product-item__currency">р</span>
   </div>
   <button class="secondary-btn add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">КУПИТЬ</button>
-  @if($product->hit)
+  @if($product->content->hit)
     <div class="product-label-hit">
       <span class="product-label-hit-text">ХИТ</span>
     </div>
