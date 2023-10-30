@@ -124,7 +124,7 @@ Route::post('/ajax/minuscart', [AjaxController::class, 'ajax_minus_cart']);
 // Route::post('/ajax/send-message', [AjaxController::class, 'send_message']);
 
 // 1С exchange
-Route::any('1c_exchange.php', [ExchangeController::class, 'exchange']);
+Route::any('/1c_exchange.php', [ExchangeController::class, 'exchange']);
 
 
 // Route::get('/dashboard', function () {

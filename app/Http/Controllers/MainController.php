@@ -335,19 +335,98 @@ class MainController extends Controller
         /*
         $response = \Illuminate\Support\Facades\Http::attach('attachment', file_get_contents('storage/uploads/test.txt'), 'test.txt')
                                                         // ->withHeaders([ 'Content-Type' => 'multipart/form-data' ])
-                                                        ->post('http://lartest1.ru/1c_exchange.php', [
+                                                        ->post('https://test.mybutton.ru/get-file', [
                                                             'type' => 'catalog',
                                                             'mode' => 'file',
+                                                            'filename' => 'file.txt',
                                                         ]);
         */
+
         
         /*
-        $response = \Illuminate\Support\Facades\Http::post('https://test.mybutton.ru/1c_exchange.php', [
+        $content = json_encode(file_get_contents('storage/uploads/test.txt'));
+
+        $response = \Illuminate\Support\Facades\Http::post('http://test.mybutton.ru/get-file', $content);
+        */
+                                                        
+        /*
+        $photo = file_get_contents('storage/uploads/test.txt');
+        */
+        
+        /**
+         * Прикрепляется файл и параметры
+         */
+        /*
+        $response = \Illuminate\Support\Facades\Http::attach('attachment', file_get_contents('storage/uploads/test.txt'), 'photo.jpg')
+                                                        ->post('http://lartest1.ru/get-file', [
+                                                            'type' => 'catalog',
+                                                            'mode' => 'import',
+                                                            'filename' => 'test.txt',
+                                                       ])
+                                                    //    ->withBody(file_get_contents('storage/uploads/test.txt'));
+        */
+
+        $response = \Illuminate\Support\Facades\Http::withBody(file_get_contents('storage/uploads/test.txt'))
+                                                        ->post('http://lartest1.ru/get-file?type=catalog&mode=file&filename=1c_catalog.xml&sessid=7f8ec88162e001fdccabfdd202653fc6');
+
+        /*
+        $response = \Illuminate\Support\Facades\Http::post('http://lartest1.ru/get-file', [
                                                             'type' => 'catalog',
                                                             'mode' => 'import',
                                                             'filename' => 'test.txt',
                                                         ]);
         */
+        
+
+        /*
+        $response = \Illuminate\Support\Facades\Http::post('http://lartest1.ru/get-file', [
+                                                            'type' => 'catalog',
+                                                            'mode' => 'import',
+                                                            'filename' => 'test.txt',
+                                                        ]);
+        */
+
+
+        /*
+        // $url = 'https://test.mybutton.ru/get-file';
+        $url = 'http://lartest1.ru/get-file';
+
+        $headers = array(
+            "content-type" => "application/json",
+            // 'сontent-type: application/x-www-form-urlencoded',
+        );
+
+        $params = [
+            // file_get_contents('storage/uploads/test.txt'),
+            'filename' => 'tt1.txt',
+            // file_get_contents('storage/uploads/test.txt')
+        ];
+
+        // dd(file_get_contents('storage/uploads/test.zip')));
+
+        $response = file_get_contents($url, false, stream_context_create(array(
+            'http' => array(
+                'method'  => 'POST',
+                // 'header'  => $headers,
+                // 'header'  => 'Content-type: application/json',
+                'header'  => 'Content-type: application/x-www-form-urlencoded',
+                // 'content' => file_get_contents('storage/uploads/test.txt'),
+                // 'content' => json_encode($params),
+                // 'header'  => 'Content-type: application/x-www-form-urlencoded',
+                'content' => http_build_query($params)
+            )
+        )));
+        */
+
+
+
+
+
+
+
+
+
+
 
         // https://test.mybutton.ru/1c_exchange.php
 
@@ -356,13 +435,21 @@ class MainController extends Controller
         //                                                     'mode' => 'query',
         //                                                 ]);
 
-        // $response = \Illuminate\Support\Facades\Http::get('https://test.mybutton.ru/1c_exchange.php?type=catalog&mode=init');
+        // $response = \Illuminate\Support\Facades\Http::get('http://lartest1.ru/1c_exchange.php?type=catalog&mode=init');
 
         // $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('https://test.mybutton.ru/1c_exchange.php?type=sale&mode=checkauth');
-        $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('https://test.mybutton.ru/1c_exchange.php?type=catalog&mode=checkauth');
+        // $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('https://test.mybutton.ru/1c_exchange.php?type=catalog&mode=checkauth');
         // $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('http://lartest1.ru/1c_exchange.php?type=catalog&mode=checkauth');
 
         // $response = \Illuminate\Support\Facades\Http::get('https://test.mybutton.ru/1c_exchange.php?type=sale&mode=init');
+        
+        /*
+        $response = \Illuminate\Support\Facades\Http::post('https://test.mybutton.ru/get-file',[
+                                                                'type' => 'catalog',
+                                                                'mode' => 'import',
+                                                                'filename' => 'test.txt',
+                                                            ]);
+        */
 
         /*
         $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')
