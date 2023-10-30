@@ -11,6 +11,69 @@ class MainController extends Controller
 {
     public function home(): View
     {
+        /*
+        $categories = [
+            'Гидравлические станции',
+            'Гидравлические распределители',
+            'Гидравлические насосы',
+            'Гидравлические моторы',
+            'Клапанная аппаратура',
+            'Коробки отбора мощности',
+            'Модульная гидроаппаратура',
+            'Фильтры гидравлические',
+            'Картриджная аппаратура',
+            'Измерительная аппаратура',
+            'Гидроцилиндры',
+            'Быстроразъемные соединения БРС',
+            'Редукторы и мультипликаторы',
+            'Маслоохладители',
+            'Гидропневмо-аккумуляторы',
+            'Дистанционное управление',
+            'Электроника и автоматика',
+            'Сопутствующие товары',
+            'РВД',
+        ];
+
+        $insert_array = [];
+
+        $index = 1;
+        foreach($categories as $cat) {
+            $item['title'] = $cat;
+            $item['slug'] = \Illuminate\Support\Str::slug($cat);
+            $item['image'] = 'public/uploads/products-categories/category' . $index . '.png';
+            $item['category_id'] = '00000000-0000-0000-0000-000000000000';
+            $item['parent'] = NULL;
+            $item['created_at'] = now();
+            $item['updated_at'] = now();
+
+            $index++;
+
+            $insert_array[] = $item;
+        }
+
+        \App\Models\ProductCategory::insert($insert_array);
+        */
+
+        /*
+        $products = \App\Models\Product::all();
+
+        $insert_array = [];
+
+        foreach($products as $product) {
+            $item['product_id'] = $product->id;
+            $item['image'] = 'public/uploads/products/' . mt_rand(0, 10) . '.jpg';
+            $rand = mt_rand(0, 10);
+            $item['hit'] = $rand == 0 ? 1 : NULL;
+            $item['created_at'] = now();
+            $item['updated_at'] = now();
+
+            $insert_array[] = $item;
+        }
+
+        \App\Models\ProductContent::insert($insert_array);
+        */
+
+
         // Main slider LIFO
         $sliders = \App\Models\MainSlider::orderby('id', 'desc')->get();
         

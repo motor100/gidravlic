@@ -154,9 +154,24 @@
           <div class="aside-nav">
             <div class="aside-nav-title">КАТАЛОГ</div>
             <div class="aside-nav-items">
+
+            @foreach($categories as $cat)
               <div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-1.png" alt="">
+                  <img src="{{ Storage::url($cat->image) }}" alt="">
+                </div>
+                <div class="aside-nav-item__title">{{ $cat->title }}</div>
+                <a href="/category/{{ $cat->slug }}" class="full-link"></a>
+                <div class="vertikal-line"></div>
+                <div class="triangle-left"></div>
+                <div class="triangle-right"></div>
+              </div>
+            @endforeach
+
+<!-- 
+              1<div class="aside-nav-item">
+                <div class="aside-nav-item__image">
+                  <img src="/img/category1.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Гидравлические станции</div>
                 <a href="/category" class="full-link"></a>
@@ -164,9 +179,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              2<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-2.png" alt="">
+                  <img src="/img/category2.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Гидравлические распределители</div>
                 <a href="/category" class="full-link"></a>
@@ -174,9 +189,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              3<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-3.png" alt="">
+                  <img src="/img/category3.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Гидравлические насосы</div>
                 <a href="/category" class="full-link"></a>
@@ -184,9 +199,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              4<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-4.png" alt="">
+                  <img src="/img/category4.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Гидравлические моторы</div>
                 <a href="/category" class="full-link"></a>
@@ -194,9 +209,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              5<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-5.png" alt="">
+                  <img src="/img/category5.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Клапанная аппаратура</div>
                 <a href="/category" class="full-link"></a>
@@ -204,9 +219,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              6<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-6.png" alt="">
+                  <img src="/img/category6.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Коробки отбора мощности</div>
                 <a href="/category" class="full-link"></a>
@@ -214,9 +229,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              7<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-7.png" alt="">
+                  <img src="/img/category7.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Модульная гидроаппаратура</div>
                 <a href="/category" class="full-link"></a>
@@ -224,9 +239,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              8<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-8.png" alt="">
+                  <img src="/img/category8.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Фильтры гидравлические</div>
                 <a href="/category" class="full-link"></a>
@@ -234,9 +249,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              9<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-9.png" alt="">
+                  <img src="/img/category9.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Картриджная аппаратура</div>
                 <a href="/category" class="full-link"></a>
@@ -244,9 +259,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              10<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-10.png" alt="">
+                  <img src="/img/category10.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Измерительная аппаратура</div>
                 <a href="/category" class="full-link"></a>
@@ -254,9 +269,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              11<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-11.png" alt="">
+                  <img src="/img/category11.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Гидроцилиндры</div>
                 <a href="/category" class="full-link"></a>
@@ -264,9 +279,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              12<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-12.png" alt="">
+                  <img src="/img/category12.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Быстроразъемные соединения БРС</div>
                 <a href="/category" class="full-link"></a>
@@ -274,9 +289,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              13<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-13.png" alt="">
+                  <img src="/img/category13.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Редукторы и мультипликаторы</div>
                 <a href="/category" class="full-link"></a>
@@ -284,9 +299,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              14<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-14.png" alt="">
+                  <img src="/img/category14.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Маслоохладители</div>
                 <a href="/category" class="full-link"></a>
@@ -294,9 +309,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              15<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-15.png" alt="">
+                  <img src="/img/category15.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Гидропневмо-аккумуляторы</div>
                 <a href="/category" class="full-link"></a>
@@ -304,9 +319,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              16<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-16.png" alt="">
+                  <img src="/img/category16.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Дистанционное управление</div>
                 <a href="/category" class="full-link"></a>
@@ -314,9 +329,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              17<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-17.png" alt="">
+                  <img src="/img/category17.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Электроника и автоматика</div>
                 <a href="/category" class="full-link"></a>
@@ -324,9 +339,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              18<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-18.png" alt="">
+                  <img src="/img/category18.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">Сопутствующие товары</div>
                 <a href="/category" class="full-link"></a>
@@ -334,9 +349,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
-              <div class="aside-nav-item">
+              19<div class="aside-nav-item">
                 <div class="aside-nav-item__image">
-                  <img src="/img/aside-nav-19.png" alt="">
+                  <img src="/img/category19.png" alt="">
                 </div>
                 <div class="aside-nav-item__title">РВД</div>
                 <a href="/category" class="full-link"></a>
@@ -344,6 +359,9 @@
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>
               </div>
+ -->
+
+
             </div>
           </div>
         </div>

@@ -28,12 +28,10 @@ class ViewServiceProvider extends ServiceProvider
         // Шаблон главной страницы
         view()->composer('layouts.main', function ($view) // прикрепить компоновщик к шаблону layouts.main
         {
-            // Categories
-            // Get all categories
-            // $categories = \App\Models\Category::all();
-
             // Get parent categories
-            // $parent_category = $categories->where('parent', '0')->sortBy('sort');
+            $categories = \App\Models\ProductCategory::whereNull('parent')->get();
+
+            $view->with('categories', $categories);
 
             // Get child categories
             /*
@@ -45,20 +43,6 @@ class ViewServiceProvider extends ServiceProvider
             }
             */
 
-            // $view->with('parent_category', $parent_category);
-            
-            // City
-            /*
-            $city = json_decode(\Illuminate\Support\Facades\Cookie::get('city'), true);
-
-            if ($city) {
-                $city_name = $city['city'];
-            } else {
-                $city_name = '';
-            }
-
-            $view->with('city_name', $city_name);
-            */
 
             // Count products in cart
             $cart = json_decode(\Illuminate\Support\Facades\Cookie::get('cart'), true);
