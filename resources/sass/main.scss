@@ -955,17 +955,13 @@ p {
   left: -1px;
   top: 24px;
   width: 67px;
-  height: 25px;
-  background-color: $accentcolor;
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 12px solid transparent;
-    border-right: 12px solid #fff;
+  .product-label-hit-image {
+    width: 100%;
   }
   .product-label-hit-text {
+    position: absolute;
+    top: 2px;
+    left: 0;
     padding: 0 0 0 12px;
     font-family: 'roboto-condensed-bold';
     font-size: 20px;
@@ -3621,7 +3617,7 @@ p {
     width: 53px;
     .product-label-hit-text {
       padding: 0 0 0 8px;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.6;
     }
   }

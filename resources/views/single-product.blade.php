@@ -44,6 +44,7 @@
       @if($product->content)
         @if($product->content->hit)
           <div class="product-label-hit">
+            <img src="/img/label-hit.png" class="product-label-hit-image" alt="">
             <span class="product-label-hit-text">ХИТ</span>
           </div>
         @endif

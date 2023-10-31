@@ -37,9 +37,10 @@
               <button class="secondary-btn add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">КУПИТЬ</button>
               @if($product->content)
                 @if($product->content->hit)
-                  <div class="product-label-hit">
-                    <span class="product-label-hit-text">ХИТ</span>
-                  </div>
+                <div class="product-label-hit">
+                  <img src="/img/label-hit.png" class="product-label-hit-image" alt="">
+                  <span class="product-label-hit-text">ХИТ</span>
+                </div>
                 @endif
               @endif
               <div class="regular-product-item-favourites add-to-favourites" data-id="{{ $product->id }}">
