@@ -46,6 +46,14 @@
       <label for="hit" class="form-check-label">Хит</label>
     </div>
     <div class="form-group mb-3">
+      @if($product->content)
+        <input type="checkbox" name="special_offer" id="special_offer" class="form-check-input me-1" @checked($product->content->special_offer)>
+      @else
+        <input type="checkbox" name="special_offer" id="special_offer" class="form-check-input me-1">
+      @endif
+      <label for="special_offer" class="form-check-label">Специальное предложение</label>
+    </div>
+    <div class="form-group mb-3">
       <div class="image-preview">
         @if($product->content)
           @if($product->content->image)

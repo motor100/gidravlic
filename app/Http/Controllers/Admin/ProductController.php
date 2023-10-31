@@ -79,6 +79,7 @@ class ProductController extends Controller
         $validated = $request->validate([
             'title' => 'required|min:2|max:250',
             'hit' => 'nullable',
+            'special_offer' => 'nullable',
             'input-main-file' => [
                                 'nullable',
                                 \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
@@ -96,13 +97,13 @@ class ProductController extends Controller
 
         $product = Product::findOrFail($id);
 
-        // Обновление-вставка отметки хит и изображения
-        // dd($product->product_id);
+        // Обновление-вставка отметки хит, отметки специальное предложение и изображения
         ProductContent::upsert(
             [
                 'product_id' => $product->product_id,
                 'image' => (new \App\Services\ProductContent($product, $validated))->image(),
                 'hit' => (new \App\Services\ProductContent($product, $validated))->hit(),
+                'special_offer' => (new \App\Services\ProductContent($product, $validated))->special_offer(),
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -110,6 +111,7 @@ class ProductController extends Controller
             [
                 'image',
                 'hit',
+                'special_offer',
                 'updated_at'
             ]
         );

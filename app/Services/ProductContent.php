@@ -29,6 +29,17 @@ class ProductContent
         // Преобразование on в 1
         return isset($this->validated["hit"]) ? 1 : NULL;
     }
+
+    /**
+     * Обновление отметки специальное предложение
+     * @param
+     * @return mixed
+     */
+    public function special_offer(): mixed
+    {
+        // Преобразование on в 1
+        return isset($this->validated["special_offer"]) ? 1 : NULL;
+    }
     
     /**
      * Обновление изображения у товара

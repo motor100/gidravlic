@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
+use Illuminate\Database\Eloquent\Builder;
 
 class MainController extends Controller
 {
@@ -60,11 +61,12 @@ class MainController extends Controller
         $insert_array = [];
 
         foreach($products as $product) {
-            $item['product_id'] = $product->id;
+            $item['product_id'] = $product->product_id;
             $mt_rand = mt_rand(0, 10);
             $item['image'] = $mt_rand == 1 ? 'public/uploads/products/no-photo.jpg' : 'public/uploads/products/' . mt_rand(0, 10) . '.jpg';
             $rand = mt_rand(0, 10);
             $item['hit'] = $rand == 0 ? 1 : NULL;
+            $item['special_offer'] = $rand == 1 ? 1 : NULL;
             $item['created_at'] = now();
             $item['updated_at'] = now();
 
@@ -74,13 +76,17 @@ class MainController extends Controller
         \App\Models\ProductContent::insert($insert_array);
         */
 
+
         // Main slider LIFO
         $sliders = \App\Models\MainSlider::orderby('id', 'desc')->get();
         
         // Special offer
-        $special_offer_products = \App\Models\Product::limit(4)
-                                                        ->inRandomOrder()
-                                                        ->get();
+        $special_offer_products = \App\Models\Product::whereHas('content', function (Builder $query) {
+                    return $query->whereNotNull('special_offer');
+                })
+                ->limit(4)
+                ->inRandomOrder()
+                ->get();
         
         return view('home', compact('sliders', 'special_offer_products'));
     }
@@ -284,8 +290,11 @@ class MainController extends Controller
 
     public function special_offer(): View
     {
-        $products = \App\Models\Product::paginate(24);
-        
+        $products = \App\Models\Product::whereHas('content', function (Builder $query) {
+                    return $query->whereNotNull('special_offer');
+                })
+                ->paginate(24);
+
         return view('special-offer', compact('products'));
     }
 
