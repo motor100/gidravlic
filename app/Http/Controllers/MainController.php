@@ -61,7 +61,8 @@ class MainController extends Controller
 
         foreach($products as $product) {
             $item['product_id'] = $product->id;
-            $item['image'] = 'public/uploads/products/' . mt_rand(0, 10) . '.jpg';
+            $mt_rand = mt_rand(0, 10);
+            $item['image'] = $mt_rand == 1 ? 'public/uploads/products/no-photo.jpg' : 'public/uploads/products/' . mt_rand(0, 10) . '.jpg';
             $rand = mt_rand(0, 10);
             $item['hit'] = $rand == 0 ? 1 : NULL;
             $item['created_at'] = now();
@@ -72,7 +73,6 @@ class MainController extends Controller
 
         \App\Models\ProductContent::insert($insert_array);
         */
-
 
         // Main slider LIFO
         $sliders = \App\Models\MainSlider::orderby('id', 'desc')->get();

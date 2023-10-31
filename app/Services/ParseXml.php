@@ -63,7 +63,6 @@ class ParseXml
                 // $item["category_name"] = '';
             }
 
-            $item["image"] = NULL;
             $item["description"] = NULL;
 
             // Артикул
@@ -99,8 +98,6 @@ class ParseXml
                 }
                 
             }
-
-            $item["hit"] = NULL;
 
             $item["created_at"] = now();
             $item["updated_at"] = now();

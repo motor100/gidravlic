@@ -120,8 +120,9 @@ class ExchangeController extends Controller
                     (new \App\Services\ParseXml())->parse();
                 }
 
-                return response("success\n")
-                        ->header("Content-Type" ,"text/plane; charset=UTF-8");
+                // return response("success\n")
+                //         ->header("Content-Type" ,"text/plane; charset=UTF-8");
+                return "success\n";
             }
 
         // Обмен заказами. Выгрузка заказов из сайта в 1С

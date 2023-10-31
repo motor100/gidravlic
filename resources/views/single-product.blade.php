@@ -39,7 +39,11 @@
 
     <div class="single-product-image-wrapper">
       <div class="single-product-image">
-        <img src="{{ Storage::url($product->content->image) }}" alt="">
+        @if($product->content)
+          <img src="{{ Storage::url($product->content->image) }}" alt="">
+        @else
+          <img src="/img/no-photo.jpg" alt="">
+        @endif
       </div>
       @if($product->content)
         @if($product->content->hit)

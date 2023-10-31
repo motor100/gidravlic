@@ -34,21 +34,22 @@ class ProductContent
      * Обновление изображения у товара
      * @param array $request->validated()
      * @param Illuminate\Database\Eloquent\Model Product
-     * @return string
+     * @return mixed
      */
-    
-    public function image(): string
+    public function image(): mixed
     {
         if (array_key_exists('input-main-file', $this->validated)) {
-            if (Storage::exists($this->product->content->image)) {
-                Storage::delete($this->product->content->image);
+            if ($this->product->content->image) {
+                if (Storage::exists($this->product->content->image)) {
+                    Storage::delete($this->product->content->image);
+                }
             }
 
             return Storage::putFile('public/uploads/products', $this->validated["input-main-file"]);
 
         } else {
 
-            return $this->product->content->image;
+            return $this->product->content ? $this->product->content->image : NULL;
         }
     }
 }

@@ -26,6 +26,6 @@ class Product extends Model
      */
     public function content(): HasOne
     {
-        return $this->hasOne(ProductContent::class);
+        return $this->hasOne(ProductContent::class, 'product_id', 'product_id');
     }
 }

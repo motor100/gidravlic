@@ -96,17 +96,23 @@ class ProductController extends Controller
 
         $product = Product::findOrFail($id);
 
-        // Обновление отметки хит
-        ProductContent::where('product_id', $product->id)
-                        ->update([
-                            'hit' => (new \App\Services\ProductContent($product, $validated))->hit()
-                        ]);
-
-        // Обновление изображения
-        ProductContent::where('product_id', $product->id)
-                        ->update([
-                            'image' => (new \App\Services\ProductContent($product, $validated))->image(),
-                        ]);
+        // Обновление-вставка отметки хит и изображения
+        // dd($product->product_id);
+        ProductContent::upsert(
+            [
+                'product_id' => $product->product_id,
+                'image' => (new \App\Services\ProductContent($product, $validated))->image(),
+                'hit' => (new \App\Services\ProductContent($product, $validated))->hit(),
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            ['product_id'],
+            [
+                'image',
+                'hit',
+                'updated_at'
+            ]
+        );
 
         // Обновление галереи
         if (array_key_exists('input-gallery-file', $validated)) {
