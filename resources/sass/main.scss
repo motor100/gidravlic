@@ -724,7 +724,7 @@ p {
       margin: 0 0 24px 0;
     }
     .categories-item__image {
-      height: 278px;
+      height: 288px;
     }
     .categories-item__image img {
       width: 100%;
@@ -2690,6 +2690,9 @@ p {
       }
     }
     .categories {
+      .categories-item__image {
+        height: 285px;
+      }
       .categories-item__title {
         font-size: 18px;
       }
@@ -2820,6 +2823,11 @@ p {
   .home {
     .main-slider .view-more-btn {
       right: 60px;
+    }
+    .categories {
+      .categories-item__image {
+        height: 268px;
+      }
     }
   }
 
