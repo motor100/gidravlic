@@ -9,21 +9,33 @@
     <a href="{{ route('home') }}">Главная</a>
   </div>
   <div class="arrow">></div>
-  <div class="active">Клапанная аппаратура</div>
+  <div class="active">{{ $category[0]->title }}</div>
 </div>
 
 <div class="category">
   <div class="page-title-wrapper">
-    <div class="page-title">Клапанная аппаратура</div>
+    <div class="page-title">{{ $category[0]->title }}</div>
     <div class="count_products">
       <span class="count_products__text">Найдено:</span>
-      <span class="count_products__value">230</span>
+      <span class="count_products__value">{{ $products->total() }}</span>
       <span class="count_products__text">товаров</span>
     </div>
   </div>
 
   <div class="subcategories">
     <div class="row">
+      @foreach($subcategories as $scat)
+        <div class="col-md-4 col-sm-6">
+          <div class="subcategories-item">
+            <div class="subcategories-item__image">
+              <img src="/img/temp-category-image.png" alt="">
+            </div>
+            <div class="subcategories-item__title">{{ $scat->title }}</div>
+            <a href="/{{ $category[0]->slug }}/{{ $scat->slug }}" class="full-link"></a>
+          </div>
+        </div>
+      @endforeach
+    <!-- 
       <div class="col-md-4 col-sm-6">
         <div class="subcategories-item">
           <div class="subcategories-item__image">
@@ -159,10 +171,11 @@
           <a href="/category/subcategory" class="full-link"></a>
         </div>
       </div>
+       -->
     </div>
   </div>
 
-  <div class="category-description">Клапанная аппаратура входит в состав каждой гидросистемы (помимо насоса, гидрораспределителей и исполнительных гидродвигателей). Клапана могут использоваться в системе в количестве от единиц до нескольких десятков.</div>
+  <!-- <div class="category-description">Клапанная аппаратура входит в состав каждой гидросистемы (помимо насоса, гидрораспределителей и исполнительных гидродвигателей). Клапана могут использоваться в системе в количестве от единиц до нескольких десятков.</div> -->
 
   <!-- 
   <div class="products-filter">

@@ -25,6 +25,12 @@ Route::get('/catalog', [MainController::class, 'catalog']);
 
 Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
 
+// Route::get('/category', [MainController::class, 'cat']);
+
+Route::get('/{slug}', [MainController::class, 'category']);
+
+Route::get('/{slug}/{subcat}', [MainController::class, 'subcategory']);
+
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 
 Route::post('/rm-from-cart', [MainController::class, 'rm_from_cart']);
@@ -91,8 +97,6 @@ Route::get('/sitemap.xml', [MainController::class, 'sitemap']);
 
 
 // temp
-Route::get('/category', [MainController::class, 'category']);
-
 Route::get('/category/subcategory', [MainController::class, 'subcategory']);
 
 Route::get('/http-auth', [MainController::class, 'http_auth']);

@@ -98,6 +98,66 @@ class MainController extends Controller
         return view('catalog', compact('products'));
     }
 
+    /*
+    public function cat(): RedirectResponse
+    {
+        return redirect('/');
+    }
+    */
+
+    public function category($slug): View
+    {
+        // Категория
+        $category = \App\Models\ProductCategory::where('slug', $slug)->get();
+
+        // Если есть коллекция $category и количество элементов = 1
+        if ($category && $category->count() == 1) {
+
+            // Подкатегории
+            $subcategories = \App\Models\ProductCategory::where('parent', $category[0]->category_id)->get();
+            
+            // Объединение главной категории и ее подкатегорий в одну коллекцию
+            $categories = $category->merge($subcategories);
+
+            // Массив с category_id
+            $cats = [];
+
+            foreach($categories as $cat) {
+                $cats[] = $cat->category_id;
+            }
+
+            // Товары из главной категории и ее подкатегорий
+            $products = \App\Models\Product::whereIn('category_id', $cats)->paginate(24);
+
+            return view('category', compact('products', 'category', 'subcategories'));
+        }
+
+        return abort(404);
+    }
+
+    public function subcategory($slug, $subcat): View
+    {
+        // Категория
+        $category = \App\Models\ProductCategory::where('slug', $slug)->first();
+
+        if ($category) {
+            // Подкатегория
+            $subcategory = \App\Models\ProductCategory::where('slug', $subcat)->first();
+
+            if ($subcategory) {
+                
+                // Товары в подкатегории
+                $products = \App\Models\Product::where('category_id', $subcategory->category_id)->paginate(24);
+    
+                return view('subcategory', compact('products', 'subcategory'));
+            } else {
+                return abort(404);
+            }
+        }
+
+        return abort(404);
+    }
+
     public function single_product($slug): mixed
     {
         $product = \App\Models\Product::where('slug', $slug)->first();
@@ -372,31 +432,6 @@ class MainController extends Controller
 
 
     // temp
-    public function category(): View
-    {
-        $products = \App\Models\Product::paginate(24);
-        
-        return view('category', compact('products'));
-    }
-
-    public function subcategory(): View
-    {
-        $products = \App\Models\Product::paginate(24);
-        
-        return view('subcategory', compact('products'));
-    }
-
-    /*
-    public function http_auth()
-    {
-        $response = \Illuminate\Support\Facades\Http::withBasicAuth('Admin', 'secret123')->get('http://lartest1.ru/1c_exchange.php?type=catalog&mode=checkauth');
-
-        return $response;
-    }
-    */
-
-
-
     public function http_auth()
     {
         // dd(file_get_contents('storage/uploads/test.txt'));
@@ -544,15 +579,6 @@ class MainController extends Controller
 
         return $response;
     }
-
-    
-    /*
-    public function http_auth_form()
-    {
-        return view('http-auth-form');
-    }
-    */
-
 
 
 

@@ -9,15 +9,15 @@
     <a href="{{ route('home') }}">Главная</a>
   </div>
   <div class="arrow">></div>
-  <div class="active">ТОРМОЗНЫЕ КЛАПАНЫ</div>
+  <div class="active">{{ $subcategory->title }}</div>
 </div>
 
 <div class="category">
   <div class="page-title-wrapper">
-    <div class="page-title">ТОРМОЗНЫЕ КЛАПАНЫ</div>
+    <div class="page-title">{{ $subcategory->title }}</div>
     <div class="count_products">
       <span class="count_products__text">Найдено:</span>
-      <span class="count_products__value">30</span>
+      <span class="count_products__value">{{ $products->total() }}</span>
       <span class="count_products__text">товаров</span>
     </div>
   </div>
