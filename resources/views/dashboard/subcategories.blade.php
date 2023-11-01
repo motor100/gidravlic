@@ -1,12 +1,12 @@
 @extends('dashboard.layout')
 
-@section('title', 'Товары')
+@section('title', 'Подкатегории')
 
 @section('dashboardcontent')
 
 <div class="dashboard-content">
 
-  <form class="form mb-5" action="/admin/products" method="get">
+  <form class="form mb-5" action="#" method="get">
     <div class="form-group mb-3">
       <label for="search_query">Поиск</label>
       <input type="text" class="form-control input-number" name="search_query" id="search_query" maxlength="200" required>
@@ -23,15 +23,15 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($products as $pr)
+      @foreach($subcategories as $subcat)
         <tr>
           <td>{{ $loop->index + 1 }}</td>
-          <td>{{ $pr->title }}</td>
+          <td>{{ $subcat->title }}</td>
           <td class="table-button">
-            <a href="/catalog/{{ $pr->slug }}" class="btn btn-success" target="_blank">
+            <a href="#" class="btn btn-success" target="_blank">
               <i class="fas fa-eye"></i>
             </a>
-            <a href="{{ route('products-edit', $pr->id) }}" class="btn btn-primary">
+            <a href="#" class="btn btn-primary">
               <i class="fas fa-pen"></i>
             </a>
             <form class="form" action="#" method="get">
@@ -49,7 +49,7 @@
 </div>
 
 <script>
-  const menuItem = 0;
+  const menuItem = 4;
 </script>
 @endsection
 

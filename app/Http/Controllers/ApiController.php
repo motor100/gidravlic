@@ -18,6 +18,7 @@ class ApiController extends Controller
         $search_query = htmlspecialchars($search_query);
 
         $products = \App\Models\Product::where('title', 'like', "%{$search_query}%")
+                                        ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
                                         ->select('title', 'slug')
                                         ->get();
 

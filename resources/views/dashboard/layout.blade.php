@@ -54,14 +54,12 @@
             </a>
           </div>
 
-          <!-- 
           <div class="nav-item">
-            <a href="/admin/promos" class="item-link">
-              <i class="nav-icon fas fa-percent"></i>
-              <span>Акции</span>
+            <a href="/admin/subcategories" class="item-link">
+              <i class="nav-icon fas fa-list"></i>
+              <span>Подкатегории</span>
             </a>
           </div>
-           -->
 
         </div>
       </div>

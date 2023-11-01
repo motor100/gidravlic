@@ -24,14 +24,18 @@
 
   <div class="subcategories">
     <div class="row">
-      @foreach($subcategories as $scat)
+      @foreach($subcategories as $subcat)
         <div class="col-md-4 col-sm-6">
           <div class="subcategories-item">
             <div class="subcategories-item__image">
-              <img src="" alt="">
+              @if($subcat->image)
+                <img src="{{ Storage::url($subcat->image->image) }}" alt="">
+              @else
+                <img src="/img/no-photo.jpg" alt="">
+              @endif
             </div>
-            <div class="subcategories-item__title">{{ $scat->title }}</div>
-            <a href="/category/{{ $category[0]->slug }}/{{ $scat->slug }}" class="full-link"></a>
+            <div class="subcategories-item__title">{{ $subcat->title }}</div>
+            <a href="/category/{{ $category[0]->slug }}/{{ $subcat->slug }}" class="full-link"></a>
           </div>
         </div>
       @endforeach

@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProductController;
-// use App\Http\Controllers\Admin\PromoController;
+use App\Http\Controllers\Admin\SubcategoryImageController;
 
 
 /*
@@ -97,27 +97,13 @@ Route::prefix('admin')->group(static function () {
 
         Route::get('/main-slider/{id}/destroy', [MainSliderController::class, 'destroy'])->name('main-slider-destroy');
 
-        /*
-        Route::get('/promos', [PromoController::class, 'index']);
-
-        Route::get('/promos/create', [PromoController::class, 'create'])->name('promos-create');
-
-        Route::post('/promos/store', [PromoController::class, 'store'])->name('promos-store');
-
-        Route::get('/promos/{id}', [PromoController::class, 'show'])->name('promos-show');
-
-        Route::get('/promos/{id}/edit', [PromoController::class, 'edit'])->name('promos-edit');
-
-        Route::post('/promos/{id}/update', [PromoController::class, 'update'])->name('promos-update');
-
-        Route::get('/promos/{id}/destroy', [PromoController::class, 'destroy'])->name('promos-destroy');
-        */
-
         Route::get('/testimonials', [TestimonialController::class, 'index'])->name('admin.testimonials');
 
         Route::post('/testimonials/{id}/update', [TestimonialController::class, 'update'])->name('admin.tesimonials-update');
 
         Route::post('/testimonials/{id}/destroy', [TestimonialController::class, 'destroy'])->name('admin.tesimonials-destroy');
+
+        Route::get('/subcategories', [SubcategoryImageController::class, 'index'])->name('admin.subcategories');
     });
 });
 
