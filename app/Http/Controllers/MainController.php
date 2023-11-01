@@ -93,17 +93,19 @@ class MainController extends Controller
 
     public function catalog(): View
     {
+        // Категории
+        $categories = \App\Models\ProductCategory::whereNull('parent')->get();
+
+        // Товары
         $products = \App\Models\Product::paginate(24);
         
-        return view('catalog', compact('products'));
+        return view('catalog', compact('products', 'categories'));
     }
 
-    /*
     public function cat(): RedirectResponse
     {
         return redirect('/');
     }
-    */
 
     public function category($slug): View
     {
@@ -135,10 +137,10 @@ class MainController extends Controller
         return abort(404);
     }
 
-    public function subcategory($slug, $subcat): View
+    public function subcategory($cat, $subcat): View
     {
         // Категория
-        $category = \App\Models\ProductCategory::where('slug', $slug)->first();
+        $category = \App\Models\ProductCategory::where('slug', $cat)->first();
 
         if ($category) {
             // Подкатегория

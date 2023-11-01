@@ -161,7 +161,7 @@
                   <img src="{{ Storage::url($cat->image) }}" alt="">
                 </div>
                 <div class="aside-nav-item__title">{{ $cat->title }}</div>
-                <a href="/{{ $cat->slug }}" class="full-link"></a>
+                <a href="/category/{{ $cat->slug }}" class="full-link"></a>
                 <div class="vertikal-line"></div>
                 <div class="triangle-left"></div>
                 <div class="triangle-right"></div>

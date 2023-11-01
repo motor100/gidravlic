@@ -25,11 +25,11 @@ Route::get('/catalog', [MainController::class, 'catalog']);
 
 Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
 
-// Route::get('/category', [MainController::class, 'cat']);
+Route::get('/category', [MainController::class, 'cat']);
 
-Route::get('/{slug}', [MainController::class, 'category']);
+Route::get('/category/{slug}', [MainController::class, 'category']);
 
-Route::get('/{slug}/{subcat}', [MainController::class, 'subcategory']);
+Route::get('/category/{cat}/{subcat}', [MainController::class, 'subcategory']);
 
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 
@@ -97,8 +97,6 @@ Route::get('/sitemap.xml', [MainController::class, 'sitemap']);
 
 
 // temp
-Route::get('/category/subcategory', [MainController::class, 'subcategory']);
-
 Route::get('/http-auth', [MainController::class, 'http_auth']);
 
 Route::get('/http-auth-form', [MainController::class, 'http_auth_form']);
