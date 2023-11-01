@@ -57,7 +57,7 @@
     <div class="single-product-info">
       <div class="single-product-sku mb75">
         <span class="single-product-sku__text">Артикул:</span>
-        <span class="single-product-sku__value">{{ $product->sku }}</span>
+        <span class="single-product-sku__value">{{ $product->sku ? $product->sku : '-' }}</span>
       </div>
       <!-- <div class="single-product-maker mb75">Производитель: Китай</div> -->
       <div class="single-product-price">{{ $product->price }} р</div>

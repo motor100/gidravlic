@@ -101,6 +101,10 @@ Route::get('/http-auth', [MainController::class, 'http_auth']);
 
 Route::get('/http-auth-form', [MainController::class, 'http_auth_form']);
 
+Route::get('/insert-categories', [MainController::class, 'insert_categories']);
+
+Route::get('/insert-products', [MainController::class, 'insert_products']);
+
 
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 

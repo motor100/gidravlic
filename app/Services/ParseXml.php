@@ -23,51 +23,96 @@ class ParseXml
         $cml->loadImportXml($filePath . 'import.xml'); // Загружаем товары
         $cml->loadOffersXml($filePath . 'offers.xml'); // Загружаем предложения
 
-        $insert_array = [];
-        $slugs = [];
+        // Массив товаров
+        $products_array = [];
+        
+        // Массив slug для товаров
+        $product_slugs = [];
+
+        // Массив slug для подкатегорий
+        $subcategory_slugs = [];
 
         // Группы каталога 1С - категории товаров
-        // dd($cml->classifier->groups);
+        // Массив подкатегорий
+        $subcategories_array = [];
 
+        // Категории и подкатегории
+        foreach($cml->classifier->groups as $parent) {
+            // Подкатегории
+            foreach($parent->getChildren() as $children) {
+                $s_item["title"] = mb_substr($children->name, 0, 190); // Название подкатегории и ограничение до 190 символов
+
+                // slug
+                $slug = Str::slug($s_item["title"]);
+
+                // Проверка на уникальный slug. Поиск по ключу в массиве $slugs
+                $slug_unique = in_array($slug, $subcategory_slugs);
+                // $slug_unique = array_search($slug, $subcategory_slugs);
+
+                if ($slug_unique) {
+                    $s_item["slug"] = $slug . "-" . rand();
+                } else {
+                    $s_item["slug"] = $slug;
+                }
+
+                // Добавляю текущий $slug в массив $subcategory_slugs
+                $subcategory_slugs[] = $slug;
+
+                $s_item["category_id"] = $children->id;
+                $s_item["parent_category_id"] = $parent->id;
+
+                $s_item["created_at"] = now();
+                $s_item["updated_at"] = now();
+
+                $subcategories_array[] = $s_item;
+            }
+        }
+        
+        // Truncate
+        \App\Models\ProductSubcategory::truncate();
+
+        // Вставка в таблицу products_subcategories
+        \App\Models\ProductSubcategory::insert($subcategories_array);
+
+        // Товары
         foreach ($cml->catalog->products as $product) {
             // Название товара
-            $item["title"] = mb_substr($product->name, 0, 190); // Выводим название товара (Товары->Товар->Наименование) и ограничение символов до 190
+            $p_item["title"] = mb_substr($product->name, 0, 190); // Название товара (Товары->Товар->Наименование) и ограничение до 190 символов
 
             // slug
-            $slug = Str::slug($item["title"]);
+            $slug = Str::slug($p_item["title"]);
 
             // Проверка на уникальный slug. Поиск по ключу в массиве $slugs
-            $slug_unique = array_search($slug, $slugs);
+            $slug_unique = in_array($slug, $product_slugs);
 
-            if ($slug_unique > 0) {
-                $item["slug"] = $slug . "-" . rand();
+            if ($slug_unique) {
+                $p_item["slug"] = $slug . "-" . rand();
             } else {
-                $item["slug"] = $slug;
+                $p_item["slug"] = $slug;
             }
 
-            // Добавляю текущий $slug в массив $slugs
-            $slugs[] = $slug;
+            // Добавляю текущий $slug в массив $product_slugs
+            $product_slugs[] = $slug;
 
             // product_id
-            $item["product_id"] = $product->id;
+            $p_item["product_id"] = $product->id;
 
             if ($product->group) {
                 // category_id
-                $item["category_id"] = $product->group->id;
+                $p_item["category_id"] = $product->group->id;
                 // group_name
                 // $item["category_name"] = $product->group->name;
             } else {
                 // category_id
-                $item["category_id"] = '00000000-0000-0000-0000-000000000000';
+                $p_item["category_id"] = '00000000-0000-0000-0000-000000000000';
                 // category_name
                 // $item["category_name"] = '';
             }
 
-            $item["description"] = NULL;
+            $p_item["description"] = NULL;
 
             // Артикул
-            $item["sku"] = $product->Артикул;
-            
+            $p_item["sku"] = $product->Артикул;
 
             // Свойства property
             // foreach($product->properties as $property) {
@@ -85,31 +130,31 @@ class ParseXml
             foreach ($product->offers as $offer) {
                 // Количество
                 if ($offer->Количество < 0) {
-                    $item["stock"] = 0;
+                    $p_item["stock"] = 0;
                 } else {
-                    $item["stock"] = $offer->Количество;
+                    $p_item["stock"] = $offer->Количество;
                 }
 
                 // Убрать это условие когда будут цены
                 if (count($offer->prices)) {
-                    $item["price"] = $offer->prices[0]->cost; // Выводим первую цену предложения (Предложения->Предложение->Цены->Цена->ЦенаЗаЕдиницу)
+                    $p_item["price"] = $offer->prices[0]->cost; // Выводим первую цену предложения (Предложения->Предложение->Цены->Цена->ЦенаЗаЕдиницу)
                 } else {
-                    $item["price"] = 0;
+                    $p_item["price"] = 0;
                 }
                 
             }
 
-            $item["created_at"] = now();
-            $item["updated_at"] = now();
+            $p_item["created_at"] = now();
+            $p_item["updated_at"] = now();
 
-            $insert_array[] = $item;
+            $products_array[] = $p_item;
         }
 
         // Truncate
         Product::truncate();
 
-        // Вставка в БД
-        $products = Product::insert($insert_array);
+        // Вставка в таблицу products
+        $products = Product::insert($products_array);
         
         return $products;
     }

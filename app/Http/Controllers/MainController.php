@@ -12,71 +12,6 @@ class MainController extends Controller
 {
     public function home(): View
     {
-        /*
-        $categories = [
-            'Гидравлические станции',
-            'Гидравлические распределители',
-            'Гидравлические насосы',
-            'Гидравлические моторы',
-            'Клапанная аппаратура',
-            'Коробки отбора мощности',
-            'Модульная гидроаппаратура',
-            'Фильтры гидравлические',
-            'Картриджная аппаратура',
-            'Измерительная аппаратура',
-            'Гидроцилиндры',
-            'Быстроразъемные соединения БРС',
-            'Редукторы и мультипликаторы',
-            'Маслоохладители',
-            'Гидропневмо-аккумуляторы',
-            'Дистанционное управление',
-            'Электроника и автоматика',
-            'Сопутствующие товары',
-            'РВД',
-        ];
-
-        $insert_array = [];
-
-        $index = 1;
-        foreach($categories as $cat) {
-            $item['title'] = $cat;
-            $item['slug'] = \Illuminate\Support\Str::slug($cat);
-            $item['image'] = 'public/uploads/products-categories/category' . $index . '.png';
-            $item['category_id'] = '00000000-0000-0000-0000-000000000000';
-            $item['parent'] = NULL;
-            $item['created_at'] = now();
-            $item['updated_at'] = now();
-
-            $index++;
-
-            $insert_array[] = $item;
-        }
-
-        \App\Models\ProductCategory::insert($insert_array);
-        */
-
-        /*
-        $products = \App\Models\Product::all();
-
-        $insert_array = [];
-
-        foreach($products as $product) {
-            $item['product_id'] = $product->product_id;
-            $mt_rand = mt_rand(0, 10);
-            $item['image'] = $mt_rand == 1 ? 'public/uploads/products/no-photo.jpg' : 'public/uploads/products/' . mt_rand(0, 10) . '.jpg';
-            $rand = mt_rand(0, 10);
-            $item['hit'] = $rand == 0 ? 1 : NULL;
-            $item['special_offer'] = $rand == 1 ? 1 : NULL;
-            $item['created_at'] = now();
-            $item['updated_at'] = now();
-
-            $insert_array[] = $item;
-        }
-
-        \App\Models\ProductContent::insert($insert_array);
-        */
-
-
         // Main slider LIFO
         $sliders = \App\Models\MainSlider::orderby('id', 'desc')->get();
         
@@ -84,6 +19,7 @@ class MainController extends Controller
         $special_offer_products = \App\Models\Product::whereHas('content', function (Builder $query) {
                     return $query->whereNotNull('special_offer');
                 })
+                ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
                 ->limit(4)
                 ->inRandomOrder()
                 ->get();
@@ -94,10 +30,11 @@ class MainController extends Controller
     public function catalog(): View
     {
         // Категории
-        $categories = \App\Models\ProductCategory::whereNull('parent')->get();
+        $categories = \App\Models\ProductCategory::all();
 
-        // Товары
-        $products = \App\Models\Product::paginate(24);
+        // Все товары в категориях
+        $products = \App\Models\Product::where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+                                        ->paginate(24);
         
         return view('catalog', compact('products', 'categories'));
     }
@@ -107,7 +44,7 @@ class MainController extends Controller
         return redirect('/');
     }
 
-    public function category($slug): View
+    public function category($slug): mixed
     {
         // Категория
         $category = \App\Models\ProductCategory::where('slug', $slug)->get();
@@ -116,7 +53,7 @@ class MainController extends Controller
         if ($category && $category->count() == 1) {
 
             // Подкатегории
-            $subcategories = \App\Models\ProductCategory::where('parent', $category[0]->category_id)->get();
+            $subcategories = $category[0]->subcategories;
             
             // Объединение главной категории и ее подкатегорий в одну коллекцию
             $categories = $category->merge($subcategories);
@@ -137,19 +74,21 @@ class MainController extends Controller
         return abort(404);
     }
 
-    public function subcategory($cat, $subcat): View
+    public function subcategory($cat, $subcat): mixed
     {
         // Категория
         $category = \App\Models\ProductCategory::where('slug', $cat)->first();
 
         if ($category) {
             // Подкатегория
-            $subcategory = \App\Models\ProductCategory::where('slug', $subcat)->first();
+            $subcategory = \App\Models\ProductSubcategory::where('slug', $subcat)->first();
 
             if ($subcategory) {
                 
                 // Товары в подкатегории
-                $products = \App\Models\Product::where('category_id', $subcategory->category_id)->paginate(24);
+                $products = \App\Models\Product::where('category_id', $subcategory->category_id)
+                                                ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+                                                ->paginate(24);
     
                 return view('subcategory', compact('products', 'subcategory'));
             } else {
@@ -191,7 +130,9 @@ class MainController extends Controller
 
         $search_query = htmlspecialchars($search_query);
 
-        $products = \App\Models\Product::where('title', 'like', "%{$search_query}%")->get();
+        $products = \App\Models\Product::where('title', 'like', "%{$search_query}%")
+                                        ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+                                        ->get();
 
         if (!$products) {
             return redirect('/');
@@ -253,7 +194,7 @@ class MainController extends Controller
         return back();
     }
 
-    public function rm_from_favourites(Request $request)
+    public function rm_from_favourites(Request $request): RedirectResponse
     {
         $id = $request->input('id');
 
@@ -292,7 +233,7 @@ class MainController extends Controller
         return back();
     }
 
-    public function rm_from_comparison(Request $request)
+    public function rm_from_comparison(Request $request): RedirectResponse
     {
         $id = $request->input('id');
 
@@ -355,6 +296,7 @@ class MainController extends Controller
         $products = \App\Models\Product::whereHas('content', function (Builder $query) {
                     return $query->whereNotNull('special_offer');
                 })
+                ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
                 ->paginate(24);
 
         return view('special-offer', compact('products'));
@@ -582,6 +524,72 @@ class MainController extends Controller
         return $response;
     }
 
+    public function insert_categories()
+    {
+        $categories = [
+            'Гидравлические станции',
+            'Гидравлические распределители',
+            'Гидравлические насосы',
+            'Гидравлические моторы',
+            'Клапанная аппаратура',
+            'Коробки отбора мощности',
+            'Модульная гидроаппаратура',
+            'Фильтры гидравлические',
+            'Картриджная аппаратура',
+            'Измерительная аппаратура',
+            'Гидроцилиндры',
+            'Быстроразъемные соединения БРС',
+            'Редукторы и мультипликаторы',
+            'Маслоохладители',
+            'Гидропневмо-аккумуляторы',
+            'Дистанционное управление',
+            'Электроника и автоматика',
+            'Сопутствующие товары',
+            'РВД',
+        ];
+
+        $insert_array = [];
+
+        $index = 1;
+        foreach($categories as $cat) {
+            $item['title'] = $cat;
+            $item['slug'] = \Illuminate\Support\Str::slug($cat);
+            $item['image'] = 'public/uploads/products-categories/category' . $index . '.png';
+            $item['category_id'] = '00000000-0000-0000-0000-000000000000';
+            $item['parent'] = NULL;
+            $item['created_at'] = now();
+            $item['updated_at'] = now();
+
+            $index++;
+
+            $insert_array[] = $item;
+        }
+
+        return \App\Models\ProductCategory::insert($insert_array);
+    }
+
+    public function insert_products()
+    {
+        $products = \App\Models\Product::all();
+
+        $insert_array = [];
+
+        foreach($products as $product) {
+            $item['product_id'] = $product->product_id;
+            $mt_rand = mt_rand(0, 10);
+            $item['image'] = $mt_rand == 1 ? 'public/uploads/products/no-photo.jpg' : 'public/uploads/products/' . mt_rand(0, 10) . '.jpg';
+            $rand = mt_rand(0, 10);
+            $item['hit'] = $rand == 0 ? 1 : NULL;
+            $item['special_offer'] = $rand == 1 ? 1 : NULL;
+            $item['created_at'] = now();
+            $item['updated_at'] = now();
+
+            $insert_array[] = $item;
+        }
+
+        return \App\Models\ProductContent::insert($insert_array);
+    }
+
 
 
     public function politika_konfidencialnosti(): View
@@ -615,7 +623,9 @@ class MainController extends Controller
 
     public function sitemap(): Response
     {
-        $products = \App\Models\Product::select('slug')->get();
+        $products = \App\Models\Product::where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+                                        ->select('slug')
+                                        ->get();
 
         return response()
                 ->view('sitemap', compact('products'))

@@ -29,7 +29,7 @@ class ViewServiceProvider extends ServiceProvider
         view()->composer('layouts.main', function ($view) // прикрепить компоновщик к шаблону layouts.main
         {
             // Get parent categories
-            $categories = \App\Models\ProductCategory::whereNull('parent')->get();
+            $categories = \App\Models\ProductCategory::all();
 
             $view->with('categories', $categories);
 
