@@ -95,17 +95,6 @@ Route::get('/thank-you', [MainController::class, 'thank_you'])->name('thank-you'
 
 Route::get('/sitemap.xml', [MainController::class, 'sitemap']);
 
-
-// temp
-Route::get('/http-auth', [MainController::class, 'http_auth']);
-
-Route::get('/http-auth-form', [MainController::class, 'http_auth_form']);
-
-Route::get('/insert-categories', [MainController::class, 'insert_categories']);
-
-Route::get('/insert-products', [MainController::class, 'insert_products']);
-
-
 Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
 
 Route::get('/polzovatelskoe-soglashenie-s-publichnoj-ofertoj', [MainController::class, 'polzovatelskoe_soglashenie_s_publichnoj_ofertoj']);
@@ -131,11 +120,6 @@ Route::post('/ajax/minuscart', [AjaxController::class, 'ajax_minus_cart']);
 
 // 1С exchange
 Route::any('/1c_exchange.php', [ExchangeController::class, 'exchange']);
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Личный кабинет
 Route::middleware('auth')->group(function () {

@@ -42,13 +42,13 @@
         @if($product->content)
           <img src="{{ Storage::url($product->content->image) }}" alt="">
         @else
-          <img src="/img/no-photo.jpg" alt="">
+          <img src="/img/no-photo.svg" alt="">
         @endif
       </div>
       @if($product->content)
         @if($product->content->hit)
           <div class="product-label-hit">
-            <img src="/img/label-hit.png" class="product-label-hit-image" alt="">
+            <img src="/img/label-hit.svg" class="product-label-hit-image" alt="">
             <span class="product-label-hit-text">ХИТ</span>
           </div>
         @endif
@@ -59,7 +59,6 @@
         <span class="single-product-sku__text">Артикул:</span>
         <span class="single-product-sku__value">{{ $product->sku ? $product->sku : '-' }}</span>
       </div>
-      <!-- <div class="single-product-maker mb75">Производитель: Китай</div> -->
       <div class="single-product-price">{{ $product->price }} р</div>
       <button class="primary-btn add-to-cart add-to-cart-btn btn-195" data-id="{{ $product->id }}">КУПИТЬ</button>
       <div class="single-product-stock">
@@ -94,22 +93,6 @@
     <p>Описание</p>
     {!! $product->description !!}
   </div>
-  <!-- 
-  <div class="single-product-documents">
-    <div class="single-product-document-item">
-      <div class="single-product-document-item__image">
-        <img src="/img/single-product-pdf.png" alt="">
-      </div>
-      <a href="{{-- Storage::url('uploads/documents/doc.pdf') --}}" class="single-product-document-item__link" target="_blank">Сертификат</a>
-    </div>
-    <div class="single-product-document-item">
-      <div class="single-product-document-item__image">
-        <img src="/img/single-product-pdf.png" alt="">
-      </div>
-      <a href="{{-- Storage::url('uploads/documents/doc.pdf') --}}" class="single-product-document-item__link" target="_blank">Свидетельство</a>
-    </div>
-  </div>
-   -->
 </div>
 
 @endsection

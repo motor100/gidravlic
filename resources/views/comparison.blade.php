@@ -29,7 +29,7 @@
                   @if($product->content)
                     <img src="{{ Storage::url($product->content->image) }}" alt="">
                   @else
-                    <img src="/img/no-photo.jpg" alt="">
+                    <img src="/img/no-photo.svg" alt="">
                   @endif
                 </a>
               </div>
@@ -42,7 +42,7 @@
               @if($product->content)
                 @if($product->content->hit)
                 <div class="product-label-hit">
-                  <img src="/img/label-hit.png" class="product-label-hit-image" alt="">
+                  <img src="/img/label-hit.svg" class="product-label-hit-image" alt="">
                   <span class="product-label-hit-text">ХИТ</span>
                 </div>
                 @endif

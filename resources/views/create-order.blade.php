@@ -136,15 +136,7 @@
           <span class="order-info-row__currency">шт</span>
         </div>
       </div>
-      <!-- 
-      <div class="order-info-row order-info-row__discount">
-        <div class="order-info-row__text">Скидка:</div>
-        <div class="order-info-row__content">
-          <span class="order-info-row__value">0</span>
-          <span class="order-info-row__currency">р</span>
-        </div>
-      </div>
-      -->  
+
       <div class="order-info-row order-info-row__total-summ">
         <div class="order-info-row__text">Общая сумма:</div>
         <div class="order-info-row__content">

@@ -29,14 +29,7 @@
       <textarea class="form-control" name="text" id="text">{{ $product->text }}</textarea>
     </div>
      -->
-     <!-- 
-    <div class="form-group mb-3">
-      <div class="label-text">Категория</div>
-      <select name="category" id="category" class="form-select mt-1">
-        
-      </select>
-    </div>
-     -->
+
     <div class="form-group mb-3">
       @if($product->content)
         <input type="checkbox" name="hit" id="hit" class="form-check-input me-1" @checked($product->content->hit)>
@@ -59,10 +52,10 @@
           @if($product->content->image)
             <img src="{{ Storage::url($product->content->image) }}" alt="">
           @else
-            <img src="/img/no-photo.jpg" alt="">
+            <img src="/img/no-photo.svg" alt="">
           @endif
         @else
-          <img src="/img/no-photo.jpg" alt="">
+          <img src="/img/no-photo.svg" alt="">
         @endif
       </div>
     </div>
