@@ -69,8 +69,10 @@ class ExchangeController extends Controller
                     Storage::append('/public/uploads/test/catalog-checkauth-auth.txt', 'method=' . $method . ' ' . 'auth yes autentifikaciya proshla');
                 }
 
-                return response("success\n$cookieName\n$cookieID\n")
-                        ->header("Content-Type" ,"text/plane; charset=UTF-8");
+                // return response("success\n$cookieName\n$cookieID\n")
+                //         ->header("Content-Type" ,"text/plane; charset=UTF-8");
+
+                return "success\n$cookieName\n$cookieID\n";
 
             } elseif ($input_mode == 'init') {
 
@@ -87,10 +89,10 @@ class ExchangeController extends Controller
                 // return response("zip=no\nfile_limit=4000000")
                 //             ->header("Content-Type" ,"text/plane; charset=UTF-8");
 
-                return response("zip=yes\nfile_limit=4000000")
-                            ->header("Content-Type" ,"text/plane; charset=UTF-8");
+                // return response("zip=yes\nfile_limit=4000000")
+                //             ->header("Content-Type" ,"text/plane; charset=UTF-8");
 
-                // return "zip=no\nfile_limit=4000000";
+                return "zip=no\nfile_limit=4000000";
                 
             } elseif ($input_mode == 'file') {
 
@@ -105,8 +107,10 @@ class ExchangeController extends Controller
                 // test
                 Storage::append('/public/uploads/test/catalog-file.txt', 'method=' . $method . ' ' . 'type=catalog mode=file' . $filename . " " . $file_content);
 
-                return response("success\n")
-                        ->header("Content-Type" ,"text/plane; charset=UTF-8");
+                // return response("success\n", 200)
+                //         ->header("Content-Type" ,"text/plane");
+
+                return "success\n";
 
             } elseif ($input_mode == 'import') {  // import to 1c
 
@@ -120,8 +124,8 @@ class ExchangeController extends Controller
                     (new \App\Services\ParseXml())->parse();
                 }
 
-                // return response("success\n")
-                //         ->header("Content-Type" ,"text/plane; charset=UTF-8");
+                // return response('success\n', 200)
+                //         ->header('Content-Type' ,'text/plane');
                 return "success\n";
             }
 
