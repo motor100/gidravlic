@@ -14,9 +14,18 @@ class SubcategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
-        $subcategories = \App\Models\ProductSubcategory::all();
+        $search_query = $request->input('search_query');
+
+        $subcategories = collect();
+
+        if($search_query) {
+            $search_query = htmlspecialchars($search_query);
+            $subcategories = ProductSubcategory::where('title', 'like', "%{$search_query}%")->get();
+        } else {
+            $subcategories = ProductSubcategory::all();
+        }
 
         return view('dashboard.subcategories', compact('subcategories'));
     }
