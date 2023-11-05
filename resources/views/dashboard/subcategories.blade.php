@@ -28,10 +28,10 @@
           <td>{{ $loop->index + 1 }}</td>
           <td>{{ $subcat->title }}</td>
           <td class="table-button">
-            <a href="#" class="btn btn-success" target="_blank">
+            <a href="/category/{{ $subcat->category->slug }}/{{ $subcat->slug }}" class="btn btn-success" target="_blank">
               <i class="fas fa-eye"></i>
             </a>
-            <a href="#" class="btn btn-primary">
+            <a href="{{ route('admin.subcategories-edit', $subcat->id) }}" class="btn btn-primary">
               <i class="fas fa-pen"></i>
             </a>
             <form class="form" action="#" method="get">
@@ -51,9 +51,4 @@
 <script>
   const menuItem = 4;
 </script>
-@endsection
-
-@section('script')
-  <script src="https://cdn.tiny.cloud/1/5bpy3e636t6os710b6abr6w7zmyr1d77c4px4vl6qi628r67/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script src="{{ asset('adminpanel/js/tiny-file-upload.js') }}"></script>
 @endsection

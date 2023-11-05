@@ -16,7 +16,7 @@
     </div>
   @endif
 
-  <form class="form" action="{{ route('main-slider-store') }}" enctype="multipart/form-data" method="post">
+  <form class="form" action="{{ route('admin.main-slider-store') }}" enctype="multipart/form-data" method="post">
 
     <div class="form-group mb-3">
       <label for="title" class="form-check-label mb-1">Заголовок</label>

@@ -31,7 +31,7 @@
             <a href="/catalog/{{ $pr->slug }}" class="btn btn-success" target="_blank">
               <i class="fas fa-eye"></i>
             </a>
-            <a href="{{ route('products-edit', $pr->id) }}" class="btn btn-primary">
+            <a href="{{ route('admin.products-edit', $pr->id) }}" class="btn btn-primary">
               <i class="fas fa-pen"></i>
             </a>
             <form class="form" action="#" method="get">
@@ -51,9 +51,4 @@
 <script>
   const menuItem = 0;
 </script>
-@endsection
-
-@section('script')
-  <script src="https://cdn.tiny.cloud/1/5bpy3e636t6os710b6abr6w7zmyr1d77c4px4vl6qi628r67/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script src="{{ asset('adminpanel/js/tiny-file-upload.js') }}"></script>
 @endsection

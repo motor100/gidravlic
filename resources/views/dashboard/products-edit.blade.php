@@ -1,8 +1,6 @@
 @extends('dashboard.layout')
 
-@section('title')
-Редактировать товар
-@endsection
+@section('title', 'Редактировать товар')
 
 @section('dashboardcontent')
 
@@ -18,7 +16,7 @@
     </div>
   @endif
 
-  <form class="form" action="{{ route('products-update', $product->id) }}" method="post" enctype="multipart/form-data">
+  <form class="form" action="{{ route('admin.products-update', $product->id) }}" method="post" enctype="multipart/form-data">
     <div class="form-group mb-3">
       <label for="title" class="label-text">Название</label>
       <input type="text" class="form-control" name="title" id="title" maxlength="200" required readonly value="{{ $product->title }}">

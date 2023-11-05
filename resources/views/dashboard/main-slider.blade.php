@@ -6,7 +6,7 @@
 
 <div class="dashboard-content">
 
-  <a href="{{ route('main-slider-create') }}" class="btn btn-success mb-3">Добавить</a>
+  <a href="{{ route('admin.main-slider-create') }}" class="btn btn-success mb-3">Добавить</a>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -21,13 +21,13 @@
           <td>{{ $loop->index + 1 }}</td>
           <td>{{ $slide->title }}</td>
           <td class="table-button">
-            <a href="{{ route('main-slider-show', $slide->id) }}" class="btn btn-success">
+            <a href="{{ route('admin.main-slider-show', $slide->id) }}" class="btn btn-success">
               <i class="fas fa-eye"></i>
             </a>
-            <a href="{{ route('main-slider-edit', $slide->id) }}" class="btn btn-primary">
+            <a href="{{ route('admin.main-slider-edit', $slide->id) }}" class="btn btn-primary">
               <i class="fas fa-pen"></i>
             </a>
-            <form class="form" action="{{ route('main-slider-destroy', $slide->id) }}" method="get">
+            <form class="form" action="{{ route('admin.main-slider-destroy', $slide->id) }}" method="get">
               @csrf
               <button type="submit" class="btn btn-danger">
                 <i class="fas fa-trash"></i>

@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\SubcategoryImageController;
+use App\Http\Controllers\Admin\SubcategoryController;
 
 
 /*
@@ -69,11 +69,11 @@ Route::prefix('admin')->group(static function () {
 
         // Route::post('/products/store', [ProductController::class, 'store'])->name('products-store');
 
-        Route::get('/products/{id}', [ProductController::class, 'show'])->name('products-show');
+        // Route::get('/products/{id}', [ProductController::class, 'show'])->name('products-show');
 
-        Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products-edit');
+        Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.products-edit');
 
-        Route::post('/products/{id}/update', [ProductController::class, 'update'])->name('products-update');
+        Route::post('/products/{id}/update', [ProductController::class, 'update'])->name('admin.products-update');
 
         // Route::get('/products/{id}/destroy', [ProductController::class, 'destroy'])->name('products-destroy');
 
@@ -85,15 +85,15 @@ Route::prefix('admin')->group(static function () {
 
         Route::get('/main-slider', [MainSliderController::class, 'index']);
 
-        Route::get('/main-slider/create', [MainSliderController::class, 'create'])->name('main-slider-create');
+        Route::get('/main-slider/create', [MainSliderController::class, 'create'])->name('admin.main-slider-create');
 
-        Route::post('/main-slider/store', [MainSliderController::class, 'store'])->name('main-slider-store');
+        Route::post('/main-slider/store', [MainSliderController::class, 'store'])->name('admin.main-slider-store');
 
-        Route::get('/main-slider/{id}', [MainSliderController::class, 'show'])->name('main-slider-show');
+        Route::get('/main-slider/{id}', [MainSliderController::class, 'show'])->name('admin.main-slider-show');
 
-        Route::get('/main-slider/{id}/edit', [MainSliderController::class, 'edit'])->name('main-slider-edit');
+        Route::get('/main-slider/{id}/edit', [MainSliderController::class, 'edit'])->name('admin.main-slider-edit');
 
-        Route::post('/main-slider/{id}/update', [MainSliderController::class, 'update'])->name('main-slider-update');
+        Route::post('/main-slider/{id}/update', [MainSliderController::class, 'update'])->name('admin.main-slider-update');
 
         Route::get('/main-slider/{id}/destroy', [MainSliderController::class, 'destroy'])->name('main-slider-destroy');
 
@@ -103,7 +103,11 @@ Route::prefix('admin')->group(static function () {
 
         Route::post('/testimonials/{id}/destroy', [TestimonialController::class, 'destroy'])->name('admin.tesimonials-destroy');
 
-        Route::get('/subcategories', [SubcategoryImageController::class, 'index'])->name('admin.subcategories');
+        Route::get('/subcategories', [SubcategoryController::class, 'index'])->name('admin.subcategories');
+
+        Route::get('/subcategories/{id}/edit', [SubcategoryController::class, 'edit'])->name('admin.subcategories-edit');
+
+        Route::post('/subcategories/{id}/update', [SubcategoryController::class, 'update'])->name('admin.subcategories-update');
     });
 });
 
