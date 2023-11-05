@@ -14,7 +14,7 @@
 
 <div class="poisk">
 
-  @if (count($products) > 0)
+  @if(count($products) > 0)
     <div class="page-title">Результаты поиска «{{ $search_query }}»</div>
     <div class="products">
       <div class="row">
@@ -34,10 +34,8 @@
       <div class="search-is-empty-text ccf-is-empty-text">Товаров не найдено</div>
       <button class="primary-btn btn-305 ccf-is-empty-btn" onclick="history.back();">ВЕРНУТЬСЯ НАЗАД</button>
     </div>
-    
   @endif
 
-  </div>
 </div>
 
 @endsection
