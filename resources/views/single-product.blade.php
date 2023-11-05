@@ -21,7 +21,7 @@
 </div>
 
 <div class="single-product">
-  <div class="page-title">{{ $product->title }}</div>
+  <h1 class="page-title">{{ $product->title }}</h1>
 
   <div class="single-product-content">
 
@@ -91,6 +91,7 @@
   </div>
   <div class="single-product-description">
     <p>Описание</p>
+    {!! $product->content->text !!}
     {!! $product->description !!}
   </div>
 </div>

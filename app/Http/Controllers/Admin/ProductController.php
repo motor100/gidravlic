@@ -78,8 +78,7 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|min:2|max:250',
-            'hit' => 'nullable',
-            'special_offer' => 'nullable',
+            'text' => 'nullable|min:2|max:65000',
             'input-main-file' => [
                                 'nullable',
                                 \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
@@ -92,6 +91,8 @@ class ProductController extends Controller
                                                                         ->min(50)
                                                                         ->max(5 * 1024)
                                     ],
+                                    'hit' => 'nullable',
+            'special_offer' => 'nullable',
             'delete-gallery' => 'nullable|numeric',
         ]);
 
@@ -102,6 +103,7 @@ class ProductController extends Controller
             [
                 'product_id' => $product->product_id,
                 'image' => (new \App\Services\ProductContent($product, $validated))->image(),
+                'text' => $validated['text'],
                 'hit' => (new \App\Services\ProductContent($product, $validated))->hit(),
                 'special_offer' => (new \App\Services\ProductContent($product, $validated))->special_offer(),
                 'created_at' => now(),
@@ -110,6 +112,7 @@ class ProductController extends Controller
             ['product_id'],
             [
                 'image',
+                'text',
                 'hit',
                 'special_offer',
                 'updated_at'

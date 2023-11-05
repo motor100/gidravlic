@@ -21,28 +21,9 @@
       <label for="title" class="label-text">Название</label>
       <input type="text" class="form-control" name="title" id="title" maxlength="200" required readonly value="{{ $product->title }}">
     </div>
-    <!-- 
     <div class="form-group mb-3">
       <label for="text">Описание</label>
-      <textarea class="form-control" name="text" id="text">{{ $product->text }}</textarea>
-    </div>
-     -->
-
-    <div class="form-group mb-3">
-      @if($product->content)
-        <input type="checkbox" name="hit" id="hit" class="form-check-input me-1" @checked($product->content->hit)>
-      @else
-        <input type="checkbox" name="hit" id="hit" class="form-check-input me-1">
-      @endif
-      <label for="hit" class="form-check-label">Хит</label>
-    </div>
-    <div class="form-group mb-3">
-      @if($product->content)
-        <input type="checkbox" name="special_offer" id="special_offer" class="form-check-input me-1" @checked($product->content->special_offer)>
-      @else
-        <input type="checkbox" name="special_offer" id="special_offer" class="form-check-input me-1">
-      @endif
-      <label for="special_offer" class="form-check-label">Специальное предложение</label>
+      <textarea class="form-control" name="text" id="text">{{ $product->content->text }}</textarea>
     </div>
     <div class="form-group mb-3">
       <div class="image-preview">
@@ -73,11 +54,27 @@
         @endif
       </div>
     </div>
-    <div class="form-group mb-5">
+    <div class="form-group mb-3">
       <div class="label-text">Галерея</div>
       <input type="file" name="input-gallery-file[]" id="input-gallery-file" class="inputfile" accept="image/jpeg,image/png" multiple>
       <label for="input-gallery-file" class="custom-inputfile-label">Выберите файлы</label>
       <span class="namefile gallery-file-text">Файлы не выбраны</span>
+    </div>
+    <div class="form-group mb-3">
+      @if($product->content)
+        <input type="checkbox" name="hit" id="hit" class="form-check-input me-1" @checked($product->content->hit)>
+      @else
+        <input type="checkbox" name="hit" id="hit" class="form-check-input me-1">
+      @endif
+      <label for="hit" class="form-check-label">Хит</label>
+    </div>
+    <div class="form-group mb-5">
+      @if($product->content)
+        <input type="checkbox" name="special_offer" id="special_offer" class="form-check-input me-1" @checked($product->content->special_offer)>
+      @else
+        <input type="checkbox" name="special_offer" id="special_offer" class="form-check-input me-1">
+      @endif
+      <label for="special_offer" class="form-check-label">Специальное предложение</label>
     </div>
 
     <input type="hidden" name="delete-gallery" id="delete-gallery" value="">
@@ -122,6 +119,6 @@
 @endsection
 
 @section('script')
-  <!-- <script src="https://cdn.tiny.cloud/1/5bpy3e636t6os710b6abr6w7zmyr1d77c4px4vl6qi628r67/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
-  <!-- <script src="{{-- asset('/js/tiny-file-upload.js') --}}"></script> -->
+  <script src="https://cdn.tiny.cloud/1/5bpy3e636t6os710b6abr6w7zmyr1d77c4px4vl6qi628r67/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="{{ asset('/js/tiny-file-upload.js') }}"></script>
 @endsection

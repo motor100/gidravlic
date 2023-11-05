@@ -63,25 +63,20 @@ Route::prefix('admin')->group(static function () {
 
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');
 
+
         Route::get('/products', [ProductController::class, 'index']);
-
-        // Route::get('/products/create', [ProductController::class, 'create'])->name('products-create');
-
-        // Route::post('/products/store', [ProductController::class, 'store'])->name('products-store');
-
-        // Route::get('/products/{id}', [ProductController::class, 'show'])->name('products-show');
 
         Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.products-edit');
 
         Route::post('/products/{id}/update', [ProductController::class, 'update'])->name('admin.products-update');
 
-        // Route::get('/products/{id}/destroy', [ProductController::class, 'destroy'])->name('products-destroy');
 
         Route::get('/orders', [OrderController::class, 'index'])->name('admin.orders');
 
         Route::get('/orders/{id}', [OrderController::class, 'show'])->name('admin.orders-show');
 
         Route::post('order/{id}/update', [OrderController::class, 'update'])->name('admin.order-update');
+
 
         Route::get('/main-slider', [MainSliderController::class, 'index']);
 
@@ -97,12 +92,14 @@ Route::prefix('admin')->group(static function () {
 
         Route::get('/main-slider/{id}/destroy', [MainSliderController::class, 'destroy'])->name('main-slider-destroy');
 
+
         Route::get('/testimonials', [TestimonialController::class, 'index'])->name('admin.testimonials');
 
         Route::post('/testimonials/{id}/update', [TestimonialController::class, 'update'])->name('admin.tesimonials-update');
 
         Route::post('/testimonials/{id}/destroy', [TestimonialController::class, 'destroy'])->name('admin.tesimonials-destroy');
 
+        
         Route::get('/subcategories', [SubcategoryController::class, 'index'])->name('admin.subcategories');
 
         Route::get('/subcategories/{id}/edit', [SubcategoryController::class, 'edit'])->name('admin.subcategories-edit');

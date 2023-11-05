@@ -109,7 +109,17 @@ class ParseXml
                 // $item["category_name"] = '';
             }
 
+            // Описание
+            $description = $product->Описание; // Объект SimpleXmlElement
+
             $p_item["description"] = NULL;
+
+            // Преобразование \n в <br>
+            if ($description) {
+                foreach($description as $value) {
+                    $p_item["description"] = '<p>' . nl2br($value) . '</p>'; 
+                }
+            }            
 
             // Артикул
             $p_item["sku"] = $product->Артикул;
