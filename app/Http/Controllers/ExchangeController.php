@@ -67,7 +67,17 @@ class ExchangeController extends Controller
 
                     // test
                     Storage::append('/public/uploads/test/catalog-checkauth-auth.txt', 'method=' . $method . ' ' . 'auth yes autentifikaciya proshla');
+
                 }
+
+                // Truncate table exchange_sessions
+                \App\Models\ExchangeSession::truncate();
+
+                // Make model ExchangeSession
+                \App\Models\ExchangeSession::create([
+                    'cookie_name' => $cookieName,
+                    'session_id' => $cookieID
+                ]);
 
                 return "success\n$cookieName\n$cookieID\n";
 
@@ -96,6 +106,11 @@ class ExchangeController extends Controller
 
                 $filename = $request->input('filename');
 
+                // test header
+                if ($request->hasHeader('cookie')) {
+                    Storage::append('/public/uploads/test/catalog-file-auth-header.txt', $request->header('cookie'));
+                }
+
                 // $file_content = $request->getContent()
                 $file_content = file_get_contents('php://input');
 
@@ -110,6 +125,11 @@ class ExchangeController extends Controller
             } elseif ($input_mode == 'import') {  // import to 1c
 
                 $filename = $request->input('filename');
+
+                // test header
+                if ($request->hasHeader('cookie')) {
+                    Storage::append('/public/uploads/test/catalog-import-auth-header.txt', $request->header('cookie'));
+                }
 
                 // test
                 Storage::append('/public/uploads/test/catalog-import.txt', 'method=' . $method . ' ' . 'mode=import filename is ' . $filename);
