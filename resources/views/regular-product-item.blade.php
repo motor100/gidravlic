@@ -2,7 +2,11 @@
   <div class="regular-product-item__image">
     <a href="/catalog/{{ $product->slug }}" class="regular-product-item__link">
       @if($product->content)
-        <img src="{{ Storage::url($product->content->image) }}" alt="">
+        @if($product->content->image)
+          <img src="{{ Storage::url($product->content->image) }}" alt="">
+        @else
+          <img src="/img/no-photo.svg" alt="">
+        @endif
       @else
         <img src="/img/no-photo.svg" alt="">
       @endif

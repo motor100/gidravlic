@@ -23,7 +23,7 @@
     </div>
     <div class="form-group mb-3">
       <label for="text">Описание</label>
-      <textarea class="form-control" name="text" id="text">{{ $product->content->text }}</textarea>
+      <textarea class="form-control" name="text" id="text">{{ $product->content ? $product->content->text : '' }}</textarea>
     </div>
     <div class="form-group mb-3">
       <div class="image-preview">
