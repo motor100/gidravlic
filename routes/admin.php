@@ -90,7 +90,7 @@ Route::prefix('admin')->group(static function () {
 
         Route::post('/main-slider/{id}/update', [MainSliderController::class, 'update'])->name('admin.main-slider-update');
 
-        Route::get('/main-slider/{id}/destroy', [MainSliderController::class, 'destroy'])->name('main-slider-destroy');
+        Route::get('/main-slider/{id}/destroy', [MainSliderController::class, 'destroy'])->name('admin.main-slider-destroy');
 
 
         Route::get('/testimonials', [TestimonialController::class, 'index'])->name('admin.testimonials');

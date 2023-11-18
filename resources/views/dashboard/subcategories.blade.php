@@ -23,25 +23,33 @@
       </tr>
     </thead>
     <tbody>
+      @php 
+        $i = 1;
+      @endphp
       @foreach($subcategories as $subcat)
-        <tr>
-          <td>{{ $loop->index + 1 }}</td>
-          <td>{{ $subcat->title }}</td>
-          <td class="table-button">
-            <a href="/category/{{ $subcat->category->slug }}/{{ $subcat->slug }}" class="btn btn-success" target="_blank">
-              <i class="fas fa-eye"></i>
-            </a>
-            <a href="{{ route('admin.subcategories-edit', $subcat->id) }}" class="btn btn-primary">
-              <i class="fas fa-pen"></i>
-            </a>
-            <form class="form" action="#" method="get">
-              @csrf
-              <button type="submit" class="btn btn-danger">
-                <i class="fas fa-trash"></i>
-              </button>
-            </form>
-          </td>
-        </tr>
+        @if($subcat->category)
+          <tr>
+            <td>{{ $i }}</td>
+            <td>{{ $subcat->title }}</td>
+            <td class="table-button">
+              <a href="/category/{{ $subcat->category->slug }}/{{ $subcat->slug }}" class="btn btn-success" target="_blank">
+                <i class="fas fa-eye"></i>
+              </a>
+              <a href="{{ route('admin.subcategories-edit', $subcat->id) }}" class="btn btn-primary">
+                <i class="fas fa-pen"></i>
+              </a>
+              <form class="form" action="#" method="get">
+                @csrf
+                <button type="submit" class="btn btn-danger">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+          @php 
+            $i++;
+          @endphp
+        @endif
       @endforeach
     </tbody>
   </table>
