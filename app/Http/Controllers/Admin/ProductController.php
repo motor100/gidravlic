@@ -23,9 +23,14 @@ class ProductController extends Controller
 
         if($search_query) {
             $search_query = htmlspecialchars($search_query);
-            $products = Product::where('title', 'like', "%{$search_query}%")->get();
+            $products = Product::where('title', 'like', "%{$search_query}%")
+                                ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+                                ->get();
         } else {
-            $products = Product::orderBy('id', 'desc')->limit(20)->get();
+            $products = Product::orderBy('id', 'desc')
+                                ->limit(20)
+                                ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+                                ->get();
         }
 
         return view('dashboard.products', compact('products'));
