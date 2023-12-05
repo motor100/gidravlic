@@ -1975,6 +1975,7 @@ p {
   margin: 80px 0 0 0;
   padding: 37px 0;
   background-color: $greycolor;
+  overflow-x: hidden;
   .logo {
     width: 200px;
     margin: 0 0 47px 0;
@@ -2023,6 +2024,21 @@ p {
     position: absolute;
     top: -200px;
     left: -50px;
+  }
+  .footer-links {
+    margin: 0 0 50px 0;
+  }
+  .developer {
+    text-align: center;
+  }
+  .developer .author {
+    display: inline-block;
+    width: 160px;
+    font-size: 20px;
+    color: #fff;
+  }
+  .developer .author:hover {
+    text-decoration: underline;
   }
 }
 
@@ -3127,6 +3143,10 @@ p {
       font-size: 18px;
     }
   }
+
+  .footer {
+    padding: 37px 0 60px 0;
+  }
 }
 
 @media only screen and (max-width : 768px) {
@@ -3254,6 +3274,11 @@ p {
     }
     .footer-nav {
       margin: 0 0 40px 0;
+    }
+    .developer .author {
+      display: block;
+      margin: 0 auto 10px auto;
+      font-size: 18px;
     }
   }
 
@@ -3670,6 +3695,9 @@ p {
     }
     .footer-nav {
       margin: 0 0 30px 0;
+    }
+    .developer .author {
+      font-size: 16px;
     }
   }
 

@@ -290,6 +290,10 @@
           </div>
         </div>
       </div>
+      <div class="developer">
+        <a href="https://vk.com/fenix_mix" class="author" target="_blank">Дизайн FeniX</a>
+        <a href="https://mybutton.ru" class="author" target="_blank">Поддержка Button</a>
+      </div>
     </div>
   </footer>
 
