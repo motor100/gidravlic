@@ -1972,10 +1972,14 @@ p {
 
 // footer
 .footer {
-  margin: 80px 0 0 0;
-  padding: 37px 0;
-  background-color: $greycolor;
   overflow-x: hidden;
+  .footer-top {
+    height: 80px;
+  }
+  .footer-bottom {
+    background-color: $greycolor;
+    padding: 37px 0;
+  }
   .logo {
     width: 200px;
     margin: 0 0 47px 0;
@@ -2913,7 +2917,9 @@ p {
   }
 
   .footer {
-    margin: 20px 0 0 0;
+    .footer-top {
+      height: 20px;
+    }
   }
 
   .page-item {

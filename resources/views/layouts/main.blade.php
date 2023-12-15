@@ -203,96 +203,99 @@
   @endif
 
   <footer class="footer">
-    <div class="container">
-      <div class="logo">
-        <img src="/img/header-logo.png" alt="">
-      </div>
-      <div class="footer-nav">
-        <div class="row">
-          <div class="col-xl-1"></div>
-          <div class="col-xl-2 col-md-3 col-sm-6">
-            <div class="footer-nav__title">Компания</div>
-            <div class="footer-nav-item">
-              <a href="/company" class="footer-nav-item__link">О компании</a>
-            </div>
-            <div class="footer-nav-item">
-              <a href="/calculators" class="footer-nav-item__link">Калькуляторы</a>
-            </div>
-            <div class="footer-nav-item">
-              <a href="/company#company-info" class="footer-nav-item__link">Реквизиты</a>
-            </div>
-            <div class="footer-nav-item footer-nav-last-item">
-              <a href="/contacts" class="footer-nav-item__link">Контакты</a>
-            </div>
-          </div>
-          <div class="col-xl-2 col-md-3 col-sm-6">
-            <div class="footer-nav__title">Покупателям</div>
-            <div class="footer-nav-item">
-              <a href="/services" class="footer-nav-item__link">Услуги</a>
-            </div>
-            <div class="footer-nav-item">
-              <a href="/payment" class="footer-nav-item__link">Оплата</a>
-            </div>
-            <div class="footer-nav-item">
-              <a href="/delivery" class="footer-nav-item__link">Доставка</a>
-            </div>
-            <div class="footer-nav-item footer-nav-last-item">
-              <a href="/warranty" class="footer-nav-item__link">Гарантия</a>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6">
-            <div class="footer-nav__title">Оставайтесь на связи</div>
-            <div class="footer-nav-item footer-contacts-item">
-              <div class="footer-contacts-item__image">
-                <img src="/img/footer-whatsapp.svg" alt="">
+    <div class="footer-top"></div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="logo">
+          <img src="/img/header-logo.png" alt="">
+        </div>
+        <div class="footer-nav">
+          <div class="row">
+            <div class="col-xl-1"></div>
+            <div class="col-xl-2 col-md-3 col-sm-6">
+              <div class="footer-nav__title">Компания</div>
+              <div class="footer-nav-item">
+                <a href="/company" class="footer-nav-item__link">О компании</a>
               </div>
-              <div class="footer-contacts-item__text">+7 (982) 292-88-79</div>
-            </div>
-            <div class="footer-nav-item footer-contacts-item">
-              <div class="footer-contacts-item__image">
-                <img src="/img/footer-geolocation.svg" alt="">
+              <div class="footer-nav-item">
+                <a href="/calculators" class="footer-nav-item__link">Калькуляторы</a>
               </div>
-              <div class="footer-contacts-item__text">г. Миасс, Тургоякское шоссе, 5/11</div>
-            </div>
-            <div class="footer-nav-item footer-contacts-item">
-              <div class="footer-contacts-item__image">
-                <img src="/img/footer-clock.svg" alt="">
+              <div class="footer-nav-item">
+                <a href="/company#company-info" class="footer-nav-item__link">Реквизиты</a>
               </div>
-              <div class="footer-contacts-item__text">с 9:00 до 18:00 (СБ, ВС - выходной)</div>
-            </div>
-            <div class="footer-nav-item footer-contacts-item">
-              <div class="footer-contacts-item__image">
-                <img src="/img/footer-mail.svg" alt="">
+              <div class="footer-nav-item footer-nav-last-item">
+                <a href="/contacts" class="footer-nav-item__link">Контакты</a>
               </div>
-              <div class="footer-contacts-item__text">zakaz@gidravlic.com</div>
             </div>
-          </div>
-          <div class="col-md-3 d-xl-block d-none">
-            <div class="footer-image">
-              <img src="/img/footer-image.png" alt="">
+            <div class="col-xl-2 col-md-3 col-sm-6">
+              <div class="footer-nav__title">Покупателям</div>
+              <div class="footer-nav-item">
+                <a href="/services" class="footer-nav-item__link">Услуги</a>
+              </div>
+              <div class="footer-nav-item">
+                <a href="/payment" class="footer-nav-item__link">Оплата</a>
+              </div>
+              <div class="footer-nav-item">
+                <a href="/delivery" class="footer-nav-item__link">Доставка</a>
+              </div>
+              <div class="footer-nav-item footer-nav-last-item">
+                <a href="/warranty" class="footer-nav-item__link">Гарантия</a>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+              <div class="footer-nav__title">Оставайтесь на связи</div>
+              <div class="footer-nav-item footer-contacts-item">
+                <div class="footer-contacts-item__image">
+                  <img src="/img/footer-whatsapp.svg" alt="">
+                </div>
+                <div class="footer-contacts-item__text">+7 (982) 292-88-79</div>
+              </div>
+              <div class="footer-nav-item footer-contacts-item">
+                <div class="footer-contacts-item__image">
+                  <img src="/img/footer-geolocation.svg" alt="">
+                </div>
+                <div class="footer-contacts-item__text">г. Миасс, Тургоякское шоссе, 5/11</div>
+              </div>
+              <div class="footer-nav-item footer-contacts-item">
+                <div class="footer-contacts-item__image">
+                  <img src="/img/footer-clock.svg" alt="">
+                </div>
+                <div class="footer-contacts-item__text">с 9:00 до 18:00 (СБ, ВС - выходной)</div>
+              </div>
+              <div class="footer-nav-item footer-contacts-item">
+                <div class="footer-contacts-item__image">
+                  <img src="/img/footer-mail.svg" alt="">
+                </div>
+                <div class="footer-contacts-item__text">zakaz@gidravlic.com</div>
+              </div>
+            </div>
+            <div class="col-md-3 d-xl-block d-none">
+              <div class="footer-image">
+                <img src="/img/footer-image.png" alt="">
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="footer-links">
-        <div class="row">
-          <div class="col-xl-1"></div>
-          <div class="col-md-11">
-            <div class="footer-link">
-              <a href="/politika-konfidencialnosti">Политика конфиденциальности</a>
-            </div>
-            <div class="footer-link">
-              <a href="/polzovatelskoe-soglashenie-s-publichnoj-ofertoj">Пользовательское соглашение с публичной офертой</a>
-            </div>
-            <div class="footer-link">
-              <a href="/garantiya-vozvrata-denezhnyh-sredstv">Гарантия возврата денежных средств</a>
+        <div class="footer-links">
+          <div class="row">
+            <div class="col-xl-1"></div>
+            <div class="col-md-11">
+              <div class="footer-link">
+                <a href="/politika-konfidencialnosti">Политика конфиденциальности</a>
+              </div>
+              <div class="footer-link">
+                <a href="/polzovatelskoe-soglashenie-s-publichnoj-ofertoj">Пользовательское соглашение с публичной офертой</a>
+              </div>
+              <div class="footer-link">
+                <a href="/garantiya-vozvrata-denezhnyh-sredstv">Гарантия возврата денежных средств</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="developer">
-        <a href="https://vk.com/fenix_mix" class="author" target="_blank">Дизайн FeniX</a>
-        <a href="https://mybutton.ru" class="author" target="_blank">Поддержка Button</a>
+        <div class="developer">
+          <a href="https://vk.com/fenix_mix" class="author" target="_blank">Дизайн FeniX</a>
+          <a href="https://mybutton.ru" class="author" target="_blank">Поддержка Button</a>
+        </div>
       </div>
     </div>
   </footer>
