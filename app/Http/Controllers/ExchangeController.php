@@ -22,6 +22,7 @@ class ExchangeController extends Controller
 
     /**
      * 1C_exchange
+     * Документация https://its.1c.ru/db/metod8dev/content/3314/hdoc
      * @param Illuminate\Http\Request
      * @return mixed
      */
@@ -54,41 +55,60 @@ class ExchangeController extends Controller
 
             if ($input_mode == 'checkauth') {
 
-                // http auth
-                // $user = $request->header('PHP_AUTH_USER');
-                // $pass = $request->header('PHP_AUTH_PW');
-                $user = $_SERVER['PHP_AUTH_USER'];
-                $pass = $_SERVER['PHP_AUTH_PW'];
-
-                // test
-                Storage::append('/public/uploads/test/catalog-checkauth.txt', 'method=' . $method . ' ' . 'type=catalog mode-checkauth ' . $user . " " . $pass);
-
+                // HTTP auth
+                $user = $request->header('PHP_AUTH_USER'); // Admin
+                $pass = $request->header('PHP_AUTH_PW'); // secret123
+                
+                /**
+                 * Аутентификация пользователя по имени и паролю. Модель App\Models\User
+                 * Если аутентификация пройдена, то возвращаю строку "success\n$cookieName\n$cookieID\n"
+                 * Иначе возвращаю строку "failure\n"
+                 */
                 if (Auth::attempt(['name' => $user, 'password' => $pass])) {
 
-                    // test
-                    Storage::append('/public/uploads/test/catalog-checkauth-auth.txt', 'method=' . $method . ' ' . 'auth yes autentifikaciya proshla');
+                    // Truncate table exchange_sessions
+                    \App\Models\ExchangeSession::truncate();
 
+                    // Make model ExchangeSession
+                    \App\Models\ExchangeSession::create([
+                        'cookie_name' => $cookieName,
+                        'session_id' => $cookieID
+                    ]);
+
+                    // test auth
+                    Storage::append('/public/uploads/test/test-auth-all-ok.txt', 'all ok');
+
+                    return "success\n$cookieName\n$cookieID\n";
+
+                } else {
+                    return "failure";
                 }
-
-                // Truncate table exchange_sessions
-                \App\Models\ExchangeSession::truncate();
-
-                // Make model ExchangeSession
-                \App\Models\ExchangeSession::create([
-                    'cookie_name' => $cookieName,
-                    'session_id' => $cookieID
-                ]);
-
-                return "success\n$cookieName\n$cookieID\n";
 
             } elseif ($input_mode == 'init') {
 
                 // test
                 $cookie = '';
 
+                /*
                 if ($request->headers->has('cookie')) {
                     $cookie = $request->header('cookie');
+
+                    // $cookie строка вида 'gidravliccom_session=IyUmT1S6odcjgosz0HbtMgBI2LGASyAYF0bCdLbu'
+                    $exchange_session = \App\Models\ExchangeSession::find(1);
+
+                    $session = $exchange_session->cookie_name . '=' . $exchange_session->session_id;
+
+                    if ($cookie != $session) {
+                        return "failure";
+                    }
                 }
+                */
+
+                /*
+                if (!(new \App\Services\ExchangeSession($request))->check()) {
+                    return "failure";
+                }
+                */
 
                 // Удаление старых файлов обмена
                 // Получение всех файлов в папке
