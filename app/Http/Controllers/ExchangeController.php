@@ -118,7 +118,7 @@ class ExchangeController extends Controller
                 Storage::append('/public/uploads/1c_catalog/' . $filename, $file_content); // Добавить в файл к текущему содержимому
 
                 // test
-                Storage::append('/public/uploads/test/catalog-file.txt', 'method=' . $method . ' ' . 'type=catalog mode=file' . $filename . " " . $file_content);
+                Storage::append('/public/uploads/test/catalog-file.txt', 'method=' . $method . ' ' . 'type=catalog mode=file ' . $filename);
 
                 return "success\n";
 
