@@ -909,16 +909,16 @@ p {
   }
   .regular-product-item__title {
     display: -webkit-box;
-    height: 46px;
+    height: 58px;
     margin: 0 0 5px 0;
     font-family: 'roboto-condensed-medium';
-    font-size: 20px;
+    font-size: 17px;
     color: $greycolor;
     line-height: 1.1;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     transition: color .3s;
   }
@@ -2906,10 +2906,6 @@ p {
 
   .regular-product-item {
     padding: 36px 35px;
-    .regular-product-item__title {
-      height: 40px;
-      font-size: 18px;
-    }
   }
 
   .to-top {
@@ -3217,8 +3213,8 @@ p {
   .regular-product-item {
     padding: 30px 25px;
     .regular-product-item__title {
-      height: 36px;
-      font-size: 16px;
+      height: 52px;
+      font-size: 15px;
     }
     .regular-product-item__price {
       font-size: 26px;
