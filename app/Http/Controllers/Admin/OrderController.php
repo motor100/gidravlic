@@ -7,6 +7,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Order;
+use App\Models\OrderProduct;
+use App\Models\Product;
 
 class OrderController extends Controller
 {
@@ -48,10 +50,23 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
 
+        // Получение товаров для заказа
+        $order_products = OrderProduct::where('order_id', $order->id)->get();
+
+        $products = [];
+
+        // Медленный способ
+        // Количество запросов к БД = количество товаров
+        foreach($order_products as $product) {
+            $item = Product::where('product_id', $product->product_id)->first();
+            $item['quantity'] = $product->quantity;
+            $products[] = $item;
+        }
+
         // Телефон из числа в строку
         $order->phone = (new \App\Services\Phone())->int_to_phone($order->phone);
 
-        return view('dashboard.order-show', compact('order'));
+        return view('dashboard.order-show', compact('order', 'products'));
     }
 
     /**

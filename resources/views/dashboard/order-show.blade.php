@@ -75,8 +75,8 @@
 
   <div class="order-products">
     <div class="label-text mb-1">Товары</div>
-    @foreach($order->products as $product)
-      <p>{{ $product->title }} {{ $product->pivot->quantity }}шт</p>
+    @foreach($products as $product)
+      <p>{{ $product->title }} {{ $product->quantity }}шт</p>
     @endforeach
   </div>
 
