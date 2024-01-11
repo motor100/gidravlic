@@ -95,12 +95,6 @@ class Exchange
 
                 // Удаление файлов
                 Storage::delete($files);
-                
-                // test значение cookie
-                if($this->request->headers->has('cookie')) {
-                    $cookie = $this->request->header('cookie');
-                    Storage::append('/public/uploads/test/catalog-init-cookie.txt', $cookie);
-                }
 
                 return "zip=no\nfile_limit=4000000";
                 
@@ -113,19 +107,11 @@ class Exchange
 
                 $filename = $this->request->input('filename');
 
-                // test header
-                if ($this->request->hasHeader('cookie')) {
-                    Storage::append('/public/uploads/test/catalog-file-auth-header.txt', $this->request->header('cookie'));
-                }
-
-                // $file_content = $this->request->getContent()
-                $file_content = file_get_contents('php://input');
+                $file_content = $this->request->getContent();
+                // $file_content = file_get_contents('php://input');
 
                 // Storage::put('/public/uploads/1c_catalog/' . $filename, $file_content); // Вставить в файл
                 Storage::append('/public/uploads/1c_catalog/' . $filename, $file_content); // Добавить в файл к текущему содержимому
-
-                // test
-                // Storage::append('/public/uploads/test/catalog-file.txt', 'method=' . $method . ' ' . 'type=catalog mode=file ' . $filename);
 
                 return "success\n";
 
@@ -137,14 +123,6 @@ class Exchange
                 }
 
                 $filename = $this->request->input('filename');
-
-                // test header
-                if ($this->request->hasHeader('cookie')) {
-                    Storage::append('/public/uploads/test/catalog-import-auth-header.txt', $this->request->header('cookie'));
-                }
-
-                // test
-                // Storage::append('/public/uploads/test/catalog-import.txt', 'method=' . $method . ' ' . 'mode=import filename is ' . $filename);
                 
                 // Если имя файла 'import.xml', то парсинг
                 if ($filename === 'import.xml') {
