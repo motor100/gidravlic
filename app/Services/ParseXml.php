@@ -77,7 +77,8 @@ class ParseXml
         // Товары
         foreach ($cml->catalog->products as $product) {
             // Название товара
-            $p_item["title"] = mb_substr($product->name, 0, 190); // Название товара (Товары->Товар->Наименование) и ограничение до 190 символов
+            // $p_item["title"] = mb_substr($product->name, 0, 190); // Название товара (Товары->Товар->Наименование) и ограничение до 190 символов
+            $p_item["title"] = mb_substr($product->requisites[2]->value, 0, 190); // Реквизит Полное наименование
 
             // slug
             $slug = Str::slug($p_item["title"]);
