@@ -46,6 +46,8 @@
     </tbody>
   </table>
 
+  {{ $products->links('pagination.dashboard') }}
+
 </div>
 
 <script>
