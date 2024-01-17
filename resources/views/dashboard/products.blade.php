@@ -14,11 +14,20 @@
     <button type="submit" class="btn btn-primary">Найти</button>
   </form>
 
+  <div class="temp-description">
+    <p>И - основное изображение</p>
+    <p>О - описание, количество символов</p>
+    <p>Г - галерея, количество фотографий</p>
+  </div>
+
   <table class="table table-striped">
     <thead>
       <tr>
         <th class="number-column">№</th>
         <th>Название</th>
+        <th>И</th>
+        <th>О</th>
+        <th>Г</th>
         <th class="button-column"></th>
       </tr>
     </thead>
@@ -27,6 +36,9 @@
         <tr>
           <td>{{ $loop->index + 1 }}</td>
           <td>{{ $pr->title }}</td>
+          <td>{{ $pr->content && $pr->content->image ? "•" : "" }}</td>
+          <td>{{ $pr->content && $pr->content->text ? mb_strlen(str_replace('&nbsp;', '', strip_tags($pr->content->text))) : "" }}</td>
+          <td>{{ count($pr->gallery) > 0 ? count($pr->gallery) : "" }}</td>
           <td class="table-button">
             <a href="/catalog/{{ $pr->slug }}" class="btn btn-success" target="_blank">
               <i class="fas fa-eye"></i>

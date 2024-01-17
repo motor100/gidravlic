@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="form-group mb-3">
-      <div class="label-text">Галерея</div>
+      <div class="label-text">Галерея (соотношение сторон 1:1)</div>
       <input type="file" name="input-gallery-file[]" id="input-gallery-file" class="inputfile" accept="image/jpeg,image/png" multiple>
       <label for="input-gallery-file" class="custom-inputfile-label">Выберите файлы</label>
       <span class="namefile gallery-file-text">Файлы не выбраны</span>
