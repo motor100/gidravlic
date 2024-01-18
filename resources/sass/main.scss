@@ -1434,8 +1434,15 @@ p {
     width: 17px;
     height: 20px;
   }
+  .single-product-description__title {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    color: #000;
+    text-transform: uppercase;
+  }
   .single-product-description {
     margin: 0 0 50px 0;
+    font-size: 17px;
   }
   .single-product-document-item {
     display: flex;
@@ -3483,6 +3490,12 @@ p {
     }
     .single-product-stock .single-product-stock__image {
       width: 20px;
+    }
+    .single-product-stock {
+      margin: 0 0 20px 0;
+    }
+    .single-product-description__title {
+      margin: 0 0 10px 0;
     }
   }
 

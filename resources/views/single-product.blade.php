@@ -94,7 +94,7 @@
     </div>
   </div>
   <div class="single-product-description">
-    <p>Описание</p>
+    <div class="single-product-description__title">Описание</div>
     @if($product->content)
       {!! $product->content->text !!}
     @endif
