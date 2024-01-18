@@ -9,7 +9,11 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   @yield('robots')
   <link rel="shortcut icon" href="{{ asset('/img/favicon.svg') }}" type="image/x-icon">
-  <title>@yield('title', config('app.name') )</title>
+  @if(Route::is('home'))
+    <title>Гидравлическое оборудование в наличии и под заказ</title>
+  @else
+    <title>@yield('title', 'Гидравлическое оборудование' ) | Гидравлическое оборудование</title>
+  @endif
   @yield('style')
   @vite(['resources/sass/main.scss'])
 </head>
