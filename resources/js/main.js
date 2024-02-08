@@ -460,7 +460,7 @@ function ajaxCallback(form) {
   }
 
   let inputEmail = form.querySelector('.js-email-callback-modal');
-  if (inputName.value.length < 3 || inputName.value.length > 20) {
+  if (inputEmail.value.length < 3 || inputEmail.value.length > 50) {
     inputEmail.classList.add('required');
     arr.push(false);
   }
