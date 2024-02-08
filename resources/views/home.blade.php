@@ -71,7 +71,7 @@
             <img src="/img/category-gidravlicheskie-raspredeliteli.jpg" alt="">
           </div>
           <div class="categories-item__title bg-bluecolor">ГИДРАВЛИЧЕСКИЕ РАСПРЕДЕЛИТЕЛИ</div>
-          <a href="/category" class="full-link"></a>
+          <a href="/category/gidravliceskie-raspredeliteli" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4 col-sm-5">
@@ -80,7 +80,7 @@
             <img src="/img/category-klapannaya-apparatura.jpg" alt="">
           </div>
           <div class="categories-item__title bg-lightbluecolor">КЛАПАННАЯ АППАРАТУРА</div>
-          <a href="/category" class="full-link"></a>
+          <a href="/category/klapannaia-apparatura" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-4 col-sm-5">
@@ -89,7 +89,7 @@
             <img src="/img/category-gidronasosy.jpg" alt="">
           </div>
           <div class="categories-item__title bg-lightbluecolor">ГИДРОНАСОСЫ</div>
-          <a href="/category" class="full-link"></a>
+          <a href="/category/gidravliceskie-nasosy" class="full-link"></a>
         </div>
       </div>
       <div class="col-md-8 col-sm-7">
@@ -98,7 +98,7 @@
             <img src="/img/category-rvd-fitingi-mufty-dlya-rvd.jpg" alt="">
           </div>
           <div class="categories-item__title bg-bluecolor">РВД. ФИТИНГИ, МУФТЫ ДЛЯ РВД</div>
-          <a href="/category" class="full-link"></a>
+          <a href="/category/rvd" class="full-link"></a>
         </div>
       </div>
       

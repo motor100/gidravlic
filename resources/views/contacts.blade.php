@@ -21,9 +21,9 @@
   <div class="contacts-item">
     <div class="contacts-text"><span class="text-bold">Юрид.адрес:</span> 456300 г. Миасс, Челябинская область, Тургоякское шоссе 5/11, 1 этаж</div>
     <div class="contacts-text"><span class="text-bold">Адрес:</span> 456300 г. Миасс, Челябинская область, Тургоякское шоссе 5/11, 1 этаж</div>
+    <div class="contacts-text"><span class="text-bold">ИНН:</span> 7415113283</div>
     <div class="contacts-text"><span class="text-bold">Телефон:</span> +7 (982) 292-88-79</div>
-    <div class="contacts-text"><span class="text-bold">Whatsapp:</span> ......</div>
-    <div class="contacts-text"><span class="text-bold">E-mail:</span> <a href="mailto:zakaz@gidravlic.com">zakaz@gidravlic.com</a></div>
+    <div class="contacts-text"><span class="text-bold">E-mail:</span> zakaz@gidravlic.com</div>
     <div class="contacts-text"><span class="text-bold">График работы:</span> ПН-ПТ с 9:00 до 18:00, СБ-ВС выходной</div>
   </div>
   <div class="map">
