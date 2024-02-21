@@ -26,10 +26,10 @@ class ProductController extends Controller
             $products = Product::where('title', 'like', "%{$search_query}%")
                                 ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
                                 ->paginate(50)
+                                ->withQueryString()
                                 ->onEachSide(1);
         } else {
             $products = Product::orderBy('id', 'desc')
-                                // ->limit(20)
                                 ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
                                 ->paginate(50)
                                 ->onEachSide(1);

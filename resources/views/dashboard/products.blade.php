@@ -34,8 +34,8 @@
     <tbody>
       @foreach($products as $pr)
         <tr>
-          <td>{{ $loop->index + 1 }}</td>
-          <td>{{ $pr->title }}</td>
+          <td>{{ $pr->id }}</td>
+          <td class="{{ $pr->id < 870 ? 'orange' : 'green' }}">{{ $pr->title }}</td>
           <td>{{ $pr->content && $pr->content->image ? "•" : "" }}</td>
           <td>{{ $pr->content && $pr->content->text ? mb_strlen(str_replace('&nbsp;', '', strip_tags($pr->content->text))) : "" }}</td>
           <td>{{ count($pr->gallery) > 0 ? count($pr->gallery) : "" }}</td>
