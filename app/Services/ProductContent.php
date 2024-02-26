@@ -61,9 +61,9 @@ class ProductContent
 
         } else {
 
-            // return $this->product->content ? $this->product->content->image : NULL;
+            return $this->product->content ? $this->product->content->image : NULL;
 
-            return $this->product->content->image;
+            // return $this->product->content->image;
         }
     }
 }

@@ -90,13 +90,13 @@ class ProductController extends Controller
                                 'nullable',
                                 \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
                                                                     ->min(10)
-                                                                    ->max(5 * 1024)
+                                                                    ->max(308)
                                 ],
             'input-gallery-file' => 'nullable|max:4',
             'input-gallery-file.*' => [
                                     \Illuminate\Validation\Rules\File::types(['jpg', 'png'])
                                                                         ->min(10)
-                                                                        ->max(5 * 1024)
+                                                                        ->max(308)
                                     ],
                                     'hit' => 'nullable',
             'special_offer' => 'nullable',
