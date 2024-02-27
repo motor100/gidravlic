@@ -151,11 +151,14 @@ class ProductController extends Controller
             ProductDocument::upsert(
                 [
                     'product_id' => $product->product_id,
-                    'file' => (new \App\Services\ProductDocument($product, $validated))->file_update()
+                    'file' => (new \App\Services\ProductDocument($product, $validated))->file_update(),
+                    'created_at' => now(),
+                    'updated_at' => now()
                 ],
                 ['product_id'],
                 [
-                    'file'
+                    'file',
+                    'updated_at'
                 ]
             );
         }

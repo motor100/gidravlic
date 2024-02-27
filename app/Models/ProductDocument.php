@@ -18,6 +18,6 @@ class ProductDocument extends Model
 
     protected $fillable = [
         'product_id',
-        'document',
+        'file',
     ];
 }
