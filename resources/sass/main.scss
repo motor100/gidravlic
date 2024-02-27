@@ -1444,6 +1444,15 @@ p {
     margin: 0 0 50px 0;
     font-size: 17px;
   }
+  .single-product-description table {
+    width: auto;
+    border-collapse: collapse;
+  }
+  .single-product-description table td {
+    padding: 5px;
+    border: 1px solid $greycolor;
+    line-height: 1.2;
+  }
   .single-product-document-item {
     display: flex;
     margin: 0 0 20px 0;
@@ -3634,6 +3643,11 @@ p {
 }
 
 @media only screen and (max-width : 480px) {
+  .section-title,
+  .page-title {
+    font-size: 22px;
+  }
+  
   .home {
     .advantages {
       .flex-container {
@@ -3850,6 +3864,9 @@ p {
     }
     .product-item-favourites {
       margin: 0 0 10px 0;
+    }
+    .single-product-description {
+      font-size: 15px;
     }
   }
 
