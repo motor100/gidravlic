@@ -8,6 +8,7 @@ use Illuminate\View\View;
 use App\Models\Product;
 use App\Models\ProductGallery;
 use App\Models\ProductContent;
+use App\Models\ProductDocument;
 use Illuminate\Http\RedirectResponse;
 
 class ProductController extends Controller
@@ -98,7 +99,13 @@ class ProductController extends Controller
                                                                         ->min(10)
                                                                         ->max(308)
                                     ],
-                                    'hit' => 'nullable',
+            'input-pdf-file' => [
+                                'nullable',
+                                \Illuminate\Validation\Rules\File::types(['pdf'])
+                                                                    ->min(10)
+                                                                    ->max(3 * 1024)
+                                ],
+            'hit' => 'nullable',
             'special_offer' => 'nullable',
             'delete-gallery' => 'nullable|numeric',
         ]);
@@ -136,6 +143,21 @@ class ProductController extends Controller
         // Удаление галереи
         if ($validated['delete-gallery']) {
             (new \App\Services\ProductGallery($product, $validated))->gallery_destroy();
+        }
+
+        // Обновление документа pdf
+        if (array_key_exists('input-pdf-file', $validated)) {
+
+            ProductDocument::upsert(
+                [
+                    'product_id' => $product->product_id,
+                    'file' => (new \App\Services\ProductDocument($product, $validated))->file_update()
+                ],
+                ['product_id'],
+                [
+                    'file'
+                ]
+            );
         }
 
         return redirect('/admin/products');

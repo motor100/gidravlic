@@ -100,6 +100,17 @@
     @endif
     {!! $product->description !!}
   </div>
+
+  @if($product->document)
+    <div class="single-product-documents">
+      <div class="single-product-document-item">
+        <div class="single-product-document-item__image">
+          <img src="/img/single-product-pdf.png" alt="">
+        </div>
+        <a href="{{ Storage::url($product->document->file) }}" class="single-product-document-item__link" target="_blank">Параметры</a>
+      </div>
+    </div>
+  @endif
 </div>
 
 @endsection

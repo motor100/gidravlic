@@ -60,6 +60,17 @@
       <label for="input-gallery-file" class="custom-inputfile-label">Выберите файлы</label>
       <span class="namefile gallery-file-text">Файлы не выбраны</span>
     </div>
+
+    @if($product->document)
+      <a href="{{ Storage::url($product->document->file) }}" target="_blank">Документ</a>
+    @endif
+    <div class="form-group mb-3">
+      <div class="label-text">Документ PDF</div>
+      <input type="file" name="input-pdf-file" id="input-pdf-file" class="inputfile" accept="application/pdf">
+      <label for="input-pdf-file" class="custom-inputfile-label">Выберите файл</label>
+      <span class="namefile pdf-file-text">Файл не выбран</span>
+    </div>
+
     <div class="form-group mb-3">
       @if($product->content)
         <input type="checkbox" name="hit" id="hit" class="form-check-input me-1" @checked($product->content->hit)>
@@ -113,6 +124,18 @@
       galleryImagePreview.innerHTML = '';
       inputDeleteGallery.value = 1;
     }
+  }
+
+  // Выбор файлов Документ
+  let inputPdfFile = document.querySelector('#input-pdf-file'),
+      pdfFileText = document.querySelector('.pdf-file-text');
+
+  inputPdfFile.onchange = function() {
+    let filesName = '';
+    for (let i = 0; i < this.files.length; i++) {
+      filesName += this.files[i].name + ' ';
+    }
+    pdfFileText.innerHTML = filesName;
   }
 </script>
 

@@ -28,4 +28,13 @@ class Product extends Model
     {
         return $this->hasOne(ProductContent::class, 'product_id', 'product_id');
     }
+
+    /**
+     * Один к одному
+     * Получить документ к товару.
+     */
+    public function document(): HasOne
+    {
+        return $this->hasOne(ProductDocument::class, 'product_id', 'product_id');
+    }
 }
