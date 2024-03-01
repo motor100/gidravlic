@@ -52,8 +52,10 @@ class ProductContent
         if (array_key_exists('input-main-file', $this->validated)) {
 
             if ($this->product->content) {
-                if (Storage::exists($this->product->content->image)) {
-                    Storage::delete($this->product->content->image);
+                if ($this->product->content->image) {
+                    if (Storage::exists($this->product->content->image)) {
+                        Storage::delete($this->product->content->image);
+                    }
                 }
             }
 
