@@ -120,7 +120,7 @@ class MainController extends Controller
     {
         $search_query = $request->input('search_query');
 
-        if (mb_strlen($search_query) < 3 || mb_strlen($search_query) > 40) {
+        if (mb_strlen($search_query) < 3 || mb_strlen($search_query) > 30) {
             return redirect('/');
         }
 

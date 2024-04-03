@@ -68,7 +68,7 @@
           <div class="col-xxl-6 col-lg-5 col-md-4">
             <div class="search-wrapper">
               <form class="search-form" action="/poisk" method="get">
-                <input type="text" name="search_query" class="search-input" minlength="3" maxlength="20" autocomplete="off" required placeholder="Поиск по товарам">
+                <input type="text" name="search_query" class="search-input" minlength="3" maxlength="30" autocomplete="off" required placeholder="Поиск по товарам">
                 <button type="submit" class="search-submit-btn">
                   <img src="/img/header-search-lens.svg" alt="">
                 </button>

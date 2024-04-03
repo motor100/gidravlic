@@ -36,7 +36,7 @@ searchInput.onblur = () => {
 
 function searchOnInput() {
 
-  if (searchInput.value.length > 3 && searchInput.value.length < 40) {
+  if (searchInput.value.length > 3 && searchInput.value.length < 30) {
 
     function searchDropdownRender(json) {
       
@@ -100,7 +100,7 @@ function searchOnInput() {
     })
 
   } else {
-    // Если менее 3 символов, то скрываю результаты поиска
+    // Если менее 3 и более 30 символов, то скрываю результаты поиска
     searchDropdownClose();
     searchRezult.innerHTML = '';
   }
