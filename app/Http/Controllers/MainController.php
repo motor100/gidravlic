@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -415,4 +416,26 @@ class MainController extends Controller
                 ->view('sitemap', compact('products'))
                 ->header('Content-Type', 'text/xml');
     }
+
+
+    // temp
+    public function images(): View
+    {
+        $products = collect();
+
+        $all_products = Product::with('content')->get();
+
+        foreach($all_products as $product) {
+            if($product->content) {
+                if($product->content->image) {
+                    $products->push($product);
+                }
+            }
+        }
+        
+        $products = $products->paginate(20);
+
+        return view('temp-images', compact('products'));
+    }
+
 }

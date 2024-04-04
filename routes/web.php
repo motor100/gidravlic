@@ -118,6 +118,11 @@ Route::post('/ajax/minuscart', [AjaxController::class, 'ajax_minus_cart']);
 // Отправка сообщения на почту о новом заказе
 // Route::post('/ajax/send-message', [AjaxController::class, 'send_message']);
 
+// temp
+Route::get('images', [MainController::class, 'images']);
+
+
+
 // 1С exchange
 Route::any('/1c_exchange.php', [ExchangeController::class, 'exchange']);
 
