@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Гидравлическое оборудование в наличии и под заказ для различных отраслей промышленности. Доставка по России. Звоните 8 (800) 575-55-88">
+  <meta name="description" content="Гидравлическое оборудование в наличии и под заказ для различных отраслей промышленности. Доставка по России. Звоните 8 (800) 234-08-12">
   <meta name="keywords" content="Гидравлические системы, Гидросистема, Гидравлическое оборудование, Гидроагрегат, Гидрооборудование, РВД">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   @yield('robots')
@@ -35,7 +35,7 @@
           <div class="col-xxl-2 col-md-3 d-md-block d-none">
             <div class="flex-container">
               <a href="tel:+79822928879" class="header-phone">+7 (982) 292-88-79</a>
-              <a href="tel:+78005755588" class="header-phone">8 (800) 575-55-88</a>
+              <a href="tel:+78002340812" class="header-phone">8 (800) 234-08-12</a>
             </div>
           </div>
           <div class="col-xxl-2 col-lg-3 col-md-4 d-md-block d-none">
@@ -350,7 +350,7 @@
 
     <div class="info">
       <div class="phone">+7 (982) 292-88-79</div>
-      <div class="phone">8 (800) 575-55-88</div>
+      <div class="phone">8 (800) 234-08-12</div>
     </div>          
 
   </div>
@@ -404,7 +404,7 @@
             <div class="close"></div>
           </div>
           <div class="rate-of-currency-title">Уважаемые клиенты!</div>
-          <div class="rate-of-currency-text">В связи с нестабильным курсом валют - актуальную стоимость товаров уточняйте по телефону: <span class="phone">8(800)575-55-88</span> или почте: <span class="email">zakaz@gidravlic.com</span></div>
+          <div class="rate-of-currency-text">В связи с нестабильным курсом валют - актуальную стоимость товаров уточняйте по телефону: <span class="phone">8 (800) 234-08-12</span> или почте: <span class="email">zakaz@gidravlic.com</span></div>
           <div class="rate-of-currency-image">
             <img src="/img/rate-of-currency.png" alt="">
           </div>

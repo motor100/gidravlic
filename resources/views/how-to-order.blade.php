@@ -17,7 +17,7 @@
       </div>
       <div class="how-to-order-top-item__content">
         <div class="how-to-order-top-item__title">Телефон</div>
-        <div class="how-to-order-top-item__text">8 800 575-55-88</div>
+        <div class="how-to-order-top-item__text">8 800 234-08-12</div>
       </div>
     </div>
     <div class="how-to-order-top-item">
@@ -66,7 +66,7 @@
     </div>
     <div class="how-to-order-bottom-line"></div>
     <div class="how-to-order-bottom-item__content">
-      <div class="how-to-order-bottom-item__title">Заказать по телефону 8 800 575-55-88 (звонок по России бесплатный)</div>
+      <div class="how-to-order-bottom-item__title">Заказать по телефону 8 800 234-08-12 (звонок по России бесплатный)</div>
       <div class="how-to-order-bottom-item__text">По телефону вас проконсультируют по всем вопросам, расскажут про преимущества товаров, гарантию и примут заказ. Если Вы позвонили в не рабочее время (рабочее время с 9:00 до 19:00), оставьте свой номер, и мы перезвоним.</div>
     </div>
   </div>
