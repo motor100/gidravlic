@@ -510,7 +510,7 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/95314088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
 
-  <script src="//code.jivo.ru/widget/qXz1GgymN2" async></script>
+  <!-- <script src="//code.jivo.ru/widget/qXz1GgymN2" async></script> -->
 
   <!-- Yandex.Metrika counter evgeniakhalturina@yandex.ru -->
   <script>

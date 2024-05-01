@@ -8,6 +8,9 @@ use Illuminate\Support\Str;
 
 class ParseXml
 {   
+    // Массив slug для подкатегорий
+    public $subcategory_slugs = [];
+    
     /**
      * Документация
      * https://github.com/carono/php-commerceml
@@ -30,41 +33,25 @@ class ParseXml
         $product_slugs = [];
 
         // Массив slug для подкатегорий
-        $subcategory_slugs = [];
+        // $subcategory_slugs = [];
 
         // Группы каталога 1С - категории товаров
         // Массив подкатегорий
         $subcategories_array = [];
 
-        // Категории и подкатегории
-        foreach($cml->classifier->groups as $parent) {
-            // Подкатегории
-            foreach($parent->getChildren() as $children) {
-                $s_item["title"] = mb_substr($children->name, 0, 190); // Название подкатегории и ограничение до 190 символов
+        // Категории и подкатегории и вложенные подкатегории
+        // Категории category
+        foreach($cml->classifier->groups as $category) {
 
-                // slug
-                $slug = Str::slug($s_item["title"]);
+            // Подкатегории subcat1
+            foreach($category->getChildren() as $subcat1) {
 
-                // Проверка на уникальный slug. Поиск по ключу в массиве $slugs
-                $slug_unique = in_array($slug, $subcategory_slugs);
-                // $slug_unique = array_search($slug, $subcategory_slugs);
+                $subcategories_array[] = $this->subcategory($subcat1, $category);
 
-                if ($slug_unique) {
-                    $s_item["slug"] = $slug . "-" . rand();
-                } else {
-                    $s_item["slug"] = $slug;
+                // Вложенные подкатегории subcat2
+                foreach($subcat1->getChildren() as $subcat2) {
+                    $subcategories_array[] = $this->subcategory($subcat2, $subcat1);
                 }
-
-                // Добавляю текущий $slug в массив $subcategory_slugs
-                $subcategory_slugs[] = $slug;
-
-                $s_item["category_id"] = $children->id;
-                $s_item["parent_category_id"] = $parent->id;
-
-                $s_item["created_at"] = now();
-                $s_item["updated_at"] = now();
-
-                $subcategories_array[] = $s_item;
             }
         }
         
@@ -152,7 +139,6 @@ class ParseXml
                 } else {
                     $p_item["price"] = 0;
                 }
-                
             }
 
             $p_item["created_at"] = now();
@@ -168,5 +154,36 @@ class ParseXml
         $products = Product::insert($products_array);
         
         return $products;
+    }
+
+    /**
+     * Функция возвращает массив для вставки в таблицу product_subcategories
+     */
+    public function subcategory($subcat, $parent) {
+
+        $s_item["title"] = mb_substr($subcat->name, 0, 190); // Название подкатегории и ограничение до 190 символов
+
+        // slug
+        $slug = Str::slug($s_item["title"]);
+
+        // Проверка на уникальный slug. Поиск по ключу $slugs в массиве $this->subcategory_slugs
+        $slug_unique = in_array($slug, $this->subcategory_slugs);
+
+        if ($slug_unique) {
+            $s_item["slug"] = $slug . "-" . Str::slug($parent->name);
+        } else {
+            $s_item["slug"] = $slug;
+        }
+
+        // Добавляю текущий $slug в массив $this->subcategory_slugs
+        $this->subcategory_slugs[] = $slug;
+
+        $s_item["category_id"] = $subcat->id;
+        $s_item["parent_category_id"] = $parent->id;
+
+        $s_item["created_at"] = now();
+        $s_item["updated_at"] = now();
+
+        return $s_item;
     }
 }

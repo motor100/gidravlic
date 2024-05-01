@@ -438,4 +438,10 @@ class MainController extends Controller
         return view('temp-images', compact('products'));
     }
 
+    public function parse_xml_test()
+    {
+        return (new \App\Services\ParseXml())->parse();
+        // return view('phpinfo');
+    }
+
 }
