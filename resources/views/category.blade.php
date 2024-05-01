@@ -9,15 +9,17 @@
     <a href="{{ route('home') }}">Главная</a>
   </div>
   <div class="arrow">></div>
-  <div class="active">{{ $category[0]->title }}</div>
+  <div class="active">{{-- $category->title --}}</div>
+  <div class="active">{{ $ct_title }}</div>
 </div>
 
 <div class="category">
   <div class="page-title-wrapper">
-    <div class="page-title">{{ $category[0]->title }}</div>
+    <div class="page-title">{{-- $category->title --}}</div>
+    <div class="page-title">{{ $ct_title }}</div>
     <div class="count_products">
       <span class="count_products__text">Найдено:</span>
-      <span class="count_products__value">{{ $products->total() }}</span>
+      <span class="count_products__value">{{-- $products->total() --}}</span>
       <span class="count_products__text">товаров</span>
     </div>
   </div>
@@ -35,7 +37,9 @@
               @endif
             </div>
             <div class="subcategories-item__title">{{ $subcat->title }}</div>
-            <a href="/category/{{ $category[0]->slug }}/{{ $subcat->slug }}" class="full-link"></a>
+            <!-- <a href="/category/{{-- $category->slug --}}/{{-- $subcat->slug --}}/{{-- $children->slug --}}" class="full-link"></a> -->
+            <a href="{{ route('category_t', $subcat->slug ) }}" class="full-link"></a>
+            
           </div>
         </div>
       @endforeach

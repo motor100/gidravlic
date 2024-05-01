@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Models\ProductSubcategory;
+use App\Models\ProductSubCategory;
 use App\Models\SubcategoryImage;
 use Illuminate\Http\RedirectResponse;
 
@@ -22,9 +22,9 @@ class SubcategoryController extends Controller
 
         if($search_query) {
             $search_query = htmlspecialchars($search_query);
-            $subcategories = ProductSubcategory::where('title', 'like', "%{$search_query}%")->get();
+            $subcategories = ProductSubCategory::where('title', 'like', "%{$search_query}%")->get();
         } else {
-            $subcategories = ProductSubcategory::all();
+            $subcategories = ProductSubCategory::all();
         }
 
         return view('dashboard.subcategories', compact('subcategories'));
@@ -59,7 +59,7 @@ class SubcategoryController extends Controller
      */
     public function edit(string $id): View
     {
-        $subcategory = \App\Models\ProductSubcategory::findOrFail($id);
+        $subcategory = \App\Models\ProductSubCategory::findOrFail($id);
 
         return view('dashboard.subcategories-edit', compact('subcategory'));
     }
@@ -79,7 +79,7 @@ class SubcategoryController extends Controller
                                 ],
         ]);
 
-        $subcategory = ProductSubcategory::findOrFail($id);
+        $subcategory = ProductSubCategory::findOrFail($id);
 
         // Обновление-вставка изображения
         SubcategoryImage::upsert(

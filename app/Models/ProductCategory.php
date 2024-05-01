@@ -21,8 +21,18 @@ class ProductCategory extends Model
      * Один ко многим
      * Получить подкатегории.
      */
+    public function categories(): HasMany
+    {
+        return $this->hasMany(ProductSubCategory::class, 'parent_category_id', 'category_id');
+    }
+
+    /**
+     * Один ко многим
+     * Рекурсивное отношение
+     * Получить подкатегории и все их дочерние подкатегории
+     */
     public function subcategories(): HasMany
     {
-        return $this->hasMany(ProductSubcategory::class, 'parent_category_id', 'category_id');
+        return $this->hasMany(ProductSubCategory::class, 'parent_category_id', 'category_id')->with('childrencategories');
     }
 }

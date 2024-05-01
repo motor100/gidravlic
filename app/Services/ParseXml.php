@@ -56,10 +56,10 @@ class ParseXml
         }
         
         // Truncate
-        \App\Models\ProductSubcategory::truncate();
+        \App\Models\ProductSubCategory::truncate();
 
         // Вставка в таблицу products_subcategories
-        \App\Models\ProductSubcategory::insert($subcategories_array);
+        \App\Models\ProductSubCategory::insert($subcategories_array);
 
         // Товары
         foreach ($cml->catalog->products as $product) {

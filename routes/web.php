@@ -27,9 +27,11 @@ Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
 
 Route::get('/category', [MainController::class, 'cat']);
 
-Route::get('/category/{slug}', [MainController::class, 'category']);
+// Route::get('/category/{slug}', [MainController::class, 'category']);
 
-Route::get('/category/{cat}/{subcat}', [MainController::class, 'subcategory']);
+// Route::get('/category/{cat}/{subcat}', [MainController::class, 'subcategory']);
+
+Route::get('/category/{cat?}/{subcat1?}/{subcat2?}', [MainController::class, 'category_t'])->name('category_t');
 
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 

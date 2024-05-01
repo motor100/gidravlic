@@ -45,6 +45,172 @@ class MainController extends Controller
         return redirect('/');
     }
 
+
+    public function category_t(string $cat = null, string $subcat1 = null, string $subcat2 = null)
+    {
+        $ct_title = "";
+        $subcategories = collect();
+
+        // Категория
+        if ($cat) {
+            $category = \App\Models\ProductCategory::where('slug', $cat)
+                                                    // ->with('categories')
+                                                    ->first();
+
+            if ($category) {
+
+                $ct_title = $category->title;
+                $subcategories = $category->categories;
+
+            } else {
+                return abort(404);
+            }
+        }
+
+        // Подкатегория subcat1
+        if ($subcat1) {
+            $subcategory1 = \App\Models\ProductSubCategory::where('slug', $subcat1)->first();
+
+            // Проверка что эта подкатегория от этой категории через отношения
+            $parent1 = \App\Models\ProductCategory::where('slug', $cat)
+                                                    ->whereHas('categories', function($query) use ($subcat1) {
+                                                        $query->where('slug', $subcat1);
+                                                    })
+                                                    ->first();
+
+            if ($parent1) {
+
+                $ct_title = $subcategory1->title;
+                $subcategories = $subcategory1->childrencategories;
+
+            } else {
+                return abort(404);
+            }
+        }
+
+        // Подкатегория subcat2
+        if ($subcat2) {
+            $subcategory2 = \App\Models\ProductSubCategory::where('slug', $subcat2)->first();
+
+            // Проверка что эта подкатегория от этой подкатегории
+            $parent2 = \App\Models\ProductCategory::where('slug', $cat)
+                                                    ->whereHas('categories', function($query) use ($subcat2) {
+                                                        $query->whereHas('childrencategories', function($query2)  use ($subcat2) {
+                                                            $query2->where('slug', $subcat2);
+                                                        });
+                                                    })
+                                                    ->first();
+
+            if ($parent2) {
+
+                $ct_title = $subcategory2->title;
+                
+            } else {
+                return abort(404);
+            }
+        }
+
+        // products - товары
+        // ct_title - название категории/подкатегории
+        // subcategories - подкатегории в этой категории
+
+        $products = \App\Models\Product::where('category_id', $category->category_id)
+                                                ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+                                                ->paginate(24);
+
+        return view('category', compact('products', 'ct_title', 'subcategories'));
+    }
+
+
+    public function category_v(string $cat = null, string $subcat1 = null, string $subcat2 = null)
+    {
+        $ct_title = "";
+
+        // Категория
+        if ($cat) {
+            $category = \App\Models\ProductCategory::where('slug', $cat)->first();
+
+            if ($category) {
+
+                $ct_title = $category->title;
+
+                /*
+                // Подкатегории
+                $subcategories = $category->subcategories;
+
+                // Объединение главной категории и ее подкатегорий в одну коллекцию
+                $categories = $category->subcategories->shuffle(); // shuffle нужен чтобы создать новую коллекцию
+                $categories = $categories->push($category);
+
+                // Массив с category_id
+                $cats = [];
+
+                foreach($categories as $cat) {
+                    $cats[] = $cat->category_id;
+                }
+
+                // Товары из главной категории и ее подкатегорий
+                $products = \App\Models\Product::whereIn('category_id', $cats)
+                                                ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+                                                ->paginate(24);
+
+                return view('category', compact('products', 'category', 'subcategories'));
+                */
+            } else {
+                return abort(404);
+            }
+        }
+
+        // Подкатегория subcat1
+        if ($subcat1) {
+            $subcategory1 = \App\Models\ProductSubCategory::where('slug', $subcat1)->first();
+
+            if ($subcategory1) {
+
+                // Проверка что это подкатегория дочерняя для категории
+                // У нее parent_category_id == category_id
+                if ($subcategory1->parent_category_id == $category->category_id) {
+
+                    $ct_title = $subcategory1->title;
+
+                } else {
+                    return abort(404);
+                }
+
+            } else {
+                return abort(404);
+            }
+        }
+
+        // Подкатегория subcat2
+        if ($subcat2) {
+            $subcategory2 = \App\Models\ProductSubCategory::where('slug', $subcat2)->first();
+
+            if ($subcategory2) {
+
+                // Проверка что это подкатегория2 дочерняя для подкатегории
+                // У нее parent_category_id == category_id
+                if ($subcategory2->parent_category_id == $subcategory1->parent_category_id) {
+
+                    $ct_title = $subcategory2->title;
+
+                } else {
+                    return abort(404);
+                }
+                
+            } else {
+                return abort(404);
+            }
+        }
+
+        // products - товары
+        // ct_title - название категории/подкатегории
+        // subcategories - подкатегории в этой категории
+        dd($ct_title);
+        return view('category', compact('ct_title'));
+    }
+
+
     public function category($slug): mixed
     {
         // Категория
@@ -84,7 +250,7 @@ class MainController extends Controller
 
         if ($category) {
             // Подкатегория
-            $subcategory = \App\Models\ProductSubcategory::where('slug', $subcat)->first();
+            $subcategory = \App\Models\ProductSubCategory::where('slug', $subcat)->first();
 
             if ($subcategory) {
                 
@@ -101,6 +267,9 @@ class MainController extends Controller
 
         return abort(404);
     }
+
+
+
 
     public function single_product($slug): mixed
     {
