@@ -17,7 +17,7 @@ class Product extends Model
      */
     public function gallery(): HasMany
     {
-        return $this->hasMany(ProductGallery::class);
+        return $this->hasMany(ProductGallery::class, 'product_uuid', 'product_id');
     }
 
     /**

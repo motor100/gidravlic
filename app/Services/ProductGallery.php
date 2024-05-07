@@ -40,7 +40,7 @@ class ProductGallery
 
         foreach ($this->validated['input-gallery-file'] as $value) {
             $item = [];
-            $item["product_id"] = $this->product->id;
+            $item["product_uuid"] = $this->product->product_id;
             $item["image"] = Storage::putFile('public/uploads/products-galleries', $value);
             $item["created_at"] = now();
             $item["updated_at"] = now();

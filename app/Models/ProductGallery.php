@@ -17,7 +17,7 @@ class ProductGallery extends Model
     protected $table = 'products_galleries';
 
     protected $fillable = [
-        'product_id',
+        'product_uuid',
         'image'
     ];
 }

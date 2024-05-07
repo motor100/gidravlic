@@ -70,12 +70,6 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        // $category = \App\Models\Category::where('count_children', 0)->get();
-
-        // $current_category = $category->where('id', $product->category_id)->first();
-
-        // return view('dashboard.products-edit', compact('product', 'category', 'current_category'));
-
         return view('dashboard.products-edit', compact('product'));
     }
 
