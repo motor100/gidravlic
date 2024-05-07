@@ -125,6 +125,13 @@ class MainController extends Controller
     }
     */
 
+    public function test_t()
+    {
+        // return (new \App\Services\MainCategory())->set_main_category();
+        // return (new \App\Services\MainCategory())->set_main_category_and_image();
+
+    }
+
     public function category_t(string $cat = null, string $subcat1 = null, string $subcat2 = null)
     {
         $ct = "";

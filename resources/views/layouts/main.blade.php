@@ -161,7 +161,7 @@
               @foreach($categories as $cat)
                 <div class="aside-nav-item">
                   <div class="aside-nav-item__image">
-                    <img src="{{ Storage::url($cat->image) }}" alt="">
+                    <img src="{{ Storage::url($cat->image->image) }}" alt="">
                   </div>
                   <div class="aside-nav-item__title">{{ $cat->title }}</div>
                   <a href="/category/{{ $cat->slug }}" class="full-link"></a>

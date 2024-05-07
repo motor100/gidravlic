@@ -31,6 +31,10 @@ Route::get('/category', [MainController::class, 'cat']);
 
 // Route::get('/category/{cat}/{subcat}', [MainController::class, 'subcategory']);
 
+// temp
+Route::get('/test-t', [MainController::class, 'test_t']);
+
+
 Route::get('/category/{cat?}/{subcat1?}/{subcat2?}', [MainController::class, 'category_t'])->name('category_t');
 
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
