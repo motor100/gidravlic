@@ -9,16 +9,36 @@
     <a href="{{ route('home') }}">Главная</a>
   </div>
   <div class="arrow">></div>
-  <div class="active">{{ $subcategory->title }}</div>
+  <div class="active">{{ $ct->title }}</div>
 </div>
 
 <div class="category">
   <div class="page-title-wrapper">
-    <div class="page-title">{{ $subcategory->title }}</div>
+    <div class="page-title">{{ $ct->title }}</div>
     <div class="count_products">
       <span class="count_products__text">Найдено:</span>
-      <span class="count_products__value">{{ $products->total() }}</span>
+      <span class="count_products__value">{{-- $products->total() --}}</span>
       <span class="count_products__text">товаров</span>
+    </div>
+  </div>
+
+  <div class="subcategories">
+    <div class="row">
+      @foreach($childrencategories as $chcat)
+        <div class="col-md-4 col-sm-6">
+          <div class="subcategories-item">
+            <div class="subcategories-item__image">
+              @if($chcat->image)
+                <img src="{{ Storage::url($chcat->image->image) }}" alt="">
+              @else
+                <img src="/img/no-photo.svg" alt="">
+              @endif
+            </div>
+            <div class="subcategories-item__title">{{ $chcat->title }}</div>
+            <a href="/category/{{ $category->slug }}/{{ $subcategory->slug }}/{{ $chcat->slug }}" class="full-link"></a>
+          </div>
+        </div>
+      @endforeach
     </div>
   </div>
 

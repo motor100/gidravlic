@@ -45,7 +45,10 @@ class MainController extends Controller
         return redirect('/');
     }
 
-
+    /**
+     * Подкатегории с много запросов к БД
+     */
+    /*
     public function category_t(string $cat = null, string $subcat1 = null, string $subcat2 = null)
     {
         $ct_title = "";
@@ -119,6 +122,74 @@ class MainController extends Controller
                                                 ->paginate(24);
 
         return view('category', compact('products', 'ct_title', 'subcategories'));
+    }
+    */
+
+    public function category_t(string $cat = null, string $subcat1 = null, string $subcat2 = null)
+    {
+        $ct = "";
+        $subcategories = "";
+        
+        // Категория
+        if ($cat) {
+
+            // Получаю категорию и ее подкатегории все вложения
+            $category = \App\Models\ProductCategory::where('slug', $cat)
+                                                    ->with('subcategories')
+                                                    ->first();
+            
+            if ($category) {
+                $ct = $category;
+                $subcategories = $category->categories;
+            } else {
+                return abort(404);
+            }
+        }
+
+        // Подкатегория subcat1
+        if ($subcat1) {
+
+            // Ищу в $subcategories подкатегорию с таким slug
+            $has_subcategory = false;
+            $subcategory = "";
+            foreach($subcategories as $sbc) {
+                if ($subcat1 == $sbc->slug) {
+                    $has_subcategory = true;
+
+                    $ct = $sbc;
+                    $subcategory = $sbc;
+                    $childrencategories = $sbc->childrencategories;
+                }
+            }
+
+            // Если не найдено, то подкатегория не от этой категории
+            if (!$has_subcategory) {
+                return abort(404);
+            }
+
+            // $products = \App\Models\Product::where('category_id', $category->category_id)
+            //                                 ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+            //                                 ->paginate(24);
+
+            // return view('subcategory', compact('category', 'ct', 'products', 'subcategory', 'childrencategories'));
+
+        }
+
+        // Подкатегория subcat2
+        if ($subcat2) {
+            // Категория РВД
+            if ($category->id == 19) {
+                dd("ok");
+            } else {
+                return abort(404);
+            }
+        }
+
+        $products = \App\Models\Product::where('category_id', $category->category_id)
+                                        ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+                                        ->paginate(24);
+
+        return view('category', compact('category', 'ct', 'products', 'subcategories'));
     }
 
 
