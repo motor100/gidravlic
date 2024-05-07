@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 class ParseXml
 {   
     // Массив slug для подкатегорий
-    public $subcategory_slugs = [];
+    protected $subcategory_slugs = [];
     
     /**
      * Документация
@@ -23,6 +23,7 @@ class ParseXml
         $filePath = public_path('storage/uploads/1c_catalog/');
 
         $cml = new CommerceML();
+
         $cml->loadImportXml($filePath . 'import.xml'); // Загружаем товары
         $cml->loadOffersXml($filePath . 'offers.xml'); // Загружаем предложения
 
@@ -46,20 +47,29 @@ class ParseXml
             // Подкатегории subcat1
             foreach($category->getChildren() as $subcat1) {
 
-                $subcategories_array[] = $this->subcategory($subcat1, $category);
+                $subcategories_array[] = $this->category($subcat1, $category);
 
                 // Вложенные подкатегории subcat2
                 foreach($subcat1->getChildren() as $subcat2) {
-                    $subcategories_array[] = $this->subcategory($subcat2, $subcat1);
+                    $subcategories_array[] = $this->category($subcat2, $subcat1);
                 }
             }
         }
         
         // Truncate
-        \App\Models\ProductSubCategory::truncate();
+        \App\Models\Category::truncate();
 
-        // Вставка в таблицу products_subcategories
-        \App\Models\ProductSubCategory::insert($subcategories_array);
+        // Вставка главных категорий
+        (new \App\Services\MainCategory())->set_main_category();
+
+        // Вставка подкатегорий
+        \App\Models\Category::insert($subcategories_array);
+
+        // Заполение поля parent_id
+        $this->set_parent_id();
+
+        // Заполнение _lft и _rgt nested-set
+        \App\Models\Category::fixTree();
 
         // Товары
         foreach ($cml->catalog->products as $product) {
@@ -159,6 +169,7 @@ class ParseXml
     /**
      * Функция возвращает массив для вставки в таблицу product_subcategories
      */
+    /*
     public function subcategory($subcat, $parent) {
 
         $s_item["title"] = mb_substr($subcat->name, 0, 190); // Название подкатегории и ограничение до 190 символов
@@ -178,6 +189,8 @@ class ParseXml
         // Добавляю текущий $slug в массив $this->subcategory_slugs
         $this->subcategory_slugs[] = $slug;
 
+        // $s_item["category_id"] = $subcat->id;
+        // $s_item["parent_category_id"] = $parent->id;
         $s_item["category_id"] = $subcat->id;
         $s_item["parent_category_id"] = $parent->id;
 
@@ -185,5 +198,70 @@ class ParseXml
         $s_item["updated_at"] = now();
 
         return $s_item;
+    }
+    */
+
+    /**
+     * Функция возвращает массив для вставки в таблицу product_subcategories
+     */
+    public function category($subcat, $parent) {
+
+        $s_item["title"] = mb_substr($subcat->name, 0, 190); // Название подкатегории и ограничение до 190 символов
+
+        // slug
+        $slug = Str::slug($s_item["title"]);
+
+        // Проверка на уникальный slug. Поиск по ключу $slugs в массиве $this->subcategory_slugs
+        // $slug_unique = in_array($slug, $this->subcategory_slugs);
+
+        if (array_key_exists($slug, $this->subcategory_slugs)) {
+
+        // if ($slug_unique) {
+            $s_item["slug"] = $slug . "-" . Str::slug($parent->name);
+        } else {
+            $s_item["slug"] = $slug;
+        }
+
+        // Добавляю текущий $slug в массив $this->subcategory_slugs
+        // $this->subcategory_slugs[] = $slug;
+        $this->subcategory_slugs[$slug] = $slug;
+
+        $s_item["uuid"] = $subcat->id;
+        $s_item["parent_id"] = NULL;
+        $s_item["parent_uuid"] = $parent->id;
+        $s_item["_lft"] = 0;
+        $s_item["_rgt"] = 0;
+
+        $s_item["created_at"] = now();
+        $s_item["updated_at"] = now();
+
+        return $s_item;
+    }
+
+    /**
+     * Обновление поля parent_id
+     * Только через DB::table("categories")
+     * @param
+     * @return bool false
+     */
+    public function set_parent_id(): bool
+    {
+        $categories = \Illuminate\Support\Facades\DB::table("categories")->get();
+
+        foreach($categories as $cat) {
+            // Если поле parent_uuid не NULL
+            if ($cat->parent_uuid) {
+
+                $parent = \Illuminate\Support\Facades\DB::table("categories")->where('uuid', $cat->parent_uuid)->first();
+
+                \Illuminate\Support\Facades\DB::table("categories")
+                                            ->where("id", $cat->id)
+                                            ->update([
+                                                "parent_id" => $parent->id
+                                            ]);
+            }
+        }
+
+        return false;
     }
 }

@@ -25,17 +25,20 @@ Route::get('/catalog', [MainController::class, 'catalog']);
 
 Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
 
-Route::get('/category', [MainController::class, 'cat']);
+// Route::get('/category', [MainController::class, 'cat']);
 
 // Route::get('/category/{slug}', [MainController::class, 'category']);
 
 // Route::get('/category/{cat}/{subcat}', [MainController::class, 'subcategory']);
 
 // temp
-Route::get('/test-t', [MainController::class, 'test_t']);
+// Route::get('/test-t', [MainController::class, 'test_t']);
+
+Route::get('/category/{subcat1?}/{subcat2?}/{subcat3?}', [MainController::class, 'test_t']);
+// Route::get('/category/rvd', [MainController::class, 'test_t']);
 
 
-Route::get('/category/{cat?}/{subcat1?}/{subcat2?}', [MainController::class, 'category_t'])->name('category_t');
+// Route::get('/category/{cat?}/{subcat1?}/{subcat2?}', [MainController::class, 'category_t'])->name('category_t');
 
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 
@@ -125,9 +128,9 @@ Route::post('/ajax/minuscart', [AjaxController::class, 'ajax_minus_cart']);
 // Route::post('/ajax/send-message', [AjaxController::class, 'send_message']);
 
 // temp
-Route::get('images', [MainController::class, 'images']);
+// Route::get('images', [MainController::class, 'images']);
 
-Route::get('parse-xml-test', [MainController::class, 'parse_xml_test']);
+// Route::get('parse-xml-test', [MainController::class, 'parse_xml_test']);
 
 
 

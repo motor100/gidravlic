@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Illuminate\Database\Eloquent\Builder;
+use App\Models\Category;
 
 class MainController extends Controller
 {
@@ -125,11 +126,34 @@ class MainController extends Controller
     }
     */
 
-    public function test_t()
+    public function test_t(Request $request, Category $subcat1 = null, Category $subcat2 = null, Category $subcat3 = null)
     {
         // return (new \App\Services\MainCategory())->set_main_category();
         // return (new \App\Services\MainCategory())->set_main_category_and_image();
+        // return (new \App\Services\ParseXml())->parse();
+        
+        if ($subcat3) {
+            $categories = Category::descendantsAndSelf($subcat3->id)->toTree();
+            return view('test-subcat', compact('categories'));
+        }
 
+        if ($subcat2) {
+            $categories = Category::descendantsAndSelf($subcat2->id)->toTree();
+            return view('test-subcat', compact('categories'));
+        }
+
+        if ($subcat1) {
+            $categories = Category::descendantsAndSelf($subcat1->id)->toTree();
+            return view('test-subcat', compact('categories'));
+        }
+
+        // if (!$subcat3 && !$subcat2 && !$subcat1) {
+        //     dd($subcat1, $subcat2, $subcat3);
+        //     $categories = Category::all()->toTree();
+        //     return view('test-subcat', compact('categories'));
+        // }
+
+        return redirect()->route("home");
     }
 
     public function category_t(string $cat = null, string $subcat1 = null, string $subcat2 = null)

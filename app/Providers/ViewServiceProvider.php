@@ -31,8 +31,10 @@ class ViewServiceProvider extends ServiceProvider
             // Get parent categories
             // $categories = \App\Models\ProductCategory::all();
 
-            // Get main category
-            $categories = \App\Models\Category::all();
+            // Получение главных категорий
+            $categories = \App\Models\Category::whereNull("parent_id")
+                                                ->whereNull("parent_uuid")
+                                                ->get();
 
             $view->with('categories', $categories);
 
