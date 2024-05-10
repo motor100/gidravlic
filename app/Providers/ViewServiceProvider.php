@@ -48,42 +48,51 @@ class ViewServiceProvider extends ServiceProvider
             }
             */
 
-
-            // Count products in cart
-            $cart = json_decode(\Illuminate\Support\Facades\Cookie::get('cart'), true);
-
-            if ($cart) {
-                $cart_count = count($cart);
-                $cart_count = $cart_count > 9 ? 9 : $cart_count;
-                $view->with('cart_count', $cart_count);
-            }
-
-            // Products in cart
-            if ($cart) {
-                $keys = array_keys($cart);
-                $products_in_cart = \App\Models\Product::whereIn('id', $keys)->get();
-                foreach ($products_in_cart as $product) {
-                    $product->quantity = $cart[$product->id];
+            // Cart
+            if (\Illuminate\Support\Facades\Cookie::get('cart')) {
+                $cart = json_decode(\Illuminate\Support\Facades\Cookie::get('cart'), true);
+                
+                // Count products in cart
+                if ($cart) {
+                    $cart_count = count($cart);
+                    $cart_count = $cart_count > 9 ? 9 : $cart_count;
+                    $view->with('cart_count', $cart_count);
                 }
-                $view->with('products_in_cart', $products_in_cart);
+
+                // Get products in cart
+                if ($cart) {
+                    $keys = array_keys($cart);
+                    $products_in_cart = \App\Models\Product::whereIn('id', $keys)->get();
+                    foreach ($products_in_cart as $product) {
+                        $product->quantity = $cart[$product->id];
+                    }
+                    $view->with('products_in_cart', $products_in_cart);
+                }
+            }
+            
+            // Favourites
+            if (\Illuminate\Support\Facades\Cookie::get('favourites')) {
+
+                $favourites = json_decode(\Illuminate\Support\Facades\Cookie::get('favourites'), true);
+
+                // Count products in favourites
+                if ($favourites) {
+                    $favourites_count = count($favourites);
+                    $favourites_count = $favourites_count > 9 ? 9 : $favourites_count;
+                    $view->with('favourites_count', $favourites_count);
+                }
             }
 
-            // Count products in favourites
-            $favourites = json_decode(\Illuminate\Support\Facades\Cookie::get('favourites'), true);
+            // Comparison
+            if (\Illuminate\Support\Facades\Cookie::get('comparison')) {
+                $comparison = json_decode(\Illuminate\Support\Facades\Cookie::get('comparison'), true);
 
-            if ($favourites) {
-                $favourites_count = count($favourites);
-                $favourites_count = $favourites_count > 9 ? 9 : $favourites_count;
-                $view->with('favourites_count', $favourites_count);
-            }
-
-            // Count products in comparison
-            $comparison = json_decode(\Illuminate\Support\Facades\Cookie::get('comparison'), true);
-
-            if ($comparison) {
-                $comparison_count = count($comparison);
-                $comparison_count = $comparison_count > 9 ? 9 : $comparison_count;
-                $view->with('comparison_count', $comparison_count);
+                // Count products in comparison
+                if ($comparison) {
+                    $comparison_count = count($comparison);
+                    $comparison_count = $comparison_count > 9 ? 9 : $comparison_count;
+                    $view->with('comparison_count', $comparison_count);
+                }
             }
 
         });

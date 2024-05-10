@@ -10,6 +10,9 @@ class ParseXml
 {   
     // Массив slug для подкатегорий
     protected $subcategory_slugs = [];
+
+    // Массив категорий для вставки в таблицу categories
+    protected $category_array = [];
     
     /**
      * Документация
@@ -17,7 +20,8 @@ class ParseXml
      * @param
      * @return bool
      */
-    public function parse(): bool
+    // public function parse(): bool
+    public function parse()
     {
         // $filePath - полный путь до XML файла import.xml или offers.xml
         $filePath = public_path('storage/uploads/1c_catalog/');
@@ -55,26 +59,32 @@ class ParseXml
                 }
             }
         }
+
+        // Получение списка главных категорий
+        $main_categories = (new \App\Services\MainCategory())->main_category_list();
         
+        // Объединение массивов $main_categories и $subcategories_array в один
+        $categories_array = array_merge($main_categories, $subcategories_array);
+
+        // Установка ключа parent_id
+        $categories_array = $this->set_parent_id($categories_array);
+
         // Truncate
         \App\Models\Category::truncate();
 
-        // Вставка главных категорий
-        (new \App\Services\MainCategory())->set_main_category();
-
         // Вставка подкатегорий
-        \App\Models\Category::insert($subcategories_array);
-
-        // Заполение поля parent_id
-        $this->set_parent_id();
+        \App\Models\Category::insert($categories_array);
 
         // Заполнение _lft и _rgt nested-set
         \App\Models\Category::fixTree();
 
         // Товары
         foreach ($cml->catalog->products as $product) {
-            // Название товара
+
+            // Название товара главное
             // $p_item["title"] = mb_substr($product->name, 0, 190); // Название товара (Товары->Товар->Наименование) и ограничение до 190 символов
+
+            // Название товара второе
             $p_item["title"] = mb_substr($product->requisites[2]->value, 0, 190); // Реквизит Полное наименование
 
             // slug
@@ -108,16 +118,16 @@ class ParseXml
             }
 
             // Описание
-            $description = $product->Описание; // Объект SimpleXmlElement
+            // $description = $product->Описание; // Объект SimpleXmlElement
 
-            $p_item["description"] = NULL;
+            // $p_item["description"] = NULL;
 
             // Преобразование \n в <br>
-            if ($description) {
-                foreach($description as $value) {
-                    $p_item["description"] = '<p>' . nl2br($value) . '</p>'; 
-                }
-            }            
+            // if ($description) {
+            //     foreach($description as $value) {
+            //         $p_item["description"] = '<p>' . nl2br($value) . '</p>'; 
+            //     }
+            // }            
 
             // Артикул
             $p_item["sku"] = $product->Артикул;
@@ -144,7 +154,7 @@ class ParseXml
                 }
 
                 // Убрать это условие когда будут цены
-                if (count($offer->prices)) {
+                if (count($offer->prices) > 0) {
                     $p_item["price"] = $offer->prices[0]->cost; // Выводим первую цену предложения (Предложения->Предложение->Цены->Цена->ЦенаЗаЕдиницу)
                 } else {
                     $p_item["price"] = 0;
@@ -162,44 +172,9 @@ class ParseXml
 
         // Вставка в таблицу products
         $products = Product::insert($products_array);
-        
+
         return $products;
     }
-
-    /**
-     * Функция возвращает массив для вставки в таблицу product_subcategories
-     */
-    /*
-    public function subcategory($subcat, $parent) {
-
-        $s_item["title"] = mb_substr($subcat->name, 0, 190); // Название подкатегории и ограничение до 190 символов
-
-        // slug
-        $slug = Str::slug($s_item["title"]);
-
-        // Проверка на уникальный slug. Поиск по ключу $slugs в массиве $this->subcategory_slugs
-        $slug_unique = in_array($slug, $this->subcategory_slugs);
-
-        if ($slug_unique) {
-            $s_item["slug"] = $slug . "-" . Str::slug($parent->name);
-        } else {
-            $s_item["slug"] = $slug;
-        }
-
-        // Добавляю текущий $slug в массив $this->subcategory_slugs
-        $this->subcategory_slugs[] = $slug;
-
-        // $s_item["category_id"] = $subcat->id;
-        // $s_item["parent_category_id"] = $parent->id;
-        $s_item["category_id"] = $subcat->id;
-        $s_item["parent_category_id"] = $parent->id;
-
-        $s_item["created_at"] = now();
-        $s_item["updated_at"] = now();
-
-        return $s_item;
-    }
-    */
 
     /**
      * Функция возвращает массив для вставки в таблицу product_subcategories
@@ -212,18 +187,13 @@ class ParseXml
         $slug = Str::slug($s_item["title"]);
 
         // Проверка на уникальный slug. Поиск по ключу $slugs в массиве $this->subcategory_slugs
-        // $slug_unique = in_array($slug, $this->subcategory_slugs);
-
         if (array_key_exists($slug, $this->subcategory_slugs)) {
-
-        // if ($slug_unique) {
             $s_item["slug"] = $slug . "-" . Str::slug($parent->name);
         } else {
             $s_item["slug"] = $slug;
         }
 
         // Добавляю текущий $slug в массив $this->subcategory_slugs
-        // $this->subcategory_slugs[] = $slug;
         $this->subcategory_slugs[$slug] = $slug;
 
         $s_item["uuid"] = $subcat->id;
@@ -239,29 +209,20 @@ class ParseXml
     }
 
     /**
-     * Обновление поля parent_id
-     * Только через DB::table("categories")
-     * @param
-     * @return bool false
+     * Перебор массива, получение ключа parent_uuid и сравнение с ключом uuid
+     * @param array
+     * @return array
      */
-    public function set_parent_id(): bool
-    {
-        $categories = \Illuminate\Support\Facades\DB::table("categories")->get();
-
-        foreach($categories as $cat) {
-            // Если поле parent_uuid не NULL
-            if ($cat->parent_uuid) {
-
-                $parent = \Illuminate\Support\Facades\DB::table("categories")->where('uuid', $cat->parent_uuid)->first();
-
-                \Illuminate\Support\Facades\DB::table("categories")
-                                            ->where("id", $cat->id)
-                                            ->update([
-                                                "parent_id" => $parent->id
-                                            ]);
+    public function set_parent_id(array $categories_array): array
+    {   
+        foreach($categories_array as $key1 => $cat) {
+            foreach($categories_array as $key2 => $value) {
+                if ($cat["parent_uuid"] == $value["uuid"]) {
+                    $categories_array[$key1]["parent_id"] = $key2 + 1;
+                }
             }
         }
 
-        return false;
+        return $categories_array;
     }
 }

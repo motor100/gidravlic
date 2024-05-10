@@ -117,7 +117,7 @@ Route::post('/ajax/minuscart', [AjaxController::class, 'ajax_minus_cart']);
 // temp
 // Route::get('images', [MainController::class, 'images']);
 
-// Route::get('parse-xml-test', [MainController::class, 'parse_xml_test']);
+Route::get('parse-xml-test', [MainController::class, 'parse_xml_test']);
 
 
 

@@ -18,19 +18,15 @@ class Category extends Model
      *
      * @var array<int, string>
      */
-    // protected $fillable = [
-    //     'cookie_name',
-    //     'session_id',
-    // ];
-
-    /**
-     * Один ко многим
-     * Получить подкатегории.
-     */
-    // public function categories(): HasMany
-    // {
-    //     return $this->hasMany(ProductSubCategory::class, 'parent_category_id', 'category_id');
-    // }
+    protected $fillable = [
+        'title',
+        'slug',
+        'uuid',
+        'parent_id',
+        'parent_uuid',
+        '_lft',
+        '_rgt'
+    ];
 
     /**
      * Один к одному
@@ -42,15 +38,8 @@ class Category extends Model
     }
 
     /**
-     * Один ко многим
-     * Рекурсивное отношение
-     * Получить подкатегории и все их дочерние подкатегории
+     * Поиск модели по slug
      */
-    // public function subcategories(): HasMany
-    // {
-    //     return $this->hasMany(ProductSubCategory::class, 'parent_category_id', 'category_id')->with('childrencategories');
-    // }
-
     public function getRouteKeyName()
     {
         return 'slug';
