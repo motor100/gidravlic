@@ -25,20 +25,7 @@ Route::get('/catalog', [MainController::class, 'catalog']);
 
 Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
 
-// Route::get('/category', [MainController::class, 'cat']);
-
-// Route::get('/category/{slug}', [MainController::class, 'category']);
-
-// Route::get('/category/{cat}/{subcat}', [MainController::class, 'subcategory']);
-
-// temp
-// Route::get('/test-t', [MainController::class, 'test_t']);
-
-Route::get('/category/{subcat1?}/{subcat2?}/{subcat3?}', [MainController::class, 'test_t']);
-// Route::get('/category/rvd', [MainController::class, 'test_t']);
-
-
-// Route::get('/category/{cat?}/{subcat1?}/{subcat2?}', [MainController::class, 'category_t'])->name('category_t');
+Route::get('/category/{subcat1?}/{subcat2?}/{subcat3?}', [MainController::class, 'category']);
 
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 

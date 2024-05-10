@@ -41,337 +41,65 @@ class MainController extends Controller
         return view('catalog', compact('products', 'categories'));
     }
 
-    public function cat(): RedirectResponse
+    public function category(Request $request, Category $subcat1 = null, Category $subcat2 = null, Category $subcat3 = null)
     {
-        return redirect('/');
-    }
-
-    /**
-     * Подкатегории с много запросов к БД
-     */
-    /*
-    public function category_t(string $cat = null, string $subcat1 = null, string $subcat2 = null)
-    {
-        $ct_title = "";
-        $subcategories = collect();
-
-        // Категория
-        if ($cat) {
-            $category = \App\Models\ProductCategory::where('slug', $cat)
-                                                    // ->with('categories')
-                                                    ->first();
-
-            if ($category) {
-
-                $ct_title = $category->title;
-                $subcategories = $category->categories;
-
-            } else {
-                return abort(404);
-            }
-        }
-
-        // Подкатегория subcat1
-        if ($subcat1) {
-            $subcategory1 = \App\Models\ProductSubCategory::where('slug', $subcat1)->first();
-
-            // Проверка что эта подкатегория от этой категории через отношения
-            $parent1 = \App\Models\ProductCategory::where('slug', $cat)
-                                                    ->whereHas('categories', function($query) use ($subcat1) {
-                                                        $query->where('slug', $subcat1);
-                                                    })
-                                                    ->first();
-
-            if ($parent1) {
-
-                $ct_title = $subcategory1->title;
-                $subcategories = $subcategory1->childrencategories;
-
-            } else {
-                return abort(404);
-            }
-        }
-
-        // Подкатегория subcat2
-        if ($subcat2) {
-            $subcategory2 = \App\Models\ProductSubCategory::where('slug', $subcat2)->first();
-
-            // Проверка что эта подкатегория от этой подкатегории
-            $parent2 = \App\Models\ProductCategory::where('slug', $cat)
-                                                    ->whereHas('categories', function($query) use ($subcat2) {
-                                                        $query->whereHas('childrencategories', function($query2)  use ($subcat2) {
-                                                            $query2->where('slug', $subcat2);
-                                                        });
-                                                    })
-                                                    ->first();
-
-            if ($parent2) {
-
-                $ct_title = $subcategory2->title;
-                
-            } else {
-                return abort(404);
-            }
-        }
-
-        // products - товары
-        // ct_title - название категории/подкатегории
-        // subcategories - подкатегории в этой категории
-
-        $products = \App\Models\Product::where('category_id', $category->category_id)
-                                                ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
-                                                ->paginate(24);
-
-        return view('category', compact('products', 'ct_title', 'subcategories'));
-    }
-    */
-
-    public function test_t(Request $request, Category $subcat1 = null, Category $subcat2 = null, Category $subcat3 = null)
-    {
-        // return (new \App\Services\MainCategory())->set_main_category();
-        // return (new \App\Services\MainCategory())->set_main_category_and_image();
-        // return (new \App\Services\ParseXml())->parse();
-        
         if ($subcat3) {
-            $categories = Category::descendantsAndSelf($subcat3->id)->toTree();
-            return view('test-subcat', compact('categories'));
-        }
 
-        if ($subcat2) {
-            $categories = Category::descendantsAndSelf($subcat2->id)->toTree();
-            return view('test-subcat', compact('categories'));
-        }
-
-        if ($subcat1) {
-            $categories = Category::descendantsAndSelf($subcat1->id)->toTree();
-            return view('test-subcat', compact('categories'));
-        }
-
-        // if (!$subcat3 && !$subcat2 && !$subcat1) {
-        //     dd($subcat1, $subcat2, $subcat3);
-        //     $categories = Category::all()->toTree();
-        //     return view('test-subcat', compact('categories'));
-        // }
-
-        return redirect()->route("home");
-    }
-
-    public function category_t(string $cat = null, string $subcat1 = null, string $subcat2 = null)
-    {
-        $ct = "";
-        $subcategories = "";
-        
-        // Категория
-        if ($cat) {
-
-            // Получаю категорию и ее подкатегории все вложения
-            $category = \App\Models\ProductCategory::where('slug', $cat)
-                                                    ->with('subcategories')
-                                                    ->first();
-            
-            if ($category) {
-                $ct = $category;
-                $subcategories = $category->categories;
-            } else {
-                return abort(404);
-            }
-        }
-
-        // Подкатегория subcat1
-        if ($subcat1) {
-
-            // Ищу в $subcategories подкатегорию с таким slug
-            $has_subcategory = false;
-            $subcategory = "";
-            foreach($subcategories as $sbc) {
-                if ($subcat1 == $sbc->slug) {
-                    $has_subcategory = true;
-
-                    $ct = $sbc;
-                    $subcategory = $sbc;
-                    $childrencategories = $sbc->childrencategories;
-                }
-            }
-
-            // Если не найдено, то подкатегория не от этой категории
-            if (!$has_subcategory) {
-                return abort(404);
-            }
-
-            // $products = \App\Models\Product::where('category_id', $category->category_id)
-            //                                 ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
-            //                                 ->paginate(24);
-
-            // return view('subcategory', compact('category', 'ct', 'products', 'subcategory', 'childrencategories'));
-
-        }
-
-        // Подкатегория subcat2
-        if ($subcat2) {
-            // Категория РВД
-            if ($category->id == 19) {
-                dd("ok");
-            } else {
-                return abort(404);
-            }
-        }
-
-        $products = \App\Models\Product::where('category_id', $category->category_id)
-                                        ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
-                                        ->paginate(24);
-
-        return view('category', compact('category', 'ct', 'products', 'subcategories'));
-    }
-
-
-    public function category_v(string $cat = null, string $subcat1 = null, string $subcat2 = null)
-    {
-        $ct_title = "";
-
-        // Категория
-        if ($cat) {
-            $category = \App\Models\ProductCategory::where('slug', $cat)->first();
-
-            if ($category) {
-
-                $ct_title = $category->title;
-
-                /*
-                // Подкатегории
-                $subcategories = $category->subcategories;
-
-                // Объединение главной категории и ее подкатегорий в одну коллекцию
-                $categories = $category->subcategories->shuffle(); // shuffle нужен чтобы создать новую коллекцию
-                $categories = $categories->push($category);
-
-                // Массив с category_id
-                $cats = [];
-
-                foreach($categories as $cat) {
-                    $cats[] = $cat->category_id;
-                }
-
-                // Товары из главной категории и ее подкатегорий
-                $products = \App\Models\Product::whereIn('category_id', $cats)
-                                                ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
-                                                ->paginate(24);
-
-                return view('category', compact('products', 'category', 'subcategories'));
-                */
-            } else {
-                return abort(404);
-            }
-        }
-
-        // Подкатегория subcat1
-        if ($subcat1) {
-            $subcategory1 = \App\Models\ProductSubCategory::where('slug', $subcat1)->first();
-
-            if ($subcategory1) {
-
-                // Проверка что это подкатегория дочерняя для категории
-                // У нее parent_category_id == category_id
-                if ($subcategory1->parent_category_id == $category->category_id) {
-
-                    $ct_title = $subcategory1->title;
-
-                } else {
-                    return abort(404);
-                }
-
-            } else {
-                return abort(404);
-            }
-        }
-
-        // Подкатегория subcat2
-        if ($subcat2) {
-            $subcategory2 = \App\Models\ProductSubCategory::where('slug', $subcat2)->first();
-
-            if ($subcategory2) {
-
-                // Проверка что это подкатегория2 дочерняя для подкатегории
-                // У нее parent_category_id == category_id
-                if ($subcategory2->parent_category_id == $subcategory1->parent_category_id) {
-
-                    $ct_title = $subcategory2->title;
-
-                } else {
-                    return abort(404);
-                }
-                
-            } else {
-                return abort(404);
-            }
-        }
-
-        // products - товары
-        // ct_title - название категории/подкатегории
-        // subcategories - подкатегории в этой категории
-        dd($ct_title);
-        return view('category', compact('ct_title'));
-    }
-
-
-    public function category($slug): mixed
-    {
-        // Категория
-        $category = \App\Models\ProductCategory::where('slug', $slug)->get();
-
-        // Если есть коллекция $category и количество элементов = 1
-        if ($category && $category->count() == 1) {
-
-            // Подкатегории
-            $subcategories = $category[0]->subcategories;
-            
-            // Объединение главной категории и ее подкатегорий в одну коллекцию
-            $categories = $category->merge($subcategories);
+            // Запрос
+            $query = Category::descendantsAndSelf($subcat3->id);
 
             // Массив с category_id
-            $cats = [];
+                $cats_array = $query->pluck('uuid')->toArray(); // это не массив с кошками)))
 
-            foreach($categories as $cat) {
-                $cats[] = $cat->category_id;
-            }
+                // Категории
+                $categories = $query->toTree();
 
-            // Товары из главной категории и ее подкатегорий
-            $products = \App\Models\Product::whereIn('category_id', $cats)
-                                            ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
-                                            ->paginate(24);
-
-            return view('category', compact('products', 'category', 'subcategories'));
-        }
-
-        return abort(404);
-    }
-
-    public function subcategory($cat, $subcat): mixed
-    {
-        // Категория
-        $category = \App\Models\ProductCategory::where('slug', $cat)->first();
-
-        if ($category) {
-            // Подкатегория
-            $subcategory = \App\Models\ProductSubCategory::where('slug', $subcat)->first();
-
-            if ($subcategory) {
-                
-                // Товары в подкатегории
-                $products = \App\Models\Product::where('category_id', $subcategory->category_id)
-                                                ->where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
+                // Товары из главной категории и ее подкатегорий
+                $products = \App\Models\Product::whereIn('category_id', $cats_array)
                                                 ->paginate(24);
-    
-                return view('subcategory', compact('products', 'subcategory'));
-            } else {
-                return abort(404);
-            }
+
+            return view('category', compact('categories', 'products'));
         }
 
-        return abort(404);
+        if ($subcat2) {
+
+            // Запрос
+            $query = Category::descendantsAndSelf($subcat2->id);
+
+                // Массив с category_id
+                $cats_array = $query->pluck('uuid')->toArray(); // это не массив с кошками)))
+
+                // Категории
+                $categories = $query->toTree();
+
+                // Товары из главной категории и ее подкатегорий
+                $products = \App\Models\Product::whereIn('category_id', $cats_array)
+                                                ->paginate(24);
+
+            return view('category', compact('categories', 'products'));
+        }
+
+        if ($subcat1) {
+            
+            // Запрос
+                $query = Category::descendantsAndSelf($subcat1->id);
+
+                // Массив с category_id
+                $cats_array = $query->pluck('uuid')->toArray(); // это не массив с кошками)))
+
+                // Категории
+                $categories = $query->toTree();
+
+                // Товары из главной категории и ее подкатегорий
+                $products = \App\Models\Product::whereIn('category_id', $cats_array)
+                                                ->paginate(24);
+
+            return view('category', compact('categories', 'products'));
+        }
+
+        // Если нет параметров в url, это /category редирект на главную
+        return redirect()->route("home");
     }
-
-
-
 
     public function single_product($slug): mixed
     {
