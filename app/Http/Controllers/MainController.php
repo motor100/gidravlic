@@ -32,7 +32,9 @@ class MainController extends Controller
     public function catalog(): View
     {
         // Категории
-        $categories = \App\Models\ProductCategory::all();
+        $categories = \App\Models\Category::whereNull('parent_id')
+                                            ->whereNull('parent_uuid')
+                                            ->get();
 
         // Все товары в категориях
         $products = \App\Models\Product::where('category_id', '<>', '00000000-0000-0000-0000-000000000000')
@@ -49,50 +51,56 @@ class MainController extends Controller
             $query = Category::descendantsAndSelf($subcat3->id);
 
             // Массив с category_id
-                $cats_array = $query->pluck('uuid')->toArray(); // это не массив с кошками)))
+            $cats_array = $query->pluck('uuid')->toArray(); // это не массив с кошками)))
 
-                // Категории
-                $categories = $query->toTree();
+            // Категории
+            $categories = $query->toTree();
 
-                // Товары из главной категории и ее подкатегорий
-                $products = \App\Models\Product::whereIn('category_id', $cats_array)
-                                                ->paginate(24);
+            // Товары из главной категории и ее подкатегорий
+            $products = \App\Models\Product::whereIn('category_id', $cats_array)
+                                            ->paginate(24);
 
-            return view('category', compact('categories', 'products'));
+            // Родительская категория
+            $parent = Category::ancestorsOf($subcat3->id);
+
+            return view('category', compact('categories', 'products', 'parent'));
         }
 
         if ($subcat2) {
 
             // Запрос
             $query = Category::descendantsAndSelf($subcat2->id);
+            // dd();
+            // Массив с category_id
+            $cats_array = $query->pluck('uuid')->toArray(); // это не массив с кошками)))
 
-                // Массив с category_id
-                $cats_array = $query->pluck('uuid')->toArray(); // это не массив с кошками)))
+            // Категории
+            $categories = $query->toTree();
 
-                // Категории
-                $categories = $query->toTree();
+            // Товары из главной категории и ее подкатегорий
+            $products = \App\Models\Product::whereIn('category_id', $cats_array)
+                                            ->paginate(24);
 
-                // Товары из главной категории и ее подкатегорий
-                $products = \App\Models\Product::whereIn('category_id', $cats_array)
-                                                ->paginate(24);
+            // Родительская категория
+            $parent = Category::ancestorsOf($subcat2->id);
 
-            return view('category', compact('categories', 'products'));
+            return view('category', compact('categories', 'products', 'parent'));
         }
 
         if ($subcat1) {
             
             // Запрос
-                $query = Category::descendantsAndSelf($subcat1->id);
+            $query = Category::descendantsAndSelf($subcat1->id);
 
-                // Массив с category_id
-                $cats_array = $query->pluck('uuid')->toArray(); // это не массив с кошками)))
+            // Массив с category_id
+            $cats_array = $query->pluck('uuid')->toArray(); // это не массив с кошками)))
 
-                // Категории
-                $categories = $query->toTree();
+            // Категории
+            $categories = $query->toTree();
 
-                // Товары из главной категории и ее подкатегорий
-                $products = \App\Models\Product::whereIn('category_id', $cats_array)
-                                                ->paginate(24);
+            // Товары из главной категории и ее подкатегорий
+            $products = \App\Models\Product::whereIn('category_id', $cats_array)
+                                            ->paginate(24);
 
             return view('category', compact('categories', 'products'));
         }

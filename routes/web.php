@@ -21,7 +21,7 @@ use App\Http\Controllers\ExchangeController;
 
 Route::get('/', [MainController::class, 'home'])->name('home');
 
-Route::get('/catalog', [MainController::class, 'catalog']);
+Route::get('/catalog', [MainController::class, 'catalog'])->name('catalog');
 
 Route::get('/catalog/{slug}', [MainController::class, 'single_product']);
 
@@ -117,7 +117,7 @@ Route::post('/ajax/minuscart', [AjaxController::class, 'ajax_minus_cart']);
 // temp
 // Route::get('images', [MainController::class, 'images']);
 
-Route::get('parse-xml-test', [MainController::class, 'parse_xml_test']);
+// Route::get('parse-xml-test', [MainController::class, 'parse_xml_test']);
 
 
 
