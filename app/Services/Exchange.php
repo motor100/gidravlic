@@ -6,7 +6,7 @@ namespace App\Services;
 // use Illuminate\Support\Facades\Log;
 use \Illuminate\Support\Facades\Storage;
 use \Illuminate\Support\Facades\Auth;
-// use ZipArchive;
+use ZipArchive;
 // use XMLReader;
 // use SimpleXMLElement;
 
@@ -90,13 +90,20 @@ class Exchange
                 }
 
                 // Удаление старых файлов обмена
-                // Получение всех файлов в папке
-                $files = Storage::files('/public/uploads/1c_catalog/');
+                // Получение всех файлов в папке 1c_catalog
+                $files_1c_catalog = Storage::files('/public/uploads/1c_catalog/');
 
-                // Удаление файлов
-                Storage::delete($files);
+                // Удаление файлов из папки 1c_catalog
+                Storage::delete($files_1c_catalog);
 
-                return "zip=no\nfile_limit=4000000";
+                // Получение всех файлов в папке 1c_catalog/tmp
+                $files_1c_catalog_tmp = Storage::files('/public/uploads/1c_catalog/tmp/');
+
+                // Удаление файлов из папки 1c_catalog/tmp
+                Storage::delete($files_1c_catalog_tmp);
+
+                // return "zip=no\nfile_limit=4000000";
+                return "zip=yes\nfile_limit=4000000";
                 
             } elseif ($input_mode == 'file') {  // Пошаговая загрузка каталога
 
@@ -126,6 +133,33 @@ class Exchange
                 
                 // Если имя файла 'import.xml', то парсинг
                 if ($filename === 'import.xml') {
+
+                    // Распаковка архива
+                    // Получаю все файлы из папки tmp
+                    $files = Storage::files('/public/uploads/1c_catalog/tmp');
+
+                    // Получаю название единственного файла
+                    $file = $files[0];
+
+                    // Создание экземпляра объекта
+                    $zip = new ZipArchive();
+
+                    // Открыть архив $zip->open
+                    $zipFile = $zip->open(Storage::path($file));
+
+                    // Если архив открылся
+                    if ($zipFile === TRUE) {
+
+                        // Распаковка $zip->extractTo
+                        $zip->extractTo(Storage::path('/public/uploads/1c_catalog'));
+
+                        $zip->close();
+
+                    } else {
+                        return "failure";
+                    }
+
+                    // Парсинг
                     (new \App\Services\ParseXml())->parse();
                 }
 
