@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Models\ProductSubCategory;
+use App\Models\Category;
 use App\Models\SubcategoryImage;
 use Illuminate\Http\RedirectResponse;
 
@@ -22,9 +22,16 @@ class SubcategoryController extends Controller
 
         if($search_query) {
             $search_query = htmlspecialchars($search_query);
-            $subcategories = ProductSubCategory::where('title', 'like', "%{$search_query}%")->get();
+            $subcategories = Category::where('title', 'like', "%{$search_query}%")
+                                        ->whereNotNull('parent_id') // только подкатегории 
+                                        ->whereNotNull('parent_uuid') // только подкатегории 
+                                        ->with('ancestors') // вместе с родительскими категориями
+                                        ->paginate(20);
         } else {
-            $subcategories = ProductSubCategory::all();
+            $subcategories = Category::whereNotNull('parent_id') // только подкатегории 
+                                        ->whereNotNull('parent_uuid') // только подкатегории 
+                                        ->with('ancestors') // вместе с родительскими категориями
+                                        ->paginate(20);
         }
 
         return view('dashboard.subcategories', compact('subcategories'));
@@ -59,7 +66,7 @@ class SubcategoryController extends Controller
      */
     public function edit(string $id): View
     {
-        $subcategory = \App\Models\ProductSubCategory::findOrFail($id);
+        $subcategory = Category::findOrFail($id);
 
         return view('dashboard.subcategories-edit', compact('subcategory'));
     }
@@ -79,7 +86,7 @@ class SubcategoryController extends Controller
                                 ],
         ]);
 
-        $subcategory = ProductSubCategory::findOrFail($id);
+        $subcategory = Category::findOrFail($id);
 
         // Обновление-вставка изображения
         SubcategoryImage::upsert(

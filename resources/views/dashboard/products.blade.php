@@ -58,7 +58,9 @@
     </tbody>
   </table>
 
+  <div class="pagination-links">
   {{ $products->links('pagination.dashboard') }}
+  </div>
 
 </div>
 
