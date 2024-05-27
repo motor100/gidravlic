@@ -33,35 +33,33 @@
             </a>
           </div>
 
-          @if( Auth::guard('admin')->user()->id != 6 )
-            <div class="nav-item">
-              <a href="/admin/orders" class="item-link">
-                <i class="nav-icon fas fa-shopping-cart"></i>
-                <span>Заказы</span>
-              </a>
-            </div>
+          <div class="nav-item">
+            <a href="/admin/orders" class="item-link">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <span>Заказы</span>
+            </a>
+          </div>
 
-            <div class="nav-item">
-              <a href="/admin/main-slider" class="item-link">
-                <i class="nav-icon fas fa-images"></i>
-                <span>Слайдер</span>
-              </a>
-            </div>
-            
-            <div class="nav-item">
-              <a href="/admin/testimonials" class="item-link">
-                <i class="nav-icon far fa-comments"></i>
-                <span>Отзывы</span>
-              </a>
-            </div>
+          <div class="nav-item">
+            <a href="/admin/main-slider" class="item-link">
+              <i class="nav-icon fas fa-images"></i>
+              <span>Слайдер</span>
+            </a>
+          </div>
+          
+          <div class="nav-item">
+            <a href="/admin/testimonials" class="item-link">
+              <i class="nav-icon far fa-comments"></i>
+              <span>Отзывы</span>
+            </a>
+          </div>
 
-            <div class="nav-item">
-              <a href="/admin/subcategories" class="item-link">
-                <i class="nav-icon fas fa-list"></i>
-                <span>Подкатегории</span>
-              </a>
-            </div>
-          @endif
+          <div class="nav-item">
+            <a href="/admin/subcategories" class="item-link">
+              <i class="nav-icon fas fa-list"></i>
+              <span>Подкатегории</span>
+            </a>
+          </div>
 
         </div>
       </div>
