@@ -426,7 +426,6 @@ class MainController extends Controller
 
 
     // temp
-    /*
     public function images(): View
     {
         $products = collect();
@@ -445,7 +444,63 @@ class MainController extends Controller
 
         return view('temp-images', compact('products'));
     }
-    */
+
+    public function documents(): View
+    {
+        $products = collect();
+
+        $all_products = Product::with('document')->get();
+
+        foreach($all_products as $product) {
+            if($product->document) {
+                if($product->document->file) {
+                    $products->push($product);
+                }
+            }
+        }
+        
+        $products = $products->paginate(20);
+
+        return view('temp-images', compact('products'));
+    }
+
+    public function texts(): View
+    {
+        $products = collect();
+
+        $all_products = Product::with('content')->get();
+
+        foreach($all_products as $product) {
+            if($product->content) {
+                if(mb_strlen($product->content->text) > 10) {
+                    $products->push($product);
+                }
+            }
+        }
+        
+        $products = $products->paginate(20);
+
+        return view('temp-images', compact('products'));
+    }
+
+    public function galleries(): View
+    {
+        $products = collect();
+
+        $all_products = Product::with('gallery')->get();
+
+        foreach($all_products as $product) {
+            if(count($product->gallery) > 0) {
+                if($product->gallery[0]->image) {
+                    $products->push($product);
+                }
+            }
+        }
+        
+        $products = $products->paginate(20);
+
+        return view('temp-images', compact('products'));
+    }
 
     /*
     public function parse_xml_test()
