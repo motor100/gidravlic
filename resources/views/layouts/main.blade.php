@@ -182,22 +182,24 @@
 
   @if(Route::is('home'))
 
-    <div class="special-offer-section">
-      <div class="container">
-        <div class="section-title">Специальные предложения</div>
-        <div class="special-offer-products">
-          <div class="row">
-            @foreach($special_offer_products as $product)
-              <div class="col-lg-3 col-6">
-                @include('regular-product-item')
-              </div>
-            @endforeach
+    @if (count($special_offer_products) > 0)
+      <div class="special-offer-section">
+        <div class="container">
+          <div class="section-title">Специальные предложения</div>
+          <div class="special-offer-products">
+            <div class="row">
+              @foreach($special_offer_products as $product)
+                <div class="col-lg-3 col-6">
+                  @include('regular-product-item')
+                </div>
+              @endforeach
+            </div>
           </div>
+          <a href="/special-offer" class="primary-btn see-all-btn btn-245">СМОТРЕТЬ ВСЕ</a>
         </div>
-        <a href="/special-offer" class="primary-btn see-all-btn btn-245">СМОТРЕТЬ ВСЕ</a>
       </div>
-    </div>
-
+    @endif
+    
     <div class="how-to-order-section main-how-to-order-section">
       <div class="container">
         @include('how-to-order')
