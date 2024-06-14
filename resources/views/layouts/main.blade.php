@@ -290,9 +290,10 @@
               <div class="footer-link">
                 <a href="/polzovatelskoe-soglashenie-s-publichnoj-ofertoj">Пользовательское соглашение с публичной офертой</a>
               </div>
-              <div class="footer-link">
+              <div class="footer-link footer-link-last">
                 <a href="/garantiya-vozvrata-denezhnyh-sredstv">Гарантия возврата денежных средств</a>
               </div>
+              <div class="about-company">ООО «ГИДРАВЛИК-КОМ» ИНН 7415113283</div>
             </div>
           </div>
         </div>
@@ -510,7 +511,7 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/95314088" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
 
-  <!-- <script src="//code.jivo.ru/widget/qXz1GgymN2" async></script> -->
+  <script src="//code.jivo.ru/widget/qXz1GgymN2" async></script>
 
   <!-- Yandex.Metrika counter evgeniakhalturina@yandex.ru -->
   <script>

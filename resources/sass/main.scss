@@ -2039,6 +2039,9 @@ p {
     font-size: 20px;
     color: #fff;
   }
+  .footer-link-last {
+    margin: 0 0 10px 0;
+  }
   .footer-image {
     position: relative;
   }
@@ -2049,6 +2052,10 @@ p {
   }
   .footer-links {
     margin: 0 0 50px 0;
+  }
+  .footer-links .about-company {
+    font-size: 20px;
+    color: #fff;
   }
   .developer {
     text-align: center;
@@ -3273,6 +3280,9 @@ p {
     .footer-link a {
       font-size: 18px;
     }
+    .footer-links .about-company {
+      font-size: 18px;
+    }
     .logo {
       margin: 0 0 37px 0;
     }
@@ -3710,6 +3720,9 @@ p {
 
   .footer {
     .footer-link a {
+      font-size: 16px;
+    }
+    .footer-links .about-company {
       font-size: 16px;
     }
     .footer-nav__title {
