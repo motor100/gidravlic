@@ -142,6 +142,6 @@
 @endsection
 
 @section('script')
-  <script src="https://cdn.tiny.cloud/1/5bpy3e636t6os710b6abr6w7zmyr1d77c4px4vl6qi628r67/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="https://cdn.tiny.cloud/1/b62ra2i2sow452bimd9sgry7ofijm72bygzmpmo43uik0503/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script src="{{ asset('/js/tiny-file-upload.js') }}"></script>
 @endsection
